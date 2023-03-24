@@ -1,0 +1,15 @@
+{
+  "extends": "@parte-dev/tsconfig/react-library.json",
+  "include": [
+    ".",
+    "../../apps/storybook/stories/Typography.stories.tsx",
+    "../../apps/storybook/stories/Alert.stories.tsx",
+    "../../apps/storybook/stories/Avatar.stories.tsx",
+    "../../apps/storybook/stories/Badge.stories.tsx",
+    "../../apps/storybook/stories/Checkbox.stories.tsx",
+    "../../apps/storybook/stories/CornerDialog.stories.tsx",
+    "../../apps/storybook/stories/Dialog.stories.tsx",
+    "../../apps/storybook/stories/DialogModal.stories.tsx"
+  ],
+  "exclude": ["dist", "build", "node_modules"]
+}

@@ -1,0 +1,38 @@
+{
+  "name": "@parte-dev/storybook",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "start-storybook -p 6006",
+    "build": "build-storybook --docs",
+    "preview-storybook": "serve storybook-static",
+    "clean": "rm -rf .turbo && rm -rf node_modules",
+    "chromatic": "npx chromatic --project-token=49bd3395f197"
+  },
+  "dependencies": {
+    "@parte-dev/icons": "workspace:*",
+    "@parte-dev/ui": "workspace:*",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "styled-components": "^5.3.9"
+  },
+  "devDependencies": {
+    "@parte-dev/tsconfig": "workspace:*",
+    "@storybook/addon-actions": "^6.5.16",
+    "@storybook/addon-docs": "^6.5.16",
+    "@storybook/addon-essentials": "^6.5.16",
+    "@storybook/addon-interactions": "^6.5.16",
+    "@storybook/addon-links": "^6.5.16",
+    "@storybook/builder-vite": "^0.1.41",
+    "@storybook/react": "^6.5.16",
+    "@storybook/testing-library": "^0.0.13",
+    "@types/react": "^18.0.28",
+    "@types/react-dom": "^18.0.11",
+    "@vitejs/plugin-react": "^1.3.2",
+    "chromatic": "^6.17.2",
+    "eslint-config-parte": "workspace:*",
+    "serve": "^13.0.4",
+    "typescript": "^4.9.5",
+    "vite": "^2.9.15"
+  }
+}
