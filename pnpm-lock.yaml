@@ -101,8 +101,6 @@ importers:
 
   packages/parte-ui:
     specifiers:
-      '@emotion/cache': ^11.10.5
-      '@emotion/react': ^11.10.6
       '@parte/tsconfig': workspace:*
       '@tanstack/react-table': ^8.7.9
       '@types/react': ^18.0.28
@@ -123,8 +121,6 @@ importers:
       tsup: ^5.12.9
       typescript: ^4.9.5
     devDependencies:
-      '@emotion/cache': 11.10.5
-      '@emotion/react': 11.10.6_pmekkgnqduwlme35zpnqhenc34
       '@parte/tsconfig': link:../tsconfig
       '@tanstack/react-table': 8.7.9_biqbaboplfbrettd7655fr4n2y
       '@types/react': 18.0.28
