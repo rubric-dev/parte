@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Story, Meta } from "@storybook/react";
-import { Toggle, ToggleProps } from "@parte/ui";
+import { Toggle, ToggleProps } from "@parte-ds/ui";
 
 export default {
   title: "Components/Controls/Toggle",

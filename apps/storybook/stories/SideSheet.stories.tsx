@@ -5,7 +5,7 @@ import {
   SideSheetProps,
   Tab,
   Tabs,
-} from "@parte/ui";
+} from "@parte-ds/ui";
 import { Story, Meta } from "@storybook/react";
 import { useState } from "react";
 import styled, { css } from "styled-components";

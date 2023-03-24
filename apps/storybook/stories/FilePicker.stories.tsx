@@ -1,4 +1,4 @@
-import { FilePicker, FilePickerProps } from "@parte/ui";
+import { FilePicker, FilePickerProps } from "@parte-ds/ui";
 import { Story, Meta } from "@storybook/react";
 
 export default {

@@ -1,4 +1,4 @@
-import { Menu, MenuGroupProps } from "@parte/ui";
+import { Menu, MenuGroupProps } from "@parte-ds/ui";
 import { Story, Meta } from "@storybook/react";
 
 export default {

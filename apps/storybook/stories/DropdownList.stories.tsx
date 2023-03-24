@@ -1,4 +1,4 @@
-import { DropdownList, DropdownListProps } from "@parte/ui";
+import { DropdownList, DropdownListProps } from "@parte-ds/ui";
 import { Story, Meta } from "@storybook/react";
 
 export default {

@@ -1,5 +1,5 @@
 {
-  "name": "@parte/ui",
+  "name": "@parte-ds/ui",
   "version": "0.0.0",
   "main": "./dist/index.js",
   "module": "./dist/index.mjs",
@@ -16,7 +16,7 @@
     "clean": "rm -rf .turbo && rm -rf node_modules && rm -rf dist"
   },
   "devDependencies": {
-    "@parte/tsconfig": "workspace:*",
+    "@parte-ds/tsconfig": "workspace:*",
     "@tanstack/react-table": "^8.7.9",
     "@types/react": "^18.0.28",
     "@types/react-dom": "^18.0.11",

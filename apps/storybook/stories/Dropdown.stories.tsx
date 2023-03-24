@@ -1,4 +1,4 @@
-import { ActionChatIcon } from "@parte/icons";
+import { ActionChatIcon } from "@parte-ds/icons";
 import {
   Button,
   Dropdown,
@@ -6,7 +6,7 @@ import {
   DropdownProps,
   GroupOption,
   Option,
-} from "@parte/ui";
+} from "@parte-ds/ui";
 import { Meta, Story } from "@storybook/react";
 import { useState } from "react";
 

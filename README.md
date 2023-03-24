@@ -1,8 +1,8 @@
 # Parte Design System
 
-- 📗 @parte/ui - Parte의 컴포넌트 라이브러리
-- 📘 @parte/icons - Parte의 아이콘 라이브러리
-- 📙 @parte/utils - Parte 내부 유틸 모음
+- 📗 @parte-ds/ui - Parte의 컴포넌트 라이브러리
+- 📘 @parte-ds/icons - Parte의 아이콘 라이브러리
+- 📙 @parte-ds/utils - Parte 내부 유틸 모음
 
 ```bash
 pnpm install

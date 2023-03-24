@@ -1,5 +1,5 @@
-import { ActionChatIcon } from "@parte/icons";
-import { Menu, MenuRowProps } from "@parte/ui";
+import { ActionChatIcon } from "@parte-ds/icons";
+import { Menu, MenuRowProps } from "@parte-ds/ui";
 import { Story, Meta } from "@storybook/react";
 import { useState } from "react";
 

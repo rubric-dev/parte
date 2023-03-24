@@ -1,4 +1,4 @@
-import { Button, CornerDialog, CornerDialogProps } from "@parte/ui";
+import { Button, CornerDialog, CornerDialogProps } from "@parte-ds/ui";
 import { Story, Meta } from "@storybook/react";
 import { useState } from "react";
 

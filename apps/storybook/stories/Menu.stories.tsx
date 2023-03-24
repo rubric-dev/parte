@@ -2,8 +2,8 @@ import {
   ActionChatIcon,
   ActionCrossIcon,
   ActionRefreshIcon,
-} from "@parte/icons";
-import { Menu, MenuProps, Option } from "@parte/ui";
+} from "@parte-ds/icons";
+import { Menu, MenuProps, Option } from "@parte-ds/ui";
 import { Story, Meta } from "@storybook/react";
 import { useState } from "react";
 

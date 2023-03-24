@@ -1,5 +1,5 @@
 import { Story, Meta } from "@storybook/react";
-import { BoxProps, Box, Button } from "@parte/ui";
+import { BoxProps, Box, Button } from "@parte-ds/ui";
 
 export default {
   title: "Components/Layout/Box",

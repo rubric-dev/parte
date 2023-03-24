@@ -1,5 +1,5 @@
 import { Meta, Story } from "@storybook/react";
-import { Alert, AlertProps } from "@parte/ui";
+import { Alert, AlertProps } from "@parte-ds/ui";
 
 export default {
   title: "Components/Alerts/Alert",

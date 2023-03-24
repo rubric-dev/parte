@@ -1,4 +1,4 @@
-import { ActionTickIcon } from "@parte/icons";
+import { ActionTickIcon } from "@parte-ds/icons";
 import {
   Box,
   Option,
@@ -7,7 +7,7 @@ import {
   Tabs,
   TabsProps,
   TabVariant,
-} from "@parte/ui";
+} from "@parte-ds/ui";
 import { Story, Meta } from "@storybook/react";
 import { useState } from "react";
 

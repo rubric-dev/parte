@@ -1,8 +1,8 @@
 import { Story, Meta } from "@storybook/react";
 import { MultiValue, SingleValue } from "react-select";
 import { useState } from "react";
-import { Option, Select, StaticSelectProps } from "@parte/ui";
-import { ActionAddIcon } from "@parte/icons";
+import { Option, Select, StaticSelectProps } from "@parte-ds/ui";
+import { ActionAddIcon } from "@parte-ds/icons";
 
 export default {
   title: "Components/Select/StaticSelect",

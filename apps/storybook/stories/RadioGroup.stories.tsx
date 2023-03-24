@@ -1,4 +1,4 @@
-import { Box, Radio, RadioGroup, RadioGroupProps } from "@parte/ui";
+import { Box, Radio, RadioGroup, RadioGroupProps } from "@parte-ds/ui";
 import { Story, Meta } from "@storybook/react";
 import { ChangeEvent, useState } from "react";
 

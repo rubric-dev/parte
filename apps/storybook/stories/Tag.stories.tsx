@@ -1,4 +1,4 @@
-import { Option, Tag, TagProps } from "@parte/ui";
+import { Option, Tag, TagProps } from "@parte-ds/ui";
 import { Story, Meta } from "@storybook/react";
 
 export default {
