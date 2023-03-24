@@ -3,6 +3,7 @@ import { ThemeProvider as DefaultThemeProvider } from "styled-components";
 import { Colors } from ".";
 import { ColorTokenType } from "./theme/colorToken";
 import { theme as defaultTheme } from "./theme";
+import { cloneDeep } from "lodash-es";
 
 export type CustomTheme = Partial<ColorTokenType> & {
   colors?: Partial<Colors>;
@@ -24,7 +25,7 @@ export function ThemeProvider({ children, customTheme = {} }: Props) {
 }
 
 const overrideTheme = (theme: CustomTheme) => {
-  let plate = structuredClone(defaultTheme);
+  let plate = cloneDeep(defaultTheme);
 
   const { colors: customColors = {}, ...customTokens } = theme;
 
