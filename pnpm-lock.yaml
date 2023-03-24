@@ -6,7 +6,7 @@ importers:
     specifiers:
       '@changesets/cli': ^2.26.0
       eslint: ^8.36.0
-      eslint-config-parte: workspace:0.0.0
+      eslint-config-parte: workspace:*
       prettier: ^2.8.5
       turbo: latest
     devDependencies:
