@@ -1,4 +1,4 @@
-import { Menu, MenuOptionsGroupProps } from "@parte-dev/ui";
+import { Menu, MenuOptionsGroupProps } from "@parte/ui";
 import { Story, Meta } from "@storybook/react";
 import { useState } from "react";
 

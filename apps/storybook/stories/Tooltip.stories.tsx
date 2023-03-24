@@ -1,4 +1,4 @@
-import { Button, POSITION, Tooltip, TooltipProps } from "@parte-dev/ui";
+import { Button, POSITION, Tooltip, TooltipProps } from "@parte/ui";
 import { Meta, Story } from "@storybook/react";
 
 export default {

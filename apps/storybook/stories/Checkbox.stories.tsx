@@ -1,4 +1,4 @@
-import { Box, Checkbox, CheckboxProps } from "@parte-dev/ui";
+import { Box, Checkbox, CheckboxProps } from "@parte/ui";
 import { Story, Meta } from "@storybook/react";
 import { useState } from "react";
 

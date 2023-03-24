@@ -1,5 +1,5 @@
 {
-  "name": "@parte-dev/storybook",
+  "name": "@parte/storybook",
   "version": "0.0.0",
   "private": true,
   "scripts": {
@@ -10,14 +10,14 @@
     "chromatic": "npx chromatic --project-token=49bd3395f197"
   },
   "dependencies": {
-    "@parte-dev/icons": "workspace:*",
-    "@parte-dev/ui": "workspace:*",
+    "@parte/icons": "workspace:*",
+    "@parte/ui": "workspace:*",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "styled-components": "^5.3.9"
   },
   "devDependencies": {
-    "@parte-dev/tsconfig": "workspace:*",
+    "@parte/tsconfig": "workspace:*",
     "@storybook/addon-actions": "^6.5.16",
     "@storybook/addon-docs": "^6.5.16",
     "@storybook/addon-essentials": "^6.5.16",

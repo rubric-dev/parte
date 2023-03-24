@@ -1,4 +1,4 @@
-import { Avatar, AvatarProps } from "@parte-dev/ui";
+import { Avatar, AvatarProps } from "@parte/ui";
 import { Story, Meta } from "@storybook/react";
 
 export default {

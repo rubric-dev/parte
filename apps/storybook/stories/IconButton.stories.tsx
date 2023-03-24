@@ -1,5 +1,5 @@
-import { TableThIcon } from "@parte-dev/icons";
-import { IconButton, IconButtonProps } from "@parte-dev/ui";
+import { TableThIcon } from "@parte/icons";
+import { IconButton, IconButtonProps } from "@parte/ui";
 import { Story, Meta } from "@storybook/react";
 
 export default {

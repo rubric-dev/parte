@@ -1,4 +1,4 @@
-import { Box, Spinner, SpinnerProps } from "@parte-dev/ui";
+import { Box, Spinner, SpinnerProps } from "@parte/ui";
 import { Story, Meta } from "@storybook/react";
 
 export default {

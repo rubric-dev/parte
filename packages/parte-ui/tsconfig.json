@@ -1,5 +1,5 @@
 {
-  "extends": "@parte-dev/tsconfig/react-library.json",
+  "extends": "@parte/tsconfig/react-library.json",
   "include": [
     ".",
     "../../apps/storybook/stories/Typography.stories.tsx",

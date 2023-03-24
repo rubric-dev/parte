@@ -1,4 +1,4 @@
-import { Pagination, PaginationProps } from "@parte-dev/ui";
+import { Pagination, PaginationProps } from "@parte/ui";
 import { Story, Meta } from "@storybook/react";
 import { useCallback, useState } from "react";
 

@@ -1,4 +1,4 @@
-import { Button, Overlay, OverlayProps } from "@parte-dev/ui";
+import { Button, Overlay, OverlayProps } from "@parte/ui";
 import { Story, Meta } from "@storybook/react";
 import { useState } from "react";
 

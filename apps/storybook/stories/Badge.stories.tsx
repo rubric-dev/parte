@@ -1,5 +1,5 @@
 import { Story, Meta } from "@storybook/react";
-import { Badge, BadgeProps } from "@parte-dev/ui";
+import { Badge, BadgeProps } from "@parte/ui";
 
 export default {
   title: "Components/Avatars & Badges/Badges",

@@ -1,4 +1,4 @@
-import { Alert, AlertProps, Button, toaster } from "@parte-dev/ui";
+import { Alert, AlertProps, Button, toaster } from "@parte/ui";
 import { Story, Meta } from "@storybook/react";
 
 export default {

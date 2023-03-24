@@ -1,4 +1,4 @@
-import { Radio, RadioProps } from "@parte-dev/ui";
+import { Radio, RadioProps } from "@parte/ui";
 import { Story, Meta } from "@storybook/react";
 
 export default {

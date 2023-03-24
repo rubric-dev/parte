@@ -1,4 +1,4 @@
-import { ColorList } from "@parte-dev/ui";
+import { ColorList } from "@parte/ui";
 import { Story, Meta } from "@storybook/react";
 
 export default {

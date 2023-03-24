@@ -1,5 +1,5 @@
 import * as React from "react";
-import { ThemeProvider } from "@parte-dev/ui";
+import { ThemeProvider } from "@parte/ui";
 import { GlobalStyle } from "./decorators/GlobalStyles";
 
 export const decorators = [

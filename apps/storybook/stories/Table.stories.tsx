@@ -2,7 +2,7 @@ import { Meta, Story } from "@storybook/react";
 import { ColumnDef, createColumnHelper } from "@tanstack/react-table";
 import { useState } from "react";
 import styled from "styled-components";
-import { ActionChatIcon, InterfaceMoreIcon } from "@parte-dev/icons";
+import { ActionChatIcon, InterfaceMoreIcon } from "@parte/icons";
 import {
   Avatar,
   Badge,
@@ -18,7 +18,7 @@ import {
   TableTemplate,
   toaster,
   Toggle,
-} from "@parte-dev/ui";
+} from "@parte/ui";
 
 type UserType = "user" | "manager" | "admin";
 type User = {

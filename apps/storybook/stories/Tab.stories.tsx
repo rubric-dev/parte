@@ -1,5 +1,5 @@
-import { ActionLockIcon } from "@parte-dev/icons";
-import { Tab, TabProps } from "@parte-dev/ui";
+import { ActionLockIcon } from "@parte/icons";
+import { Tab, TabProps } from "@parte/ui";
 import { Story, Meta } from "@storybook/react";
 
 export default {

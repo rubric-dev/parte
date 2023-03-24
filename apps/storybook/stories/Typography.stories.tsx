@@ -1,4 +1,4 @@
-import { Heading, Paragraph, Caption, Code, Box } from "@parte-dev/ui";
+import { Heading, Paragraph, Caption, Code, Box } from "@parte/ui";
 import { Story, Meta } from "@storybook/react";
 
 export default {

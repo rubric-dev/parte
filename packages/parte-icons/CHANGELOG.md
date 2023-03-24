@@ -1,4 +1,4 @@
-# @parte-dev/icons
+# @parte/icons
 
 ## 0.0.2
 

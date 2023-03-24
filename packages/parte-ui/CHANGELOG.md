@@ -1,4 +1,4 @@
-# @parte-dev/ui
+# @parte/ui
 
 ## 0.0.2
 

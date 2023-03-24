@@ -2,8 +2,8 @@ import {
   ActionCrossIcon,
   ActionSearchIcon,
   InterfaceCaretDownIcon,
-} from "@parte-dev/icons";
-import { TextInput, TextInputProps } from "@parte-dev/ui";
+} from "@parte/icons";
+import { TextInput, TextInputProps } from "@parte/ui";
 import { Story, Meta } from "@storybook/react";
 
 export default {

@@ -1,4 +1,4 @@
-import { Textarea, TextAreaProps } from "@parte-dev/ui";
+import { Textarea, TextAreaProps } from "@parte/ui";
 import { Story, Meta } from "@storybook/react";
 
 export default {

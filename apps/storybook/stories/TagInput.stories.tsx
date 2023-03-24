@@ -1,5 +1,5 @@
-import { ActionCrossIcon, InterfaceCaretDownIcon } from "@parte-dev/icons";
-import { TagInput, TagInputProps, TagOption } from "@parte-dev/ui";
+import { ActionCrossIcon, InterfaceCaretDownIcon } from "@parte/icons";
+import { TagInput, TagInputProps, TagOption } from "@parte/ui";
 import { Story, Meta } from "@storybook/react";
 import { useState } from "react";
 

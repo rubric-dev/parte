@@ -10,9 +10,9 @@ import {
   AsyncSelectProps,
   SelectAdditional,
   Option,
-} from "@parte-dev/ui";
+} from "@parte/ui";
 import { useState } from "react";
-import { ActionAddIcon } from "@parte-dev/icons";
+import { ActionAddIcon } from "@parte/icons";
 
 export default {
   title: "Components/Select/AsyncSelect",

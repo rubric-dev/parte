@@ -1,5 +1,5 @@
 import { createGlobalStyle } from "styled-components";
-import { styleReset } from "@parte-dev/ui";
+import { styleReset } from "@parte/ui";
 
 export const GlobalStyle = createGlobalStyle`
   *, *::before, *::after {

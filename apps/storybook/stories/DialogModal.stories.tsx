@@ -4,7 +4,7 @@ import {
   DialogModal,
   DialogModalProps,
   theme,
-} from "@parte-dev/ui";
+} from "@parte/ui";
 import { Story, Meta } from "@storybook/react";
 import { useState } from "react";
 import { css } from "styled-components";

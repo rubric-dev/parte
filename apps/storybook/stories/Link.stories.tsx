@@ -1,4 +1,4 @@
-import { Box, Link, LinkProps, Paragraph } from "@parte-dev/ui";
+import { Box, Link, LinkProps, Paragraph } from "@parte/ui";
 import { Meta, Story } from "@storybook/react";
 
 export default {

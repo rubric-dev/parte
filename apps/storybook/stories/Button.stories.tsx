@@ -1,5 +1,5 @@
 import { Story, Meta } from "@storybook/react";
-import { Button, ButtonProps } from "@parte-dev/ui";
+import { Button, ButtonProps } from "@parte/ui";
 
 export default {
   title: "Components/Buttons/Button",
