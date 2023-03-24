@@ -18,6 +18,7 @@
   "devDependencies": {
     "@parte-ds/tsconfig": "workspace:*",
     "@tanstack/react-table": "^8.7.9",
+    "@types/lodash-es": "^4.17.7",
     "@types/react": "^18.0.28",
     "@types/react-dom": "^18.0.11",
     "@types/react-transition-group": "^4.4.5",
@@ -25,6 +26,7 @@
     "@types/styled-components": "^5.1.26",
     "eslint": "^8.36.0",
     "eslint-config-parte": "workspace:*",
+    "lodash-es": "^4.17.21",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-select": "^5.7.1",
