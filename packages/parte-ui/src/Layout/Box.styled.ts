@@ -46,6 +46,7 @@ export const commonBoxStyle = css<BoxProps>`
     marginLeft,
     marginRight,
     elevation,
+    borderRadius,
   }) =>
     css`
       display: ${display};
@@ -110,5 +111,12 @@ export const commonBoxStyle = css<BoxProps>`
       ]};
 
       ${typeof elevation === "number" && getElevation(elevation)};
+      ${borderRadius === undefined
+        ? ""
+        : css`
+            border-radius: ${typeof borderRadius === "number"
+              ? `${borderRadius}px`
+              : borderRadius};
+          `};
     `}
 `;
