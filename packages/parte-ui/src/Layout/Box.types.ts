@@ -58,6 +58,7 @@ export type BoxProps = HTMLAttributes<HTMLDivElement> & {
   marginRight?: number;
 
   elevation?: ElevationToken;
+  borderRadius?: number | string;
 
   /**
    * @uxpinignoreprop

@@ -1,11 +1,12 @@
-import styled, { css } from 'styled-components';
-import { Box } from '../Layout';
+import styled, { css } from "styled-components";
+import { Box } from "../Layout";
 
 export const DialogContainer = styled(Box)`
   ${({ theme }) => css`
     background-color: ${theme.colors.N0};
     display: flex;
     height: fit-content;
+    border-radius: 8px;
   `}
 `;
 export const Header = styled(Box)`

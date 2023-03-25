@@ -1,10 +1,11 @@
 # Workflow name
-name: "Run chromatic when storybook changed"
+name: "Chromatic"
 
 on:
   push:
     paths:
       - apps/storybook/**
+      - packages/parte-ui/**
 jobs:
   chromatic:
     runs-on: ubuntu-latest

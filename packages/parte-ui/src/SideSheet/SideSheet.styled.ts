@@ -1,6 +1,6 @@
-import styled, { css, keyframes } from 'styled-components';
-import { animationEasing } from '../constant';
-import { Box } from '../Layout';
+import styled, { css, keyframes } from "styled-components";
+import { animationEasing } from "../constant";
+import { Box } from "../Layout";
 
 const { deceleration, acceleration } = animationEasing;
 
@@ -34,13 +34,13 @@ export const Container = styled(Box)`
     transform: translateX(-100%);
     ${theme.elevation.elevation3}
 
-    &[data-state='entering'] {
+    &[data-state="entering"] {
       animation: ${openAnimation} ${ANIMATION_DURATION}ms ${deceleration} both;
     }
-    &[data-state='entered'] {
+    &[data-state="entered"] {
       animation: ${openAnimation} ${ANIMATION_DURATION}ms ${deceleration} both;
     }
-    &[data-state='exiting'] {
+    &[data-state="exiting"] {
       animation: ${closeAnimation} ${ANIMATION_DURATION}ms ${acceleration} both;
     }
   `}
@@ -79,15 +79,15 @@ export const Close = styled(Box)`
     &:active {
       background-color: rgba(255, 255, 255, 0.4);
     }
-    &[data-state='entering'] {
+    &[data-state="entering"] {
       animation: ${closeIconOpenAnimation} ${ANIMATION_DURATION}ms
         ${deceleration} both;
     }
-    &[data-state='entered'] {
+    &[data-state="entered"] {
       animation: ${closeIconOpenAnimation} ${ANIMATION_DURATION}ms
         ${deceleration} both;
     }
-    &[data-state='exiting'] {
+    &[data-state="exiting"] {
       animation: ${closeIconCloseAnimation} ${ANIMATION_DURATION}ms
         ${acceleration} both;
     }

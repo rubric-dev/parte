@@ -68,7 +68,7 @@ export const DialogModal = memo(function DialogModal({
           close={close}
           width={width}
           {...dialogProps}
-          elevation={0}
+          elevation={2}
           state={state}
           overrideStyles={css`
             width: ${width}px;
