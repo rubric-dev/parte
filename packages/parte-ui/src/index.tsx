@@ -7,6 +7,7 @@ export * from "./Alerts";
 export * from "./Avatar";
 export * from "./Badge";
 export * from "./Button";
+export * from "./Card";
 export * from "./Checkbox";
 export * from "./CornerDialog";
 export * from "./Dialog";

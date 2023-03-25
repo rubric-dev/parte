@@ -1,8 +1,10 @@
 # Workflow name
-name: "Chromatic for pull requests"
+name: "Run chromatic when storybook changed"
 
-on: push
-
+on:
+  push:
+    paths:
+      - apps/storybook/**
 jobs:
   chromatic:
     runs-on: ubuntu-latest
