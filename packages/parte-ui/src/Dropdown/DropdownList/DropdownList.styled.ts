@@ -1,5 +1,5 @@
-import styled, { css } from 'styled-components';
-import { Box } from '../../Layout';
+import styled, { css } from "styled-components";
+import { Box } from "../../Layout";
 
 export const List = styled(Box)`
   ${({ theme }) => {
@@ -21,6 +21,7 @@ export const NoOption = styled(Box)`
     width: 100%;
     height: 120px;
     ${theme.elevation.elevation1};
+    border-radius: 4px;
     ${theme.typography.P100}
     color: ${theme.colors.N800};
   `}

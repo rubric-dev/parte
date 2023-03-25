@@ -7,7 +7,7 @@
     "build": "build-storybook --docs",
     "preview-storybook": "serve storybook-static",
     "clean": "rm -rf .turbo && rm -rf node_modules",
-    "chromatic": "npx chromatic --project-token=f447c51dae7b"
+    "chromatic": "chromatic --exit-zero-on-changes"
   },
   "dependencies": {
     "@parte-ds/icons": "workspace:*",
