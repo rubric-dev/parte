@@ -5,10 +5,11 @@ export const Button = ({
   children,
   leadingIcon,
   trailingIcon,
+  variant = "primary",
   ...props
 }: ButtonProps) => {
   return (
-    <StyledButton {...props}>
+    <StyledButton variant={variant} {...props}>
       {leadingIcon}
       {children}
       {trailingIcon}
