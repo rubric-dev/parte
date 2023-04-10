@@ -1,5 +1,5 @@
-import styled, { css } from 'styled-components';
-import { ButtonProps } from './Button.types';
+import styled, { css } from 'styled-components'
+import { ButtonProps } from './Button.types'
 
 const commonButtonStyles = css<ButtonProps>`
   position: relative;
@@ -17,6 +17,7 @@ const commonButtonStyles = css<ButtonProps>`
   box-sizing: border-box;
   width: ${({ fullWidth }) => (fullWidth ? '100%' : 'fit-content')};
   -webkit-font-smoothing: antialiased;
+  appearance: none;
   -webkit-appearance: none;
   -moz-appearance: none;
   padding: ${({ theme }) =>
@@ -24,13 +25,15 @@ const commonButtonStyles = css<ButtonProps>`
   column-gap: 8px;
   border-radius: 4px;
   font-family: inherit;
+  height: fit-content;
+  white-space: nowrap;
   &:disabled {
     cursor: default;
   }
   &::-moz-focus-inner {
     border: 0;
   }
-`;
+`
 
 export const StyledButton = styled.button<ButtonProps>`
   ${commonButtonStyles}
@@ -131,4 +134,4 @@ export const StyledButton = styled.button<ButtonProps>`
         color: ${theme.colorTextButtonErrorDisabled};
       }
     `}
-`;
+`
