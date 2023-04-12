@@ -11,7 +11,9 @@ const AlertStory: Meta = {
 };
 export default AlertStory;
 
-export const Default: StoryObj = {
+type Story = StoryObj<typeof Alert>;
+
+export const Default: Story = {
   args: {
     type: "alert-inline",
     status: "error",
@@ -19,7 +21,7 @@ export const Default: StoryObj = {
   },
 };
 
-export const BasicAlert = {
+export const BasicAlert: Story = {
   args: {
     type: "alert",
     status: "error",
@@ -29,14 +31,14 @@ export const BasicAlert = {
   },
 };
 
-export const BasicAlertNoDescription = {
+export const BasicAlertNoDescription: Story = {
   args: {
     type: "alert",
     status: "success",
     title: "Success Message",
   },
 };
-export const ToastAlert = {
+export const ToastAlert: Story = {
   args: {
     type: "toast",
     status: "info",

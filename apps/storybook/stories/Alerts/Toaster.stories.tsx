@@ -1,16 +1,18 @@
-import { Alert, AlertProps, Button, toaster } from "@parte-ds/ui";
-import { Story, Meta } from "@storybook/react";
+import { Alert, Button, toaster } from "@parte-ds/ui";
+import type { Meta, StoryObj } from "@storybook/react";
 
-export default {
+const meta: Meta = {
   title: "Components/Alerts/Toaster",
   component: Alert,
   parameters: {
     layout: "centered",
     viewport: "responsive",
   },
-} as Meta;
+};
 
-const Template: Story<AlertProps> = () => {
+export default meta;
+
+const DefaultToastStory = () => {
   return (
     <div style={{ display: "flex", flexDirection: "column", gap: "16px" }}>
       <Button
@@ -66,5 +68,6 @@ const Template: Story<AlertProps> = () => {
   );
 };
 
-export const Default = Template.bind({});
-Default.args = {};
+export const Default: StoryObj = {
+  render: () => <DefaultToastStory />,
+};
