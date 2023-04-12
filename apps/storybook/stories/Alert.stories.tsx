@@ -1,46 +1,47 @@
-import { Meta, Story } from "@storybook/react";
-import { Alert, AlertProps } from "@parte-ds/ui";
+import { Meta, StoryObj } from "@storybook/react";
+import { Alert } from "@parte-ds/ui";
 
-export default {
+const AlertStory: Meta = {
   title: "Components/Alerts/Alert",
   component: Alert,
   parameters: {
     layout: "centered",
     viewport: "responsive",
   },
-} as Meta;
+};
+export default AlertStory;
 
-const Template: Story<AlertProps> = ({ ...args }) => {
-  return <Alert {...args} />;
+export const Default: StoryObj = {
+  args: {
+    type: "alert-inline",
+    status: "error",
+    message: "Warning message.",
+  },
 };
 
-export const Default = Template.bind({});
-Default.args = {
-  type: "alert-inline",
-  status: "error",
-  message: "Warning message.",
+export const BasicAlert = {
+  args: {
+    type: "alert",
+    status: "error",
+    title: "Error Message",
+    description:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore.",
+  },
 };
 
-export const BasicAlert = Template.bind({});
-BasicAlert.args = {
-  type: "alert",
-  status: "error",
-  title: "Error Message",
-  description:
-    "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore.",
+export const BasicAlertNoDescription = {
+  args: {
+    type: "alert",
+    status: "success",
+    title: "Success Message",
+  },
 };
-
-export const BasicAlertNoDescription = Template.bind({});
-BasicAlertNoDescription.args = {
-  type: "alert",
-  status: "success",
-  title: "Success Message",
-};
-export const ToastAlert = Template.bind({});
-ToastAlert.args = {
-  type: "toast",
-  status: "info",
-  title: "Info Message",
-  description:
-    "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore.",
+export const ToastAlert = {
+  args: {
+    type: "toast",
+    status: "info",
+    title: "Info Message",
+    description:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore.",
+  },
 };
