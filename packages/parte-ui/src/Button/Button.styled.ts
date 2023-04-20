@@ -25,7 +25,7 @@ const commonButtonStyles = css<ButtonProps>`
   column-gap: 8px;
   border-radius: 4px;
   font-family: inherit;
-  height: fit-content;
+  height: 32px;
   white-space: nowrap;
   &:disabled {
     cursor: default;
