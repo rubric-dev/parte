@@ -1,5 +1,5 @@
-import styled, { css } from 'styled-components';
-import { TabProps } from './Tab.types';
+import styled, { css } from "styled-components";
+import { TabProps } from "./Tab.types";
 
 export const Tab = styled.button<TabProps>`
   ${({ theme, variant, selected, disabled, direction }) => {
@@ -12,13 +12,15 @@ export const Tab = styled.button<TabProps>`
       ${selected &&
       css`
         &::before {
-          content: '';
+          content: "";
           position: absolute;
           bottom: 0;
           right: 0;
           height: 2px;
           border-radius: 2px 2px 0px 0px;
-          background-color: ${disabled ? theme.colors.N500 : theme.colors.B400};
+          background-color: ${disabled
+            ? theme.colors.N500
+            : theme.colors.PRIMARY400};
           width: 100%;
         }
       `}
@@ -53,9 +55,9 @@ export const Tab = styled.button<TabProps>`
         &:hover,
         &:active,
         &:focus {
-          color: ${theme.colors.B400};
+          color: ${theme.colors.PRIMARY400};
           svg {
-            color: ${theme.colors.B400};
+            color: ${theme.colors.PRIMARY400};
           }
         }
       `}
@@ -71,7 +73,7 @@ export const Tab = styled.button<TabProps>`
       padding: 8px 16px;
       cursor: pointer;
 
-      ${direction === 'horizontal' &&
+      ${direction === "horizontal" &&
       css`
          {
           margin-right: 8px;
@@ -80,7 +82,7 @@ export const Tab = styled.button<TabProps>`
           }
         }
       `}
-      ${direction === 'vertical' &&
+      ${direction === "vertical" &&
       css`
          {
           margin-bottom: 8px;
@@ -115,16 +117,16 @@ export const Tab = styled.button<TabProps>`
         &:hover,
         &:active,
         &:focus {
-          color: ${theme.colors.B400};
-          background-color: ${theme.colors.B100};
+          color: ${theme.colors.PRIMARY400};
+          background-color: ${theme.colors.PRIMARY100};
           svg {
-            color: ${theme.colors.B400};
+            color: ${theme.colors.PRIMARY400};
           }
         }
       `}
       &:disabled {
         color: ${theme.colors.N500};
-        background-color: ${selected ? theme.colors.N100 : 'transparent'};
+        background-color: ${selected ? theme.colors.N100 : "transparent"};
         svg {
           color: ${theme.colors.N500};
         }
@@ -134,8 +136,8 @@ export const Tab = styled.button<TabProps>`
 
     return css`
       box-sizing: border-box;
-      display: ${direction === 'horizontal' ? 'inline-flex' : 'flex'};
-      width: ${direction === 'horizontal' ? 'auto' : '100%'};
+      display: ${direction === "horizontal" ? "inline-flex" : "flex"};
+      width: ${direction === "horizontal" ? "auto" : "100%"};
       justify-content: center;
       align-items: center;
       border-radius: 4px;
@@ -146,7 +148,7 @@ export const Tab = styled.button<TabProps>`
       background-color: transparent;
       border: none;
       cursor: pointer;
-      ${variant === 'Primary' ? primaryTabStyle : secondaryTabStyle}
+      ${variant === "Primary" ? primaryTabStyle : secondaryTabStyle}
     `;
   }}
 `;

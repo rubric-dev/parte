@@ -1,10 +1,10 @@
 const LinkToken = {
-  colorTextLink: 'B400',
-  colorTextLinkHover: 'B500',
-  colorTextLinkPressed: 'B600',
-  colorTextLinkFocused: 'B500',
-  colorTextLinkDisabled: 'N500',
-  colorTextLinkVisited: 'V400',
+  colorTextLink: "PRIMARY400",
+  colorTextLinkHover: "PRIMARY500",
+  colorTextLinkPressed: "PRIMARY600",
+  colorTextLinkFocused: "PRIMARY500",
+  colorTextLinkDisabled: "N500",
+  colorTextLinkVisited: "V400",
 };
 
 export default {

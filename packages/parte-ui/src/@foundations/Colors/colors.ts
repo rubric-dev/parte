@@ -79,4 +79,11 @@ export const COLORS = {
   ChartPink: "#FD8ADC",
   ChartAqua: "#70B0FF",
   ChartOrange: "#FF9D66",
+  PRIMARY600: "#1F3D99",
+  PRIMARY500: "#2952CC",
+  PRIMARY400: "#3366FF",
+  PRIMARY300: "#9DB5FF",
+  PRIMARY200: "#D6E0FF",
+  PRIMARY100: "#EBF0FF",
+  PRIMARY50: "#F3F6FF",
 };

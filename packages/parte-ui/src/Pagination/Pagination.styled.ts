@@ -1,5 +1,5 @@
-import styled, { css } from 'styled-components';
-import { Box } from '../Layout';
+import styled, { css } from "styled-components";
+import { Box } from "../Layout";
 
 export const PaginationButton = styled.button<{
   isSelected: boolean;
@@ -35,8 +35,8 @@ export const PaginationButton = styled.button<{
     }
     ${isSelected &&
     css`
-      background-color: ${theme.colors.B100} !important;
-      color: ${theme.colors.B400} !important;
+      background-color: ${theme.colors.PRIMARY100} !important;
+      color: ${theme.colors.PRIMARY400} !important;
       outline: none !important;
     `}
   `}

@@ -1,11 +1,11 @@
-import styled, { css } from 'styled-components';
+import styled, { css } from "styled-components";
 
 export const RadioWrapper = styled.label<{ disabled: boolean }>`
   ${({ theme, disabled }) => css`
     display: flex;
     align-items: center;
     column-gap: ${theme.spacing.spacing12}px;
-    cursor: ${disabled ? 'default' : 'pointer'};
+    cursor: ${disabled ? "default" : "pointer"};
   `}
 `;
 
@@ -31,12 +31,12 @@ export const Input = styled.input`
       background-color: ${theme.colors.N100};
     }
     &:checked {
-      border: 4px solid ${theme.colors.B400};
+      border: 4px solid ${theme.colors.PRIMARY400};
       &:hover {
-        border: 4px solid ${theme.colors.B500};
+        border: 4px solid ${theme.colors.PRIMARY500};
       }
       &:active {
-        border: 4px solid ${theme.colors.B600};
+        border: 4px solid ${theme.colors.PRIMARY600};
         background-color: ${theme.colors.transparent};
       }
       &:disabled {

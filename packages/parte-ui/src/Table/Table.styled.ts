@@ -1,7 +1,7 @@
-import styled, { css } from 'styled-components';
-import { Box } from '../Layout';
-import { BoxProps } from '../Layout/Box.types';
-import { HeaderContainerProps, RowProps } from './Table.types';
+import styled, { css } from "styled-components";
+import { Box } from "../Layout";
+import { BoxProps } from "../Layout/Box.types";
+import { HeaderContainerProps, RowProps } from "./Table.types";
 
 export const Table = styled(Box)`
   ${() => css`
@@ -55,14 +55,16 @@ export const Row = styled(Box)<BoxProps & RowProps>`
       cursor: pointer;
       &:hover,
       &:focus {
-        background-color: ${selected ? theme.colors.B50 : theme.colors.N75};
+        background-color: ${selected
+          ? theme.colors.PRIMARY50
+          : theme.colors.N75};
       }
     `;
     return css`
       box-sizing: border-box;
       display: flex;
       width: 100%;
-      background-color: ${selected ? theme.colors.B50 : theme.colors.N0};
+      background-color: ${selected ? theme.colors.PRIMARY50 : theme.colors.N0};
       padding: 0 ${theme.spacing.spacing16}px;
       &:not(:last-child) {
         border-bottom: 1px solid ${theme.colors.N300};
@@ -98,14 +100,14 @@ export const TableFilterBar = styled(Box)`
 
 export const ClearFilter = styled.button`
   ${({ theme }) => css`
-    color: ${theme.colors.B400};
+    color: ${theme.colors.PRIMARY400};
     background-color: ${theme.colors.transparent};
     outline: none;
     border: none;
     ${theme.typography.P100}
     cursor: pointer;
     &:hover {
-      color: ${theme.colors.B500};
+      color: ${theme.colors.PRIMARY500};
     }
   `}
 `;

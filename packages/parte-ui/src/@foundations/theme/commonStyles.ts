@@ -10,4 +10,4 @@ export const commonStyles = {
   outlineError: css`
     outline: 2px solid ${COLORS.R100};
   `,
-} as const;
+};
