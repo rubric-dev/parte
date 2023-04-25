@@ -475,6 +475,17 @@ export { default as ProductSmartPhoneIcon } from "./Icons/ProductSmartPhoneIcon"
 export { default as ProductSourceIcon } from "./Icons/ProductSourceIcon";
 export { default as ProductTraitsIcon } from "./Icons/ProductTraitsIcon";
 export { default as ProductUserIcon } from "./Icons/ProductUserIcon";
+export { default as StyleCalendarIcon } from "./Icons/StyleCalendarIcon";
+export { default as StyleClothesShortSleeveIcon } from "./Icons/StyleClothesShortSleeveIcon";
+export { default as StyleCoatHangerIcon } from "./Icons/StyleCoatHangerIcon";
+export { default as StyleDeleteIcon } from "./Icons/StyleDeleteIcon";
+export { default as StyleFiledateIcon } from "./Icons/StyleFiledateIcon";
+export { default as StyleInfoIcon } from "./Icons/StyleInfoIcon";
+export { default as StylePercentageIcon } from "./Icons/StylePercentageIcon";
+export { default as StyleRankingIcon } from "./Icons/StyleRankingIcon";
+export { default as StyleRingIcon } from "./Icons/StyleRingIcon";
+export { default as StyleRulerIcon } from "./Icons/StyleRulerIcon";
+export { default as StyleUploadIcon } from "./Icons/StyleUploadIcon";
 export { default as TableAddColumnLeftIcon } from "./Icons/TableAddColumnLeftIcon";
 export { default as TableAddColumnRightIcon } from "./Icons/TableAddColumnRightIcon";
 export { default as TableAddRowBottomIcon } from "./Icons/TableAddRowBottomIcon";
