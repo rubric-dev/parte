@@ -78,6 +78,7 @@ const Menu = ({ children }: DropdownMenuProps) => {
     }
     return null;
   };
+
   const calculateMenuStyle = (pos: DropdownPosition) => {
     const dropdownRect = dropdownRef?.current?.getBoundingClientRect();
     const menuRect = menuRef?.current?.getBoundingClientRect();
@@ -128,6 +129,11 @@ const Menu = ({ children }: DropdownMenuProps) => {
     return null;
   }
 
+  const container = document.createElement("div");
+  container.id = "tooltip-container";
+
+  useEffect(() => {}, []);
+
   const rootDom = document.getElementById("root");
   if (usePortal && rootDom) {
     return createPortal(
@@ -142,6 +148,7 @@ const Menu = ({ children }: DropdownMenuProps) => {
       rootDom
     );
   }
+
   return (
     <Styled.Menu
       ref={menuRef}

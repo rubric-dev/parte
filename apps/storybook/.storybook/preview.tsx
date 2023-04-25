@@ -5,12 +5,7 @@ import { GlobalStyle } from "./decorators/GlobalStyles";
 export const decorators = [
   (Story) => {
     return (
-      <ThemeProvider
-      // theme={{
-      //   colors: { B400: '#0AA2C0' },
-      //   colorBackgroundButtonPrimary: 'red',
-      // }}
-      >
+      <ThemeProvider>
         <GlobalStyle />
         <Story />
       </ThemeProvider>

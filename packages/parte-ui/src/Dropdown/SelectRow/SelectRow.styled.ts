@@ -1,6 +1,6 @@
-import styled, { css } from 'styled-components';
-import { Box } from '../../Layout';
-import { SelectRowProps, SelectRowType } from './SelectRow.types';
+import styled, { css } from "styled-components";
+import { Box } from "../../Layout";
+import { SelectRowProps, SelectRowType } from "./SelectRow.types";
 
 const commonSelectRowStyle = css`
   position: relative;
@@ -16,13 +16,13 @@ const commonSelectRowStyle = css`
 const indicator = css`
   ${({ theme }) => css`
     &::before {
-      content: '';
+      content: "";
       position: absolute;
       bottom: 0;
       left: 0;
       height: 100%;
       border-radius: 0px 2px 2px 0px;
-      background-color: ${theme.colors.B400};
+      background-color: ${theme.colors.T400};
       width: 2px;
     }
   `}
@@ -58,12 +58,12 @@ export const SelectRow = styled(Box)<{
   ${commonSelectRowStyle}
   ${(props) => {
     const { variant, theme } = props;
-    if (variant === 'title') {
+    if (variant === "title") {
       return css`
         ${titleStyle}
       `;
     }
-    if (variant === 'element') {
+    if (variant === "element") {
       return css`
         background-color: ${theme.colorBackgroundDropdown};
         &:not(:last-child) {
@@ -86,10 +86,10 @@ export const SelectRow = styled(Box)<{
         !props.disabled &&
         css`
           background-color: ${theme.colorBackgroundDropdownSelected};
-          color: ${theme.colors.B400};
+          color: ${theme.colors.T400};
           ${indicator}
           svg {
-            color: ${theme.colors.B400};
+            color: ${theme.colors.T400};
           }
         `}
         ${props.disabled &&
@@ -103,7 +103,7 @@ export const SelectRow = styled(Box)<{
         `}
       `;
     }
-    if (variant === 'search') {
+    if (variant === "search") {
       return css`
         ${searchStyle}
       `;
