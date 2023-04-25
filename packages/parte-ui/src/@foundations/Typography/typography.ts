@@ -43,13 +43,13 @@ export const TYPOGRAPHY = {
     ${commonBaseTextStyle}
     font-weight: 600;
     font-size: 16px;
-    line-height: 24px;
+    line-height: 20px;
   `,
   H400: css`
     ${commonBaseTextStyle}
     font-weight: 500;
     font-size: 14px;
-    line-height: 24px;
+    line-height: 18px;
   `,
   H300: css`
     ${commonBaseTextStyle}
