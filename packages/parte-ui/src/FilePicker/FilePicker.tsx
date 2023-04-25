@@ -83,8 +83,8 @@ export const FilePicker = ({
         <Box
           display="flex"
           flexDirection="column"
-          gap={4}
-          style={{ marginBottom: "8px" }}
+          gap={2}
+          style={{ marginBottom: "2px" }}
         >
           {label && (
             <Styled.LabelWrapper>

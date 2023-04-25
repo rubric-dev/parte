@@ -1,4 +1,4 @@
-import styled, { css } from 'styled-components';
+import styled, { css } from "styled-components";
 
 export const Container = styled.div`
   box-sizing: border-box;
@@ -54,7 +54,7 @@ export const LabelWrapper = styled.div`
     display: flex;
     align-items: flex-start;
     column-gap: ${theme.spacing.spacing2}px;
-    margin-bottom: ${theme.spacing.spacing4}px;
+    margin-bottom: ${theme.spacing.spacing2}px;
   `}
 `;
 
@@ -76,7 +76,7 @@ export const Description = styled.p`
   ${({ theme }) => css`
     ${theme.typography.P100}
     color: ${theme.colorParagraph};
-    margin-bottom: ${theme.spacing.spacing8}px;
+    margin-bottom: ${theme.spacing.spacing2}px;
   `}
 `;
 

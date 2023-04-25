@@ -1,12 +1,12 @@
-import styled, { css } from 'styled-components';
-import { TextAreaProps } from './Textarea.types';
+import styled, { css } from "styled-components";
+import { TextAreaProps } from "./Textarea.types";
 
 export const Container = styled.div<TextAreaProps>`
   ${({ fullWidth }) => css`
     box-sizing: border-box;
     display: flex;
     flex-direction: column;
-    width: ${fullWidth ? '100%' : 'fit-content'};
+    width: ${fullWidth ? "100%" : "fit-content"};
   `}
 `;
 
@@ -15,7 +15,7 @@ export const LabelWrapper = styled.div`
     display: flex;
     align-items: flex-start;
     column-gap: ${theme.spacing.spacing2}px;
-    margin-bottom: ${theme.spacing.spacing4}px;
+    margin-bottom: ${theme.spacing.spacing2}px;
   `}
 `;
 
@@ -37,7 +37,7 @@ export const Description = styled.p`
   ${({ theme }) => css`
     ${theme.typography.P100}
     color: ${theme.colorParagraph};
-    margin-bottom: ${theme.spacing.spacing8}px;
+    margin-bottom: ${theme.spacing.spacing2}px;
   `}
 `;
 
@@ -67,7 +67,7 @@ export const TextareaWrapper = styled.div<{
     display: inline-flex;
     border: 1px solid ${theme.colorBorderDefault};
     border-radius: 4px;
-    width: ${fullWidth ? '100%' : 'fit-content'};
+    width: ${fullWidth ? "100%" : "fit-content"};
     ${hover &&
     css`
       border: 1px solid ${theme.colorBorderHover};
