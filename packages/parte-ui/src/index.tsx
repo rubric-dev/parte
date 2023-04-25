@@ -29,6 +29,7 @@ export * from "./SideSheet";
 export * from "./Spinner";
 export * from "./Steps";
 export * from "./Table";
+export * from "./TableButton";
 export * from "./Tabs";
 export * from "./TagInput";
 export * from "./Textarea";
