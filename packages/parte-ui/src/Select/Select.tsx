@@ -294,7 +294,7 @@ export function Select<T>(props: SelectProps<T>) {
   return (
     <Box flexDirection="column" display="flex">
       {(label || description) && (
-        <Box gap={4} flexDirection="column" marginBottom={8} display="flex">
+        <Box gap={2} flexDirection="column" marginBottom={2} display="flex">
           <Box alignItems="flex-start" gap={1} display="flex">
             {required && (
               <Caption size={200} color="R400">

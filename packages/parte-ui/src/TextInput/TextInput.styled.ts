@@ -1,12 +1,12 @@
-import styled, { css } from 'styled-components';
-import { TextInputProps } from './TextInput.types';
+import styled, { css } from "styled-components";
+import { TextInputProps } from "./TextInput.types";
 
-export const Container = styled.div<Pick<TextInputProps, 'fullWidth'>>`
+export const Container = styled.div<Pick<TextInputProps, "fullWidth">>`
   ${({ fullWidth }) => css`
     display: flex;
     box-sizing: border-box;
     flex-direction: column;
-    width: ${fullWidth ? '100%' : 'fit-content'};
+    width: ${fullWidth ? "100%" : "fit-content"};
   `};
 `;
 
@@ -24,7 +24,7 @@ export const InputWrapper = styled.div<{
     overflow: hidden;
     border: 1px solid ${theme.colorBorderDefault};
     border-radius: 4px;
-    width: ${fullWidth ? '100%' : 'fit-content'};
+    width: ${fullWidth ? "100%" : "fit-content"};
     ${!readOnly &&
     hover &&
     css`
@@ -62,7 +62,7 @@ export const LabelWrapper = styled.div`
     display: flex;
     align-items: flex-start;
     column-gap: ${theme.spacing.spacing2}px;
-    margin-bottom: ${theme.spacing.spacing4}px;
+    margin-bottom: ${theme.spacing.spacing2}px;
   `}
 `;
 
@@ -84,7 +84,7 @@ export const Description = styled.p`
   ${({ theme }) => css`
     ${theme.typography.P100}
     color: ${theme.colorParagraph};
-    margin-bottom: ${theme.spacing.spacing8}px;
+    margin-bottom: ${theme.spacing.spacing2}px;
   `}
 `;
 
@@ -141,7 +141,7 @@ export const Input = styled.input<TextInputProps>`
         `};
     padding-right: ${theme.spacing.spacing12}px;
     background-color: ${theme.colorBackgroundDefault};
-    width: ${fullWidth ? '100%' : 'fit-content'};
+    width: ${fullWidth ? "100%" : "fit-content"};
     color: ${theme.colorParagraph};
     ${theme.typography.P100}
     font-family: inherit;
