@@ -1,5 +1,5 @@
 import { ReactNode } from "react";
-import { ThemeProvider as DefaultThemeProvider } from "styled-components";
+import { css, ThemeProvider as DefaultThemeProvider } from "styled-components";
 import { Colors } from ".";
 import { ColorTokenType } from "./theme/colorToken";
 import { theme as defaultTheme } from "./theme";
@@ -56,6 +56,10 @@ const overrideTheme = (theme: CustomTheme) => {
   if (customTokens) {
     plate = { ...plate, ...customTokens };
   }
+
+  plate.commonStyles.outline = css`
+    outline: 2px solid ${plate.colors.T200};
+  `;
 
   return plate;
 };

@@ -1,11 +1,11 @@
-import styled, { css } from 'styled-components';
+import styled, { css } from "styled-components";
 
 export const Container = styled.label<{ disabled: boolean }>`
   ${({ theme, disabled }) => css`
     display: inline-flex;
     align-items: center;
     gap: ${theme.spacing.spacing12}px;
-    cursor: ${disabled ? 'default' : 'pointer'};
+    cursor: ${disabled ? "default" : "pointer"};
   `}
 `;
 
@@ -21,7 +21,7 @@ export const Input = styled.input`
     background-color: ${theme.colors.N400};
     cursor: pointer;
     &::before {
-      content: '';
+      content: "";
       position: absolute;
       left: 2px;
       top: 2px;
@@ -39,15 +39,15 @@ export const Input = styled.input`
     }
 
     &:checked {
-      background-color: ${theme.colors.B400};
+      background-color: ${theme.colors.T400};
       &::before {
         left: 14px;
       }
       &:hover {
-        background-color: ${theme.colors.B500};
+        background-color: ${theme.colors.T500};
       }
       &:active {
-        background-color: ${theme.colors.B600};
+        background-color: ${theme.colors.T600};
       }
     }
     &:disabled,

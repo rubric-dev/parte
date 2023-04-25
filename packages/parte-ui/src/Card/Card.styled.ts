@@ -1,5 +1,5 @@
-import styled, { css } from 'styled-components'
-import { Box } from '../Layout'
+import styled, { css } from "styled-components";
+import { Box } from "../Layout";
 
 const CommonStyle = css`
   ${({ theme }) => css`
@@ -8,7 +8,7 @@ const CommonStyle = css`
     border-radius: 8px;
     box-sizing: border-box;
   `}
-`
+`;
 
 export const DefaultCard = styled(Box)<{ disabled?: boolean }>`
   ${({ theme, disabled }) => css`
@@ -18,7 +18,7 @@ export const DefaultCard = styled(Box)<{ disabled?: boolean }>`
     }
     &:focus,
     &:active {
-      border: 1px solid ${theme.colors.B400};
+      border: 1px solid ${theme.colors.T400};
       background-color: ${theme.colors.N50};
     }
     ${disabled &&
@@ -33,11 +33,11 @@ export const DefaultCard = styled(Box)<{ disabled?: boolean }>`
       }
     `}
   `}
-`
+`;
 
 export const SelectableCard = styled(Box)<{
-  disabled?: boolean
-  selected?: boolean
+  disabled?: boolean;
+  selected?: boolean;
 }>`
   ${({ theme, disabled, selected }) => css`
     ${CommonStyle}
@@ -65,8 +65,8 @@ export const SelectableCard = styled(Box)<{
     `}
     ${selected &&
     css`
-      border-color: ${theme.colors.B400};
+      border-color: ${theme.colors.T400};
       background-color: ${theme.colors.N50};
     `}
   `}
-`
+`;

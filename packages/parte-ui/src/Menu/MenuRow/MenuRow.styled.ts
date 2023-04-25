@@ -1,6 +1,6 @@
-import styled, { css } from 'styled-components';
-import { Box } from '../../Layout';
-import { MenuRowType } from './MenuRow.types';
+import styled, { css } from "styled-components";
+import { Box } from "../../Layout";
+import { MenuRowType } from "./MenuRow.types";
 
 type ContainerProps = {
   type: MenuRowType;
@@ -11,23 +11,23 @@ type ContainerProps = {
 
 const sideBarStyle = css`
   &::before {
-    content: '';
+    content: "";
     position: absolute;
     top: 0;
     left: 0;
     width: 2px;
     height: 100%;
     border-radius: 0px 2px 2px 0px;
-    background-color: ${({ theme }) => theme.colors.B400};
+    background-color: ${({ theme }) => theme.colors.T400};
   }
 `;
 
 export const Container = styled(Box)<ContainerProps>`
   ${({ theme, hover, selected, type, disabled }) => {
-    const isTitle = type === 'title';
+    const isTitle = type === "title";
     return css`
       box-sizing: border-box;
-      height: ${isTitle ? '32px' : '40px'};
+      height: ${isTitle ? "32px" : "40px"};
       min-width: 208px;
       width: fit-content;
       background-color: ${theme.colorBackgroundMenu};
@@ -36,7 +36,7 @@ export const Container = styled(Box)<ContainerProps>`
       padding: ${`0 ${theme.spacing.spacing16}px`};
       ${isTitle ? theme.typography.C100 : theme.typography.P200}
       color: ${isTitle ? theme.colors.N700 : theme.colors.N800};
-      cursor: ${isTitle || disabled ? 'default' : 'pointer'};
+      cursor: ${isTitle || disabled ? "default" : "pointer"};
       position: relative;
       text-transform: none;
       ${hover &&
@@ -49,7 +49,7 @@ export const Container = styled(Box)<ContainerProps>`
       css`
         ${sideBarStyle}
         background-color: ${theme.colorBackgroundMenuSelected};
-        color: ${theme.colors.B400};
+        color: ${theme.colors.T400};
       `}
       ${disabled &&
       !isTitle &&
@@ -57,7 +57,7 @@ export const Container = styled(Box)<ContainerProps>`
         color: ${theme.colors.N700};
         background-color: ${theme.colorBackgroundMenu};
       `}
-      ${type === 'checkbox' &&
+      ${type === "checkbox" &&
       css`
         color: ${theme.colors.N800};
       `}
@@ -75,7 +75,7 @@ export const Icon = styled.div<{ selected?: boolean; disabled?: boolean }>`
         color: ${theme.colors.N700};
         ${selected &&
         css`
-          color: ${theme.colors.B400};
+          color: ${theme.colors.T400};
         `}
         ${disabled &&
         css`

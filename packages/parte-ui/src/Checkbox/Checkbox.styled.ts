@@ -1,5 +1,5 @@
-import styled, { css } from 'styled-components';
-import { Box } from '../Layout';
+import styled, { css } from "styled-components";
+import { Box } from "../Layout";
 
 export const Container = styled.label<{ disabled: boolean }>`
   ${({ theme, disabled }) => css`
@@ -8,7 +8,7 @@ export const Container = styled.label<{ disabled: boolean }>`
     flex: 1;
     align-items: center;
     column-gap: ${theme.spacing.spacing12}px;
-    cursor: ${disabled ? 'default' : 'pointer'};
+    cursor: ${disabled ? "default" : "pointer"};
     -webkit-user-select: none;
     -ms-user-select: none;
     user-select: none;
@@ -51,15 +51,15 @@ export const Checkbox = styled(Box)<{
     `}
     ${checked &&
     css`
-      background-color: ${theme.colors.B400};
+      background-color: ${theme.colors.T400};
       border: none;
       ${hover &&
       css`
-        background-color: ${theme.colors.B500};
+        background-color: ${theme.colors.T500};
       `}
       ${pressed &&
       css`
-        background-color: ${theme.colors.B600};
+        background-color: ${theme.colors.T600};
       `}
     ${disabled &&
       css`
