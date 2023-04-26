@@ -129,11 +129,6 @@ const Menu = ({ children }: DropdownMenuProps) => {
     return null;
   }
 
-  const container = document.createElement("div");
-  container.id = "tooltip-container";
-
-  useEffect(() => {}, []);
-
   const rootDom = document.getElementById("root");
   if (usePortal && rootDom) {
     return createPortal(
