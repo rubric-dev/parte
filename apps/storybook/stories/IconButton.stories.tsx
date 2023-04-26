@@ -1,8 +1,8 @@
 import { TableThIcon } from "@parte-ds/icons";
-import { IconButton, IconButtonProps } from "@parte-ds/ui";
-import { Story, Meta } from "@storybook/react";
+import { IconButton } from "@parte-ds/ui";
+import { Meta, StoryObj } from "@storybook/react";
 
-export default {
+const IconButtonStory: Meta = {
   title: "Components/Buttons/IconButton",
   component: IconButton,
   parameters: {
@@ -11,34 +11,60 @@ export default {
   },
 } as Meta;
 
-const Template: Story<IconButtonProps> = ({ ...args }) => {
-  return <IconButton {...args} />;
+export default IconButtonStory;
+type Story = StoryObj<typeof IconButton>;
+
+export const Default: Story = {
+  args: {
+    Icon: <TableThIcon />,
+    variant: "primary",
+  },
 };
 
-export const Default = Template.bind({});
-Default.args = {
-  variant: "primary",
-  size: 32,
-  Icon: <TableThIcon />,
+export const Secondary: Story = {
+  args: {
+    Icon: <TableThIcon />,
+    variant: "secondary",
+  },
 };
 
-export const Secondary = Template.bind({});
-Secondary.args = {
-  variant: "secondary",
-  Icon: <TableThIcon />,
-  size: 32,
+export const SecondaryColored: Story = {
+  args: {
+    Icon: <TableThIcon />,
+    variant: "secondary-colored",
+  },
 };
 
-export const Minimal = Template.bind({});
-Minimal.args = {
-  variant: "minimal",
-  Icon: <TableThIcon />,
-  size: 32,
+export const Minimal: Story = {
+  args: {
+    Icon: <TableThIcon />,
+    variant: "minimal",
+  },
 };
 
-export const Error = Template.bind({});
-Error.args = {
-  variant: "error",
-  Icon: <TableThIcon />,
-  size: 32,
+export const MinimalColored: Story = {
+  args: {
+    Icon: <TableThIcon />,
+    variant: "minimal-colored",
+  },
+};
+export const Error: Story = {
+  args: {
+    Icon: <TableThIcon />,
+    variant: "error",
+  },
+};
+
+export const Text: Story = {
+  args: {
+    Icon: <TableThIcon />,
+    variant: "text",
+  },
+};
+
+export const TextColored: Story = {
+  args: {
+    Icon: <TableThIcon />,
+    variant: "text-colored",
+  },
 };
