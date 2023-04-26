@@ -1,7 +1,7 @@
 # Parte Design System
 
-- 📗 @parte-ds/ui - Parte의 컴포넌트 라이브러리
-- 📘 @parte-ds/icons - Parte의 아이콘 라이브러리
+- 📗 [@parte-ds/ui](https://www.npmjs.com/package/@parte-ds/ui) - Parte의 컴포넌트 라이브러리
+- 📘 [@parte-ds/icons](https://www.npmjs.com/package/@parte-ds/icons) - Parte의 아이콘 라이브러리
 - 📙 @parte-ds/utils - Parte 내부 유틸 모음
 
 ```bash
