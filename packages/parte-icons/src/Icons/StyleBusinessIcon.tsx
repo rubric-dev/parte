@@ -11,20 +11,21 @@ function Icon({ size, ...rest }: Pick<IconProps, "style" | "color" | "size">) {
       {...rest}
     >
       <path
-        d="M5.66671 6H1.33337V14H5.66671V6Z"
+        d="M8.00004 6.66671C9.4728 6.66671 10.6667 5.4728 10.6667 4.00004C10.6667 2.52728 9.4728 1.33337 8.00004 1.33337C6.52728 1.33337 5.33337 2.52728 5.33337 4.00004C5.33337 5.4728 6.52728 6.66671 8.00004 6.66671Z"
         stroke="currentcolor"
         stroke-width="1.25"
         stroke-linecap="round"
         stroke-linejoin="round"
       />
       <path
-        d="M9.99996 2H5.66663V14H9.99996V2Z"
+        d="M14 14.6666C14 11.3529 11.3137 8.66663 8 8.66663C4.6863 8.66663 2 11.3529 2 14.6666"
         stroke="currentcolor"
         stroke-width="1.25"
+        stroke-linecap="round"
         stroke-linejoin="round"
       />
       <path
-        d="M14.3333 8.66663H10V14H14.3333V8.66663Z"
+        d="M7.99996 14.6666L9.33329 13L7.99996 8.66663L6.66663 13L7.99996 14.6666Z"
         stroke="currentcolor"
         stroke-width="1.25"
         stroke-linecap="round"
@@ -34,5 +35,5 @@ function Icon({ size, ...rest }: Pick<IconProps, "style" | "color" | "size">) {
   );
 }
 
-const StyleRankingIcon = convertIcon(Icon, "style-ranking");
-export default StyleRankingIcon;
+const StyleBusinessIcon = convertIcon(Icon, "style-business");
+export default StyleBusinessIcon;
