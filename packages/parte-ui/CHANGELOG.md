@@ -1,5 +1,11 @@
 # @parte-ds/ui
 
+## 1.1.0
+
+### Minor Changes
+
+- ff32d7d: erp에 맞게 업데이트
+
 ## 1.0.1
 
 ### Patch Changes
