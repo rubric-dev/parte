@@ -1,5 +1,11 @@
 # @parte-ds/icons
 
+## 1.2.0
+
+### Minor Changes
+
+- 누락된 style icon 추가
+
 ## 1.1.0
 
 ### Minor Changes
