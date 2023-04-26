@@ -13,34 +13,34 @@ function Icon({ size, ...rest }: Pick<IconProps, "style" | "color" | "size">) {
       <g clip-path="url(#clip0_462_5519)">
         <path
           d="M3 3.33337V14.6667H13V3.33337H3Z"
-          stroke="#8F95B2"
+          stroke="currentcolor"
           stroke-width="1.25"
           stroke-linejoin="round"
         />
         <path
           d="M6.66663 6.66663V11"
-          stroke="#8F95B2"
+          stroke="currentcolor"
           stroke-width="1.25"
           stroke-linecap="round"
           stroke-linejoin="round"
         />
         <path
           d="M9.33337 6.66663V11"
-          stroke="#8F95B2"
+          stroke="currentcolor"
           stroke-width="1.25"
           stroke-linecap="round"
           stroke-linejoin="round"
         />
         <path
           d="M1.33337 3.33337H14.6667"
-          stroke="#8F95B2"
+          stroke="currentcolor"
           stroke-width="1.25"
           stroke-linecap="round"
           stroke-linejoin="round"
         />
         <path
           d="M5.33337 3.33337L6.42971 1.33337H9.59241L10.6667 3.33337H5.33337Z"
-          stroke="#8F95B2"
+          stroke="currentcolor"
           stroke-width="1.25"
           stroke-linejoin="round"
         />

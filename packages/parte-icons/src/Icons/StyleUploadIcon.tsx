@@ -25,21 +25,21 @@ function Icon({ size, ...rest }: Pick<IconProps, "style" | "color" | "size">) {
         <g mask="url(#mask0_368_5370)">
           <path
             d="M2 8.00277V14H14V8"
-            stroke="#8F95B2"
+            stroke="currentcolor"
             stroke-width="1.25"
             stroke-linecap="round"
             stroke-linejoin="round"
           />
           <path
             d="M11 5L8 2L5 5"
-            stroke="#8F95B2"
+            stroke="currentcolor"
             stroke-width="1.25"
             stroke-linecap="round"
             stroke-linejoin="round"
           />
           <path
             d="M7.99719 10.6667V2"
-            stroke="#8F95B2"
+            stroke="currentcolor"
             stroke-width="1.25"
             stroke-linecap="round"
             stroke-linejoin="round"

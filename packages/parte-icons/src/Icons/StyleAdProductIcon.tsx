@@ -10,30 +10,36 @@ function Icon({ size, ...rest }: Pick<IconProps, "style" | "color" | "size">) {
       xmlns="http://www.w3.org/2000/svg"
       {...rest}
     >
-      <g clip-path="url(#clip0_367_5604)">
+      <g clip-path="url(#clip0_1063_12973)">
         <path
-          d="M14.6667 1.33337H1.33337V4.00004H3.33337V14.6667H12.6667V4.00004H14.6667V1.33337Z"
+          d="M14.6667 4.66671L8.00004 1.33337L1.33337 4.66671V11.3334L8.00004 14.6667L14.6667 11.3334V4.66671Z"
+          stroke="currentcolor"
+          stroke-width="1.25"
+          stroke-linejoin="round"
+        />
+        <path
+          d="M1.33337 4.66663L8.00004 7.99996"
           stroke="currentcolor"
           stroke-width="1.25"
           stroke-linecap="round"
           stroke-linejoin="round"
         />
         <path
-          d="M3.33337 10.6666H12.6667"
+          d="M8 14.6667V8"
           stroke="currentcolor"
           stroke-width="1.25"
           stroke-linecap="round"
           stroke-linejoin="round"
         />
         <path
-          d="M3.33337 8H12.6667"
+          d="M14.6667 4.66663L8 7.99996"
           stroke="currentcolor"
           stroke-width="1.25"
           stroke-linecap="round"
           stroke-linejoin="round"
         />
         <path
-          d="M10 1.33337C10 2.43794 9.10457 3.33337 8 3.33337C6.89543 3.33337 6 2.43794 6 1.33337"
+          d="M11.3333 3L4.66663 6.33333"
           stroke="currentcolor"
           stroke-width="1.25"
           stroke-linecap="round"
@@ -41,7 +47,7 @@ function Icon({ size, ...rest }: Pick<IconProps, "style" | "color" | "size">) {
         />
       </g>
       <defs>
-        <clipPath id="clip0_367_5604">
+        <clipPath id="clip0_1063_12973">
           <rect width="16" height="16" fill="white" />
         </clipPath>
       </defs>
@@ -49,8 +55,5 @@ function Icon({ size, ...rest }: Pick<IconProps, "style" | "color" | "size">) {
   );
 }
 
-const StyleClothesShortSleeveIcon = convertIcon(
-  Icon,
-  "style-clothes-short-sleeve"
-);
-export default StyleClothesShortSleeveIcon;
+const StyleAdProductIcon = convertIcon(Icon, "style-ad-product");
+export default StyleAdProductIcon;

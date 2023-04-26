@@ -11,26 +11,26 @@ function Icon({ size, ...rest }: Pick<IconProps, "style" | "color" | "size">) {
       {...rest}
     >
       <path
-        d="M13.3333 7.66671V4.66671L10.3333 1.33337H3.33329C2.9651 1.33337 2.66663 1.63185 2.66663 2.00004V14C2.66663 14.3682 2.9651 14.6667 3.33329 14.6667H7.33329"
+        d="M3.99996 13C4.73633 13 5.33329 12.4031 5.33329 11.6667C5.33329 10.9303 4.73633 10.3334 3.99996 10.3334C3.26358 10.3334 2.66663 10.9303 2.66663 11.6667C2.66663 12.4031 3.26358 13 3.99996 13Z"
+        stroke="currentcolor"
+        stroke-width="1.25"
+        stroke-linejoin="round"
+      />
+      <path
+        d="M11.6667 13C12.4031 13 13 12.4031 13 11.6667C13 10.9303 12.4031 10.3334 11.6667 10.3334C10.9303 10.3334 10.3334 10.9303 10.3334 11.6667C10.3334 12.4031 10.9303 13 11.6667 13Z"
+        stroke="currentcolor"
+        stroke-width="1.25"
+        stroke-linejoin="round"
+      />
+      <path
+        d="M2.66663 11.6666H0.666626V3.66663H10.3333V11.6666H5.33329"
         stroke="currentcolor"
         stroke-width="1.25"
         stroke-linecap="round"
         stroke-linejoin="round"
       />
       <path
-        d="M11.3333 14.6667C12.8061 14.6667 14 13.4728 14 12C14 10.5273 12.8061 9.33337 11.3333 9.33337C9.86053 9.33337 8.66663 10.5273 8.66663 12C8.66663 13.4728 9.86053 14.6667 11.3333 14.6667Z"
-        stroke="currentcolor"
-        stroke-width="1.25"
-      />
-      <path
-        d="M11 11V12.3333H12.3333"
-        stroke="currentcolor"
-        stroke-width="1.25"
-        stroke-linecap="round"
-        stroke-linejoin="round"
-      />
-      <path
-        d="M10 1.33337V4.66671H13.3333"
+        d="M10.3334 11.6667V6H13.1905L15.3334 8.83333V11.6667H13.2704"
         stroke="currentcolor"
         stroke-width="1.25"
         stroke-linecap="round"
@@ -40,5 +40,5 @@ function Icon({ size, ...rest }: Pick<IconProps, "style" | "color" | "size">) {
   );
 }
 
-const StyleFiledateIcon = convertIcon(Icon, "style-filedate");
-export default StyleFiledateIcon;
+const StyleTruckIcon = convertIcon(Icon, "style-truck");
+export default StyleTruckIcon;
