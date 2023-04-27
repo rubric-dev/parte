@@ -13,16 +13,16 @@ function Icon({ size, ...rest }: Pick<IconProps, "style" | "color" | "size">) {
       <path
         d="M12.6666 1.33337H3.33329C2.9651 1.33337 2.66663 1.63185 2.66663 2.00004V14C2.66663 14.3682 2.9651 14.6667 3.33329 14.6667H12.6666C13.0348 14.6667 13.3333 14.3682 13.3333 14V2.00004C13.3333 1.63185 13.0348 1.33337 12.6666 1.33337Z"
         stroke="currentcolor"
-        stroke-width="1.25"
-        stroke-linecap="round"
-        stroke-linejoin="round"
+        strokeWidth="1.25"
+        strokeLinecap="round"
+        strokeLinejoin="round"
       />
       <path
         d="M11.3333 3.66663H4.66663V6.66663H11.3333V3.66663Z"
         stroke="currentcolor"
-        stroke-width="1.25"
-        stroke-linecap="round"
-        stroke-linejoin="round"
+        strokeWidth="1.25"
+        strokeLinecap="round"
+        strokeLinejoin="round"
       />
       <path
         d="M5.66667 9.33333C6.03486 9.33333 6.33333 9.03486 6.33333 8.66667C6.33333 8.29848 6.03486 8 5.66667 8C5.29848 8 5 8.29848 5 8.66667C5 9.03486 5.29848 9.33333 5.66667 9.33333Z"
