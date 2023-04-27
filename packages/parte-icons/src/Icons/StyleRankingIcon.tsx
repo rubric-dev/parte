@@ -13,22 +13,22 @@ function Icon({ size, ...rest }: Pick<IconProps, "style" | "color" | "size">) {
       <path
         d="M5.66671 6H1.33337V14H5.66671V6Z"
         stroke="currentcolor"
-        stroke-width="1.25"
-        stroke-linecap="round"
-        stroke-linejoin="round"
+        strokeWidth="1.25"
+        strokeLinecap="round"
+        strokeLinejoin="round"
       />
       <path
         d="M9.99996 2H5.66663V14H9.99996V2Z"
         stroke="currentcolor"
-        stroke-width="1.25"
-        stroke-linejoin="round"
+        strokeWidth="1.25"
+        strokeLinejoin="round"
       />
       <path
         d="M14.3333 8.66663H10V14H14.3333V8.66663Z"
         stroke="currentcolor"
-        stroke-width="1.25"
-        stroke-linecap="round"
-        stroke-linejoin="round"
+        strokeWidth="1.25"
+        strokeLinecap="round"
+        strokeLinejoin="round"
       />
     </svg>
   );

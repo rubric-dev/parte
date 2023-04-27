@@ -10,34 +10,34 @@ function Icon({ size, ...rest }: Pick<IconProps, "style" | "color" | "size">) {
       xmlns="http://www.w3.org/2000/svg"
       {...rest}
     >
-      <g clip-path="url(#clip0_367_5604)">
+      <g clipPath="url(#clip0_367_5604)">
         <path
           d="M14.6667 1.33337H1.33337V4.00004H3.33337V14.6667H12.6667V4.00004H14.6667V1.33337Z"
           stroke="currentcolor"
-          stroke-width="1.25"
-          stroke-linecap="round"
-          stroke-linejoin="round"
+          strokeWidth="1.25"
+          strokeLinecap="round"
+          strokeLinejoin="round"
         />
         <path
           d="M3.33337 10.6666H12.6667"
           stroke="currentcolor"
-          stroke-width="1.25"
-          stroke-linecap="round"
-          stroke-linejoin="round"
+          strokeWidth="1.25"
+          strokeLinecap="round"
+          strokeLinejoin="round"
         />
         <path
           d="M3.33337 8H12.6667"
           stroke="currentcolor"
-          stroke-width="1.25"
-          stroke-linecap="round"
-          stroke-linejoin="round"
+          strokeWidth="1.25"
+          strokeLinecap="round"
+          strokeLinejoin="round"
         />
         <path
           d="M10 1.33337C10 2.43794 9.10457 3.33337 8 3.33337C6.89543 3.33337 6 2.43794 6 1.33337"
           stroke="currentcolor"
-          stroke-width="1.25"
-          stroke-linecap="round"
-          stroke-linejoin="round"
+          strokeWidth="1.25"
+          strokeLinecap="round"
+          strokeLinejoin="round"
         />
       </g>
       <defs>
