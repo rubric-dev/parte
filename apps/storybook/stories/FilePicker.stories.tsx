@@ -28,6 +28,14 @@ WithLabel.args = {
   description: "This is Description",
 };
 
+export const WithHorizontalLabel = Template.bind({});
+
+WithHorizontalLabel.args = {
+  name: "label-file-picker",
+  label: "Label",
+  description: "This is Description",
+  direction: "horizontal",
+};
 export const MultipleFiles = Template.bind({});
 
 MultipleFiles.args = {

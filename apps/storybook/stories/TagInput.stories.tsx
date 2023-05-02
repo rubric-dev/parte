@@ -59,3 +59,18 @@ export const Disabled = Template.bind({});
 Disabled.args = {
   disabled: true,
 };
+
+export const WithLabel = Template.bind({});
+WithLabel.args = {
+  disabled: true,
+  description: "test description",
+  label: "this is label",
+};
+
+export const WithLabelHorizontal = Template.bind({});
+WithLabelHorizontal.args = {
+  disabled: true,
+  label: "this is label",
+  direction: "horizontal",
+  description: "test description",
+};

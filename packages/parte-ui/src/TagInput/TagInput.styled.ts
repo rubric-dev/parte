@@ -1,12 +1,5 @@
 import styled, { css } from "styled-components";
 
-export const Container = styled.div`
-  box-sizing: border-box;
-  display: flex;
-  flex: 1;
-  flex-direction: column;
-`;
-
 export const InputWrapper = styled.div<{
   focused: boolean;
   error?: boolean;
@@ -49,37 +42,6 @@ export const InputWrapper = styled.div<{
   `}
 `;
 
-export const LabelWrapper = styled.div`
-  ${({ theme }) => css`
-    display: flex;
-    align-items: flex-start;
-    column-gap: ${theme.spacing.spacing2}px;
-    margin-bottom: ${theme.spacing.spacing2}px;
-  `}
-`;
-
-export const Required = styled.label`
-  ${({ theme }) => css`
-    ${theme.typography.C200}
-    color: ${theme.colors.R400};
-  `}
-`;
-
-export const Label = styled.label`
-  ${({ theme }) => css`
-    ${theme.typography.H400}
-    color: ${theme.colorHeading};
-  `}
-`;
-
-export const Description = styled.p`
-  ${({ theme }) => css`
-    ${theme.typography.P100}
-    color: ${theme.colorParagraph};
-    margin-bottom: ${theme.spacing.spacing2}px;
-  `}
-`;
-
 export const RightIconContainer = styled.div<{ disabled: boolean }>`
   ${({ theme, disabled }) => css`
     display: flex;
@@ -92,14 +54,6 @@ export const RightIconContainer = styled.div<{ disabled: boolean }>`
         color: ${theme.colorTextDisabled};
       `};
     }
-  `}
-`;
-
-export const ErrorText = styled.p`
-  ${({ theme }) => css`
-    ${theme.typography.P100};
-    color: ${theme.colors.R400};
-    margin-top: ${theme.spacing.spacing2}px;
   `}
 `;
 

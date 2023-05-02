@@ -1,9 +1,5 @@
-import { TextareaHTMLAttributes } from 'react';
+import { TextareaHTMLAttributes } from "react";
+import { InputWrapperProps } from "../InputWrapper";
 
-export type TextAreaProps = TextareaHTMLAttributes<HTMLTextAreaElement> & {
-  errorText?: string;
-  label?: string;
-  description?: string;
-  required?: boolean;
-  fullWidth?: boolean;
-};
+export type TextAreaProps = TextareaHTMLAttributes<HTMLTextAreaElement> &
+  Omit<InputWrapperProps, "children">;

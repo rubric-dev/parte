@@ -43,3 +43,23 @@ WithDescription.args = {
   label: "Label",
   description: "Description",
 };
+
+export const WithLabelHorizontal = Template.bind({});
+WithLabelHorizontal.args = {
+  label: "Label",
+  direction: "horizontal",
+};
+
+export const WithLabelRequiredHorizontal = Template.bind({});
+WithLabelRequiredHorizontal.args = {
+  label: "Label",
+  required: true,
+  direction: "horizontal",
+};
+
+export const WithDescriptionHorizontal = Template.bind({});
+WithDescriptionHorizontal.args = {
+  label: "Label",
+  description: "Description",
+  direction: "horizontal",
+};

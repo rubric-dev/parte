@@ -118,6 +118,14 @@ DefaultWithLabel.args = {
   required: true,
 };
 
+export const DefaultWithHorizontalLabel = Template.bind({});
+DefaultWithHorizontalLabel.args = {
+  label: "TEST",
+  description: "이것은 설명입니다.",
+  required: true,
+  direction: "horizontal",
+};
+
 export const Loading = Template.bind({});
 Loading.args = {
   isLoading: true,

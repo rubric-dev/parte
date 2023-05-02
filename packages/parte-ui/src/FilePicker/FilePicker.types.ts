@@ -1,17 +1,15 @@
-import { ChangeEvent, HTMLAttributes } from 'react';
+import { ChangeEvent, HTMLAttributes } from "react";
+import { InputWrapperProps } from "../InputWrapper";
 
-export type FilePickerProps = HTMLAttributes<HTMLInputElement> & {
-  name: string;
-  placeholder?: string;
-  accept?: string;
-  disabled?: boolean;
-  multiple?: boolean;
-  required?: boolean;
-  errorMessage?: string;
-  label?: string;
-  description?: string;
-  onChange?: (files: File[]) => void;
-  onBlur?: (event: ChangeEvent<HTMLInputElement>) => void;
-  inputText?: (files: File[]) => string;
-  buttonText?: (files: File[]) => string;
-};
+export type FilePickerProps = HTMLAttributes<HTMLInputElement> &
+  Omit<InputWrapperProps, "children"> & {
+    name: string;
+    placeholder?: string;
+    accept?: string;
+    disabled?: boolean;
+    multiple?: boolean;
+    onChange?: (files: File[]) => void;
+    onBlur?: (event: ChangeEvent<HTMLInputElement>) => void;
+    inputText?: (files: File[]) => string;
+    buttonText?: (files: File[]) => string;
+  };

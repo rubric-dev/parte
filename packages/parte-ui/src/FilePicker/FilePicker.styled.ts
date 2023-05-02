@@ -50,18 +50,3 @@ export const FilePickerButton = styled(Button)<{ error: boolean }>`
     `}
   `}
 `;
-
-export const LabelWrapper = styled.div`
-  ${({ theme }) => css`
-    display: flex;
-    align-items: flex-start;
-    column-gap: ${theme.spacing.spacing2}px;
-  `}
-`;
-
-export const Label = styled.label`
-  ${({ theme }) => css`
-    ${theme.typography.H400}
-    color: ${theme.colorHeading};
-  `}
-`;
