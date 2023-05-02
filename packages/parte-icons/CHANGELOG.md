@@ -1,5 +1,11 @@
 # @parte-ds/icons
 
+## 1.3.0
+
+### Minor Changes
+
+- icon color type 변경
+
 ## 1.2.1
 
 ### Patch Changes
