@@ -17,15 +17,15 @@ type Story = StoryObj<typeof TableButton>;
 export const Default: Story = {
   args: {
     children: "test",
-    variant: "primary",
+    variant: "fill-primary",
     leadingIcon: <InterfaceConsoleIcon size={10} />,
   },
 };
 
-export const Secondary: Story = {
+export const Outline: Story = {
   args: {
     children: "test",
-    variant: "secondary",
+    variant: "outline-secondary",
     trailingIcon: <InterfaceConsoleIcon size={10} />,
   },
 };

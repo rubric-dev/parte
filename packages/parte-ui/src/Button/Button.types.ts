@@ -1,14 +1,14 @@
 import React, { ButtonHTMLAttributes } from "react";
 
 export type ButtonVariant =
-  | "primary"
-  | "secondary"
-  | "secondary-colored"
-  | "minimal"
-  | "minimal-colored"
-  | "error"
-  | "text"
-  | "text-colored";
+  | "fill-primary"
+  | "outline-secondary"
+  | "outline-primary"
+  | "ghost-secondary"
+  | "ghost-primary"
+  | "fill-error"
+  | "text-secondary"
+  | "text-primary";
 
 export type ButtonDirection = "horizontal" | "vertical";
 

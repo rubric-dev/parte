@@ -34,7 +34,7 @@ const Template: Story<DialogModalProps> = ({ children, ...args }) => {
     <div
       style={{ display: "flex", flexDirection: "column", overflowY: "auto" }}
     >
-      <Button variant="primary" onClick={() => setOpen(true)}>
+      <Button variant="fill-primary" onClick={() => setOpen(true)}>
         Open DialogModal
       </Button>
       <div style={{ width: "100%", height: "1000px" }} />
@@ -52,7 +52,7 @@ const Template: Story<DialogModalProps> = ({ children, ...args }) => {
 
 export const Default = Template.bind({});
 Default.args = {
-  confirmVariant: "primary",
+  confirmVariant: "fill-primary",
   children: `Used for multiline pieces of content. Lorem ipsum dolor sit amet, ex
   lucilius hendrerit vim, tempor scaevola iudicabit ei ius, te eum illud
   impetus antiopam. Eu wisi commune volutpat pro, usu at alii magna
@@ -60,7 +60,7 @@ Default.args = {
 };
 export const Error = Template.bind({});
 Error.args = {
-  confirmVariant: "error",
+  confirmVariant: "fill-error",
   confirmLabel: "오류",
   width: 320,
   minHeightContent: 40,
@@ -69,6 +69,6 @@ Error.args = {
 };
 export const ScrollContent = Template.bind({});
 ScrollContent.args = {
-  confirmVariant: "primary",
+  confirmVariant: "fill-primary",
   children: <ScrollBox />,
 };

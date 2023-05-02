@@ -34,7 +34,7 @@ const Template: Story = () => {
       </Box>
       <Box display="flex" flexDirection="column" gap={10}>
         <Code>Code Default</Code>
-        <Code variant="minimal">Code Minimal</Code>
+        <Code variant="ghost-secondary">Code Minimal</Code>
       </Box>
     </Box>
   );
@@ -75,7 +75,7 @@ const CustomStyle: Story = () => {
       </Box>
       <Box display="flex" flexDirection="column" gap={10}>
         <Code>Code Default</Code>
-        <Code variant="minimal">Code Minimal</Code>
+        <Code variant="ghost-secondary">Code Minimal</Code>
       </Box>
     </Box>
   );

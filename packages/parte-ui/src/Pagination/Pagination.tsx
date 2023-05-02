@@ -102,7 +102,7 @@ export const Pagination = ({
   return (
     <Box display="flex" alignItems="center" padding={0} gap={4}>
       <IconButton
-        variant="minimal"
+        variant="ghost-secondary"
         Icon={
           <InterfaceChevronLeftIcon
             size={12}
@@ -133,7 +133,7 @@ export const Pagination = ({
         );
       })}
       <IconButton
-        variant="minimal"
+        variant="ghost-secondary"
         Icon={
           <InterfaceChevronRightIcon
             size={12}

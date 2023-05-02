@@ -47,7 +47,7 @@ export const Alert = (props: AlertProps & HTMLAttributes<HTMLDivElement>) => {
           <Styled.Header>
             <Styled.Title>{props.title}</Styled.Title>
             <IconButton
-              variant="minimal"
+              variant="ghost-secondary"
               size={24}
               Icon={
                 <ActionCrossIcon

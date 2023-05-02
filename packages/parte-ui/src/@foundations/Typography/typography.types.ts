@@ -29,5 +29,5 @@ export type CaptionProps = CommonProps & {
 };
 
 export type CodeProps = Omit<CommonProps, "color"> & {
-  variant?: "minimal" | "default";
+  variant?: "ghost-secondary" | "default";
 };

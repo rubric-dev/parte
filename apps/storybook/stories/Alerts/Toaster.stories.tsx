@@ -16,7 +16,7 @@ const DefaultToastStory = () => {
   return (
     <div style={{ display: "flex", flexDirection: "column", gap: "16px" }}>
       <Button
-        variant="primary"
+        variant="fill-primary"
         onClick={() =>
           toaster.notify({
             title: "헤벌레",
@@ -29,7 +29,7 @@ const DefaultToastStory = () => {
         넋이 나가있는 벌레는
       </Button>
       <Button
-        variant="primary"
+        variant="fill-primary"
         onClick={() =>
           toaster.notify({
             title: "미식가세요?ㅋㅋㅋㅋㅋㅋㅋㅋㅋㅇㅋㅋㅋㅎㅋㅋㅋㅋ",
@@ -40,7 +40,7 @@ const DefaultToastStory = () => {
         속이 좀 미식거려보이시네요
       </Button>
       <Button
-        variant="primary"
+        variant="fill-primary"
         onClick={() =>
           toaster.notify({
             title: "수정과",
@@ -52,7 +52,7 @@ const DefaultToastStory = () => {
         자신감없을때 먹는 차는
       </Button>
       <Button
-        variant="primary"
+        variant="fill-primary"
         onClick={() =>
           toaster.notify({
             title: "g.o.d",

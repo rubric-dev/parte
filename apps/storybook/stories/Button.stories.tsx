@@ -15,75 +15,73 @@ export default ButtonStory;
 
 type Story = StoryObj<typeof Button>;
 
-export const Default: Story = {
+export const FillPrimary: Story = {
   args: {
     leadingIcon: <InterfaceConsoleIcon />,
     children: "default button",
-    variant: "primary",
+    variant: "fill-primary",
   },
 };
 
-export const DefaultColumn: Story = {
+export const FillPrimaryColumn: Story = {
   args: {
     leadingIcon: <InterfaceConsoleIcon />,
     children: "default button",
-    variant: "primary",
+    variant: "fill-primary",
     direction: "vertical",
   },
 };
 
-export const Secondary: Story = {
-  args: {
-    leadingIcon: <InterfaceConsoleIcon />,
-    children: "secondary button",
-    variant: "secondary",
-  },
-};
-
-export const SecondaryColored: Story = {
+export const OutlinePrimary: Story = {
   args: {
     leadingIcon: <InterfaceConsoleIcon />,
     children: "secondary colored button",
-    variant: "secondary-colored",
+    variant: "outline-primary",
   },
 };
 
-export const Minimal: Story = {
+export const OutlineSecondary: Story = {
   args: {
     leadingIcon: <InterfaceConsoleIcon />,
-    children: "minimal button",
-    variant: "minimal",
+    children: "secondary button",
+    variant: "outline-secondary",
   },
 };
-
-export const MinimalColored: Story = {
+export const GhostPrimary: Story = {
   args: {
     leadingIcon: <InterfaceConsoleIcon />,
     children: "minimal colored button",
-    variant: "minimal-colored",
+    variant: "ghost-primary",
   },
 };
 
-export const Error: Story = {
+export const GhostSecondary: Story = {
+  args: {
+    leadingIcon: <InterfaceConsoleIcon />,
+    children: "minimal button",
+    variant: "ghost-secondary",
+  },
+};
+
+export const FillError: Story = {
   args: {
     leadingIcon: <InterfaceConsoleIcon />,
     children: "error button",
-    variant: "error",
+    variant: "fill-error",
   },
 };
 
-export const Text: Story = {
-  args: {
-    leadingIcon: <InterfaceConsoleIcon />,
-    children: "text button",
-    variant: "text",
-  },
-};
-
-export const TextColored: Story = {
+export const TextPrimary: Story = {
   args: {
     leadingIcon: <InterfaceConsoleIcon />,
     children: "text colored button",
-    variant: "text-colored",
+    variant: "text-primary",
+  },
+};
+export const TextSecondary: Story = {
+  args: {
+    leadingIcon: <InterfaceConsoleIcon />,
+    children: "text button",
+    variant: "text-secondary",
   },
 };

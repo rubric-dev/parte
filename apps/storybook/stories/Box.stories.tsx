@@ -12,10 +12,10 @@ export default {
 
 const Content = (
   <>
-    <Button variant="primary">First Button</Button>
-    <Button variant="primary">Second Button</Button>
-    <Button variant="primary">Third Button</Button>
-    <Button variant="primary">Fourth Button</Button>
+    <Button variant="fill-primary">First Button</Button>
+    <Button variant="fill-primary">Second Button</Button>
+    <Button variant="fill-primary">Third Button</Button>
+    <Button variant="fill-primary">Fourth Button</Button>
   </>
 );
 
