@@ -37,10 +37,10 @@ const Template: Story<TagInputProps> = ({ ...args }) => {
         <div style={{ display: "flex", gap: "8px" }}>
           <ActionCrossIcon
             size={12}
-            color="muted"
+            color="N600"
             onClick={() => setValues([])}
           />
-          <InterfaceCaretDownIcon size={12} color="muted" />
+          <InterfaceCaretDownIcon size={12} color="N600" />
         </div>
       }
       placeholder="Placeholder"

@@ -4,24 +4,7 @@ import {
   DetailedHTMLProps,
   forwardRef,
 } from "react";
-import { COLORS } from "../../../parte-ui/src/@foundations";
-import { AlertStatus } from "../../../parte-ui/src";
-
-export type IconColor = keyof typeof ICON_COLOR;
-
-export const ICON_COLOR: Record<
-  AlertStatus | "default" | "muted" | "disabled" | "selected",
-  string
-> = {
-  default: COLORS.N700,
-  muted: COLORS.N600,
-  disabled: COLORS.N400,
-  selected: COLORS.B500,
-  info: COLORS.B400,
-  success: COLORS.G400,
-  warning: COLORS.Y400,
-  error: COLORS.R400,
-} as const;
+import { COLORS, ColorKey } from "../../../parte-ui/src/@foundations";
 
 export interface IconProps
   extends DetailedHTMLProps<
@@ -31,7 +14,7 @@ export interface IconProps
   svg: React.ReactElement;
   rotate?: number;
   size?: number;
-  color?: IconColor;
+  color?: ColorKey;
   type?: string;
 }
 
@@ -41,7 +24,7 @@ const Icon = forwardRef<HTMLSpanElement, IconProps>((props, ref) => {
     rotate,
     style,
     type,
-    color = "default",
+    color = "transparent",
     size = "16",
     ...restProps
   } = props;
@@ -54,7 +37,7 @@ const Icon = forwardRef<HTMLSpanElement, IconProps>((props, ref) => {
   };
 
   const svgComponent = cloneElement(svg, {
-    color: ICON_COLOR[color],
+    color: COLORS[color],
     size,
     style: overrideStyle.style,
   });

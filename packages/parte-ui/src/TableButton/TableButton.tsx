@@ -8,7 +8,6 @@ export const TableButton = ({
   variant = "primary",
   ...props
 }: TableButtonProps) => {
-  console.log(children);
   return (
     <StyledButton variant={variant} {...props} isIconButton={!children}>
       {leadingIcon}

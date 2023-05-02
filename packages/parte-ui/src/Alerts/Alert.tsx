@@ -9,10 +9,11 @@ import {
 } from "../../../parte-icons/src";
 import * as Styled from "./Alert.styled";
 import { AlertProps, AlertStatus } from "./Alert.types";
+import { ALERT_ICON_COLOR } from "./Alert.styled";
 
 const renderIcon = (currentStatus: AlertStatus) => {
   switch (currentStatus) {
-    case "success":
+    case "G400":
       return <AlertSuccessIcon size={16} />;
     case "info":
       return <AlertInfoIcon size={16} />;
@@ -48,7 +49,12 @@ export const Alert = (props: AlertProps & HTMLAttributes<HTMLDivElement>) => {
             <IconButton
               variant="minimal"
               size={24}
-              Icon={<ActionCrossIcon size={12} color={props.status} />}
+              Icon={
+                <ActionCrossIcon
+                  size={12}
+                  color={ALERT_ICON_COLOR[props.status]}
+                />
+              }
               onClick={props.onClose}
             />
           </Styled.Header>
