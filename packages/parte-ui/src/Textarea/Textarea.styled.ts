@@ -1,54 +1,6 @@
 import styled, { css } from "styled-components";
 import { TextAreaProps } from "./Textarea.types";
 
-export const Container = styled.div<TextAreaProps>`
-  ${({ fullWidth }) => css`
-    box-sizing: border-box;
-    display: flex;
-    flex-direction: column;
-    width: ${fullWidth ? "100%" : "fit-content"};
-  `}
-`;
-
-export const LabelWrapper = styled.div`
-  ${({ theme }) => css`
-    display: flex;
-    align-items: flex-start;
-    column-gap: ${theme.spacing.spacing2}px;
-    margin-bottom: ${theme.spacing.spacing2}px;
-  `}
-`;
-
-export const Required = styled.label`
-  ${({ theme }) => css`
-    ${theme.typography.C200}
-    color: ${theme.colors.R400};
-  `}
-`;
-
-export const Label = styled.label`
-  ${({ theme }) => css`
-    ${theme.typography.H400}
-    color: ${theme.colorHeading};
-  `}
-`;
-
-export const Description = styled.p`
-  ${({ theme }) => css`
-    ${theme.typography.P100}
-    color: ${theme.colorParagraph};
-    margin-bottom: ${theme.spacing.spacing2}px;
-  `}
-`;
-
-export const ErrorText = styled.p`
-  ${({ theme }) => css`
-    ${theme.typography.P100};
-    color: ${theme.colors.R400};
-    margin-top: ${theme.spacing.spacing2}px;
-  `}
-`;
-
 export const TextareaWrapper = styled.div<{
   focused: boolean;
   error?: boolean;

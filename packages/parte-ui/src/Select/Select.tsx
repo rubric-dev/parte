@@ -40,6 +40,7 @@ import { Box } from "../Layout";
 import { Caption, Headline, Paragraph } from "../@foundations/Typography";
 import { Spinner } from "../Spinner";
 import { Option } from "../Dropdown";
+import { InputWrapper } from "../InputWrapper";
 
 export const Control = ({
   children,
@@ -182,6 +183,8 @@ export function Select<T>(props: SelectProps<T>) {
     description,
     required,
     menuIsOpen,
+    fullWidth,
+    direction,
   } = props;
 
   const styles = useSelectStyle({ isError }) as StylesConfig<
@@ -292,32 +295,15 @@ export function Select<T>(props: SelectProps<T>) {
     );
 
   return (
-    <Box flexDirection="column" display="flex">
-      {(label || description) && (
-        <Box gap={2} flexDirection="column" marginBottom={2} display="flex">
-          <Box alignItems="flex-start" gap={1} display="flex">
-            {required && (
-              <Caption size={200} color="R400">
-                *
-              </Caption>
-            )}
-            <Headline size={400} color="N800">
-              {label}
-            </Headline>
-          </Box>
-          {description && (
-            <Paragraph size={100} color="N700">
-              {description}
-            </Paragraph>
-          )}
-        </Box>
-      )}
+    <InputWrapper
+      label={label}
+      description={description}
+      required={required}
+      fullWidth={fullWidth}
+      errorText={errorText}
+      direction={direction}
+    >
       {SelectComponent}
-      {isError && errorText && (
-        <Paragraph size={100} color="R400" marginTop={2}>
-          {errorText}
-        </Paragraph>
-      )}
-    </Box>
+    </InputWrapper>
   );
 }

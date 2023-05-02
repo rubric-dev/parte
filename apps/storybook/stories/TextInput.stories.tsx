@@ -47,12 +47,14 @@ Error.args = {
 
 export const WithLabel = Template.bind({});
 WithLabel.args = {
+  direction: "vertical",
   label: "Label",
 };
 
 export const WithLabelRequired = Template.bind({});
 WithLabelRequired.args = {
   label: "Label",
+  direction: "vertical",
   required: true,
 };
 
@@ -60,6 +62,35 @@ export const WithDescription = Template.bind({});
 WithDescription.args = {
   label: "Label",
   description: "Description",
+  direction: "vertical",
+};
+
+export const WithHorizontalLabel = Template.bind({});
+WithHorizontalLabel.args = {
+  label: "Label",
+  direction: "horizontal",
+};
+
+export const WithHorizontalLabelRequired = Template.bind({});
+WithHorizontalLabelRequired.args = {
+  label: "Label",
+  required: true,
+  direction: "horizontal",
+};
+
+export const WithHorizontalDescription = Template.bind({});
+WithHorizontalDescription.args = {
+  label: "Label",
+  description: "Description",
+  direction: "horizontal",
+};
+
+export const WithHorizontalErrorAndDescription = Template.bind({});
+WithHorizontalErrorAndDescription.args = {
+  label: "Label",
+  description: "Description",
+  errorText: "error text",
+  direction: "horizontal",
 };
 
 export const WithTrailingIcon = Template.bind({});

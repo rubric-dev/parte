@@ -1,4 +1,5 @@
 import { forwardRef, useId, useState } from "react";
+import { InputWrapper } from "../InputWrapper";
 import * as Styled from "./Textarea.styled";
 import { TextAreaProps } from "./Textarea.types";
 
@@ -14,25 +15,21 @@ export const Textarea = forwardRef<HTMLTextAreaElement, TextAreaProps>(
       onFocus,
       onBlur,
       disabled,
+      direction,
     } = props;
 
     const [hover, setHover] = useState(false);
     const [focused, setFocused] = useState(false);
 
     return (
-      <Styled.Container fullWidth={fullWidth}>
-        {label && (
-          <Styled.LabelWrapper>
-            {required && <Styled.Required>*</Styled.Required>}
-            <Styled.Label
-              htmlFor={id}
-              title={required ? "This field is required" : ""}
-            >
-              {label}
-            </Styled.Label>
-          </Styled.LabelWrapper>
-        )}
-        {description && <Styled.Description>{description}</Styled.Description>}
+      <InputWrapper
+        label={label}
+        description={description}
+        required={required}
+        fullWidth={fullWidth}
+        errorText={errorText}
+        direction={direction}
+      >
         <Styled.TextareaWrapper
           hover={hover}
           disabled={disabled}
@@ -58,9 +55,7 @@ export const Textarea = forwardRef<HTMLTextAreaElement, TextAreaProps>(
             }}
           />
         </Styled.TextareaWrapper>
-
-        {errorText && <Styled.ErrorText>{errorText}</Styled.ErrorText>}
-      </Styled.Container>
+      </InputWrapper>
     );
   }
 );

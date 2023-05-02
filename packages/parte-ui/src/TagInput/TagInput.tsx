@@ -10,6 +10,7 @@ import * as Styled from "./TagInput.styled";
 import { Box } from "../Layout";
 import { TagInputProps } from "./TagInput.types";
 import { Tag } from "./Tag";
+import { InputWrapper } from "../InputWrapper";
 
 export const TagInput = forwardRef<HTMLInputElement, TagInputProps>(
   (
@@ -33,6 +34,8 @@ export const TagInput = forwardRef<HTMLInputElement, TagInputProps>(
       errorText,
       disabled,
       onFocus,
+      fullWidth = false,
+      direction,
     } = props;
 
     const [hover, setHover] = useState(false);
@@ -74,19 +77,14 @@ export const TagInput = forwardRef<HTMLInputElement, TagInputProps>(
     };
 
     return (
-      <Styled.Container>
-        {label && (
-          <Styled.LabelWrapper>
-            {required && <Styled.Required>*</Styled.Required>}
-            <Styled.Label
-              htmlFor={id}
-              title={required ? "This field is required" : ""}
-            >
-              {label}
-            </Styled.Label>
-          </Styled.LabelWrapper>
-        )}
-        {description && <Styled.Description>{description}</Styled.Description>}
+      <InputWrapper
+        label={label}
+        description={description}
+        required={required}
+        fullWidth={fullWidth}
+        errorText={errorText}
+        direction={direction}
+      >
         <Styled.InputWrapper
           hover={hover}
           focused={focused}
@@ -144,8 +142,7 @@ export const TagInput = forwardRef<HTMLInputElement, TagInputProps>(
             </Styled.RightIconContainer>
           )}
         </Styled.InputWrapper>
-        {errorText && <Styled.ErrorText>{errorText}</Styled.ErrorText>}
-      </Styled.Container>
+      </InputWrapper>
     );
   }
 );

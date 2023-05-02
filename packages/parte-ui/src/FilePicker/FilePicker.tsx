@@ -4,6 +4,7 @@ import { ChangeEvent, useCallback, useRef, useState } from "react";
 import { Box } from "../Layout";
 import { Caption, Paragraph } from "../@foundations/Typography";
 import { TextInput } from "../TextInput";
+import { InputWrapper } from "../InputWrapper";
 
 const defaultButtonText = (files: File[]) => {
   const fileCount = files.length;
@@ -34,11 +35,12 @@ export const FilePicker = ({
   disabled = false,
   multiple,
   accept,
-  errorMessage,
+  errorText,
   inputText = getInputValue,
   buttonText = defaultButtonText,
   onBlur,
   onChange,
+  direction,
 }: FilePickerProps) => {
   const [files, setFiles] = useState<File[]>([]);
   const [inputFocused, setInputFocused] = useState(false);
@@ -78,36 +80,14 @@ export const FilePicker = ({
   );
 
   return (
-    <Box display="flex" flexDirection="column">
-      {(label || description) && (
-        <Box
-          display="flex"
-          flexDirection="column"
-          gap={2}
-          style={{ marginBottom: "2px" }}
-        >
-          {label && (
-            <Styled.LabelWrapper>
-              {required && (
-                <Caption size={200} color="R400">
-                  *
-                </Caption>
-              )}
-              <Styled.Label
-                htmlFor={name}
-                title={required ? "This field is required" : ""}
-              >
-                {label}
-              </Styled.Label>
-            </Styled.LabelWrapper>
-          )}
-          {description && (
-            <Paragraph size={100} color="N700">
-              {description}
-            </Paragraph>
-          )}
-        </Box>
-      )}
+    <InputWrapper
+      label={label}
+      description={description}
+      required={required}
+      fullWidth={false}
+      errorText={errorText}
+      direction={direction}
+    >
       <Styled.Container>
         <input
           style={{
@@ -136,7 +116,7 @@ export const FilePicker = ({
             onFocus={() => setInputFocused(true)}
             onBlur={() => setInputFocused(false)}
             fullWidth
-            errorText={errorMessage}
+            errorText={errorText}
             placeholder={placeholder}
             value={inputText(files)}
           />
@@ -144,12 +124,12 @@ export const FilePicker = ({
         <Styled.FilePickerButton
           variant="outline-secondary"
           disabled={disabled}
-          error={!!errorMessage}
+          error={!!errorText}
           onClick={handleButtonClick}
         >
           {buttonText(files)}
         </Styled.FilePickerButton>
       </Styled.Container>
-    </Box>
+    </InputWrapper>
   );
 };

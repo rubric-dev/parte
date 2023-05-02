@@ -1,15 +1,6 @@
 import styled, { css } from "styled-components";
 import { TextInputProps } from "./TextInput.types";
 
-export const Container = styled.div<Pick<TextInputProps, "fullWidth">>`
-  ${({ fullWidth }) => css`
-    display: flex;
-    box-sizing: border-box;
-    flex-direction: column;
-    width: ${fullWidth ? "100%" : "fit-content"};
-  `};
-`;
-
 export const InputWrapper = styled.div<{
   focused: boolean;
   error?: boolean;
@@ -57,37 +48,6 @@ export const InputWrapper = styled.div<{
   `}
 `;
 
-export const LabelWrapper = styled.div`
-  ${({ theme }) => css`
-    display: flex;
-    align-items: flex-start;
-    column-gap: ${theme.spacing.spacing2}px;
-    margin-bottom: ${theme.spacing.spacing2}px;
-  `}
-`;
-
-export const Required = styled.label`
-  ${({ theme }) => css`
-    ${theme.typography.C200}
-    color: ${theme.colors.R400};
-  `}
-`;
-
-export const Label = styled.label`
-  ${({ theme }) => css`
-    ${theme.typography.H400}
-    color: ${theme.colorHeading};
-  `}
-`;
-
-export const Description = styled.p`
-  ${({ theme }) => css`
-    ${theme.typography.P100}
-    color: ${theme.colorParagraph};
-    margin-bottom: ${theme.spacing.spacing2}px;
-  `}
-`;
-
 export const LeftIconContainer = styled.div<TextInputProps>`
   ${({ theme, disabled }) => css`
     display: flex;
@@ -114,14 +74,6 @@ export const RightIconContainer = styled.div<TextInputProps>`
         color: ${theme.colorTextDisabled};
       `};
     }
-  `}
-`;
-
-export const ErrorText = styled.p`
-  ${({ theme }) => css`
-    ${theme.typography.P100};
-    color: ${theme.colors.R400};
-    margin-top: ${theme.spacing.spacing2}px;
   `}
 `;
 
