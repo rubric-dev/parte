@@ -18,7 +18,7 @@ export function Step({ label, currentStep, stepIndex }: StepProps) {
     <Styled.Container gap={8}>
       <Styled.Icon status={stepStatus}>
         {stepStatus === "complete" ? (
-          <ActionTickIcon size={8} color="success" />
+          <ActionTickIcon size={8} color="G400" />
         ) : (
           stepIndex
         )}

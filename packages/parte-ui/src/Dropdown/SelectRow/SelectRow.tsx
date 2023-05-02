@@ -17,7 +17,7 @@ const SearchRow = forwardRef<HTMLDivElement, SelectRowSearch>((props, ref) => {
       role="selectItemSearch"
       disabled={props.disabled}
     >
-      <ActionSearchIcon size={12} color="muted" />
+      <ActionSearchIcon size={12} color="N600" />
       <Styled.SearchInput
         variant="search"
         role="selectItemSearchInput"

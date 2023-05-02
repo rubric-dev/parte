@@ -34,7 +34,7 @@ export const BasicAlert: Story = {
 export const BasicAlertNoDescription: Story = {
   args: {
     type: "alert",
-    status: "success",
+    status: "G400",
     title: "Success Message",
   },
 };

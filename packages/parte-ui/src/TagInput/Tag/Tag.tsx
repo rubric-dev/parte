@@ -16,7 +16,7 @@ export function Tag({ tag, onRemove }: TagProps) {
     >
       <Paragraph size={100}>{tag.label}</Paragraph>
       <ActionSmallCrossIcon
-        color="error"
+        color="R400"
         size={12}
         onClick={(e) => {
           e.stopPropagation();

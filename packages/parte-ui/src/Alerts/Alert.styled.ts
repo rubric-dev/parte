@@ -1,19 +1,26 @@
 import { HTMLAttributes } from "react";
 import styled, { css, DefaultTheme } from "styled-components";
 import { Box } from "../Layout";
-import { ICON_COLOR } from "../../../parte-icons/src";
+import { COLORS, ColorKey } from "../../../parte-icons/src";
 import { AlertProps, AlertStatus } from "./Alert.types";
+
+export const ALERT_ICON_COLOR: Record<AlertStatus, ColorKey> = {
+  info: "B400",
+  success: "G400",
+  warning: "Y400",
+  error: "R400",
+} as const;
 
 export const getColorByStatus = (
   status: AlertStatus,
   theme: DefaultTheme
-): { iconColor: string; backgroundColor: string; color: string } => {
+): { iconColor: ColorKey; backgroundColor: string; color: string } => {
   let colorInfos = {
     backgroundColor: "",
     color: "",
   };
   switch (status) {
-    case "success": {
+    case "G400": {
       colorInfos = {
         backgroundColor: theme.colors.G50,
         color: theme.colors.G500,
@@ -44,7 +51,7 @@ export const getColorByStatus = (
   }
   return {
     ...colorInfos,
-    iconColor: ICON_COLOR[status],
+    iconColor: ALERT_ICON_COLOR[status],
   };
 };
 
@@ -75,7 +82,7 @@ const commonStyle = css<AlertProps>`
       flex-direction: column;
       background-color: ${backgroundColor};
       color: ${color};
-      border: ${borderPixel}px solid ${iconColor};
+      border: ${borderPixel}px solid ${theme.colors[iconColor]};
       border-radius: 8px;
       max-width: 487px;
       gap: ${theme.spacing.spacing4}px;
@@ -87,6 +94,7 @@ const commonStyle = css<AlertProps>`
     `;
   }}
 `;
+
 const toastStyle = css<AlertProps>`
   ${({ theme }) => {
     return css`

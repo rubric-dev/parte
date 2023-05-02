@@ -1,4 +1,4 @@
-export type AlertStatus = "success" | "info" | "warning" | "error";
+export type AlertStatus = "G400" | "info" | "warning" | "error";
 export type AlertProps =
   | AlertBasicProps
   | AlertToastProps

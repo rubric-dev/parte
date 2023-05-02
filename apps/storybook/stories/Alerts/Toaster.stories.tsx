@@ -56,7 +56,7 @@ const DefaultToastStory = () => {
         onClick={() =>
           toaster.notify({
             title: "g.o.d",
-            status: "success",
+            status: "G400",
             description:
               "지오디? ㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋ엌 ㅋㅋㅋㅋㅋㅋ엌ㅋㅋㅋㅋ",
           })

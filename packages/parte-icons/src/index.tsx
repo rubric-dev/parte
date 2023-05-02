@@ -1,4 +1,5 @@
-export { ICON_COLOR, type IconColor, type IconProps } from "./common/Icon";
+export { type IconProps } from "./common/Icon";
+export { COLORS, type ColorKey } from "../../parte-ui/src/@foundations";
 
 export { default as ActionAddIcon } from "./Icons/ActionAddIcon";
 export { default as ActionAddToArtifactIcon } from "./Icons/ActionAddToArtifactIcon";

@@ -106,7 +106,7 @@ export const Pagination = ({
         Icon={
           <InterfaceChevronLeftIcon
             size={12}
-            color={prevDisabled ? "disabled" : "muted"}
+            color={prevDisabled ? "N400" : "N600"}
           />
         }
         size={32}
@@ -137,7 +137,7 @@ export const Pagination = ({
         Icon={
           <InterfaceChevronRightIcon
             size={12}
-            color={nextDisabled ? "disabled" : "muted"}
+            color={nextDisabled ? "N400" : "N600"}
           />
         }
         size={32}
