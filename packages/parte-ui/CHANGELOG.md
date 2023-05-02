@@ -1,5 +1,11 @@
 # @parte-ds/ui
 
+## 1.2.1
+
+### Patch Changes
+
+- input wrapper 생성
+
 ## 1.2.0
 
 ### Minor Changes
