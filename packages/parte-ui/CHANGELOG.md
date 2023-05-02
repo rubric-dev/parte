@@ -1,5 +1,11 @@
 # @parte-ds/ui
 
+## 1.2.0
+
+### Minor Changes
+
+- button variant 이름 변경 및 headline 명칭 수정
+
 ## 1.1.1
 
 ### Patch Changes
