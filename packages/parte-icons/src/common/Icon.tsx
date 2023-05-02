@@ -24,7 +24,7 @@ const Icon = forwardRef<HTMLSpanElement, IconProps>((props, ref) => {
     rotate,
     style,
     type,
-    color = "transparent",
+    color = "N700",
     size = "16",
     ...restProps
   } = props;
