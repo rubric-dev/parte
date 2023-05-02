@@ -1,11 +1,11 @@
-import styled, { css } from 'styled-components';
+import styled, { css } from "styled-components";
 import {
   CommonProps,
-  HeadingProps,
+  HeadlineProps,
   ParagraphProps,
   CaptionProps,
   CodeProps,
-} from './typography.types';
+} from "./typography.types";
 
 const CommonTextStyle = ({
   marginBottom,
@@ -14,16 +14,16 @@ const CommonTextStyle = ({
   marginTop,
 }: Pick<
   CommonProps,
-  'marginBottom' | 'marginLeft' | 'marginRight' | 'marginTop'
+  "marginBottom" | "marginLeft" | "marginRight" | "marginTop"
 >) => css`
-  margin-top: ${marginTop ? `${marginTop}px` : 'unset'};
-  margin-bottom: ${marginBottom ? `${marginBottom}px` : 'unset'};
-  margin-left: ${marginLeft ? `${marginLeft}px` : 'unset'};
-  margin-right: ${marginRight ? `${marginRight}px` : 'unset'};
+  margin-top: ${marginTop ? `${marginTop}px` : "unset"};
+  margin-bottom: ${marginBottom ? `${marginBottom}px` : "unset"};
+  margin-left: ${marginLeft ? `${marginLeft}px` : "unset"};
+  margin-right: ${marginRight ? `${marginRight}px` : "unset"};
 `;
 
-export const Heading = styled.h2<Exclude<HeadingProps, 'children'>>`
-  ${({ theme, size, color = 'N900', ...marginProps }) => css`
+export const Headline = styled.h2<Exclude<HeadlineProps, "children">>`
+  ${({ theme, size, color = "N900", ...marginProps }) => css`
     ${CommonTextStyle(marginProps)}
     color: ${theme.colors[color]};
     ${size === 900 && theme.typography.H900}
@@ -38,8 +38,8 @@ export const Heading = styled.h2<Exclude<HeadingProps, 'children'>>`
   `}
 `;
 
-export const Paragraph = styled.p<Exclude<ParagraphProps, 'children'>>`
-  ${({ theme, size, color = 'N900', ...marginProps }) => css`
+export const Paragraph = styled.p<Exclude<ParagraphProps, "children">>`
+  ${({ theme, size, color = "N900", ...marginProps }) => css`
     ${CommonTextStyle(marginProps)}
     color: ${theme.colors[color]};
     ${size === 300 && theme.typography.P300}
@@ -48,8 +48,8 @@ export const Paragraph = styled.p<Exclude<ParagraphProps, 'children'>>`
   `}
 `;
 
-export const Caption = styled.span<Exclude<CaptionProps, 'children'>>`
-  ${({ theme, size, color = 'N900', ...marginProps }) => css`
+export const Caption = styled.span<Exclude<CaptionProps, "children">>`
+  ${({ theme, size, color = "N900", ...marginProps }) => css`
     ${CommonTextStyle(marginProps)}
     color: ${theme.colors[color]};
     ${size === 200 && theme.typography.C200}
@@ -57,10 +57,10 @@ export const Caption = styled.span<Exclude<CaptionProps, 'children'>>`
   `}
 `;
 
-export const Code = styled.code<Exclude<CodeProps, 'children'>>`
-  ${({ theme, variant = 'default', ...marginProps }) => css`
+export const Code = styled.code<Exclude<CodeProps, "children">>`
+  ${({ theme, variant = "default", ...marginProps }) => css`
     ${CommonTextStyle(marginProps)}
-    ${variant === 'default' && theme.typography.CD200}
-    ${variant === 'minimal' && theme.typography.CM200}
+    ${variant === "default" && theme.typography.CD200}
+    ${variant === "ghost-secondary" && theme.typography.CM200}
   `}
 `;

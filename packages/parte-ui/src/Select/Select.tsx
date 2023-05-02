@@ -37,7 +37,7 @@ import useSelectStyle from "./useSelectStyle";
 import { SelectProps } from "./Select.types";
 import { SelectComponents } from "react-select/dist/declarations/src/components";
 import { Box } from "../Layout";
-import { Caption, Heading, Paragraph } from "../@foundations/Typography";
+import { Caption, Headline, Paragraph } from "../@foundations/Typography";
 import { Spinner } from "../Spinner";
 import { Option } from "../Dropdown";
 
@@ -301,9 +301,9 @@ export function Select<T>(props: SelectProps<T>) {
                 *
               </Caption>
             )}
-            <Heading size={400} color="N800">
+            <Headline size={400} color="N800">
               {label}
-            </Heading>
+            </Headline>
           </Box>
           {description && (
             <Paragraph size={100} color="N700">

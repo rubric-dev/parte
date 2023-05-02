@@ -6,7 +6,7 @@ import {
   InterfaceChevronRightIcon,
 } from "../../../parte-icons/src";
 import { Box } from "../Layout";
-import { Heading } from "../@foundations";
+import { Headline } from "../@foundations";
 import { IconButton } from "../IconButton";
 
 const MAX_HANDLES_TO_SHOW = 7;
@@ -34,9 +34,9 @@ const PaginationButton = ({
         alignItems="center"
         justifyContent="center"
       >
-        <Heading size={300} color="N700">
+        <Headline size={300} color="N700">
           {page}
-        </Heading>
+        </Headline>
       </Styled.EllipsisText>
     );
   }
