@@ -21,7 +21,7 @@ export const Dialog = memo(
     hasHeader = true,
     cancelLabel = "취소",
     confirmLabel = "확인",
-    confirmVariant = "primary",
+    confirmVariant = "fill-primary",
     isConfirmDisabled = false,
     isConfirmLoading = false,
     minHeightContent = 80,
@@ -73,7 +73,7 @@ export const Dialog = memo(
               <Styled.Title>{title}</Styled.Title>
               {hasClose && (
                 <IconButton
-                  variant="minimal"
+                  variant="ghost-secondary"
                   size={24}
                   Icon={<ActionCrossIcon size={12} />}
                   onClick={handleCancel}
@@ -98,7 +98,11 @@ export const Dialog = memo(
             <>
               {/* Cancel should be first to make sure focus gets on it first. */}
               {hasCancel && (
-                <Button variant="secondary" tabIndex={0} onClick={handleCancel}>
+                <Button
+                  variant="outline-secondary"
+                  tabIndex={0}
+                  onClick={handleCancel}
+                >
                   {cancelLabel}
                 </Button>
               )}

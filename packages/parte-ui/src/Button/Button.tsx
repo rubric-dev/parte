@@ -6,7 +6,7 @@ export const Button = ({
   children,
   leadingIcon,
   trailingIcon,
-  variant = "primary",
+  variant = "fill-primary",
   direction = "horizontal",
   ...props
 }: ButtonProps) => {

@@ -14,57 +14,57 @@ const IconButtonStory: Meta = {
 export default IconButtonStory;
 type Story = StoryObj<typeof IconButton>;
 
-export const Default: Story = {
+export const FillPrimary: Story = {
   args: {
     Icon: <TableThIcon />,
-    variant: "primary",
+    variant: "fill-primary",
   },
 };
 
-export const Secondary: Story = {
+export const OutlinePrimary: Story = {
   args: {
     Icon: <TableThIcon />,
-    variant: "secondary",
+    variant: "outline-primary",
   },
 };
 
-export const SecondaryColored: Story = {
+export const OutlineSecondary: Story = {
   args: {
     Icon: <TableThIcon />,
-    variant: "secondary-colored",
+    variant: "outline-secondary",
   },
 };
 
-export const Minimal: Story = {
+export const GhostPrimary: Story = {
   args: {
     Icon: <TableThIcon />,
-    variant: "minimal",
+    variant: "ghost-primary",
+  },
+};
+export const GhostSecondary: Story = {
+  args: {
+    Icon: <TableThIcon />,
+    variant: "ghost-secondary",
   },
 };
 
-export const MinimalColored: Story = {
+export const FillError: Story = {
   args: {
     Icon: <TableThIcon />,
-    variant: "minimal-colored",
-  },
-};
-export const Error: Story = {
-  args: {
-    Icon: <TableThIcon />,
-    variant: "error",
+    variant: "fill-error",
   },
 };
 
-export const Text: Story = {
+export const TextPrimary: Story = {
   args: {
     Icon: <TableThIcon />,
-    variant: "text",
+    variant: "text-primary",
   },
 };
 
-export const TextColored: Story = {
+export const TextSecondary: Story = {
   args: {
     Icon: <TableThIcon />,
-    variant: "text-colored",
+    variant: "text-secondary",
   },
 };

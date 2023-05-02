@@ -5,7 +5,7 @@ export const TableButton = ({
   children,
   leadingIcon,
   trailingIcon,
-  variant = "primary",
+  variant = "fill-primary",
   ...props
 }: TableButtonProps) => {
   return (

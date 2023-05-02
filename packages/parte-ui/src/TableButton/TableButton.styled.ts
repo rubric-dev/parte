@@ -44,7 +44,7 @@ export const StyledButton = styled.button<
 >`
   ${commonButtonStyles}
   ${({ theme, variant }) =>
-    variant === "primary" &&
+    variant === "fill-primary" &&
     css`
       background-color: ${theme.colorBackgroundButtonPrimary};
       color: ${theme.colorTextButtonPrimary};
@@ -70,7 +70,7 @@ export const StyledButton = styled.button<
       }
     `}
   ${({ theme, variant }) =>
-    variant === "secondary" &&
+    variant === "outline-secondary" &&
     css`
       background-color: ${theme.colorBackgroundButtonSecondary};
       color: ${theme.colorTextButtonSecondary};

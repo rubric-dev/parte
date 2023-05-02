@@ -17,7 +17,7 @@ const Template: Story<OverlayProps> = ({ ...args }) => {
     <div
       style={{ display: "flex", flexDirection: "column", overflowY: "auto" }}
     >
-      <Button variant="primary" onClick={() => setOpen(true)}>
+      <Button variant="fill-primary" onClick={() => setOpen(true)}>
         Open Overlay
       </Button>
       <div style={{ width: "100%", height: "1000px" }} />

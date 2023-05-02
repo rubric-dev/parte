@@ -34,7 +34,7 @@ export const StyledButton = styled.button<
 >`
   ${commonButtonStyles}
   ${({ theme, variant }) =>
-    variant === "primary" &&
+    variant === "fill-primary" &&
     css`
       background-color: ${theme.colorBackgroundButtonPrimary};
       & svg {
@@ -67,7 +67,7 @@ export const StyledButton = styled.button<
       }
     `}
   ${({ theme, variant, iconColor = "transparent" }) =>
-    variant === "secondary" &&
+    variant === "outline-secondary" &&
     css`
       background-color: ${theme.colorBackgroundButtonSecondary};
       border: 1px solid ${theme.colorBorderButtonSecondary};
@@ -105,7 +105,7 @@ export const StyledButton = styled.button<
       }
     `}
     ${({ theme, variant }) =>
-    variant === "secondary-colored" &&
+    variant === "outline-primary" &&
     css`
       background-color: ${theme.colorBackgroundButtonSecondaryColored};
       border: 1px solid ${theme.colorBorderButtonSecondaryColored};
@@ -143,7 +143,7 @@ export const StyledButton = styled.button<
       }
     `}
   ${({ theme, variant, iconColor = "transparent" }) =>
-    variant === "minimal" &&
+    variant === "ghost-secondary" &&
     css`
       background-color: ${theme.colorBackgroundButtonMinimal};
       & svg {
@@ -175,7 +175,7 @@ export const StyledButton = styled.button<
         }
       }
     `}${({ theme, variant }) =>
-    variant === "minimal-colored" &&
+    variant === "ghost-primary" &&
     css`
       background-color: ${theme.colorBackgroundButtonMinimalColored};
       & svg {
@@ -208,7 +208,7 @@ export const StyledButton = styled.button<
       }
     `}
   ${({ theme, variant }) =>
-    variant === "error" &&
+    variant === "fill-error" &&
     css`
       background-color: ${theme.colorBackgroundButtonError};
       & svg {
@@ -240,7 +240,7 @@ export const StyledButton = styled.button<
         }
       }
     `}${({ theme, variant }) =>
-    variant === "text" &&
+    variant === "text-secondary" &&
     css`
       width: fit-content;
       height: fit-content;
@@ -271,7 +271,7 @@ export const StyledButton = styled.button<
       }
     `}
     ${({ theme, variant }) =>
-    variant === "text-colored" &&
+    variant === "text-primary" &&
     css`
       width: fit-content;
       height: fit-content;

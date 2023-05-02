@@ -35,7 +35,7 @@ Default.args = {
   position: POSITION.BOTTOM_RIGHT,
   content:
     "Segment syncs a list of users to these destinations and keeps it up to date.",
-  children: <Button variant="primary">Click Me</Button>,
+  children: <Button variant="fill-primary">Click Me</Button>,
   hideDelay: 100,
   showDelay: 100,
 };

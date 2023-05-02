@@ -44,7 +44,7 @@ const commonButtonStyles = css<ButtonProps>`
 export const StyledButton = styled.button<ButtonProps>`
   ${commonButtonStyles}
   ${({ theme, variant }) =>
-    variant === "primary" &&
+    variant === "fill-primary" &&
     css`
       background-color: ${theme.colorBackgroundButtonPrimary};
       color: ${theme.colorTextButtonPrimary};
@@ -81,7 +81,7 @@ export const StyledButton = styled.button<ButtonProps>`
       }
     `}
   ${({ theme, variant }) =>
-    variant === "secondary" &&
+    variant === "outline-secondary" &&
     css`
       background-color: ${theme.colorBackgroundButtonSecondary};
       color: ${theme.colorTextButtonSecondary};
@@ -123,7 +123,7 @@ export const StyledButton = styled.button<ButtonProps>`
       }
     `}
     ${({ theme, variant }) =>
-    variant === "secondary-colored" &&
+    variant === "outline-primary" &&
     css`
       background-color: ${theme.colorBackgroundButtonSecondaryColored};
       color: ${theme.colorTextButtonSecondaryColored};
@@ -166,7 +166,7 @@ export const StyledButton = styled.button<ButtonProps>`
       }
     `}
   ${({ theme, variant }) =>
-    variant === "minimal" &&
+    variant === "ghost-secondary" &&
     css`
       background-color: ${theme.colorBackgroundButtonMinimal};
       color: ${theme.colorTextButtonMinimal};
@@ -204,7 +204,7 @@ export const StyledButton = styled.button<ButtonProps>`
       }
     `}
     ${({ theme, variant }) =>
-    variant === "minimal-colored" &&
+    variant === "ghost-primary" &&
     css`
       background-color: ${theme.colorBackgroundButtonMinimalColored};
       color: ${theme.colorTextButtonMinimalColored};
@@ -242,7 +242,7 @@ export const StyledButton = styled.button<ButtonProps>`
       }
     `}
   ${({ theme, variant }) =>
-    variant === "error" &&
+    variant === "fill-error" &&
     css`
       background-color: ${theme.colorBackgroundButtonError};
       color: ${theme.colorTextButtonError};
@@ -280,10 +280,11 @@ export const StyledButton = styled.button<ButtonProps>`
       }
     `}
     ${({ theme, variant }) =>
-    variant === "text" &&
+    variant === "text-secondary" &&
     css`
       padding: 0;
       background-color: transparent;
+      column-gap: 4px;
       color: ${theme.colorTextButtonMinimal};
       & svg {
         color: ${theme.colorTextButtonMinimal};
@@ -315,10 +316,11 @@ export const StyledButton = styled.button<ButtonProps>`
       }
     `}
     ${({ theme, variant }) =>
-    variant === "text-colored" &&
+    variant === "text-primary" &&
     css`
       padding: 0;
       background-color: transparent;
+      column-gap: 4px;
       color: ${theme.colorTextButtonMinimalColored};
       & svg {
         color: ${theme.colorTextButtonMinimalColored};

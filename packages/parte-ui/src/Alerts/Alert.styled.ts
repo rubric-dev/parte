@@ -6,7 +6,7 @@ import { AlertProps, AlertStatus } from "./Alert.types";
 
 export const ALERT_ICON_COLOR: Record<AlertStatus, ColorKey> = {
   info: "B400",
-  success: "G400",
+  G400: "G400",
   warning: "Y400",
   error: "R400",
 } as const;

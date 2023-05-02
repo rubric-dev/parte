@@ -190,7 +190,7 @@ const defaultColumns = [
       return (
         <Cell width={60} display="flex" justifyContent="center">
           <IconButton
-            variant="minimal"
+            variant="ghost-secondary"
             onClick={onClick}
             size={32}
             Icon={<ActionChatIcon size={16} />}
@@ -219,7 +219,7 @@ const defaultColumns = [
           <Dropdown usePortal>
             <Dropdown.Trigger>
               <IconButton
-                variant="minimal"
+                variant="ghost-secondary"
                 size={32}
                 Icon={<InterfaceMoreIcon size={12} />}
               />

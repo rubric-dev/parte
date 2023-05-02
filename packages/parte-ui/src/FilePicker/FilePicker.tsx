@@ -142,7 +142,7 @@ export const FilePicker = ({
           />
         </Styled.FilePickerInput>
         <Styled.FilePickerButton
-          variant="secondary"
+          variant="outline-secondary"
           disabled={disabled}
           error={!!errorMessage}
           onClick={handleButtonClick}

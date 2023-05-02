@@ -25,7 +25,7 @@ const Template: Story<DialogProps> = ({ children, ...args }) => {
 export const Default = Template.bind({});
 Default.args = {
   width: 480,
-  confirmVariant: "primary",
+  confirmVariant: "fill-primary",
   children: `Used for multiline pieces of content. Lorem ipsum dolor sit amet, ex
   lucilius hendrerit vim, tempor scaevola iudicabit ei ius, te eum illud
   impetus antiopam. Eu wisi commune volutpat pro, usu at alii magna

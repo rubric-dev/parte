@@ -122,7 +122,7 @@ const Template: Story<DropdownProps> = ({ ...args }) => {
       {/* <div style={{ width: '100%', height: '500px' }}>스크롤용</div> */}
       <Dropdown {...args}>
         <Dropdown.Trigger>
-          <Button variant="primary">{selectValue.label}</Button>
+          <Button variant="fill-primary">{selectValue.label}</Button>
         </Dropdown.Trigger>
         <Dropdown.Menu>
           <DropdownList
@@ -157,7 +157,9 @@ const GroupedTemplate: Story<DropdownProps & { isSearchable?: boolean }> = ({
     >
       <Dropdown {...args}>
         <Dropdown.Trigger>
-          <Button variant="primary">{selectValue?.label ?? "empty"}</Button>
+          <Button variant="fill-primary">
+            {selectValue?.label ?? "empty"}
+          </Button>
         </Dropdown.Trigger>
         <Dropdown.Menu>
           <DropdownList
@@ -189,7 +191,7 @@ const MultiTemplate: Story<DropdownProps & { closeOnSelect: boolean }> = ({
     >
       <Dropdown {...args}>
         <Dropdown.Trigger>
-          <Button variant="primary">
+          <Button variant="fill-primary">
             {selectValue?.map(({ label }) => label).join(", ") || "empty"}
           </Button>
         </Dropdown.Trigger>

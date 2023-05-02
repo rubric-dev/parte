@@ -1,4 +1,4 @@
-import React from 'react';
-import Tooltip from '../Tooltip';
+import React from "react";
+import Tooltip from "../Tooltip";
 
-export default <Tooltip uxpId="Tooltip-1" variant="primary" />;
+export default <Tooltip uxpId="Tooltip-1" variant="fill-primary" />;
