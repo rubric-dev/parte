@@ -1,4 +1,4 @@
-import { Card, CardProps, Heading, Paragraph } from "@parte-ds/ui";
+import { Card, CardProps, Headline, Paragraph } from "@parte-ds/ui";
 import { Story, Meta } from "@storybook/react";
 
 import { useState } from "react";
@@ -24,7 +24,7 @@ const Template: Story<CardProps> = ({ ...args }) => {
       onClick={() => setSelected((prev) => !prev)}
       {...args}
     >
-      <Heading size={200}>Heading</Heading>
+      <Headline size={200}>Headline</Headline>
       <Paragraph size={300}>Paragraph</Paragraph>
     </Card>
   );

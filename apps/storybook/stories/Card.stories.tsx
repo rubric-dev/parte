@@ -1,4 +1,4 @@
-import { Card, CardProps, Heading, Paragraph } from "@parte-ds/ui";
+import { Card, CardProps, Headline, Paragraph } from "@parte-ds/ui";
 import { Story, Meta } from "@storybook/react";
 
 export default {
@@ -13,7 +13,7 @@ export default {
 const Template: Story<CardProps> = ({ ...args }) => {
   return (
     <Card {...args} flexDirection="column" padding={20} display="flex">
-      <Heading size={200}>Heading</Heading>
+      <Headline size={200}>Heading</Headline>
       <Paragraph size={300}>Paragraph</Paragraph>
     </Card>
   );

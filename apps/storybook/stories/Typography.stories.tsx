@@ -1,4 +1,4 @@
-import { Heading, Paragraph, Caption, Code, Box } from "@parte-ds/ui";
+import { Headline, Paragraph, Caption, Code, Box } from "@parte-ds/ui";
 import { Story, Meta } from "@storybook/react";
 
 export default {
@@ -13,15 +13,15 @@ const Template: Story = () => {
   return (
     <Box display="flex" flexDirection="row" justifyContent="space-between">
       <Box display="flex" flexDirection="column" gap={10}>
-        <Heading size={900}>Heading 900</Heading>
-        <Heading size={800}>Heading 800</Heading>
-        <Heading size={700}>Heading 700</Heading>
-        <Heading size={600}>Heading 600</Heading>
-        <Heading size={500}>Heading 500</Heading>
-        <Heading size={400}>Heading 400</Heading>
-        <Heading size={300}>Heading 300</Heading>
-        <Heading size={200}>Heading 200</Heading>
-        <Heading size={100}>Heading 100</Heading>
+        <Headline size={900}>Headline 900</Headline>
+        <Headline size={800}>Headline 800</Headline>
+        <Headline size={700}>Headline 700</Headline>
+        <Headline size={600}>Headline 600</Headline>
+        <Headline size={500}>Headline 500</Headline>
+        <Headline size={400}>Headline 400</Headline>
+        <Headline size={300}>Headline 300</Headline>
+        <Headline size={200}>Headline 200</Headline>
+        <Headline size={100}>Headline 100</Headline>
       </Box>
       <Box display="flex" flexDirection="column" gap={10}>
         <Paragraph size={300}>Paragraph 300</Paragraph>
@@ -46,19 +46,19 @@ const CustomStyle: Story = () => {
   return (
     <Box display="flex" flexDirection="row" justifyContent="space-between">
       <Box display="flex" flexDirection="column" gap={10}>
-        <Heading size={900} marginBottom={20}>
-          Heading 900
-        </Heading>
-        <Heading size={800}>Heading 800</Heading>
-        <Heading size={700} overrideStyles={{ backgroundColor: "red" }}>
-          Heading 700
-        </Heading>
-        <Heading size={600}>Heading 600</Heading>
-        <Heading size={500}>Heading 500</Heading>
-        <Heading size={400}>Heading 400</Heading>
-        <Heading size={300}>Heading 300</Heading>
-        <Heading size={200}>Heading 200</Heading>
-        <Heading size={100}>Heading 100</Heading>
+        <Headline size={900} marginBottom={20}>
+          Headline 900
+        </Headline>
+        <Headline size={800}>Headline 800</Headline>
+        <Headline size={700} overrideStyles={{ backgroundColor: "red" }}>
+          Headline 700
+        </Headline>
+        <Headline size={600}>Headline 600</Headline>
+        <Headline size={500}>Headline 500</Headline>
+        <Headline size={400}>Headline 400</Headline>
+        <Headline size={300}>Headline 300</Headline>
+        <Headline size={200}>Headline 200</Headline>
+        <Headline size={100}>Headline 100</Headline>
       </Box>
       <Box display="flex" flexDirection="column" gap={10}>
         <Paragraph size={300}>Paragraph 300</Paragraph>

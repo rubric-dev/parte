@@ -11,7 +11,7 @@ import {
   Dropdown,
   FilterHeader,
   HeaderCell,
-  Heading,
+  Headline,
   IconButton,
   Link,
   Menu,
@@ -129,7 +129,7 @@ const defaultColumns = [
       return (
         <Cell display="flex" alignItems="center" gap={8} flex="2">
           <Avatar avatarColor={getBadgeColorByType(type)} name={name} />
-          <Heading size={300}>{name}</Heading>
+          <Headline size={300}>{name}</Headline>
         </Cell>
       );
     },

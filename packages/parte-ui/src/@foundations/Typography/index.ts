@@ -1,6 +1,6 @@
 export {
   type Typography,
-  type HeadingProps,
+  type HeadlineProps,
   type ParagraphProps,
   type CaptionProps,
   type CodeProps,
@@ -8,7 +8,7 @@ export {
 
 export { TYPOGRAPHY } from "./typography";
 
-export { Heading } from "./Heading";
+export { Headline } from "./Headline";
 export { Paragraph } from "./Paragraph";
 export { Caption } from "./Caption";
 export { Code } from "./Code";
