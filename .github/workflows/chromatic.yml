@@ -5,7 +5,7 @@ on:
   pull_request:
     paths:
       - apps/storybook/**
-      - packages/parte-ui/**
+      - packages/**
 jobs:
   chromatic:
     runs-on: ubuntu-latest
