@@ -2,7 +2,7 @@
 name: "Chromatic"
 
 on:
-  push:
+  pull_request:
     paths:
       - apps/storybook/**
       - packages/parte-ui/**
