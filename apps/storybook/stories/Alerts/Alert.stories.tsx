@@ -16,7 +16,7 @@ type Story = StoryObj<typeof Alert>;
 export const Default: Story = {
   args: {
     type: "alert-inline",
-    status: "error",
+    status: "G400",
     message: "Warning message.",
   },
 };
