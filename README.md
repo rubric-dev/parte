@@ -9,6 +9,17 @@ pnpm install
 pnpm dev
 ```
 
+**@parte-ds/ui**는 [Pretendard](https://github.com/orioncactus/pretendard) 폰트를 사용하고 있습니다. 사용하는 프로젝트의 html 파일에 아래 link 태그나 css에 @import 문으로 추가해주세요.
+
+```html
+<link
+  rel="stylesheet"
+  as="style"
+  crossorigin
+  href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.6/dist/web/variable/pretendardvariable-dynamic-subset.css"
+/>
+```
+
 ### Useful Commands
 
 - `pnpm build` - Build all packages, including the Storybook site
