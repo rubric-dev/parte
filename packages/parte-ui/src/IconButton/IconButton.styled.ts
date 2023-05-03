@@ -66,7 +66,7 @@ export const StyledButton = styled.button<
         }
       }
     `}
-  ${({ theme, variant, iconColor = "transparent" }) =>
+  ${({ theme, variant, iconColor = "N700" }) =>
     variant === "outline-secondary" &&
     css`
       background-color: ${theme.colorBackgroundButtonSecondary};
@@ -142,7 +142,7 @@ export const StyledButton = styled.button<
         }
       }
     `}
-  ${({ theme, variant, iconColor = "transparent" }) =>
+  ${({ theme, variant, iconColor = "N700" }) =>
     variant === "ghost-secondary" &&
     css`
       background-color: ${theme.colorBackgroundButtonMinimal};
