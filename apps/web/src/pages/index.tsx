@@ -1,6 +1,6 @@
 import Head from "next/head";
 import { Inter } from "next/font/google";
-import { Alert, Box } from "@parte-ds/ui";
+import { Alert, Badge, Box } from "@parte-ds/ui";
 
 export default function Home() {
   return (
@@ -13,7 +13,7 @@ export default function Home() {
       </Head>
       <main>
         <Box padding={30}>
-          <Alert message="경고 메세지" type="alert-inline" status="error" />
+          <Badge text="가운데 정렬" />
         </Box>
       </main>
     </>
