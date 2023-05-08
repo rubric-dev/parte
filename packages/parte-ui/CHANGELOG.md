@@ -1,5 +1,11 @@
 # @parte-ds/ui
 
+## 1.2.2
+
+### Patch Changes
+
+- table border & icon default color
+
 ## 1.2.1
 
 ### Patch Changes
