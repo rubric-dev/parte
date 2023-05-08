@@ -32,6 +32,7 @@ export const Table = ({
     </Styled.Table>
   );
 };
+
 const HeaderContainer = ({
   children,
   display = "flex",
@@ -48,6 +49,7 @@ const HeaderContainer = ({
     </Styled.HeaderContainer>
   );
 };
+
 const Body = ({
   children,
   display = "flex",

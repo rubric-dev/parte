@@ -7,6 +7,7 @@ export const Container = styled.label<{ disabled: boolean }>`
     display: flex;
     flex: 1;
     align-items: center;
+    justify-content: center;
     column-gap: ${theme.spacing.spacing12}px;
     cursor: ${disabled ? "default" : "pointer"};
     -webkit-user-select: none;
