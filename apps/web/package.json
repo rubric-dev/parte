@@ -1,6 +1,6 @@
 {
-  "name": "web",
-  "version": "0.1.0",
+  "name": "@parte-ds/web",
+  "version": "0.1.2",
   "private": true,
   "scripts": {
     "dev": "next dev",
