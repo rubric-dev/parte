@@ -14,6 +14,7 @@ export const Badge = styled(Box)<BadgeProps>`
   ${({ badgeColor, type = "badge" }) => css`
     display: flex;
     border-radius: ${type === "badge" ? "4px" : "8px"};
+    height: 16px;
     ${getColors(badgeColor)}
     ${commonBadgeStyles}
   `}
