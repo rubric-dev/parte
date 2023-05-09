@@ -100,12 +100,7 @@ const defaultColumns = [
   columnHelper.display({
     id: "select",
     header: ({ table }) => (
-      <HeaderCell
-        width={50}
-        display="flex"
-        alignItems="center"
-        justifyContent="center"
-      >
+      <HeaderCell width={50}>
         <Checkbox
           checked={table.getIsAllRowsSelected()}
           indeterminate={table.getIsSomeRowsSelected()}
@@ -115,12 +110,7 @@ const defaultColumns = [
     ),
     cell: ({ row }) => {
       return (
-        <Cell
-          display="flex"
-          alignItems="center"
-          width={50}
-          justifyContent="center"
-        >
+        <Cell display="flex" alignItems="center" gap={8} width={50}>
           <Checkbox
             checked={row.getIsSelected()}
             disabled={!row.getCanSelect()}
@@ -132,12 +122,12 @@ const defaultColumns = [
     },
   }),
   columnHelper.accessor("name", {
-    header: () => <HeaderCell width={150}>Name</HeaderCell>,
+    header: () => <HeaderCell flex="2">Name</HeaderCell>,
     cell: (info) => {
       const { type, name } = info.row.original;
 
       return (
-        <Cell display="flex" alignItems="center" gap={8} width={150}>
+        <Cell display="flex" alignItems="center" gap={8} flex="2">
           <Avatar avatarColor={getBadgeColorByType(type)} name={name} />
           <Headline size={300}>{name}</Headline>
         </Cell>
@@ -147,7 +137,7 @@ const defaultColumns = [
   columnHelper.accessor("type", {
     header: ({ column }) => {
       return (
-        <HeaderCell width={100}>
+        <HeaderCell flex="1">
           <FilterHeader column={column} />
         </HeaderCell>
       );
@@ -155,7 +145,7 @@ const defaultColumns = [
     cell: (info) => {
       const type = info.getValue();
       return (
-        <Cell width={100}>
+        <Cell flex="1">
           <Badge
             badgeColor={getBadgeColorByType(type)}
             text={info.getValue()}
@@ -165,8 +155,8 @@ const defaultColumns = [
     },
   }),
   columnHelper.accessor("position", {
-    header: () => <HeaderCell flex="1">Position</HeaderCell>,
-    cell: (info) => <Cell flex="1">{info.getValue()}</Cell>,
+    header: () => <HeaderCell flex="2">Position</HeaderCell>,
+    cell: (info) => <Cell flex="2">{info.getValue()}</Cell>,
   }),
   columnHelper.accessor("bio", {
     header: () => <HeaderCell flex="1">Bio</HeaderCell>,
