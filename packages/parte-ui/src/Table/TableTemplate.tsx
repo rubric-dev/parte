@@ -19,8 +19,6 @@ export const TableTemplate = <T,>({
   selectedRowId,
   onSelect,
   sticky,
-  showBodyBorder = true,
-  showHeaderBorder = true,
 }: TableTemplateProps<T>) => {
   const [columnFilters, setColumnFilters] = useState<ColumnFiltersState>([]);
 
@@ -52,7 +50,7 @@ export const TableTemplate = <T,>({
 
   return (
     <Table>
-      <Table.HeaderContainer sticky={sticky} showBorder={showHeaderBorder}>
+      <Table.HeaderContainer sticky={sticky}>
         {columnFilters.length > 0 && (
           <TableFilterBar onClear={onClear} countInfo={countInfo} />
         )}
@@ -71,7 +69,7 @@ export const TableTemplate = <T,>({
           </Table.HeaderRow>
         ))}
       </Table.HeaderContainer>
-      <Table.Body showBorder={showBodyBorder}>
+      <Table.Body>
         {table.getRowModel().rows.map((row) => (
           <Table.Row
             key={row.id}
