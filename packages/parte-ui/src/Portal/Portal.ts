@@ -1,32 +1,33 @@
-import React, { useRef, useState } from 'react'
-import { createPortal } from 'react-dom'
-import { useIsomorphicLayoutEffect } from '../hooks/useIsomorphicLayoutEffect'
+import React, { useRef, useState } from "react";
+import { createPortal } from "react-dom";
+import { useIsomorphicLayoutEffect } from "../hooks/useIsomorphicLayoutEffect";
+import { PORTAL_ROOT } from "../constant/DOM";
 
 // Based on https://github.com/mantinedev/mantine/blob/master/src/mantine-core/src/Portal/Portal.tsx
 
 type Props = {
-  children: React.ReactNode
-}
+  children: React.ReactNode;
+};
 export const Portal = ({ children }: Props): React.ReactPortal | null => {
-  const [mounted, setMounted] = useState(false)
-  const ref = useRef<HTMLDivElement>()
+  const [mounted, setMounted] = useState(false);
+  const ref = useRef<HTMLDivElement>();
 
   useIsomorphicLayoutEffect(() => {
-    setMounted(true)
+    setMounted(true);
 
-    ref.current = document.createElement('div')
-    ref.current.setAttribute('parte-portal-container', '')
+    ref.current = document.createElement("div");
+    ref.current.setAttribute(PORTAL_ROOT, "");
 
-    document.body.appendChild(ref.current)
+    document.body.appendChild(ref.current);
 
     return () => {
-      if (ref.current) document.body.removeChild(ref.current)
-    }
-  }, [])
+      if (ref.current) document.body.removeChild(ref.current);
+    };
+  }, []);
 
   if (!mounted || !ref.current) {
-    return null
+    return null;
   }
 
-  return createPortal(children, ref.current)
-}
+  return createPortal(children, ref.current);
+};

@@ -12,9 +12,8 @@ export interface DropdownProps {
 export interface DropdownContextState extends DropdownProps {
   isOpen: boolean;
   onClick?: () => void;
-  onClose?: () => void;
+  onClose: () => void;
   dropdownRef?: RefObject<HTMLDivElement>;
-  menuRef?: React.RefObject<HTMLDivElement>;
 }
 
 export interface DropdownTriggerProps {
