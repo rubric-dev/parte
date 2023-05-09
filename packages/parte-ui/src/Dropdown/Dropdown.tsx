@@ -1,19 +1,21 @@
 import React, {
+  Reducer,
+  useCallback,
   useContext,
   useEffect,
+  useReducer,
   useRef,
   useState,
-  useCallback,
 } from "react";
-import { createPortal } from "react-dom";
 import { CSSProperties } from "styled-components";
+import { Portal } from "../Portal";
 import useOutsideClick from "../hooks/useOutsideClick";
 import * as Styled from "./Dropdown.styled";
 import {
   DropdownMenuProps,
+  DropdownPosition,
   DropdownProps,
   DropdownTriggerProps,
-  DropdownPosition,
 } from "./Dropdown.types";
 import DropdownContext from "./DropdownContext";
 import {
@@ -24,7 +26,6 @@ import {
 export const Dropdown = ({ children, ...rest }: DropdownProps) => {
   const [isOpen, setIsOpen] = useState(false);
   const dropdownRef = useRef<HTMLDivElement>(null);
-  const menuRef = useRef<HTMLDivElement>(null);
 
   const onClick = useCallback(() => {
     setIsOpen((props) => !props);
@@ -34,14 +35,14 @@ export const Dropdown = ({ children, ...rest }: DropdownProps) => {
     setIsOpen(false);
   }, []);
 
-  useOutsideClick([dropdownRef, menuRef], onClose);
+  useOutsideClick([dropdownRef], onClose);
   const onKeyDown: React.KeyboardEventHandler<HTMLDivElement> = (e) => {
     if (e.key === "Escape") onClose();
   };
 
   return (
     <DropdownContext.Provider
-      value={{ ...rest, dropdownRef, isOpen, onClick, onClose, menuRef }}
+      value={{ ...rest, dropdownRef, isOpen, onClick, onClose }}
     >
       <Styled.Container ref={dropdownRef} onKeyDown={onKeyDown}>
         {children}
@@ -55,98 +56,131 @@ const Trigger = ({ children }: DropdownTriggerProps) => {
   return <Styled.Trigger onClick={onClick}>{children}</Styled.Trigger>;
 };
 
-const Menu = ({ children }: DropdownMenuProps) => {
-  const { usePortal, isOpen, dropdownRef, offset, onClose, menuRef } =
-    useContext(DropdownContext);
+type MenuState = {
+  position: DropdownPosition | null;
+  menuStyle?: CSSProperties;
+};
+const initialMenuState: MenuState = { position: null };
 
-  const [position, setPosition] = useState<DropdownPosition | null>(null);
-  const [menuStyle, setMenuStyle] = useState<CSSProperties>();
+type DecideMenuPosition = {
+  type: "decide_menu_position";
+  menuRect: DOMRect;
+  dropdownRect: DOMRect;
+  innerWidth: number;
+  innerHeight: number;
+  offset?: number;
+  usePortal?: boolean;
+};
+type ResetPosition = { type: "reset_position" };
+type MenuAction = DecideMenuPosition | ResetPosition;
 
-  const calculateDropdownPosition = () => {
-    const menuRect = menuRef?.current?.getBoundingClientRect();
-    const dropdownRect = dropdownRef?.current?.getBoundingClientRect();
-    if (menuRect && dropdownRect) {
-      const { innerWidth, innerHeight } = window;
-      const pos = getDropdownPosition(
+const menuReducer: Reducer<MenuState, MenuAction> = (state, action) => {
+  switch (action.type) {
+    case "decide_menu_position":
+      const {
+        menuRect,
+        dropdownRect,
+        innerHeight,
+        innerWidth,
+        offset,
+        usePortal,
+      } = action;
+      const position = getDropdownPosition(
         menuRect,
         dropdownRect,
         innerWidth,
         innerHeight,
         offset
       );
-      return pos;
-    }
-    return null;
-  };
+      const menuStyle = getDropdownStyle(
+        position,
+        dropdownRect,
+        menuRect,
+        innerHeight,
+        {
+          usePortal,
+          offset,
+        }
+      );
+      return { ...state, position, menuStyle };
+    case "reset_position":
+      return { position: null };
+  }
+};
 
-  const calculateMenuStyle = (pos: DropdownPosition) => {
-    const dropdownRect = dropdownRef?.current?.getBoundingClientRect();
-    const menuRect = menuRef?.current?.getBoundingClientRect();
+const Menu = ({ children }: DropdownMenuProps) => {
+  const { usePortal, isOpen, dropdownRef, offset, onClose } =
+    useContext(DropdownContext);
+  const menuRef = useRef<HTMLDivElement | null>(null);
 
-    if (dropdownRect && menuRect) {
-      const { innerHeight } = window;
-      const style = getDropdownStyle(pos, dropdownRect, menuRect, innerHeight, {
-        usePortal,
-        offset,
-      });
-      return style;
-    }
-    return undefined;
-  };
+  const [{ position, menuStyle }, dispatch] = useReducer(
+    menuReducer,
+    initialMenuState
+  );
+
+  const decideMenuPosition = useCallback(() => {
+    if (!menuRef?.current || !dropdownRef?.current) return;
+    const menuRect = menuRef.current.getBoundingClientRect();
+    const dropdownRect = dropdownRef.current.getBoundingClientRect();
+    const { innerWidth, innerHeight } = window;
+
+    dispatch({
+      type: "decide_menu_position",
+      menuRect,
+      dropdownRect,
+      innerWidth,
+      innerHeight,
+      usePortal,
+      offset,
+    });
+  }, [offset, usePortal]);
+
+  useOutsideClick([menuRef], onClose);
 
   useEffect(() => {
-    if (isOpen) {
-      setPosition(calculateDropdownPosition());
-    } else {
-      setPosition(null);
-      setMenuStyle(undefined);
-    }
-  }, [isOpen]);
-
-  useEffect(() => {
-    const handleScrollAndResize = () => {
-      const pos = calculateDropdownPosition();
-      setPosition(pos);
-      if (usePortal && pos) {
-        const style = calculateMenuStyle(pos);
-        setMenuStyle(style);
-      }
-    };
-    window.addEventListener("scroll", handleScrollAndResize);
-    window.addEventListener("resize", handleScrollAndResize);
     return () => {
-      window.removeEventListener("scroll", handleScrollAndResize);
-      window.removeEventListener("resize", handleScrollAndResize);
+      dispatch({ type: "reset_position" });
     };
-  }, [usePortal]);
+  }, []);
 
   useEffect(() => {
-    if (!position) return;
-    setMenuStyle(calculateMenuStyle(position));
-  }, [position]);
+    if (!isOpen) return;
+    window.addEventListener("scroll", decideMenuPosition);
+    window.addEventListener("resize", decideMenuPosition);
+    return () => {
+      if (!isOpen) return;
+      window.removeEventListener("scroll", decideMenuPosition);
+      window.removeEventListener("resize", decideMenuPosition);
+    };
+  }, [isOpen, decideMenuPosition]);
+
+  const handleSetRef = (ref: HTMLDivElement | null) => {
+    menuRef.current = ref;
+    if (position === null) decideMenuPosition();
+  };
 
   if (!isOpen) {
     return null;
   }
 
-  const rootDom = document.getElementById("root");
-  if (usePortal && rootDom) {
-    return createPortal(
-      <Styled.Menu
-        ref={menuRef}
-        hidden={!menuStyle}
-        style={menuStyle}
-        usePortal
-      >
-        {typeof children === "function" ? children({ onClose }) : children}
-      </Styled.Menu>,
-      rootDom
+  if (usePortal) {
+    return (
+      <Portal>
+        <Styled.Menu
+          ref={handleSetRef}
+          hidden={!menuStyle}
+          style={menuStyle}
+          usePortal
+        >
+          {typeof children === "function" ? children({ onClose }) : children}
+        </Styled.Menu>
+      </Portal>
     );
   }
 
   return (
     <Styled.Menu
-      ref={menuRef}
+      ref={handleSetRef}
       hidden={!menuStyle}
       display="flex"
       flexDirection="column"

@@ -1,4 +1,5 @@
-import { CSSProperties } from 'styled-components';
+import { CSSProperties } from "styled-components";
+import { DropdownPosition } from "../Dropdown.types";
 
 export const getDropdownPosition = (
   menuRect: DOMRect,
@@ -11,8 +12,8 @@ export const getDropdownPosition = (
   const { width: menuWidth, height: menuHeight } = menuRect;
 
   const vertical =
-    parentBottom + menuHeight + offset > innerHeight ? 'TOP' : 'BOTTOM';
-  const horizontal = parentLeft + menuWidth > innerWidth ? 'RIGHT' : 'LEFT';
+    parentBottom + menuHeight + offset > innerHeight ? "TOP" : "BOTTOM";
+  const horizontal = parentLeft + menuWidth > innerWidth ? "RIGHT" : "LEFT";
 
   return `${vertical}_${horizontal}`;
 };
@@ -31,7 +32,7 @@ export const getDropdownStyle = (
   const usePortal = option?.usePortal;
 
   const style: CSSProperties = {};
-  const [vertical, horizontal] = position.split('_');
+  const [vertical, horizontal] = position.split("_");
 
   const {
     width: parentWidth,
@@ -42,22 +43,22 @@ export const getDropdownStyle = (
   const { width } = menuRect;
 
   switch (vertical) {
-    case 'TOP':
+    case "TOP":
       style.bottom = usePortal
         ? innerHeight - (parnetBottom - parentHeight - offset)
         : `${parentHeight + offset}px`;
       break;
-    case 'BOTTOM':
+    case "BOTTOM":
       style.top = usePortal ? parnetBottom + offset : parentHeight + offset;
       break;
     default:
       break;
   }
   switch (horizontal) {
-    case 'LEFT':
+    case "LEFT":
       style.left = usePortal ? parentLeft : 0;
       break;
-    case 'RIGHT':
+    case "RIGHT":
       if (usePortal) {
         style.left = parentLeft - width + parentWidth;
       } else {
