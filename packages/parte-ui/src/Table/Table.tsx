@@ -1,4 +1,4 @@
-import { memo } from "react";
+import { memo, PropsWithChildren } from "react";
 import { Paragraph } from "../@foundations/Typography";
 import { Dropdown } from "../Dropdown";
 import { Box } from "../Layout";
@@ -19,18 +19,13 @@ import {
   RowProps,
   TableFilterBarProps,
 } from "./Table.types";
+import { useTheme } from "styled-components";
 
 export const Table = ({
   children,
-  display = "flex",
-  flexDirection = "column",
-  ...args
-}: BoxProps) => {
-  return (
-    <Styled.Table display={display} flexDirection={flexDirection} {...args}>
-      {children}
-    </Styled.Table>
-  );
+  showBorder = false,
+}: PropsWithChildren<{ showBorder?: boolean }>) => {
+  return <Styled.Table showBorder={showBorder}>{children}</Styled.Table>;
 };
 const HeaderContainer = ({
   children,
@@ -77,19 +72,32 @@ export const HeaderCell = memo(
     display = "flex",
     alignItems = "center",
     height = 48,
-    padding = 8,
+    showBorder = true,
     ...args
   }: HeaderCellProps) => {
+    const theme = useTheme();
     return (
-      <Styled.HeaderCell
-        display={display}
-        alignItems={alignItems}
-        height={height}
-        padding={padding}
-        {...args}
+      <Box
+        width="100%"
+        height="100%"
+        display="flex"
+        alignItems="center"
+        justifyContent="space-between"
       >
-        {children}
-      </Styled.HeaderCell>
+        <Styled.HeaderCell
+          display={display}
+          alignItems={alignItems}
+          height={height}
+          {...args}
+        >
+          <Box display="flex" flex="1">
+            {children}
+          </Box>
+        </Styled.HeaderCell>
+        {showBorder && (
+          <Box width={1} height={24} backgroundColor={theme.colors.N300} />
+        )}
+      </Box>
     );
   }
 );
@@ -100,7 +108,7 @@ export const Cell = memo(
     display = "flex",
     alignItems = "center",
     height = 64,
-    padding = 8,
+    padding = 16,
     ...args
   }: CellProps) => {
     return (
@@ -197,3 +205,7 @@ Table.HeaderRow = HeaderRow;
 Table.Row = Row;
 Table.HeaderCell = HeaderCell;
 Table.Cell = Cell;
+
+// displayName : forwardRef, memo로 감싼 컴포넌트는 react dev tool에서 이름을 추적을 못해서 직접 넣어줘야 함
+HeaderCell.displayName = "HeaderCell";
+Cell.displayName = "Cell";

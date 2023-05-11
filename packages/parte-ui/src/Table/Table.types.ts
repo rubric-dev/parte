@@ -23,6 +23,7 @@ export interface RowProps {
 
 export interface HeaderCellProps extends BoxProps {
   children?: ReactNode;
+  showBorder?: boolean;
 }
 export interface CellProps extends BoxProps {
   children?: ReactNode;
@@ -35,6 +36,7 @@ export interface TableTemplateProps<T> {
   selectedRowId?: number | string;
   onSelect?: (rowId: number | string) => void;
   sticky?: boolean;
+  showBorder?: boolean;
 }
 
 export type TableItemCount = {

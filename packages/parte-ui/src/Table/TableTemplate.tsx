@@ -6,10 +6,11 @@ import {
   getFacetedUniqueValues,
   getFilteredRowModel,
   useReactTable,
+  getGroupedRowModel,
 } from "@tanstack/react-table";
-import { Fragment, useCallback, useState } from "react";
-import { Table, TableFilterBar } from "./Table";
+import { useState } from "react";
 import { TableTemplateProps } from "./Table.types";
+import * as Styled from "./Table.styled";
 
 export const TableTemplate = <T,>({
   data,
@@ -19,6 +20,7 @@ export const TableTemplate = <T,>({
   selectedRowId,
   onSelect,
   sticky,
+  showBorder = false,
 }: TableTemplateProps<T>) => {
   const [columnFilters, setColumnFilters] = useState<ColumnFiltersState>([]);
 
@@ -32,6 +34,7 @@ export const TableTemplate = <T,>({
     enableRowSelection,
     getCoreRowModel: getCoreRowModel(),
     getFacetedRowModel: getFacetedRowModel(),
+    getGroupedRowModel: getGroupedRowModel(),
     getFacetedUniqueValues: getFacetedUniqueValues(),
     getFilteredRowModel: getFilteredRowModel(),
     debugTable: true,
@@ -39,52 +42,62 @@ export const TableTemplate = <T,>({
     debugColumns: true,
   });
 
-  const onClear = useCallback(() => setColumnFilters([]), []);
-
-  const totalCount = data.length;
-  const currentCount = table.getFilteredRowModel().rows.length;
-  const countInfo = {
-    totalCount,
-    currentCount,
-  };
-
   return (
-    <Table>
-      <Table.HeaderContainer sticky={sticky}>
-        {columnFilters.length > 0 && (
-          <TableFilterBar onClear={onClear} countInfo={countInfo} />
-        )}
+    <Styled.Table showBorder={showBorder}>
+      <Styled.HeaderContainer sticky={sticky}>
         {table.getHeaderGroups().map((headerGroup) => (
-          <Table.HeaderRow key={headerGroup.id}>
-            {headerGroup.headers.map((header) => (
-              <Fragment key={header.id}>
-                {header.isPlaceholder
-                  ? null
-                  : flexRender(
-                      header.column.columnDef.header,
-                      header.getContext()
-                    )}
-              </Fragment>
-            ))}
-          </Table.HeaderRow>
+          <Styled.HeaderRow key={headerGroup.id}>
+            {headerGroup.headers.map((header) => {
+              return (
+                <Styled.Th key={header.id} colSpan={header.colSpan}>
+                  {header.isPlaceholder ? null : (
+                    <>
+                      {flexRender(
+                        header.column.columnDef.header,
+                        header.getContext()
+                      )}
+                    </>
+                  )}
+                </Styled.Th>
+              );
+            })}
+          </Styled.HeaderRow>
         ))}
-      </Table.HeaderContainer>
-      <Table.Body>
-        {table.getRowModel().rows.map((row) => (
-          <Table.Row
-            key={row.id}
-            selectable={selectable}
-            onSelect={() => onSelect?.(row.id)}
-            selected={row.id === selectedRowId}
-          >
-            {row.getVisibleCells().map((cell) => (
-              <Fragment key={cell.id}>
-                {flexRender(cell.column.columnDef.cell, cell.getContext())}
-              </Fragment>
-            ))}
-          </Table.Row>
-        ))}
-      </Table.Body>
-    </Table>
+      </Styled.HeaderContainer>
+      <Styled.Body>
+        {table.getRowModel().rows.map((row) => {
+          return (
+            <Styled.Row
+              key={row.id}
+              selectable={selectable}
+              onSelect={() => onSelect?.(row.id)}
+              selected={row.id === selectedRowId}
+            >
+              {row.getVisibleCells().map((cell) => {
+                return (
+                  <td key={cell.id}>
+                    {cell.getIsAggregated()
+                      ? // If the cell is aggregated, use the Aggregated
+                        // renderer for cell
+                        flexRender(
+                          cell.column.columnDef.aggregatedCell ??
+                            cell.column.columnDef.cell,
+                          cell.getContext()
+                        )
+                      : cell.getIsPlaceholder()
+                      ? null // For cells with repeated values, render null
+                      : // Otherwise, just render the regular cell
+                        flexRender(
+                          cell.column.columnDef.cell,
+                          cell.getContext()
+                        )}
+                  </td>
+                );
+              })}
+            </Styled.Row>
+          );
+        })}
+      </Styled.Body>
+    </Styled.Table>
   );
 };

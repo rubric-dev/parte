@@ -97,149 +97,76 @@ const getBadgeColorByType = (type: UserType) => {
 const columnHelper = createColumnHelper<User>();
 
 const defaultColumns = [
-  columnHelper.display({
-    id: "select",
-    header: ({ table }) => (
-      <HeaderCell width={50}>
-        <Checkbox
-          checked={table.getIsAllRowsSelected()}
-          indeterminate={table.getIsSomeRowsSelected()}
-          onChange={table.getToggleAllRowsSelectedHandler()}
-        />
-      </HeaderCell>
-    ),
-    cell: ({ row }) => {
-      return (
-        <Cell display="flex" alignItems="center" gap={8} width={50}>
-          <Checkbox
-            checked={row.getIsSelected()}
-            disabled={!row.getCanSelect()}
-            indeterminate={row.getIsSomeSelected()}
-            onChange={row.getToggleSelectedHandler()}
-          />
-        </Cell>
-      );
-    },
-  }),
-  columnHelper.accessor("name", {
-    header: () => <HeaderCell flex="2">Name</HeaderCell>,
-    cell: (info) => {
-      const { type, name } = info.row.original;
-
-      return (
-        <Cell display="flex" alignItems="center" gap={8} flex="2">
-          <Avatar avatarColor={getBadgeColorByType(type)} name={name} />
-          <Headline size={300}>{name}</Headline>
-        </Cell>
-      );
-    },
-  }),
-  columnHelper.accessor("type", {
-    header: ({ column }) => {
-      return (
-        <HeaderCell flex="1">
-          <FilterHeader column={column} />
-        </HeaderCell>
-      );
-    },
-    cell: (info) => {
-      const type = info.getValue();
-      return (
-        <Cell flex="1">
-          <Badge
-            badgeColor={getBadgeColorByType(type)}
-            text={info.getValue()}
-          />
-        </Cell>
-      );
-    },
-  }),
-  columnHelper.accessor("position", {
-    header: () => <HeaderCell flex="2">Position</HeaderCell>,
-    cell: (info) => <Cell flex="2">{info.getValue()}</Cell>,
-  }),
-  columnHelper.accessor("bio", {
-    header: () => <HeaderCell flex="1">Bio</HeaderCell>,
-    cell: (info) => {
-      const link = info.getValue();
-      return (
-        <Cell flex="1">
-          <Link href={`https://${link}`} target="_blank" size={300}>
-            {link}
-          </Link>
-        </Cell>
-      );
-    },
-  }),
-  columnHelper.display({
-    id: "icon",
-    header: () => (
-      <HeaderCell width={60} display="flex" justifyContent="center">
-        Icon
-      </HeaderCell>
-    ),
-    cell: (info) => {
-      const { name } = info.row.original;
-      const onClick = () => {
-        toaster.notify({
-          title: "채팅",
-          status: "info",
-          description: `${name}와 채팅하기`,
-        });
-      };
-      return (
-        <Cell width={60} display="flex" justifyContent="center">
-          <IconButton
-            variant="ghost-secondary"
-            onClick={onClick}
-            size={32}
-            Icon={<ActionChatIcon size={16} />}
-          />
-        </Cell>
-      );
-    },
-  }),
-  columnHelper.accessor("active", {
-    header: () => <HeaderCell width={50}>Active</HeaderCell>,
-    cell: (info) => {
-      const [on, setOn] = useState(!!info.getValue());
-      return (
-        <Cell width={50}>
-          <Toggle on={on} onChange={() => setOn((prev) => !prev)} />
-        </Cell>
-      );
-    },
-  }),
-  columnHelper.display({
-    id: "menu",
-    header: () => <HeaderCell width={50} />,
-    cell: () => {
-      return (
-        <Cell width={50}>
-          <Dropdown usePortal>
-            <Dropdown.Trigger>
-              <IconButton
-                variant="ghost-secondary"
-                size={32}
-                Icon={<InterfaceMoreIcon size={12} />}
+  columnHelper.group({
+    id: "string",
+    header: () => <HeaderCell>Name</HeaderCell>,
+    columns: [
+      {
+        id: "select",
+        header: ({ table }) => (
+          <HeaderCell width={50}>
+            <Checkbox
+              checked={table.getIsAllRowsSelected()}
+              indeterminate={table.getIsSomeRowsSelected()}
+              onChange={table.getToggleAllRowsSelectedHandler()}
+            />
+          </HeaderCell>
+        ),
+        cell: ({ row }) => {
+          return (
+            <Cell display="flex" alignItems="center" gap={8} width={50}>
+              <Checkbox
+                checked={row.getIsSelected()}
+                disabled={!row.getCanSelect()}
+                indeterminate={row.getIsSomeSelected()}
+                onChange={row.getToggleSelectedHandler()}
               />
-            </Dropdown.Trigger>
-            <Dropdown.Menu>
-              <Menu>
-                <Menu.Group title="Action">
-                  <Menu.Row>채팅</Menu.Row>
-                  <Menu.Row>새로고침</Menu.Row>
-                </Menu.Group>
-                <Menu.Divider />
-                <Menu.Group title="Delete">
-                  <Menu.Row>삭제</Menu.Row>
-                </Menu.Group>
-              </Menu>
-            </Dropdown.Menu>
-          </Dropdown>
-        </Cell>
-      );
-    },
+            </Cell>
+          );
+        },
+      },
+      {
+        id: "test",
+        header: () => <HeaderCell>first children</HeaderCell>,
+        cell: (info) => {
+          const { type, name } = info.row.original;
+          return (
+            <Cell display="flex" alignItems="center" gap={8}>
+              <Avatar avatarColor={getBadgeColorByType(type)} name={name} />
+              <Headline size={300}>{name}</Headline>
+            </Cell>
+          );
+        },
+      },
+    ],
+  }),
+  columnHelper.group({
+    id: "str2222ing",
+    header: () => (
+      <HeaderCell flex="2" showBorder={false}>
+        second Name
+      </HeaderCell>
+    ),
+    columns: [
+      {
+        id: "teswwwwt??",
+        header: () => (
+          <HeaderCell flex="2" showBorder={false}>
+            second children
+          </HeaderCell>
+        ),
+        cell: (info) => {
+          const { type, name } = info.row.original;
+
+          return (
+            <Cell display="flex" alignItems="center" gap={8} flex="2">
+              <Avatar avatarColor={getBadgeColorByType(type)} name={name} />
+              <Headline size={300}>{name}</Headline>
+            </Cell>
+          );
+        },
+      },
+    ],
   }),
 ] as ColumnDef<User>[];
 
@@ -253,6 +180,7 @@ const Template: Story<{ enableRowSelection?: boolean }> = ({
       data={data}
       columns={defaultColumns}
       enableRowSelection={enableRowSelection}
+      showBorder
     />
   );
 };

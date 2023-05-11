@@ -1,13 +1,29 @@
 import styled, { css } from "styled-components";
 import { Box } from "../Layout";
 import { BoxProps } from "../Layout/Box.types";
-import { HeaderContainerProps, RowProps } from "./Table.types";
+import { BodyProps, HeaderContainerProps, RowProps } from "./Table.types";
 
-export const Table = styled(Box)`
-  ${() => css`
+export const Table = styled.table<{ showBorder: boolean }>`
+  ${({ theme, showBorder }) => css`
     box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
     width: 100%;
     height: 100%;
+    border-radius: 4px;
+    border-collapse: collapse;
+    overflow: hidden;
+    ${showBorder &&
+    `border-radius: 4px;
+    border-style: hidden;
+    box-shadow: 0 0 0 1px ${theme.colors.N300};
+     `}
+    & div,
+    th,
+    td,
+    table {
+      vertical-align: middle;
+    }
   `}
 `;
 
@@ -17,39 +33,44 @@ const stickyStyle = css`
   z-index: 10;
 `;
 
-export const HeaderContainer = styled(Box)<HeaderContainerProps>`
+export const HeaderContainer = styled.thead<HeaderContainerProps>`
   ${({ theme, sticky }) => css`
-    width: 100%;
     height: fit-content;
-    border: 1px solid ${theme.colors.N300};
     border-top-left-radius: ${theme.spacing.spacing4}px;
     border-top-right-radius: ${theme.spacing.spacing4}px;
     ${sticky && stickyStyle}
   `}
 `;
 
-export const Body = styled(Box)`
+export const Body = styled.tbody<BodyProps>`
   ${({ theme }) => css`
-    overflow-y: auto;
+    overflow-y: overlay;
     flex: 1;
-    border: 1px solid ${theme.colors.N300};
-    border-top: none;
+    border-bottom: 1px solid ${theme.colors.N300};
+    & > *:last-child {
+      border-bottom: none;
+    }
     border-radius: 0 0 4px 4px;
   `}
 `;
 
-export const HeaderRow = styled(Box)`
+export const HeaderRow = styled.tr`
   ${({ theme }) => css`
-    display: flex;
     width: 100%;
-    height: 100%;
-    padding: 0 ${theme.spacing.spacing16}px;
     background-color: ${theme.colors.N50};
     border-radius: 4px 4px 0 0;
+    border-bottom: 1px solid ${theme.colors.N300};
+    height: 48px;
   `}
 `;
 
-export const Row = styled(Box)<BoxProps & RowProps>`
+export const Th = styled.th`
+  ${({ theme }) => css`
+    height: 100%;
+  `}
+`;
+
+export const Row = styled.tr<BoxProps & RowProps>`
   ${({ theme, selectable, selected }) => {
     const selectableTrStyle = css`
       cursor: pointer;
@@ -60,13 +81,9 @@ export const Row = styled(Box)<BoxProps & RowProps>`
     `;
     return css`
       box-sizing: border-box;
-      display: flex;
       width: 100%;
+      border-bottom: 1px solid ${theme.colors.N300};
       background-color: ${selected ? theme.colors.T50 : theme.colors.N0};
-      padding: 0 ${theme.spacing.spacing16}px;
-      &:not(:last-child) {
-        border-bottom: 1px solid ${theme.colors.N300};
-      }
       ${selectable && selectableTrStyle}
     `;
   }}
@@ -77,6 +94,13 @@ export const HeaderCell = styled(Box)`
     ${theme.typography.C100}
     color: ${theme.colors.N700};
     text-transform: uppercase;
+    height: 100%;
+    width: 100%;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    padding: 8px 16px;
   `}
 `;
 
@@ -84,6 +108,7 @@ export const Cell = styled(Box)`
   ${({ theme }) => css`
     ${theme.typography.P100};
     color: ${theme.colors.N700};
+    padding: 16px;
   `}
 `;
 
