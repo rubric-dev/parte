@@ -129,7 +129,7 @@ export default function Home() {
 
       columnHelper.display({
         id: "menu",
-        header: () => <HeaderCell width={50} />,
+        header: () => <HeaderCell width={50} showBorder={false} />,
         cell: (info) => {
           return (
             <Cell width={50}>
@@ -171,7 +171,7 @@ export default function Home() {
       </Head>
       <main>
         <Box padding={30}>
-          <TableTemplate data={manyDatas} columns={defaultColumns} />
+          <TableTemplate data={manyDatas} columns={defaultColumns} showBorder />
         </Box>
       </main>
     </>
