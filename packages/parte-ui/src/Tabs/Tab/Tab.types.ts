@@ -1,9 +1,9 @@
-import React, { ButtonHTMLAttributes } from "react";
+import React, { HTMLAttributes } from "react";
 
 export type TabVariant = "Primary" | "Secondary";
 export type TabDirection = "horizontal" | "vertical";
 
-export type TabProps = ButtonHTMLAttributes<HTMLButtonElement> & {
+export type TabProps = HTMLAttributes<HTMLDivElement> & {
   leadingIcon?: React.ReactNode;
   trailingIcon?: React.ReactNode;
   children?: React.ReactNode;
@@ -11,4 +11,5 @@ export type TabProps = ButtonHTMLAttributes<HTMLButtonElement> & {
   selected?: boolean;
   disabled?: boolean;
   direction?: TabDirection;
+  tabIndex?: number;
 };

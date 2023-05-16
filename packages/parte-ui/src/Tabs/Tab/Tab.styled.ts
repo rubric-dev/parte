@@ -1,7 +1,7 @@
 import styled, { css } from "styled-components";
 import { TabProps } from "./Tab.types";
 
-export const Tab = styled.button<TabProps>`
+export const Tab = styled.div<TabProps>`
   ${({ theme, variant, selected, disabled, direction }) => {
     const primaryTabStyle = css`
       position: relative;
@@ -59,13 +59,20 @@ export const Tab = styled.button<TabProps>`
           }
         }
       `}
-      &:disabled {
-        color: ${theme.colors.N500};
-        svg {
-          color: ${theme.colors.N400};
+      ${disabled &&
+      css`
+        &,
+        &:hover,
+        &:active,
+        &:focus {
+          color: ${theme.colors.N500};
+          svg {
+            color: ${theme.colors.N400};
+          }
+          cursor: default;
+          outline: none;
         }
-        cursor: default;
-      }
+      `}
     `;
     const secondaryTabStyle = css`
       padding: 8px 16px;
@@ -122,14 +129,21 @@ export const Tab = styled.button<TabProps>`
           }
         }
       `}
-      &:disabled {
-        color: ${theme.colors.N500};
-        background-color: ${selected ? theme.colors.N100 : "transparent"};
-        svg {
+      ${disabled &&
+      css`
+        &,
+        &:hover,
+        &:active,
+        &:focus {
           color: ${theme.colors.N500};
+          background-color: ${selected ? theme.colors.N100 : "transparent"};
+          svg {
+            color: ${theme.colors.N500};
+          }
+          cursor: default;
+          outline: none;
         }
-        cursor: default;
-      }
+      `}
     `;
 
     return css`
