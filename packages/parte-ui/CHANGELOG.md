@@ -1,5 +1,13 @@
 # @parte-ds/ui
 
+## 1.2.4
+
+### Patch Changes
+
+- 144f4ed: 🐛 Badge의 텍스트 가운데 정렬 안되어있는 이슈 해결
+  🐛 Dropdown Position을 제대로 찾지 못하는 이슈
+  🐛 Tab을 div로 변경해서 a 태그도 넣을 수 있도록 변경
+
 ## 1.2.3
 
 ### Patch Changes
