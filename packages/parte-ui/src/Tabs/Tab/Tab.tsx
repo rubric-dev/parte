@@ -2,7 +2,7 @@ import { forwardRef } from "react";
 import * as Styled from "./Tab.styled";
 import { TabProps } from "./Tab.types";
 
-export const Tab = forwardRef<HTMLButtonElement, TabProps>(
+export const Tab = forwardRef<HTMLDivElement, TabProps>(
   (props: TabProps, ref) => {
     const {
       leadingIcon,
@@ -10,15 +10,28 @@ export const Tab = forwardRef<HTMLButtonElement, TabProps>(
       children,
       variant = "Primary",
       direction = "horizontal",
+      tabIndex = 0,
+      onClick,
+      onFocus,
+      disabled,
     } = props;
 
     return (
       <Styled.Tab
         ref={ref}
-        type="button"
+        tabIndex={disabled ? -1 : tabIndex}
         {...props}
         variant={variant}
         direction={direction}
+        disabled={disabled}
+        onClick={(e) => {
+          if (disabled) return;
+          onClick?.(e);
+        }}
+        onFocus={(e) => {
+          if (disabled) return;
+          onFocus?.(e);
+        }}
       >
         {leadingIcon}
         {children}
@@ -27,3 +40,4 @@ export const Tab = forwardRef<HTMLButtonElement, TabProps>(
     );
   }
 );
+Tab.displayName = "Tab";
