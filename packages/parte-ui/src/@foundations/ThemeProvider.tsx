@@ -9,12 +9,15 @@ export type CustomTheme = Partial<ColorTokenType> & {
   colors?: Partial<Colors>;
 };
 
-type Props = {
+type ThemeProviderProps = {
   customTheme?: CustomTheme;
   children: ReactNode;
 };
 
-export function ThemeProvider({ children, customTheme = {} }: Props) {
+export function ThemeProvider({
+  children,
+  customTheme = {},
+}: ThemeProviderProps) {
   const customizedTheme = overrideTheme(customTheme);
 
   return (
@@ -47,7 +50,6 @@ const overrideTheme = (theme: CustomTheme) => {
   // token에 theme색상을 채워준다.
   for (const token in tokens) {
     const tokenKey = token as keyof typeof tokens;
-    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
     // @ts-ignore
     plate[tokenKey] = plate.colors[tokens[tokenKey]];
   }
