@@ -1,5 +1,13 @@
 # @parte-ds/ui
 
+## 1.2.5
+
+### Patch Changes
+
+🐛 Select 컴포넌트를 위해 peer-deps에 react-select-async-paginate 추가
+🐛 Toast 컴포넌트를 사용할때 react 18 버전만 호환되도록 변경
+💄 table group header 지원하도록 변경
+
 ## 1.2.4
 
 ### Patch Changes
