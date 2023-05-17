@@ -1,8 +1,8 @@
-import ReactDOM from "react-dom";
+import ReactClientDOM from "react-dom/client";
 import { ThemeProvider } from "styled-components";
 import { theme } from "../@foundations/theme";
-import { NotifyHandler, RemoveHandler } from "./Toaster.types";
 import { ToastManager } from "./ToastManager";
+import { NotifyHandler, RemoveHandler } from "./Toaster.types";
 
 /**
  * The Toaster manages the interactions between
@@ -10,18 +10,13 @@ import { ToastManager } from "./ToastManager";
  */
 
 interface IToaster {
-  notifyHandler: NotifyHandler;
-  removeHandler: RemoveHandler;
+  notify: NotifyHandler;
+  remove: RemoveHandler;
 }
 
-const getMajorVersion = (version: string) => {
-  const majorVersion = parseInt(version, 10);
-  return majorVersion;
-};
-
 export class Toaster implements IToaster {
-  notifyHandler: NotifyHandler = () => {};
-  removeHandler: RemoveHandler = () => {};
+  private $notifyHandler: NotifyHandler = () => {};
+  private $removeHandler: RemoveHandler = () => {};
 
   constructor() {
     const canUseDom = Boolean(typeof window !== "undefined" && window.document);
@@ -31,7 +26,7 @@ export class Toaster implements IToaster {
     container.setAttribute("toaster-container", "");
     document.body.appendChild(container);
 
-    const toastManager = () => {
+    const Manager = () => {
       return (
         <ThemeProvider theme={theme}>
           <ToastManager
@@ -42,34 +37,22 @@ export class Toaster implements IToaster {
       );
     };
 
-    if (getMajorVersion(ReactDOM.version) >= 18) {
-      try {
-        const { createRoot } = require("react-dom/client");
-        const root = createRoot(container);
-
-        root.render(toastManager());
-      } catch (e) {
-        ReactDOM.render(toastManager(), container);
-      }
-      return;
-    }
-
-    ReactDOM.render(toastManager(), container);
+    ReactClientDOM.createRoot(container).render(<Manager />);
   }
 
-  _bindNotify = (handler: NotifyHandler) => {
-    this.notifyHandler = handler;
+  private _bindNotify = (handler: NotifyHandler) => {
+    this.$notifyHandler = handler;
   };
 
-  _bindRemove = (handler: RemoveHandler) => {
-    this.removeHandler = handler;
+  private _bindRemove = (handler: RemoveHandler) => {
+    this.$removeHandler = handler;
   };
 
   notify: NotifyHandler = (toastProps) => {
-    return this.notifyHandler(toastProps);
+    return this.$notifyHandler(toastProps);
   };
 
   remove: RemoveHandler = (id) => {
-    return this.removeHandler(id);
+    return this.$removeHandler(id);
   };
 }
