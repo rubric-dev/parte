@@ -5,8 +5,6 @@ import { BodyProps, HeaderContainerProps, RowProps } from "./Table.types";
 
 export const Table = styled.table<{ showBorder: boolean }>`
   ${({ theme, showBorder }) => css`
-    box-sizing: border-box;
-    display: flex;
     flex-direction: column;
     width: 100%;
     height: 100%;
@@ -39,28 +37,29 @@ export const HeaderContainer = styled.thead<HeaderContainerProps>`
     border-top-left-radius: ${theme.spacing.spacing4}px;
     border-top-right-radius: ${theme.spacing.spacing4}px;
     ${sticky && stickyStyle}
+    width:100%;
+  `}
+`;
+
+export const HeaderRow = styled.tr`
+  ${({ theme }) => css`
+    width: 70%;
+    background-color: ${theme.colors.N50};
+    border-radius: 4px 4px 0 0;
+    border-bottom: 1px solid ${theme.colors.N300};
+    height: 48px;
   `}
 `;
 
 export const Body = styled.tbody<BodyProps>`
   ${({ theme }) => css`
     overflow-y: overlay;
-    flex: 1;
+    width: 100%;
     border-bottom: 1px solid ${theme.colors.N300};
     & > *:last-child {
       border-bottom: none;
     }
     border-radius: 0 0 4px 4px;
-  `}
-`;
-
-export const HeaderRow = styled.tr`
-  ${({ theme }) => css`
-    width: 100%;
-    background-color: ${theme.colors.N50};
-    border-radius: 4px 4px 0 0;
-    border-bottom: 1px solid ${theme.colors.N300};
-    height: 48px;
   `}
 `;
 

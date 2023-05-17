@@ -104,7 +104,7 @@ const defaultColumns = [
       {
         id: "select",
         header: ({ table }) => (
-          <HeaderCell width={50}>
+          <HeaderCell>
             <Checkbox
               checked={table.getIsAllRowsSelected()}
               indeterminate={table.getIsSomeRowsSelected()}
@@ -140,6 +140,18 @@ const defaultColumns = [
       },
     ],
   }),
+  {
+    id: "this is one cell",
+    header: () => <HeaderCell showBorder={false}>second children</HeaderCell>,
+    cell: (info) => {
+      const { type, name } = info.row.original;
+      return (
+        <Cell display="flex" alignItems="center" gap={8} flex="2">
+          no group
+        </Cell>
+      );
+    },
+  },
   columnHelper.group({
     id: "str2222ing",
     header: () => (
