@@ -1,4 +1,5 @@
 export {
+  type CommonSelectProps,
   type SelectAdditional,
   type StaticSelectProps,
   type AsyncSelectProps,

@@ -1,46 +1,46 @@
 import {
-  AsyncPaginate,
-  useComponents,
-  wrapMenuList,
-} from "react-select-async-paginate";
-import StaticSelect, {
-  ActionMeta,
-  ControlProps,
-  GroupBase,
-  MultiValue,
-  SingleValue,
-  StylesConfig,
-  components,
-  IndicatorsContainerProps,
-  MultiValueRemoveProps,
-  ClearIndicatorProps,
-  DropdownIndicatorProps,
-  OptionProps,
-  SelectInstance,
-  MenuProps,
-  MenuListProps,
-} from "react-select";
-import {
-  InterfaceCaretDownIcon,
-  ActionSearchIcon,
-  ActionSmallCrossIcon,
-  ActionDeleteIcon,
-} from "../../../parte-icons/src";
-import {
   ComponentType,
   KeyboardEventHandler,
   useMemo,
   useRef,
   useState,
 } from "react";
-import useSelectStyle from "./useSelectStyle";
-import { SelectProps } from "./Select.types";
+import StaticSelect, {
+  ActionMeta,
+  ClearIndicatorProps,
+  ControlProps,
+  DropdownIndicatorProps,
+  GroupBase,
+  IndicatorsContainerProps,
+  MenuListProps,
+  MenuProps,
+  MultiValue,
+  MultiValueRemoveProps,
+  OptionProps,
+  SelectInstance,
+  SingleValue,
+  StylesConfig,
+  components,
+} from "react-select";
+import {
+  AsyncPaginate,
+  useComponents,
+  wrapMenuList,
+} from "react-select-async-paginate";
 import { SelectComponents } from "react-select/dist/declarations/src/components";
-import { Box } from "../Layout";
-import { Caption, Headline, Paragraph } from "../@foundations/Typography";
-import { Spinner } from "../Spinner";
+import {
+  ActionDeleteIcon,
+  ActionSearchIcon,
+  ActionSmallCrossIcon,
+  InterfaceCaretDownIcon,
+} from "../../../parte-icons/src";
+import { Paragraph } from "../@foundations/Typography";
 import { Option } from "../Dropdown";
 import { InputWrapper } from "../InputWrapper";
+import { Box } from "../Layout";
+import { Spinner } from "../Spinner";
+import { SelectProps } from "./Select.types";
+import useSelectStyle from "./useSelectStyle";
 
 export const Control = ({
   children,

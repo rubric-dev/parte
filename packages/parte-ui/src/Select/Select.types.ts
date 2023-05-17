@@ -1,7 +1,11 @@
-import { GroupBase, Props, OptionsOrGroups } from "react-select";
-import { AsyncPaginateProps } from "react-select-async-paginate";
-import { GroupOption, Option } from "../Dropdown";
-import { InputWrapperProps } from "../InputWrapper";
+import {
+  type GroupBase,
+  type Props as ReactSelectProps,
+  type OptionsOrGroups,
+} from "react-select";
+import { type AsyncPaginateProps } from "react-select-async-paginate";
+import { type GroupOption, type Option } from "../Dropdown";
+import { type InputWrapperProps } from "../InputWrapper";
 
 export type SelectAdditional =
   | {
@@ -10,12 +14,12 @@ export type SelectAdditional =
     }
   | undefined;
 
-type CommonSelectProps = Omit<InputWrapperProps, "children"> & {
+export type CommonSelectProps = Omit<InputWrapperProps, "children"> & {
   isError?: boolean;
 };
 
 export type StaticSelectProps<T> = CommonSelectProps &
-  Props<Option<T>, boolean, GroupBase<Option<T>>> & {
+  ReactSelectProps<Option<T>, boolean, GroupBase<Option<T>>> & {
     type: "static";
   };
 
