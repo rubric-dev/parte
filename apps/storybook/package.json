@@ -14,28 +14,28 @@
     "@parte-ds/ui": "workspace:*",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "react-select": "^5.7.1",
+    "react-select": "^5.7.3",
     "react-select-async-paginate": "^0.7.2",
-    "styled-components": "^5.3.9"
+    "styled-components": "^5.3.11"
   },
   "devDependencies": {
     "@parte-ds/tsconfig": "workspace:*",
-    "@storybook/addon-actions": "^7.0.3",
-    "@storybook/addon-docs": "^7.0.3",
-    "@storybook/addon-essentials": "^7.0.3",
-    "@storybook/addon-interactions": "^7.0.3",
-    "@storybook/addon-links": "^7.0.3",
-    "@storybook/react": "^7.0.3",
-    "@storybook/react-vite": "^7.0.3",
+    "@storybook/addon-actions": "^7.0.18",
+    "@storybook/addon-docs": "^7.0.18",
+    "@storybook/addon-essentials": "^7.0.18",
+    "@storybook/addon-interactions": "^7.0.18",
+    "@storybook/addon-links": "^7.0.18",
+    "@storybook/react": "^7.0.18",
+    "@storybook/react-vite": "^7.0.18",
     "@storybook/testing-library": "^0.1.0",
-    "@types/react": "^18.0.34",
-    "@types/react-dom": "^18.0.11",
-    "@vitejs/plugin-react": "^3.1.0",
-    "chromatic": "^6.17.3",
+    "@types/react": "^18.2.7",
+    "@types/react-dom": "^18.2.4",
+    "@vitejs/plugin-react": "^4.0.0",
+    "chromatic": "^6.17.4",
     "eslint-config-parte": "workspace:*",
     "serve": "^14.2.0",
-    "storybook": "^7.0.3",
+    "storybook": "^7.0.18",
     "typescript": "^5.0.4",
-    "vite": "^4.2.1"
+    "vite": "^4.3.9"
   }
 }
