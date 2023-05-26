@@ -1,14 +1,12 @@
-import { css } from "styled-components";
-import { getElevation } from "../utils/elevation.util";
-import {
-  getWidthStyle,
-  getFlexBasisStyle,
-  getHeightStyle,
-} from "../utils/style.util";
-import { BoxProps } from "./Box.types";
+import { FlattenSimpleInterpolation, css } from "styled-components";
+import { ParteStyledProps } from "../Layout/Box.types";
+import { getElevation } from "./elevation.util";
+import { getFlexBasisStyle, getHeightStyle, getWidthStyle } from "./style.util";
 
-export const commonBoxStyle = css<BoxProps>`
-  ${({
+export const getBoxStyleAndHtmlProps = <T extends ParteStyledProps>(
+  styleProps: T
+): [FlattenSimpleInterpolation, Omit<T, keyof ParteStyledProps>] => {
+  const {
     display = "block",
     width,
     height,
@@ -47,7 +45,11 @@ export const commonBoxStyle = css<BoxProps>`
     marginRight,
     elevation,
     borderRadius,
-  }) =>
+    overrideStyles,
+    ...htmlProps
+  } = styleProps;
+
+  return [
     css`
       display: ${display};
       ${getWidthStyle(width)};
@@ -118,5 +120,8 @@ export const commonBoxStyle = css<BoxProps>`
               ? `${borderRadius}px`
               : borderRadius};
           `};
-    `}
-`;
+      ${overrideStyles}
+    `,
+    htmlProps,
+  ];
+};

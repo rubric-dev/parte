@@ -148,3 +148,5 @@ export const Dialog = memo(
     );
   }
 );
+
+Dialog.displayName = "Dialog";
