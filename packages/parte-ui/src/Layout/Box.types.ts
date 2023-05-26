@@ -1,21 +1,17 @@
-import { HTMLAttributes, ReactNode } from "react";
+import { HTMLAttributes, PropsWithChildren } from "react";
+import { FlattenSimpleInterpolation } from "styled-components";
+import { ElevationToken, SPACING, Spacing } from "../@foundations";
 import {
-  DefaultTheme,
-  FlattenInterpolation,
-  ThemedStyledProps,
-} from "styled-components";
-import { SPACING, Spacing, ElevationToken } from "../@foundations";
-import {
+  AlignContent,
+  AlignItems,
+  AlignSelf,
   Display,
   FlexDirection,
-  JustifyContent,
-  AlignItems,
-  AlignContent,
   FlexWrap,
-  AlignSelf,
+  JustifyContent,
 } from "../constant";
 
-export type BoxProps = HTMLAttributes<HTMLDivElement> & {
+export type ParteStyledProps = {
   display?: Display;
   width?: string | number;
   height?: string | number;
@@ -59,15 +55,12 @@ export type BoxProps = HTMLAttributes<HTMLDivElement> & {
 
   elevation?: ElevationToken;
   borderRadius?: number | string;
-
-  /**
-   * @uxpinignoreprop
-   */
-  overrideStyles?: FlattenInterpolation<
-    ThemedStyledProps<BoxProps, DefaultTheme>
-  >;
-  /**
-   * @uxpinignoreprop
-   */
-  children?: ReactNode;
+  overrideStyles?: FlattenSimpleInterpolation;
 };
+
+export type NativeBoxProps = PropsWithChildren<HTMLAttributes<HTMLDivElement>>;
+
+export type InnerBoxProps = NativeBoxProps & {
+  $style: FlattenSimpleInterpolation;
+};
+export type BoxProps = NativeBoxProps & ParteStyledProps;
