@@ -1,5 +1,11 @@
 # @parte-ds/ui
 
+## 1.2.6
+
+### Patch Changes
+
+- table style revert & box style props
+
 ## 1.2.5
 
 ### Patch Changes
