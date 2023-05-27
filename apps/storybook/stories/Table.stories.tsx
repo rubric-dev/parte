@@ -142,19 +142,11 @@ const defaultColumns = [
   }),
   columnHelper.group({
     id: "str2222ing",
-    header: () => (
-      <HeaderCell flex="2" showBorder={false}>
-        second Name
-      </HeaderCell>
-    ),
+    header: () => <HeaderCell flex="2">second Name</HeaderCell>,
     columns: [
       {
         id: "teswwwwt??",
-        header: () => (
-          <HeaderCell flex="2" showBorder={false}>
-            second children
-          </HeaderCell>
-        ),
+        header: () => <HeaderCell flex="2">second children</HeaderCell>,
         cell: (info) => {
           const { type, name } = info.row.original;
 
@@ -180,7 +172,6 @@ const Template: Story<{ enableRowSelection?: boolean }> = ({
       data={data}
       columns={defaultColumns}
       enableRowSelection={enableRowSelection}
-      showBorder
     />
   );
 };
