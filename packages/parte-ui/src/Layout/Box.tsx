@@ -1,6 +1,6 @@
 import { forwardRef } from "react";
 import styled from "styled-components";
-import { getBoxStyleAndHtmlProps } from "../utils/box.util";
+import { extractStyleFormProps } from "../utils/box.util";
 import { BoxProps, InnerBoxProps } from "./Box.types";
 
 const StyledBox = styled.div<InnerBoxProps>`
@@ -8,11 +8,11 @@ const StyledBox = styled.div<InnerBoxProps>`
 `;
 
 export const Box = forwardRef<HTMLDivElement, BoxProps>((props, ref) => {
-  const [boxStyle, htmlProps] = getBoxStyleAndHtmlProps(props);
-  const { children, ...rest } = htmlProps;
+  const [boxStyle, rest] = extractStyleFormProps(props);
+  const { children, ...attributes } = rest;
 
   return (
-    <StyledBox ref={ref} $style={boxStyle} {...rest}>
+    <StyledBox ref={ref} $style={boxStyle} {...attributes}>
       {children}
     </StyledBox>
   );

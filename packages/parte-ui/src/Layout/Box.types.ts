@@ -1,5 +1,5 @@
-import { HTMLAttributes, PropsWithChildren } from "react";
-import { RuleSet } from "styled-components";
+import { HTMLAttributes } from "react";
+import { type RuleSet } from "styled-components";
 import { ElevationToken, SPACING, Spacing } from "../@foundations";
 import {
   AlignContent,
@@ -58,9 +58,9 @@ export type ParteStyledProps = {
   overrideStyles?: RuleSet;
 };
 
-export type NativeBoxProps = PropsWithChildren<HTMLAttributes<HTMLDivElement>>;
+export type NativeDivProps = HTMLAttributes<HTMLDivElement>;
 
-export type InnerBoxProps = NativeBoxProps & {
+export type InnerBoxProps = NativeDivProps & {
   $style: RuleSet;
 };
-export type BoxProps = NativeBoxProps & ParteStyledProps;
+export type BoxProps = NativeDivProps & ParteStyledProps;

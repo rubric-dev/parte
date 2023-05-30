@@ -1,0 +1,59 @@
+import { Canvas, Meta } from "@storybook/blocks";
+import * as TypographyStories from "./Typography.stories";
+
+<Meta of={TypographyStories} />
+
+# Typography
+
+Parte에서 자주 쓰이는 Typography들을 컴포넌트화 시켰습니다.
+Headline, Paragraph, Caption, Code 4가지 컴포넌트가 존재합니다.
+
+4가지 컴포넌트가 아니더라도 `theme`에 typography 필드를 제공하고 있으므로 `theme`에 접근하여 시스템에 기정의 되어있는 typography를 사용할 수 있습니다.
+
+**Headline**, **Paragraph**, **Caption**는 Props `size`, `color`로 두 가지 속성값을 갖습니다.
+
+## Size
+
+**Headline** 은 100 ~ 900까지 100 단위로 `size`값을 받습니다.
+
+<Canvas of={TypographyStories.HeadlineSize} />
+
+**Paragraph** 는 100 ~ 300까지 100 단위로 `size`값을 받습니다
+
+<Canvas of={TypographyStories.ParagraphSize} />
+
+**Caption** 는 100, 200 두 개의 `size`값을 받습니다
+
+<Canvas of={TypographyStories.CaptionSize} />
+
+**Code** 는 `size`를 지정할 수 없습니다
+
+## Color
+
+Typography 컴포넌트들은 기본적으로 `color` props를 넘겨주지 않으면 부모의 color를 갖습니다.
+따라서 프로젝트 세팅시에 style reset에서 default color 를 지정 해주는것이 좋습니다.
+
+Typography 컴포넌트는 `color`를 설정할 수 있습니다.
+`N100`, `R200`, `B300` 처럼 디자인 시스템의 palette가 제공하는 색상으로 설정 할 수 있습니다.
+
+<Canvas of={TypographyStories.TypographyColor} />
+
+`Code` 의 경우는 color 가 아닌 variant 만을 설정할 수 있고 `default`, `ghost-secondary` 두 가지값 중 선택해서 사용 가능합니다.
+
+<Canvas of={TypographyStories.CodeVariant} />
+
+## Theme에서 Typography 직접 사용
+
+`theme`에 typography 를 가지고 있기 때문에 Typography 컴포넌트에 속하지 않는 속성들을 사용해야 하는 경우 아래 코드 블럭 예시처럼 사용 가능합니다.
+
+```ts
+const CustomParagraph = styled.p`
+  ${({ theme }) => theme.typography.P200}
+  color: ${({ theme }) => theme.colors.N0};
+  background-color: ${({ theme }) => theme.colors.V500};
+  border-radius: 4px;
+  padding: 0 4px;
+`;
+```
+
+<Canvas of={TypographyStories.CustomTypography} />
