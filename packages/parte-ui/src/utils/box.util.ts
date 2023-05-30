@@ -1,11 +1,16 @@
-import { FlattenSimpleInterpolation, css } from "styled-components";
+import { type RuleSet, css } from "styled-components";
 import { ParteStyledProps } from "../Layout/Box.types";
 import { getElevation } from "./elevation.util";
-import { getFlexBasisStyle, getHeightStyle, getWidthStyle } from "./style.util";
+import {
+  getColorStyle,
+  getFlexBasisStyle,
+  getHeightStyle,
+  getWidthStyle,
+} from "./style.util";
 
-export const getBoxStyleAndHtmlProps = <T extends ParteStyledProps>(
+export const extractStyleFormProps = <T extends Partial<ParteStyledProps>>(
   styleProps: T
-): [FlattenSimpleInterpolation, Omit<T, keyof ParteStyledProps>] => {
+): [RuleSet, Omit<T, keyof ParteStyledProps>] => {
   const {
     display = "block",
     width,
@@ -46,7 +51,7 @@ export const getBoxStyleAndHtmlProps = <T extends ParteStyledProps>(
     elevation,
     borderRadius,
     overrideStyles,
-    ...htmlProps
+    ...htmlAttributes
   } = styleProps;
 
   return [
@@ -56,7 +61,7 @@ export const getBoxStyleAndHtmlProps = <T extends ParteStyledProps>(
       ${getHeightStyle(height)};
 
       ${backgroundColor && `background-color: ${backgroundColor};`}
-      ${color && `color: ${color};`}
+      ${getColorStyle(color)}
 
       ${flexDirection && `flex-direction: ${flexDirection};`}
       ${justifyContent && `justify-content: ${justifyContent};`}
@@ -122,6 +127,6 @@ export const getBoxStyleAndHtmlProps = <T extends ParteStyledProps>(
           `};
       ${overrideStyles}
     `,
-    htmlProps,
+    htmlAttributes,
   ];
 };

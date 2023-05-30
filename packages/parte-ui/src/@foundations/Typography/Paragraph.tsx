@@ -1,14 +1,19 @@
+import { forwardRef } from "react";
+import { extractStyleFormProps } from "../../utils/box.util";
 import * as Styled from "./typography.styled";
-import { ParagraphProps } from "./typography.types";
+import { type ParagraphProps } from "./typography.types";
 
-export function Paragraph({
-  children,
-  overrideStyles,
-  ...props
-}: ParagraphProps) {
-  return (
-    <Styled.Paragraph {...props} style={overrideStyles}>
-      {children}
-    </Styled.Paragraph>
-  );
-}
+export const Paragraph = forwardRef<HTMLParagraphElement, ParagraphProps>(
+  (props: ParagraphProps, ref) => {
+    const [style, rest] = extractStyleFormProps(props);
+
+    const { children, size, ...attributes } = rest;
+    return (
+      <Styled.Paragraph ref={ref} $style={style} $size={size} {...attributes}>
+        {children}
+      </Styled.Paragraph>
+    );
+  }
+);
+
+Paragraph.displayName = "Paragraph";
