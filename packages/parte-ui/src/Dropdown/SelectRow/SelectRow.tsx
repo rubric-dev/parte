@@ -86,6 +86,7 @@ const ElementRow = forwardRef<HTMLDivElement, SelectRowElement>(
     );
   }
 );
+
 export const SelectRow = forwardRef<HTMLDivElement, SelectRowProps>(
   (props, ref) => {
     if (props.variant === "search") {
@@ -98,3 +99,8 @@ export const SelectRow = forwardRef<HTMLDivElement, SelectRowProps>(
     return <ElementRow ref={ref} {...props} />;
   }
 );
+
+SearchRow.displayName = "SearchRow";
+TitleRow.displayName = "TitleRow";
+ElementRow.displayName = "ElementRow";
+SelectRow.displayName = "SelectRow";
