@@ -10,6 +10,7 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
       trailingIcon,
       variant = "fill-primary",
       direction = "horizontal",
+      onClick,
       ...props
     },
     ref
@@ -18,8 +19,12 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
       <StyledButton
         variant={variant}
         direction={direction}
-        {...props}
         ref={ref}
+        onClick={(e) => {
+          e.stopPropagation();
+          onClick?.(e);
+        }}
+        {...props}
       >
         {leadingIcon &&
           React.cloneElement(leadingIcon as ReactElement, {
