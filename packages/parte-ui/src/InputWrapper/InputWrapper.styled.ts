@@ -5,10 +5,10 @@ import { InputWrapperProps } from "./InputWrapper.types";
 export const Container = styled(Box)<
   Pick<InputWrapperProps, "fullWidth" | "children">
 >`
-  ${({ fullWidth }) => css`
+  ${({ fullWidth, width = "fit-content" }) => css`
     display: flex;
     box-sizing: border-box;
-    width: ${fullWidth ? "100%" : "fit-content"};
+    width: ${fullWidth ? "100%" : width};
   `};
 `;
 
