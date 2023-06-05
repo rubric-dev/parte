@@ -9,5 +9,6 @@ export type InputWrapperProps = {
   required?: boolean;
   errorText?: string;
   fullWidth?: boolean;
+  width?: number | string;
   children: ReactNode | ReactNode[];
 };

@@ -30,7 +30,6 @@ import {
 import { SelectComponents } from "react-select/dist/declarations/src/components";
 import {
   ActionDeleteIcon,
-  ActionSearchIcon,
   ActionSmallCrossIcon,
   InterfaceCaretDownIcon,
 } from "../../../parte-icons/src";
@@ -46,14 +45,7 @@ export const Control = ({
   children,
   ...props
 }: ControlProps<Option<unknown>, boolean>) => {
-  return (
-    <components.Control {...props}>
-      <Box marginTop={2} display="flex" alignItems="center">
-        <ActionSearchIcon size={12} />
-      </Box>
-      {children}
-    </components.Control>
-  );
+  return <components.Control {...props}>{children}</components.Control>;
 };
 
 const MultiValueRemove = ({
@@ -185,6 +177,7 @@ export function Select<T>(props: SelectProps<T>) {
     menuIsOpen,
     fullWidth,
     direction,
+    width,
   } = props;
 
   const styles = useSelectStyle({ isError }) as StylesConfig<
@@ -300,6 +293,7 @@ export function Select<T>(props: SelectProps<T>) {
       description={description}
       required={required}
       fullWidth={fullWidth}
+      width={width}
       errorText={errorText}
       direction={direction}
     >

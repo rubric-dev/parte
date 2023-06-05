@@ -6,6 +6,7 @@ import {
 import { type AsyncPaginateProps } from "react-select-async-paginate";
 import { type GroupOption, type Option } from "../Dropdown";
 import { type InputWrapperProps } from "../InputWrapper";
+import { BoxProps } from "../Layout";
 
 export type SelectAdditional =
   | {
@@ -14,9 +15,10 @@ export type SelectAdditional =
     }
   | undefined;
 
-export type CommonSelectProps = Omit<InputWrapperProps, "children"> & {
-  isError?: boolean;
-};
+export type CommonSelectProps = Omit<InputWrapperProps, "children"> &
+  Pick<BoxProps, "width"> & {
+    isError?: boolean;
+  };
 
 export type StaticSelectProps<T> = CommonSelectProps &
   ReactSelectProps<Option<T>, boolean, GroupBase<Option<T>>> & {
