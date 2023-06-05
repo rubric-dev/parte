@@ -82,8 +82,7 @@ export const Input = styled.input<TextInputProps>`
     outline: none;
     border: none;
     box-sizing: border-box;
-    height: 32px;
-    padding: ${theme.spacing.spacing8}px ${theme.spacing.spacing12}px;
+    padding: ${theme.spacing.spacing8 - 1}px ${theme.spacing.spacing12}px;
     padding-left: ${leadingIcon
       ? css`
           ${theme.spacing.spacing8}px
