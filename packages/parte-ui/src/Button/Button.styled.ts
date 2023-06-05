@@ -23,8 +23,8 @@ const commonButtonStyles = css<ButtonProps>`
   -moz-appearance: none;
   padding: ${({ theme, direction }) =>
     direction === "horizontal"
-      ? `${theme.spacing.spacing8}px ${theme.spacing.spacing16}px`
-      : `${theme.spacing.spacing8}px`};
+      ? `${theme.spacing.spacing8 - 1}px ${theme.spacing.spacing16}px`
+      : `${theme.spacing.spacing8 - 1}px ${theme.spacing.spacing8}px`};
   column-gap: 8px;
   row-gap: 4px;
   border-radius: 4px;
