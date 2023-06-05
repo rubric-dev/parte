@@ -1,12 +1,11 @@
 import { forwardRef } from "react";
 import { StyledButton } from "./IconButton.styled";
-import { IconButtonProps } from "./IconButton.types";
+import { type IconButtonProps } from "./IconButton.types";
 
 export const IconButton = forwardRef<HTMLButtonElement, IconButtonProps>(
   ({ Icon, variant = "fill-primary", onClick, ...props }, ref) => {
     return (
       <StyledButton
-        iconColor={Icon.props.color}
         variant={variant}
         ref={ref}
         onClick={(e) => {

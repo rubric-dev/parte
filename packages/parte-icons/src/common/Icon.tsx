@@ -68,6 +68,7 @@ const convertIcon = (Svg: SvgFn, iconType: string) => {
   /**
    * 일단 size default 로 아이콘 컴포넌트를 만든 다음, cloneElement 로 props 를 바꾼다.
    * */
+  // eslint-disable-next-line react/display-name
   const InnerIcon = forwardRef<
     HTMLSpanElement,
     Omit<IconProps, "svg" | "type">
@@ -79,4 +80,6 @@ const convertIcon = (Svg: SvgFn, iconType: string) => {
 };
 
 export { convertIcon };
+
+Icon.displayName = "Icon";
 export default Icon;

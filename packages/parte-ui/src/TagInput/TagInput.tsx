@@ -146,3 +146,5 @@ export const TagInput = forwardRef<HTMLInputElement, TagInputProps>(
     );
   }
 );
+
+TagInput.displayName = "TagInput";
