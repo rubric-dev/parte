@@ -1,11 +1,15 @@
 import { useTheme } from "styled-components";
-import { StylesConfig } from "react-select";
+import { GroupBase, StylesConfig } from "react-select";
 import { type Option } from "../Dropdown";
 
 const useSelectStyle = ({
   isError,
+  customStyles,
 }: {
   isError: boolean;
+  customStyles?:
+    | StylesConfig<Option<any>, boolean, GroupBase<Option<any>>>
+    | StylesConfig<Option<any>, boolean, GroupBase<Option<any>>>;
 }): StylesConfig<Option<unknown>, boolean> => {
   const theme = useTheme();
 
@@ -18,6 +22,7 @@ const useSelectStyle = ({
         svg: {
           color: props.isDisabled ? theme.colors.N500 : theme.colors.N600,
         },
+        ...customStyles?.container?.(css, props),
       };
     },
     control: (css, props) => {
@@ -70,9 +75,10 @@ const useSelectStyle = ({
               },
             }
           : {}),
+        ...customStyles?.control?.(css, props),
       };
     },
-    groupHeading: (css) => ({
+    groupHeading: (css, props) => ({
       ...css,
       height: "32px",
       color: theme.colors.N600,
@@ -84,13 +90,15 @@ const useSelectStyle = ({
       margin: 0,
       boxSizing: "border-box",
       borderBottom: `1px solid ${theme.colors.N300}`,
+      ...customStyles?.groupHeading?.(css, props),
     }),
-    group: (css) => ({
+    group: (css, props) => ({
       ...css,
       padding: "0",
       "&:not(:first-of-type)": {
         borderTop: `1px solid ${theme.colors.N300}`,
       },
+      ...customStyles?.group?.(css, props),
     }),
     multiValue: (css, props) => ({
       ...css,
@@ -124,6 +132,7 @@ const useSelectStyle = ({
             },
           }),
       ...(props.isDisabled ? { backgroundColor: theme.colors.N100 } : {}),
+      ...customStyles?.multiValue?.(css, props),
     }),
     multiValueLabel: (css, props) => ({
       ...css,
@@ -143,6 +152,7 @@ const useSelectStyle = ({
             color: theme.colors.N500,
           }
         : {}),
+      ...customStyles?.multiValueLabel?.(css, props),
     }),
     multiValueRemove: (css, props) => ({
       ...css,
@@ -166,6 +176,7 @@ const useSelectStyle = ({
             },
           }
         : {}),
+      ...customStyles?.multiValueRemove?.(css, props),
     }),
     menu: (css, props) => {
       return {
@@ -176,23 +187,27 @@ const useSelectStyle = ({
         overflow: "hidden",
         boxShadow:
           "0px 5px 8px -4px rgba(67, 90, 111, 0.47), 0px 0px 1px rgba(16, 24, 64, 0.3)",
+        ...customStyles?.menu?.(css, props),
       };
     },
     menuList: (css, props) => {
       return {
         ...css,
         padding: "0",
+        ...customStyles?.menuList?.(css, props),
       };
     },
     valueContainer: (css, props) => {
       return {
         ...css,
         padding: "0",
+        paddingLeft: "8px",
         ...(props.isMulti
           ? {
               gap: "8px",
             }
           : {}),
+        ...customStyles?.valueContainer?.(css, props),
       };
     },
     singleValue: (css, props) => ({
@@ -202,6 +217,7 @@ const useSelectStyle = ({
       lineHeight: "16px",
       color: theme.colors.N800,
       ...(props.isDisabled ? { color: theme.colors.N600 } : {}),
+      ...customStyles?.singleValue?.(css, props),
     }),
     placeholder: (css, props) => ({
       ...css,
@@ -213,6 +229,7 @@ const useSelectStyle = ({
       color: theme.colors.N600,
       ...(props.isFocused ? { color: theme.colors.N700 } : {}),
       ...(props.isDisabled ? { color: theme.colors.N600 } : {}),
+      ...customStyles?.placeholder?.(css, props),
     }),
     input: (css, props) => ({
       ...css,
@@ -223,6 +240,7 @@ const useSelectStyle = ({
       lineHeight: "16px",
       color: theme.colors.N800,
       ...(props.isDisabled ? { color: theme.colors.N600 } : {}),
+      ...customStyles?.input?.(css, props),
     }),
     option: (css, props) => {
       return {
@@ -266,6 +284,7 @@ const useSelectStyle = ({
               },
             }
           : {}),
+        ...customStyles?.option?.(css, props),
 
         // ==== icon ====
         svg: props.isSelected
@@ -295,6 +314,7 @@ const useSelectStyle = ({
             },
           }
         : {}),
+      ...customStyles?.indicatorsContainer?.(css, props),
     }),
     loadingIndicator: (css) => ({ ...css, display: "none" }),
     indicatorSeparator: (css) => ({ ...css, display: "none" }),
@@ -310,6 +330,7 @@ const useSelectStyle = ({
           color: theme.colors.N700,
         },
       },
+      ...customStyles?.clearIndicator?.(css, props),
     }),
     dropdownIndicator: (css, props) => ({
       ...css,
@@ -318,6 +339,7 @@ const useSelectStyle = ({
         color: theme.colors.N600,
       },
       ...(props.isDisabled ? { color: theme.colors.N600 } : {}),
+      ...customStyles?.dropdownIndicator?.(css, props),
     }),
   };
 };

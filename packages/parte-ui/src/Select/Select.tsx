@@ -178,9 +178,11 @@ export function Select<T>(props: SelectProps<T>) {
     fullWidth,
     direction,
     width,
+    styles: customStyles,
+    components: customComponents,
   } = props;
 
-  const styles = useSelectStyle({ isError }) as StylesConfig<
+  const styles = useSelectStyle({ isError, customStyles }) as StylesConfig<
     Option<T>,
     boolean
   >;
@@ -218,8 +220,9 @@ export function Select<T>(props: SelectProps<T>) {
       >,
       LoadingMessage,
       NoOptionsMessage,
+      ...customComponents,
     }),
-    []
+    [customComponents]
   );
 
   const asyncComponents = useComponents(defaultComponents);
