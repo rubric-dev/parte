@@ -175,7 +175,6 @@ export function Select<T>(props: SelectProps<T>) {
     description,
     required,
     menuIsOpen,
-    fullWidth,
     direction,
     width,
     styles: customStyles,
@@ -295,7 +294,6 @@ export function Select<T>(props: SelectProps<T>) {
       label={label}
       description={description}
       required={required}
-      fullWidth={fullWidth}
       width={width}
       errorText={errorText}
       direction={direction}

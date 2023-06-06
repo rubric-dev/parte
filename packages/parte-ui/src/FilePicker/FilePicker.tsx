@@ -36,6 +36,7 @@ export const FilePicker = ({
   multiple,
   accept,
   errorText,
+  width,
   inputText = getInputValue,
   buttonText = defaultButtonText,
   onBlur,
@@ -84,9 +85,9 @@ export const FilePicker = ({
       label={label}
       description={description}
       required={required}
-      fullWidth={false}
       errorText={errorText}
       direction={direction}
+      width={width}
     >
       <Styled.Container>
         <input
@@ -115,7 +116,6 @@ export const FilePicker = ({
             ref={inputRef}
             onFocus={() => setInputFocused(true)}
             onBlur={() => setInputFocused(false)}
-            fullWidth
             errorText={errorText}
             placeholder={placeholder}
             value={inputText(files)}

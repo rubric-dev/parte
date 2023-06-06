@@ -6,16 +6,15 @@ export const InputWrapper = styled.div<{
   error?: boolean;
   disabled?: boolean;
   hover?: boolean;
-  fullWidth?: boolean;
   readOnly?: boolean;
 }>`
-  ${({ theme, focused, disabled, error, hover, fullWidth, readOnly }) => css`
+  ${({ theme, focused, disabled, error, hover, readOnly }) => css`
     box-sizing: border-box;
     display: inline-flex;
     overflow: hidden;
     border: 1px solid ${theme.colorBorderDefault};
     border-radius: 4px;
-    width: ${fullWidth ? "100%" : "fit-content"};
+    width: "100%";
     ${!readOnly &&
     hover &&
     css`
@@ -30,21 +29,21 @@ export const InputWrapper = styled.div<{
         ${theme.commonStyles.outline}
       }
     `}
-    ${disabled &&
+      ${disabled &&
     css`
        {
         background-color: ${theme.colorBackgroundDisabled};
         border: 1px solid ${theme.colorBorderDisabled};
       }
     `}
-    ${error &&
+      ${error &&
     css`
       &,
       &:hover,
       &:focus {
         border: 1px solid ${theme.colors.R400};
       }
-    `}
+    `};
   `}
 `;
 
@@ -78,7 +77,7 @@ export const RightIconContainer = styled.div<TextInputProps>`
 `;
 
 export const Input = styled.input<TextInputProps>`
-  ${({ theme, leadingIcon, fullWidth }) => css`
+  ${({ theme, leadingIcon }) => css`
     outline: none;
     border: none;
     box-sizing: border-box;
@@ -92,7 +91,7 @@ export const Input = styled.input<TextInputProps>`
         `};
     padding-right: ${theme.spacing.spacing12}px;
     background-color: ${theme.colorBackgroundDefault};
-    width: ${fullWidth ? "100%" : "fit-content"};
+    width: 100%;
     color: ${theme.colorParagraph};
     ${theme.typography.P100}
     font-family: inherit;

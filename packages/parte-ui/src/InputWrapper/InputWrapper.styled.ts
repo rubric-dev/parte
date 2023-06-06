@@ -2,13 +2,11 @@ import styled, { css } from "styled-components";
 import { Box } from "../Layout";
 import { InputWrapperProps } from "./InputWrapper.types";
 
-export const Container = styled(Box)<
-  Pick<InputWrapperProps, "fullWidth" | "children">
->`
-  ${({ fullWidth, width = "fit-content" }) => css`
+export const Container = styled(Box)<Pick<InputWrapperProps, "children">>`
+  ${({ width = "100%" }) => css`
     display: flex;
     box-sizing: border-box;
-    width: ${fullWidth ? "100%" : width};
+    width: ${width};
   `};
 `;
 

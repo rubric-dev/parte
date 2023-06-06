@@ -11,6 +11,7 @@ import { Box } from "../Layout";
 import { TagInputProps } from "./TagInput.types";
 import { Tag } from "./Tag";
 import { InputWrapper } from "../InputWrapper";
+import { useTheme } from "styled-components";
 
 export const TagInput = forwardRef<HTMLInputElement, TagInputProps>(
   (
@@ -26,6 +27,7 @@ export const TagInput = forwardRef<HTMLInputElement, TagInputProps>(
     ref
   ) => {
     const id = useId();
+    const { spacing } = useTheme();
     const {
       label,
       description,
@@ -34,8 +36,8 @@ export const TagInput = forwardRef<HTMLInputElement, TagInputProps>(
       errorText,
       disabled,
       onFocus,
-      fullWidth = false,
       direction,
+      width,
     } = props;
 
     const [hover, setHover] = useState(false);
@@ -81,9 +83,9 @@ export const TagInput = forwardRef<HTMLInputElement, TagInputProps>(
         label={label}
         description={description}
         required={required}
-        fullWidth={fullWidth}
         errorText={errorText}
         direction={direction}
+        width={width}
       >
         <Styled.InputWrapper
           hover={hover}
@@ -94,8 +96,8 @@ export const TagInput = forwardRef<HTMLInputElement, TagInputProps>(
           onMouseLeave={() => setHover(false)}
         >
           <Box
-            paddingTop={8}
-            paddingBottom={8}
+            paddingTop={spacing.spacing8 - 1}
+            paddingBottom={spacing.spacing8 - 1}
             paddingLeft={12}
             paddingRight={12}
             gap={8}
