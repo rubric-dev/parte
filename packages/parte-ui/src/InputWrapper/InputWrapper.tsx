@@ -22,16 +22,11 @@ const VerticalLayout = ({
   required = false,
   errorText,
   width,
-  fullWidth = false,
 }: Omit<InputWrapperProps, "direction">) => {
   const id = useId();
 
   return (
-    <Styled.Container
-      fullWidth={fullWidth}
-      flexDirection="column"
-      width={width}
-    >
+    <Styled.Container flexDirection="column" width={width}>
       {label && (
         <Box
           display="flex"
@@ -66,13 +61,11 @@ const HorizontalLayout = ({
   required = false,
   errorText,
   width,
-  fullWidth = false,
 }: Omit<InputWrapperProps, "direction">) => {
   const id = useId();
 
   return (
     <Styled.Container
-      fullWidth={fullWidth}
       width={width}
       flexDirection="row"
       gap={8}

@@ -8,7 +8,11 @@ import {
   IconButton,
   Menu,
   Paragraph,
+  Select,
   TableTemplate,
+  TagInput,
+  TextInput,
+  Textarea,
   toaster,
 } from "@parte-ds/ui";
 import { ColumnDef, createColumnHelper } from "@tanstack/react-table";
@@ -171,7 +175,10 @@ export default function Home() {
       </Head>
       <main>
         <Box padding={30}>
-          <TableTemplate data={manyDatas} columns={defaultColumns} />
+          <TextInput />
+          <Select type="static" />
+          <Textarea />
+          <TagInput values={[]} onAdd={() => {}} onRemove={() => {}} />
         </Box>
       </main>
     </>

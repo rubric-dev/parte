@@ -6,9 +6,8 @@ export const TextareaWrapper = styled.div<{
   error?: boolean;
   disabled?: boolean;
   hover?: boolean;
-  fullWidth?: boolean;
 }>`
-  ${({ theme, error, hover, focused, disabled, fullWidth }) => css`
+  ${({ theme, error, hover, focused, disabled }) => css`
     outline: none;
     width: 100%;
     min-height: 80px;
@@ -19,7 +18,7 @@ export const TextareaWrapper = styled.div<{
     display: inline-flex;
     border: 1px solid ${theme.colorBorderDefault};
     border-radius: 4px;
-    width: ${fullWidth ? "100%" : "fit-content"};
+    width: 100%;
     ${hover &&
     css`
       border: 1px solid ${theme.colorBorderHover};

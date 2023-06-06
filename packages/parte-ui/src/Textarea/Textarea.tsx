@@ -11,11 +11,11 @@ export const Textarea = forwardRef<HTMLTextAreaElement, TextAreaProps>(
       description,
       required = false,
       errorText,
-      fullWidth,
       onFocus,
       onBlur,
       disabled,
       direction,
+      width,
     } = props;
 
     const [hover, setHover] = useState(false);
@@ -26,16 +26,15 @@ export const Textarea = forwardRef<HTMLTextAreaElement, TextAreaProps>(
         label={label}
         description={description}
         required={required}
-        fullWidth={fullWidth}
         errorText={errorText}
         direction={direction}
+        width={width}
       >
         <Styled.TextareaWrapper
           hover={hover}
           disabled={disabled}
           focused={focused}
           error={!!errorText}
-          fullWidth={fullWidth}
         >
           <Styled.Textarea
             id={id}

@@ -16,8 +16,8 @@ export const TextInput = forwardRef<HTMLInputElement, TextInputProps>(
       disabled,
       onFocus,
       onBlur,
-      fullWidth,
       direction,
+      width,
     } = props;
 
     const [hover, setHover] = useState(false);
@@ -28,9 +28,9 @@ export const TextInput = forwardRef<HTMLInputElement, TextInputProps>(
         label={label}
         description={description}
         required={required}
-        fullWidth={fullWidth}
         errorText={errorText}
         direction={direction}
+        width={width}
       >
         <Styled.InputWrapper
           {...props}

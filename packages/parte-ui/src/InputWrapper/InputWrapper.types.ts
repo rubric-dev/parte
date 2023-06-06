@@ -8,7 +8,6 @@ export type InputWrapperProps = {
   direction?: InputWrapperDirection;
   required?: boolean;
   errorText?: string;
-  fullWidth?: boolean;
   width?: number | string;
   children: ReactNode | ReactNode[];
 };
