@@ -176,7 +176,7 @@ export default function Home() {
       <main>
         <Box padding={30}>
           <TextInput />
-          <Select type="static" />
+          <Select type="static" showSearchIcon />
           <Textarea />
           <TagInput values={[]} onAdd={() => {}} onRemove={() => {}} />
         </Box>
