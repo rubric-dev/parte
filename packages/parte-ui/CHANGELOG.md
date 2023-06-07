@@ -1,5 +1,11 @@
 # @parte-ds/ui
 
+## 1.2.7
+
+### Patch Changes
+
+- button, input, select component
+
 ## 1.2.6
 
 ### Patch Changes
