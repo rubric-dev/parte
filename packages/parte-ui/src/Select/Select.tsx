@@ -30,6 +30,7 @@ import {
 import { SelectComponents } from "react-select/dist/declarations/src/components";
 import {
   ActionDeleteIcon,
+  ActionSearchIcon,
   ActionSmallCrossIcon,
   InterfaceCaretDownIcon,
 } from "../../../parte-icons/src";
@@ -43,9 +44,19 @@ import useSelectStyle from "./useSelectStyle";
 
 export const Control = ({
   children,
+  showSearchIcon,
   ...props
-}: ControlProps<Option<unknown>, boolean>) => {
-  return <components.Control {...props}>{children}</components.Control>;
+}: ControlProps<Option<unknown>, boolean> & { showSearchIcon: boolean }) => {
+  return (
+    <components.Control {...props}>
+      {showSearchIcon && (
+        <Box marginTop={2} marginRight={8} display="flex" alignItems="center">
+          <ActionSearchIcon size={12} />
+        </Box>
+      )}
+      {children}
+    </components.Control>
+  );
 };
 
 const MultiValueRemove = ({
@@ -177,6 +188,7 @@ export function Select<T>(props: SelectProps<T>) {
     menuIsOpen,
     direction,
     width,
+    showSearchIcon = false,
     styles: customStyles,
     components: customComponents,
   } = props;
@@ -199,7 +211,8 @@ export function Select<T>(props: SelectProps<T>) {
       Menu: Menu as ComponentType<
         MenuProps<Option<T>, boolean, GroupBase<Option<T>>>
       >,
-      Control: Control as ComponentType<
+      Control: ((props: ControlProps<Option<unknown>, boolean>) =>
+        Control({ ...props, showSearchIcon })) as ComponentType<
         ControlProps<Option<T>, boolean, GroupBase<Option<T>>>
       >,
       IndicatorsContainer: IndicatorsContainer as ComponentType<

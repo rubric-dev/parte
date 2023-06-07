@@ -201,7 +201,6 @@ const useSelectStyle = ({
       return {
         ...css,
         padding: "0",
-        paddingLeft: "8px",
         ...(props.isMulti
           ? {
               gap: "8px",
