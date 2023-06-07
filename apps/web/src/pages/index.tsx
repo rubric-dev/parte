@@ -175,9 +175,15 @@ export default function Home() {
       </Head>
       <main>
         <Box padding={30}>
-          <TextInput />
-          <Select type="static" showSearchIcon />
-          <Textarea />
+          <TextInput label="test" direction="horizontal" width={160} />
+          <Select
+            type="static"
+            showSearchIcon
+            label="test"
+            direction="horizontal"
+            width={160}
+          />
+          <Textarea label="test" direction="horizontal" width={160} />
           <TagInput values={[]} onAdd={() => {}} onRemove={() => {}} />
         </Box>
       </main>
