@@ -1,5 +1,11 @@
 # @parte-ds/ui
 
+## 1.2.8
+
+### Patch Changes
+
+- input wrapper의 horiontal version width설정
+
 ## 1.2.7
 
 ### Patch Changes
