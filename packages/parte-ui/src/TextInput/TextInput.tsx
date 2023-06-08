@@ -40,7 +40,6 @@ export const TextInput = forwardRef<HTMLInputElement, TextInputProps>(
           error={!!errorText}
           onMouseEnter={() => setHover(true)}
           onMouseLeave={() => setHover(false)}
-          id="parte-text-input-wrapper"
         >
           {leadingIcon && (
             <Styled.LeftIconContainer disabled={props.disabled}>

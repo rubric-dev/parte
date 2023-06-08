@@ -174,10 +174,16 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main>
-        <Box padding={30}>
-          <TextInput />
-          <Select type="static" showSearchIcon />
-          <Textarea />
+        <Box padding={30} display="flex" flexDirection="column" gap={4}>
+          <TextInput label="test" direction="horizontal" width={160} />
+          <Select
+            type="static"
+            showSearchIcon
+            label="test"
+            direction="horizontal"
+            width={160}
+          />
+          <Textarea label="test" direction="horizontal" width={160} />
           <TagInput values={[]} onAdd={() => {}} onRemove={() => {}} />
         </Box>
       </main>

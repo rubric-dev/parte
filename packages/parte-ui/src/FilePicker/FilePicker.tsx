@@ -1,10 +1,9 @@
-import { FilePickerProps } from "./FilePicker.types";
-import * as Styled from "./FilePicker.styled";
 import { ChangeEvent, useCallback, useRef, useState } from "react";
-import { Box } from "../Layout";
-import { Caption, Paragraph } from "../@foundations/Typography";
-import { TextInput } from "../TextInput";
 import { InputWrapper } from "../InputWrapper";
+import { TextInput } from "../TextInput";
+import * as Styled from "./FilePicker.styled";
+import { FilePickerProps } from "./FilePicker.types";
+import { FILE_PICKER_INPUT_WRAPPER } from "../constant/DOM";
 
 const defaultButtonText = (files: File[]) => {
   const fileCount = files.length;
@@ -112,6 +111,7 @@ export const FilePicker = ({
         />
         <Styled.FilePickerInput focused={inputFocused}>
           <TextInput
+            id={FILE_PICKER_INPUT_WRAPPER}
             disabled={disabled}
             ref={inputRef}
             onFocus={() => setInputFocused(true)}
