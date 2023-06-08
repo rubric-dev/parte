@@ -14,7 +14,7 @@ export const InputWrapper = styled.div<{
     overflow: hidden;
     border: 1px solid ${theme.colorBorderDefault};
     border-radius: 4px;
-    width: "100%";
+    width: 100%;
     ${!readOnly &&
     hover &&
     css`

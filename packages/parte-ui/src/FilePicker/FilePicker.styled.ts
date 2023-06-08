@@ -1,6 +1,7 @@
 import styled, { css } from "styled-components";
 import { Button } from "../Button";
 import { Box } from "../Layout";
+import { FILE_PICKER_INPUT_WRAPPER } from "../constant/DOM";
 
 export const Container = styled(Box)`
   ${() => css`
@@ -23,7 +24,7 @@ export const FilePickerInput = styled(Box)<{ focused: boolean }>`
         color: ${theme.colorTextPlaceholderDefault} !important;
       }
     }
-    & div#parte-text-input-wrapper {
+    & div#${FILE_PICKER_INPUT_WRAPPER} {
       border-top-right-radius: 0px;
       border-bottom-right-radius: 0px;
       ${focused &&

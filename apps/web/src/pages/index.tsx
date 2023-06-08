@@ -174,7 +174,7 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main>
-        <Box padding={30}>
+        <Box padding={30} display="flex" flexDirection="column" gap={4}>
           <TextInput label="test" direction="horizontal" width={160} />
           <Select
             type="static"
