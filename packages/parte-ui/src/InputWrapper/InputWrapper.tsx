@@ -7,13 +7,12 @@ import { useTheme } from "styled-components";
 
 export const InputWrapper = ({
   direction = "vertical",
-  ...rest
+  ...props
 }: InputWrapperProps) => {
   if (direction === "vertical") {
-    return <VerticalLayout {...rest} />;
+    return <VerticalLayout {...props} />;
   }
-
-  return <HorizontalLayout {...rest} />;
+  return <HorizontalLayout {...props} />;
 };
 
 const VerticalLayout = ({
@@ -23,7 +22,7 @@ const VerticalLayout = ({
   required = false,
   errorText,
   width,
-}: Omit<InputWrapperProps, "direction">) => {
+}: InputWrapperProps) => {
   const id = useId();
 
   return (
@@ -61,13 +60,19 @@ const HorizontalLayout = ({
   description,
   required = false,
   errorText,
-  width = "100%",
-}: Omit<InputWrapperProps, "direction">) => {
+  width,
+  labelWidth,
+}: InputWrapperProps) => {
   const id = useId();
   const { spacing } = useTheme();
 
   return (
-    <Styled.Container flexDirection="row" gap={8} alignItems="flex-start">
+    <Styled.Container
+      flexDirection="row"
+      gap={8}
+      alignItems="flex-start"
+      width={width === "100%" ? "100%" : "fit-content"}
+    >
       {label && (
         <Box
           display="flex"
@@ -75,6 +80,8 @@ const HorizontalLayout = ({
           columnGap={2}
           paddingTop={spacing.spacing8 - 1}
           paddingBottom={spacing.spacing8 - 1}
+          flexShrink={0}
+          width={labelWidth}
         >
           {required && (
             <Caption size={200} color="R400">
