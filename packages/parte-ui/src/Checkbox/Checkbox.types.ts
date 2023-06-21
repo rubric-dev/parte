@@ -1,9 +1,6 @@
-import { ChangeEvent } from 'react';
+import { InputHTMLAttributes } from "react";
 
-export type CheckboxProps = {
+export type CheckboxProps = InputHTMLAttributes<HTMLInputElement> & {
   label?: string;
-  disabled?: boolean;
   indeterminate?: boolean;
-  checked?: boolean;
-  onChange?: (e: ChangeEvent<HTMLInputElement>) => void;
 };

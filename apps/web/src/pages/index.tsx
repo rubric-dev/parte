@@ -3,6 +3,7 @@ import {
   Box,
   Button,
   Cell,
+  Checkbox,
   Dropdown,
   HeaderCell,
   IconButton,
@@ -201,6 +202,13 @@ export default function Home() {
               width={160}
             />
             <Button>버튼</Button>
+          </Box>
+          <Box display="flex" flexDirection="column" padding={30} gap={16}>
+            <Checkbox label="하이 헬로우" />
+            <Checkbox label="결정안됨" indeterminate />
+            <Checkbox label="불가능" disabled />
+            <Checkbox label="불가능 그리고 쳌" disabled checked />
+            <Checkbox label="불가능 그리고 결정안됨" disabled indeterminate />
           </Box>
         </Box>
       </main>
