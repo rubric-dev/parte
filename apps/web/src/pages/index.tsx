@@ -1,6 +1,5 @@
 import { ActionChatIcon, InterfaceMoreIcon } from "@parte-ds/icons";
 import {
-  Badge,
   Box,
   Cell,
   Dropdown,
@@ -9,7 +8,6 @@ import {
   Menu,
   Paragraph,
   Select,
-  TableTemplate,
   TagInput,
   TextInput,
   Textarea,
@@ -179,7 +177,7 @@ export default function Home() {
           <Select
             type="static"
             showSearchIcon
-            label="test"
+            label="test test test"
             direction="horizontal"
             width={160}
           />

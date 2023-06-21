@@ -188,6 +188,7 @@ export function Select<T>(props: SelectProps<T>) {
     menuIsOpen,
     direction,
     width,
+    labelWidth,
     showSearchIcon = false,
     styles: customStyles,
     components: customComponents,
@@ -310,6 +311,7 @@ export function Select<T>(props: SelectProps<T>) {
       width={width}
       errorText={errorText}
       direction={direction}
+      labelWidth={labelWidth}
     >
       {SelectComponent}
     </InputWrapper>
