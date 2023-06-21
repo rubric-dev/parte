@@ -1,6 +1,7 @@
 import { ActionChatIcon, InterfaceMoreIcon } from "@parte-ds/icons";
 import {
   Box,
+  Button,
   Cell,
   Dropdown,
   HeaderCell,
@@ -16,6 +17,7 @@ import {
 import { ColumnDef, createColumnHelper } from "@tanstack/react-table";
 import Head from "next/head";
 import { useMemo } from "react";
+import { useTheme } from "styled-components";
 
 type UserType = "user" | "manager" | "admin";
 type User = {
@@ -163,6 +165,8 @@ export default function Home() {
     ] as ColumnDef<User>[];
   }, []);
 
+  const { colors } = useTheme();
+
   return (
     <>
       <Head>
@@ -183,6 +187,21 @@ export default function Home() {
           />
           <Textarea label="test" direction="horizontal" width={160} />
           <TagInput values={[]} onAdd={() => {}} onRemove={() => {}} />
+          <Box
+            width="100%"
+            backgroundColor={colors.T100}
+            display="flex"
+            flexWrap="wrap"
+          >
+            <Select
+              type="static"
+              showSearchIcon
+              label="Label"
+              direction="horizontal"
+              width={160}
+            />
+            <Button>버튼</Button>
+          </Box>
         </Box>
       </main>
     </>

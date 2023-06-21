@@ -60,14 +60,19 @@ const HorizontalLayout = ({
   description,
   required = false,
   errorText,
-  width = "100%",
+  width,
   labelWidth,
 }: InputWrapperProps) => {
   const id = useId();
   const { spacing } = useTheme();
 
   return (
-    <Styled.Container flexDirection="row" gap={8} alignItems="flex-start">
+    <Styled.Container
+      flexDirection="row"
+      gap={8}
+      alignItems="flex-start"
+      width={width === "100%" ? "100%" : "fit-content"}
+    >
       {label && (
         <Box
           display="flex"
