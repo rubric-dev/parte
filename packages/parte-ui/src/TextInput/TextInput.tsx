@@ -1,27 +1,21 @@
-import { forwardRef, useId, useState } from "react";
+import { forwardRef } from "react";
 import { InputWrapper } from "../InputWrapper";
 import * as Styled from "./TextInput.styled";
 import { TextInputProps } from "./TextInput.types";
 
 export const TextInput = forwardRef<HTMLInputElement, TextInputProps>(
   (props: TextInputProps, ref) => {
-    const id = useId();
     const {
       label,
       description,
       required = false,
+      errorText,
+      width,
+      direction,
       leadingIcon,
       trailingIcon,
-      errorText,
-      disabled,
-      onFocus,
-      onBlur,
-      direction,
-      width,
+      ...inputProps
     } = props;
-
-    const [hover, setHover] = useState(false);
-    const [focused, setFocused] = useState(false);
 
     return (
       <InputWrapper
@@ -32,39 +26,19 @@ export const TextInput = forwardRef<HTMLInputElement, TextInputProps>(
         direction={direction}
         width={width}
       >
-        <Styled.InputWrapper
-          {...props}
-          hover={hover}
-          focused={focused}
-          disabled={disabled}
-          error={!!errorText}
-          onMouseEnter={() => setHover(true)}
-          onMouseLeave={() => setHover(false)}
-        >
+        <Styled.Container>
           {leadingIcon && (
             <Styled.LeftIconContainer disabled={props.disabled}>
               {leadingIcon}
             </Styled.LeftIconContainer>
           )}
-          <Styled.Input
-            ref={ref}
-            id={id}
-            {...props}
-            onFocus={(e) => {
-              onFocus?.(e);
-              setFocused(true);
-            }}
-            onBlur={(e) => {
-              onBlur?.(e);
-              setFocused(false);
-            }}
-          />
+          <Styled.Input ref={ref} {...inputProps} data-error={!!errorText} />
           {trailingIcon && (
             <Styled.RightIconContainer disabled={props.disabled}>
               {trailingIcon}
             </Styled.RightIconContainer>
           )}
-        </Styled.InputWrapper>
+        </Styled.Container>
       </InputWrapper>
     );
   }
