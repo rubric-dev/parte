@@ -24,6 +24,6 @@
     "react-select": "^5.7.1",
     "react-select-async-paginate": "^0.7.2",
     "styled-components": "^5.3.9",
-    "typescript": "5.0.4"
+    "typescript": "5.1.3"
   }
 }
