@@ -1,4 +1,4 @@
-import { PropsWithChildren, ReactNode } from "react";
+import { PropsWithChildren } from "react";
 
 export type InputWrapperDirection = "horizontal" | "vertical";
 
@@ -8,6 +8,8 @@ export type InputWrapperProps = PropsWithChildren<{
   description?: string;
   required?: boolean;
   errorText?: string;
+  disabled?: boolean;
+  id?: string;
   width?: number | string;
   labelWidth?: number | string;
 }>;

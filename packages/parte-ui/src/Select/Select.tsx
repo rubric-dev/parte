@@ -192,6 +192,7 @@ export function Select<T>(props: SelectProps<T>) {
     showSearchIcon = false,
     styles: customStyles,
     components: customComponents,
+    id,
   } = props;
 
   const styles = useSelectStyle({ isError, customStyles }) as StylesConfig<
@@ -266,6 +267,7 @@ export function Select<T>(props: SelectProps<T>) {
       <StaticSelect
         components={defaultComponents}
         {...props}
+        id={id}
         ref={selectRef}
         onFocus={onFocus}
         onBlur={onBlur}
@@ -287,6 +289,7 @@ export function Select<T>(props: SelectProps<T>) {
           MenuList,
         }}
         {...props}
+        id={id}
         selectRef={selectRef}
         isDisabled={isDisabled}
         onFocus={onFocus}
@@ -312,6 +315,8 @@ export function Select<T>(props: SelectProps<T>) {
       errorText={errorText}
       direction={direction}
       labelWidth={labelWidth}
+      disabled={isDisabled}
+      id={id}
     >
       {SelectComponent}
     </InputWrapper>

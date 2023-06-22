@@ -1,9 +1,8 @@
-import { useId } from "react";
+import { useTheme } from "styled-components";
 import { Caption } from "../@foundations";
 import { Box } from "../Layout";
 import * as Styled from "./InputWrapper.styled";
 import { InputWrapperProps } from "./InputWrapper.types";
-import { useTheme } from "styled-components";
 
 export const InputWrapper = ({
   direction = "vertical",
@@ -22,9 +21,9 @@ const VerticalLayout = ({
   required = false,
   errorText,
   width,
+  disabled,
+  id,
 }: InputWrapperProps) => {
-  const id = useId();
-
   return (
     <Styled.Container flexDirection="column" width={width}>
       {label && (
@@ -41,7 +40,9 @@ const VerticalLayout = ({
           )}
           <Styled.Label
             htmlFor={id}
-            title={required ? "This field is required" : ""}
+            title={required ? "This field is required" : undefined}
+            data-disabled={disabled}
+            data-hasid={!!id}
           >
             {label}
           </Styled.Label>
@@ -62,8 +63,9 @@ const HorizontalLayout = ({
   errorText,
   width,
   labelWidth,
+  id,
+  disabled,
 }: InputWrapperProps) => {
-  const id = useId();
   const { spacing } = useTheme();
 
   return (
@@ -90,7 +92,9 @@ const HorizontalLayout = ({
           )}
           <Styled.Label
             htmlFor={id}
-            title={required ? "This field is required" : ""}
+            title={required ? "This field is required" : undefined}
+            data-disabled={disabled}
+            data-hasid={!!id}
           >
             {label}
           </Styled.Label>
