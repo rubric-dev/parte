@@ -17,8 +17,8 @@
   },
   "devDependencies": {
     "@parte-ds/tsconfig": "workspace:*",
-    "@types/react": "^18.0.28",
-    "@types/react-dom": "^18.0.11",
+    "@types/react": "^18.2.13",
+    "@types/react-dom": "^18.2.6",
     "eslint": "^8.36.0",
     "eslint-config-parte": "workspace:*",
     "react": "^18.2.0",
