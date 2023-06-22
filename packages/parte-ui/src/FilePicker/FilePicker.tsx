@@ -87,6 +87,8 @@ export const FilePicker = ({
       errorText={errorText}
       direction={direction}
       width={width}
+      disabled={disabled}
+      id={name}
     >
       <Styled.Container>
         <input
@@ -119,6 +121,7 @@ export const FilePicker = ({
             errorText={errorText}
             placeholder={placeholder}
             value={inputText(files)}
+            readOnly
           />
         </Styled.FilePickerInput>
         <Styled.FilePickerButton

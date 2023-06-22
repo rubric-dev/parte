@@ -25,16 +25,18 @@ export const TextInput = forwardRef<HTMLInputElement, TextInputProps>(
         errorText={errorText}
         direction={direction}
         width={width}
+        disabled={inputProps.disabled}
+        id={inputProps.id}
       >
         <Styled.Container>
           {leadingIcon && (
-            <Styled.LeftIconContainer disabled={props.disabled}>
+            <Styled.LeftIconContainer disabled={inputProps.disabled}>
               {leadingIcon}
             </Styled.LeftIconContainer>
           )}
           <Styled.Input ref={ref} {...inputProps} data-error={!!errorText} />
           {trailingIcon && (
-            <Styled.RightIconContainer disabled={props.disabled}>
+            <Styled.RightIconContainer disabled={inputProps.disabled}>
               {trailingIcon}
             </Styled.RightIconContainer>
           )}

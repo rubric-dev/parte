@@ -1,11 +1,10 @@
-import { forwardRef, useId, useState } from "react";
+import { forwardRef, useState } from "react";
 import { InputWrapper } from "../InputWrapper";
 import * as Styled from "./Textarea.styled";
 import { TextAreaProps } from "./Textarea.types";
 
 export const Textarea = forwardRef<HTMLTextAreaElement, TextAreaProps>(
   (props: TextAreaProps, ref) => {
-    const id = useId();
     const {
       label,
       description,
@@ -14,6 +13,7 @@ export const Textarea = forwardRef<HTMLTextAreaElement, TextAreaProps>(
       onFocus,
       onBlur,
       disabled,
+      id,
       direction,
       width,
     } = props;
@@ -29,6 +29,8 @@ export const Textarea = forwardRef<HTMLTextAreaElement, TextAreaProps>(
         errorText={errorText}
         direction={direction}
         width={width}
+        disabled={disabled}
+        id={id}
       >
         <Styled.TextareaWrapper
           hover={hover}
@@ -37,10 +39,10 @@ export const Textarea = forwardRef<HTMLTextAreaElement, TextAreaProps>(
           error={!!errorText}
         >
           <Styled.Textarea
-            id={id}
             ref={ref}
             hover={hover}
             focused={focused}
+            id={id}
             {...props}
             onMouseEnter={() => setHover(true)}
             onMouseLeave={() => setHover(false)}

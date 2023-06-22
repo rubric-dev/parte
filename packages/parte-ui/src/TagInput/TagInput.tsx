@@ -1,17 +1,16 @@
 import {
-  FocusEvent,
-  forwardRef,
-  KeyboardEvent,
-  useState,
   ChangeEvent,
-  useId,
+  FocusEvent,
+  KeyboardEvent,
+  forwardRef,
+  useState,
 } from "react";
-import * as Styled from "./TagInput.styled";
-import { Box } from "../Layout";
-import { TagInputProps } from "./TagInput.types";
-import { Tag } from "./Tag";
-import { InputWrapper } from "../InputWrapper";
 import { useTheme } from "styled-components";
+import { InputWrapper } from "../InputWrapper";
+import { Box } from "../Layout";
+import { Tag } from "./Tag";
+import * as Styled from "./TagInput.styled";
+import { TagInputProps } from "./TagInput.types";
 
 export const TagInput = forwardRef<HTMLInputElement, TagInputProps>(
   (
@@ -26,7 +25,6 @@ export const TagInput = forwardRef<HTMLInputElement, TagInputProps>(
     }: TagInputProps,
     ref
   ) => {
-    const id = useId();
     const { spacing } = useTheme();
     const {
       label,
@@ -38,6 +36,7 @@ export const TagInput = forwardRef<HTMLInputElement, TagInputProps>(
       onFocus,
       direction,
       width,
+      id,
     } = props;
 
     const [hover, setHover] = useState(false);
@@ -86,6 +85,8 @@ export const TagInput = forwardRef<HTMLInputElement, TagInputProps>(
         errorText={errorText}
         direction={direction}
         width={width}
+        disabled={disabled}
+        id={id}
       >
         <Styled.InputWrapper
           hover={hover}

@@ -15,7 +15,10 @@ export type SelectAdditional =
     }
   | undefined;
 
-export type CommonSelectProps = Omit<InputWrapperProps, "children"> &
+export type CommonSelectProps = Omit<
+  InputWrapperProps,
+  "children" | "disabled"
+> &
   Pick<BoxProps, "width"> & {
     isError?: boolean;
     showSearchIcon?: boolean;

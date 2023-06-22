@@ -32,6 +32,9 @@ export default function Home() {
           <LinkContainer>
             <Link href="/new-icons">새로운 아이콘들</Link>
           </LinkContainer>
+          <LinkContainer>
+            <Link href="/input-wrapper">Input Wrapper 테스트</Link>
+          </LinkContainer>
         </Box>
         <Box padding={30} display="flex" flexDirection="column" gap={4}>
           <TextInput label="test" direction="horizontal" width={160} />

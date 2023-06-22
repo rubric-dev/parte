@@ -14,13 +14,20 @@ export const Label = styled.label`
   ${({ theme }) => css`
     ${theme.typography.H400}
     color: ${theme.colorHeading};
+    &[data-hasid="true"] {
+      cursor: pointer;
+    }
+    &[data-disabled="true"] {
+      color: ${theme.colors.N700};
+      cursor: default;
+    }
   `}
 `;
 
 export const Description = styled.p`
   ${({ theme }) => css`
     ${theme.typography.P100}
-    color: ${theme.colorParagraph};
+    color: ${theme.colors.N700};
     margin-bottom: ${theme.spacing.spacing2}px;
   `}
 `;
