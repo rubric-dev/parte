@@ -1,71 +1,97 @@
 import styled, { css } from "styled-components";
 import { Box } from "../Layout";
+import { CHECKBOX_ICON_BOX } from "../constant";
 
-export const Container = styled.label<{ disabled: boolean }>`
-  ${({ theme, disabled }) => css`
+export const LabelContainer = styled.label`
+  ${({ theme }) => css`
     box-sizing: border-box;
     display: flex;
-    flex: 1;
+    position: relative;
     align-items: center;
     column-gap: ${theme.spacing.spacing12}px;
-    cursor: ${disabled ? "default" : "pointer"};
+    width: fit-content;
+
+    cursor: pointer;
     -webkit-user-select: none;
     -ms-user-select: none;
     user-select: none;
-  `}
-`;
 
-export const Checkbox = styled(Box)<{
-  disabled: boolean;
-  hover: boolean;
-  checked: boolean;
-  pressed: boolean;
-}>`
-  ${({ theme, hover, checked, disabled, pressed }) => css`
-    width: 16px;
-    height: 16px;
-    border-radius: 4px;
-    position: relative;
-    box-sizing: border-box;
-    border: 1px solid ${theme.colors.N400};
-    display: flex;
     & svg {
       color: ${theme.colors.N0};
     }
-    ${hover &&
-    css`
+    &:hover #${CHECKBOX_ICON_BOX} {
       border: 1px solid ${theme.colors.N600};
-    `}
-    ${pressed &&
-    css`
+    }
+    &:active #${CHECKBOX_ICON_BOX} {
       border: 1px solid ${theme.colors.N500};
       background-color: ${theme.colors.N100};
-    `}
-    ${disabled &&
-    css`
+    }
+
+    &:has(input:checked) #${CHECKBOX_ICON_BOX} {
+      background-color: ${theme.colors.T400};
+      border: none;
+    }
+
+    &:has(input:checked) {
+      &:hover #${CHECKBOX_ICON_BOX} {
+        background-color: ${theme.colors.T500};
+        outline: none;
+      }
+      &:active #${CHECKBOX_ICON_BOX} {
+        background-color: ${theme.colors.T600};
+      }
+    }
+
+    &:has(input:focus) #${CHECKBOX_ICON_BOX} {
+      ${theme.commonStyles.outline}
+    }
+
+    // indeterminate=true일 경우
+    &:has(input[data-indeterminate="true"]) #${CHECKBOX_ICON_BOX} {
+      background-color: ${theme.colors.T400};
+      border: none;
+    }
+    &:has(input[data-indeterminate="true"]) {
+      &:hover #${CHECKBOX_ICON_BOX} {
+        background-color: ${theme.colors.T500};
+      }
+      &:active #${CHECKBOX_ICON_BOX} {
+        background-color: ${theme.colors.T600};
+      }
+    }
+
+    // disabled=true일 경우
+    &:has(input[type="checkbox"][disabled]) {
+      cursor: default;
+    }
+
+    &:has(input[type="checkbox"][disabled]) #${CHECKBOX_ICON_BOX} {
+      border: 1px solid ${theme.colors.N100};
+      background-color: ${theme.colors.N100};
+      & svg {
+        color: ${theme.colors.N100};
+      }
+      div {
+        background-color: ${theme.colors.N500};
+      }
+    }
+    &:has(input[type="checkbox"][disabled]:checked) #${CHECKBOX_ICON_BOX} {
       border: 1px solid ${theme.colors.N100};
       background-color: ${theme.colors.N100};
       & svg {
         color: ${theme.colors.N500};
       }
-    `}
-    ${checked &&
-    css`
-      background-color: ${theme.colors.T400};
-      border: none;
-      ${hover &&
-      css`
-        background-color: ${theme.colors.T500};
-      `}
-      ${pressed &&
-      css`
-        background-color: ${theme.colors.T600};
-      `}
-    ${disabled &&
-      css`
-        background-color: ${theme.colors.N100};
-      `}
-    `}
+    }
+  `}
+`;
+
+export const IconBox = styled(Box)`
+  ${({ theme }) => css`
+    display: flex;
+    width: 16px;
+    height: 16px;
+    border: 1px solid ${theme.colors.N400};
+    border-radius: 4px;
   `}
 `;
 

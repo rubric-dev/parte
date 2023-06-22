@@ -1,62 +1,36 @@
-import { useState } from "react";
+import { forwardRef } from "react";
+import { ActionSmallTickIcon } from "../../../parte-icons/src";
 import * as Styled from "./Checkbox.styled";
 import { CheckboxProps } from "./Checkbox.types";
-import { Box } from "../Layout";
-import { ActionSmallTickIcon } from "../../../parte-icons/src";
+import { CHECKBOX_ICON_BOX } from "../constant";
 
-export const Checkbox = ({
-  label,
-  disabled = false,
-  checked = false,
-  indeterminate = false,
-  onChange,
-}: CheckboxProps) => {
-  const [hover, setHover] = useState(false);
-  const [pressed, setPressed] = useState(false);
-
-  const renderIcon = () => {
-    if (indeterminate) {
-      return <Styled.Indeterminate />;
-    }
-    if (checked) {
-      return <ActionSmallTickIcon size={16} />;
-    }
-    return <></>;
-  };
-
-  return (
-    <Styled.Container
-      disabled={disabled}
-      onMouseEnter={() => setHover(true)}
-      onMouseLeave={() => setHover(false)}
-      onMouseDown={() => setPressed(true)}
-      onMouseUp={() => setPressed(false)}
-    >
-      <Styled.Checkbox
-        hover={hover}
-        pressed={pressed}
-        checked={checked || indeterminate}
-        disabled={disabled}
-        alignItems="center"
-      >
+export const Checkbox = forwardRef<HTMLInputElement, CheckboxProps>(
+  ({ label, indeterminate, ...props }, ref) => {
+    return (
+      <Styled.LabelContainer>
         <Styled.Input
+          ref={ref}
           type="checkbox"
-          checked={checked}
-          disabled={disabled}
-          onChange={(e) => {
-            onChange?.(e);
-          }}
+          {...props}
+          data-indeterminate={indeterminate}
         />
-        <Box
+        <Styled.IconBox
           display="flex"
           alignItems="center"
           justifyContent="center"
           flex="1"
+          id={CHECKBOX_ICON_BOX}
         >
-          {renderIcon()}
-        </Box>
-      </Styled.Checkbox>
-      {label && <Styled.Label>{label}</Styled.Label>}
-    </Styled.Container>
-  );
-};
+          {indeterminate ? (
+            <Styled.Indeterminate />
+          ) : (
+            <ActionSmallTickIcon size={16} />
+          )}
+        </Styled.IconBox>
+        {label && <Styled.Label>{label}</Styled.Label>}
+      </Styled.LabelContainer>
+    );
+  }
+);
+
+Checkbox.displayName = "Checkbox";
