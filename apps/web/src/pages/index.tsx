@@ -17,7 +17,7 @@ import {
 } from "@parte-ds/ui";
 import { ColumnDef, createColumnHelper } from "@tanstack/react-table";
 import Head from "next/head";
-import { useMemo } from "react";
+import { useMemo, useState } from "react";
 import { useTheme } from "styled-components";
 
 type UserType = "user" | "manager" | "admin";
@@ -167,6 +167,7 @@ export default function Home() {
   }, []);
 
   const { colors } = useTheme();
+  const [checked, setChecked] = useState(false);
 
   return (
     <>
@@ -204,7 +205,12 @@ export default function Home() {
             <Button>버튼</Button>
           </Box>
           <Box display="flex" flexDirection="column" padding={30} gap={16}>
-            <Checkbox label="하이 헬로우" />
+            <Checkbox label="비제어 컴포넌트" />
+            <Checkbox
+              label="제어 컴포넌트"
+              checked={checked}
+              onChange={(e) => setChecked(e.target.checked)}
+            />
             <Checkbox label="결정안됨" indeterminate />
             <Checkbox label="불가능" disabled />
             <Checkbox label="불가능 그리고 쳌" disabled checked />

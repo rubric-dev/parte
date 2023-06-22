@@ -2,6 +2,7 @@ import { forwardRef } from "react";
 import { ActionSmallTickIcon } from "../../../parte-icons/src";
 import * as Styled from "./Checkbox.styled";
 import { CheckboxProps } from "./Checkbox.types";
+import { CHECKBOX_ICON_BOX } from "../constant";
 
 export const Checkbox = forwardRef<HTMLInputElement, CheckboxProps>(
   ({ label, indeterminate, ...props }, ref) => {
@@ -18,6 +19,7 @@ export const Checkbox = forwardRef<HTMLInputElement, CheckboxProps>(
           alignItems="center"
           justifyContent="center"
           flex="1"
+          id={CHECKBOX_ICON_BOX}
         >
           {indeterminate ? (
             <Styled.Indeterminate />

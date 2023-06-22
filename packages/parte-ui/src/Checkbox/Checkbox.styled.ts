@@ -1,5 +1,6 @@
 import styled, { css } from "styled-components";
 import { Box } from "../Layout";
+import { CHECKBOX_ICON_BOX } from "../constant";
 
 export const LabelContainer = styled.label`
   ${({ theme }) => css`
@@ -18,43 +19,43 @@ export const LabelContainer = styled.label`
     & svg {
       color: ${theme.colors.N0};
     }
-    &:hover > div {
+    &:hover #${CHECKBOX_ICON_BOX} {
       border: 1px solid ${theme.colors.N600};
     }
-    &:active > div {
+    &:active #${CHECKBOX_ICON_BOX} {
       border: 1px solid ${theme.colors.N500};
       background-color: ${theme.colors.N100};
     }
 
-    &:has(input:checked) > div {
+    &:has(input:checked) #${CHECKBOX_ICON_BOX} {
       background-color: ${theme.colors.T400};
       border: none;
     }
 
     &:has(input:checked) {
-      &:hover > div {
+      &:hover #${CHECKBOX_ICON_BOX} {
         background-color: ${theme.colors.T500};
         outline: none;
       }
-      &:active > div {
+      &:active #${CHECKBOX_ICON_BOX} {
         background-color: ${theme.colors.T600};
       }
     }
 
-    &:has(input:focus) > div {
+    &:has(input:focus) #${CHECKBOX_ICON_BOX} {
       ${theme.commonStyles.outline}
     }
 
     // indeterminate=true일 경우
-    &:has(input[data-indeterminate="true"]) > div {
+    &:has(input[data-indeterminate="true"]) #${CHECKBOX_ICON_BOX} {
       background-color: ${theme.colors.T400};
       border: none;
     }
     &:has(input[data-indeterminate="true"]) {
-      &:hover > div {
+      &:hover #${CHECKBOX_ICON_BOX} {
         background-color: ${theme.colors.T500};
       }
-      &:active > div {
+      &:active #${CHECKBOX_ICON_BOX} {
         background-color: ${theme.colors.T600};
       }
     }
@@ -64,7 +65,7 @@ export const LabelContainer = styled.label`
       cursor: default;
     }
 
-    &:has(input[type="checkbox"][disabled]) > div {
+    &:has(input[type="checkbox"][disabled]) #${CHECKBOX_ICON_BOX} {
       border: 1px solid ${theme.colors.N100};
       background-color: ${theme.colors.N100};
       & svg {
@@ -74,7 +75,7 @@ export const LabelContainer = styled.label`
         background-color: ${theme.colors.N500};
       }
     }
-    &:has(input[type="checkbox"][disabled]:checked) > div {
+    &:has(input[type="checkbox"][disabled]:checked) #${CHECKBOX_ICON_BOX} {
       border: 1px solid ${theme.colors.N100};
       background-color: ${theme.colors.N100};
       & svg {
