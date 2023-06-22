@@ -14,14 +14,16 @@
     "@tanstack/react-table": "^8.7.9",
     "@types/node": "18.16.3",
     "@types/react": "18.2.2",
+    "@types/react-datepicker": "^4.11.2",
     "@types/react-dom": "18.2.3",
     "@types/styled-components": "^5.1.26",
     "next": "13.3.4",
     "react": "18.2.0",
+    "react-datepicker": "^4.14.1",
     "react-dom": "^18.2.0",
     "react-select": "^5.7.1",
     "react-select-async-paginate": "^0.7.2",
     "styled-components": "^5.3.9",
-    "typescript": "5.0.4"
+    "typescript": "5.1.3"
   }
 }

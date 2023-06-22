@@ -1,49 +1,36 @@
 import styled, { css } from "styled-components";
 import { TextInputProps } from "./TextInput.types";
 
-export const InputWrapper = styled.div<{
-  focused: boolean;
-  error?: boolean;
-  disabled?: boolean;
-  hover?: boolean;
-  readOnly?: boolean;
-}>`
-  ${({ theme, focused, disabled, error, hover, readOnly }) => css`
+export const Container = styled.div`
+  ${({ theme }) => css`
     box-sizing: border-box;
     display: inline-flex;
     overflow: hidden;
     border: 1px solid ${theme.colorBorderDefault};
     border-radius: 4px;
     width: 100%;
-    ${!readOnly &&
-    hover &&
-    css`
+
+    &:has(input:hover) {
       border: 1px solid ${theme.colorBorderHover};
       background: ${theme.colorBackgroundHover};
-    `}
-    ${!readOnly &&
-    focused &&
-    css`
-       {
-        border: 1px solid ${theme.colorBorderFocused};
-        ${theme.commonStyles.outline}
-      }
-    `}
-      ${disabled &&
-    css`
-       {
-        background-color: ${theme.colorBackgroundDisabled};
-        border: 1px solid ${theme.colorBorderDisabled};
-      }
-    `}
-      ${error &&
-    css`
+    }
+    &:has(input:focus) {
+      border: 1px solid ${theme.colorBorderFocused};
+      ${theme.commonStyles.outline};
+    }
+
+    &:has(input:disabled) {
+      background-color: ${theme.colorBackgroundDisabled};
+      border: 1px solid ${theme.colorBorderDisabled};
+    }
+
+    &:has(input[data-error="true"]) {
       &,
       &:hover,
       &:focus {
         border: 1px solid ${theme.colors.R400};
       }
-    `};
+    }
   `}
 `;
 

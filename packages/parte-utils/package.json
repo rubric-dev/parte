@@ -17,13 +17,13 @@
   },
   "devDependencies": {
     "@parte-ds/tsconfig": "workspace:*",
-    "@types/react": "^18.0.9",
-    "@types/react-dom": "^18.0.4",
+    "@types/react": "^18.2.13",
+    "@types/react-dom": "^18.2.6",
     "eslint": "^8.15.0",
     "eslint-config-parte": "workspace:*",
-    "react": "^18.1.0",
-    "tsup": "^5.10.1",
-    "typescript": "^4.5.3"
+    "react": "^18.2.0",
+    "tsup": "^7.0.0",
+    "typescript": "^5.1.3"
   },
   "publishConfig": {
     "access": "public"
