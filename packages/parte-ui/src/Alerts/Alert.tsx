@@ -1,5 +1,3 @@
-import { HTMLAttributes } from "react";
-import { IconButton } from "../IconButton";
 import {
   ActionCrossIcon,
   AlertDangerIcon,
@@ -7,24 +5,25 @@ import {
   AlertSuccessIcon,
   AlertWarningIcon,
 } from "../../../parte-icons/src";
+import { IconButton } from "../IconButton";
 import * as Styled from "./Alert.styled";
-import { AlertProps, AlertStatus } from "./Alert.types";
 import { ALERT_ICON_COLOR } from "./Alert.styled";
+import { AlertProps, AlertStatus } from "./Alert.types";
 
 const renderIcon = (currentStatus: AlertStatus) => {
   switch (currentStatus) {
     case "G400":
-      return <AlertSuccessIcon size={16} />;
+      return <AlertSuccessIcon size={16} color="G400" />;
     case "info":
-      return <AlertInfoIcon size={16} />;
+      return <AlertInfoIcon size={16} color="B400" />;
     case "warning":
-      return <AlertWarningIcon size={16} />;
+      return <AlertWarningIcon size={16} color="Y400" />;
     case "error":
-      return <AlertDangerIcon size={16} />;
+      return <AlertDangerIcon size={16} color="R400" />;
   }
 };
 
-export const Alert = (props: AlertProps & HTMLAttributes<HTMLDivElement>) => {
+export const Alert = (props: AlertProps) => {
   if (props.type === "alert-inline") {
     return (
       <Styled.Alert type={props.type} status={props.status}>
