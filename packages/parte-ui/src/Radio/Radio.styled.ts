@@ -6,6 +6,12 @@ export const RadioWrapper = styled.label<{ disabled: boolean }>`
     align-items: center;
     column-gap: ${theme.spacing.spacing12}px;
     cursor: ${disabled ? "default" : "pointer"};
+
+    &:has(input:disabled) {
+      span {
+        color: ${theme.colors.N600};
+      }
+    }
   `}
 `;
 
@@ -40,8 +46,8 @@ export const Input = styled.input`
         background-color: ${theme.colors.transparent};
       }
       &:disabled {
-        border: 4px solid ${theme.colors.N100};
-        background-color: ${theme.colors.N500};
+        border: 4px solid ${theme.colors.T200};
+        background-color: ${theme.colors.N100};
       }
     }
   `}

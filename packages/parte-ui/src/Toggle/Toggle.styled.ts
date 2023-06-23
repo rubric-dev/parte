@@ -6,6 +6,12 @@ export const Container = styled.label<{ disabled: boolean }>`
     align-items: center;
     gap: ${theme.spacing.spacing12}px;
     cursor: ${disabled ? "default" : "pointer"};
+
+    &:has(input:disabled) {
+      span {
+        color: ${theme.colors.N600};
+      }
+    }
   `}
 `;
 
@@ -50,12 +56,19 @@ export const Input = styled.input`
         background-color: ${theme.colors.T600};
       }
     }
-    &:disabled,
-    &:checked:disabled {
+    &:disabled {
       cursor: default;
       background-color: ${theme.colors.N100};
       &::before {
         background-color: ${theme.colors.N400};
+      }
+    }
+
+    &:checked:disabled {
+      cursor: default;
+      background-color: ${theme.colors.T200};
+      &::before {
+        background-color: ${theme.colors.N100};
       }
     }
   `}
