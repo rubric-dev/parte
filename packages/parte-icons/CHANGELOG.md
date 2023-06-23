@@ -1,5 +1,11 @@
 # @parte-ds/icons
 
+## 1.3.2
+
+### Patch Changes
+
+- New Icon 추가 및 UI 이슈 해결
+
 ## 1.3.1
 
 ### Patch Changes

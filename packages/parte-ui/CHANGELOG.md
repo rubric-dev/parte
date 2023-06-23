@@ -1,5 +1,11 @@
 # @parte-ds/ui
 
+## 1.3.0
+
+### Minor Changes
+
+- New Icon 추가 및 UI 이슈 해결
+
 ## 1.2.8
 
 ### Patch Changes
