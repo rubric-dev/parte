@@ -63,24 +63,32 @@ export const LabelContainer = styled.label`
     // disabled=true일 경우
     &:has(input[type="checkbox"][disabled]) {
       cursor: default;
+      span {
+        color: ${theme.colors.N600};
+      }
     }
 
     &:has(input[type="checkbox"][disabled]) #${CHECKBOX_ICON_BOX} {
-      border: 1px solid ${theme.colors.N100};
       background-color: ${theme.colors.N100};
+      border: none;
       & svg {
         color: ${theme.colors.N100};
       }
       div {
-        background-color: ${theme.colors.N500};
+        background-color: ${theme.colors.N100};
       }
     }
     &:has(input[type="checkbox"][disabled]:checked) #${CHECKBOX_ICON_BOX} {
-      border: 1px solid ${theme.colors.N100};
-      background-color: ${theme.colors.N100};
+      background-color: ${theme.colors.T200};
       & svg {
-        color: ${theme.colors.N500};
+        color: ${theme.colors.N100};
       }
+    }
+
+    // disabled=true
+    // indeterminate=true 동시에
+    &:has(input[data-indeterminate="true"][disabled]) #${CHECKBOX_ICON_BOX} {
+      background-color: ${theme.colors.T200};
     }
   `}
 `;
