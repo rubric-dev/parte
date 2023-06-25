@@ -1,13 +1,15 @@
 import styled, { css } from "styled-components";
 
-export const RadioWrapper = styled.label<{ disabled: boolean }>`
-  ${({ theme, disabled }) => css`
+export const RadioWrapper = styled.label`
+  ${({ theme }) => css`
+    width: fit-content;
     display: flex;
     align-items: center;
     column-gap: ${theme.spacing.spacing12}px;
-    cursor: ${disabled ? "default" : "pointer"};
+    cursor: pointer;
 
     &:has(input:disabled) {
+      cursor: default;
       span {
         color: ${theme.colors.N600};
       }
@@ -25,6 +27,8 @@ export const Input = styled.input`
     border-radius: 50%;
     width: 16px;
     height: 16px;
+    cursor: pointer;
+
     &:hover {
       border: 1px solid ${theme.colors.N600};
     }
@@ -33,6 +37,7 @@ export const Input = styled.input`
       background-color: ${theme.colors.N100};
     }
     &:disabled {
+      cursor: default;
       border: 1px solid ${theme.colors.N100};
       background-color: ${theme.colors.N100};
     }

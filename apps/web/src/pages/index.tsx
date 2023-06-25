@@ -1,4 +1,4 @@
-import { Box, Checkbox, Radio, RadioGroup, Toggle } from "@parte-ds/ui";
+import { Box, Checkbox, Toggle } from "@parte-ds/ui";
 import Head from "next/head";
 import Link from "next/link";
 import { useState } from "react";
@@ -9,6 +9,7 @@ const MENU = [
   { url: "/new-icons", name: "New Icons" },
   { url: "/input-wrapper", name: "Input Wrapper 테스트" },
   { url: "/alert", name: "Alert 테스트" },
+  { url: "/radio", name: "Radio 테스트" },
 ];
 
 export default function Home() {
@@ -44,14 +45,6 @@ export default function Home() {
         <Checkbox label="체크박스" disabled />
         <Checkbox label="체크박스" disabled indeterminate />
         <Checkbox label="체크박스" disabled defaultChecked />
-        <RadioGroup
-          value={value}
-          name="test"
-          onChange={(e) => setValue(e.target.value)}
-        >
-          <Radio value="1" label="라디오 버튼" />
-          <Radio value="2" label="라디오 버튼" />
-        </RadioGroup>
 
         <Toggle on={toggle} onChange={(v) => setToggle(v)} label="토글" />
       </Box>

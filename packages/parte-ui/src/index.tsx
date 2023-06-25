@@ -23,7 +23,6 @@ export * from "./Pagination";
 export * from "./Portal";
 export * from "./Positioner";
 export * from "./Radio";
-export * from "./RadioGroup";
 export * from "./Select";
 export * from "./SideSheet";
 export * from "./Spinner";

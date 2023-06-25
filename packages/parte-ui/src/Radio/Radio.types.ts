@@ -1,5 +1,5 @@
-export type RadioProps = {
-  value: string;
-  label: string;
-  disabled?: boolean;
+import { InputHTMLAttributes } from "react";
+
+export type RadioProps = InputHTMLAttributes<HTMLInputElement> & {
+  label?: string;
 };
