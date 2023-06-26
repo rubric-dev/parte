@@ -1,5 +1,4 @@
 import styled, { css } from "styled-components";
-import { TextInputProps } from "./TextInput.types";
 
 export const Container = styled.div`
   ${({ theme }) => css`
@@ -34,13 +33,13 @@ export const Container = styled.div`
   `}
 `;
 
-export const LeftIconContainer = styled.div<TextInputProps>`
-  ${({ theme, disabled }) => css`
+export const LeftIconContainer = styled.div<{ $disabled?: boolean }>`
+  ${({ theme, $disabled }) => css`
     display: flex;
     align-items: center;
     justify-content: center;
     margin-left: ${theme.spacing.spacing12}px;
-    ${disabled &&
+    ${$disabled &&
     css`
       & svg {
         color: ${theme.colors.N500};
@@ -48,14 +47,14 @@ export const LeftIconContainer = styled.div<TextInputProps>`
     `};
   `}
 `;
-export const RightIconContainer = styled.div<TextInputProps>`
-  ${({ theme, disabled }) => css`
+export const RightIconContainer = styled.div<{ $disabled?: boolean }>`
+  ${({ theme, $disabled }) => css`
     display: flex;
     align-items: center;
     justify-content: center;
     margin-right: ${theme.spacing.spacing10}px;
     svg {
-      ${disabled &&
+      ${$disabled &&
       css`
         color: ${theme.colorTextDisabled};
       `};
@@ -63,13 +62,13 @@ export const RightIconContainer = styled.div<TextInputProps>`
   `}
 `;
 
-export const Input = styled.input<TextInputProps>`
-  ${({ theme, leadingIcon }) => css`
+export const Input = styled.input<{ $hasLeadingIcon?: boolean }>`
+  ${({ theme, $hasLeadingIcon }) => css`
     outline: none;
     border: none;
     box-sizing: border-box;
     padding: ${theme.spacing.spacing8 - 1}px ${theme.spacing.spacing12}px;
-    padding-left: ${leadingIcon
+    padding-left: ${$hasLeadingIcon
       ? css`
           ${theme.spacing.spacing8}px
         `
