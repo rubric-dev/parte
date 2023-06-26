@@ -1,5 +1,13 @@
 # @parte-ds/ui
 
+## 1.3.1
+
+### Patch Changes
+
+- - Checkbox, Radio, Toggle 컴포넌트 disabled일 경우 스타일링 변경
+  - Radio uncontrolled 지원
+  - TextInput padding 조건 다시 수정
+
 ## 1.3.0
 
 ### Minor Changes
