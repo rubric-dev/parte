@@ -1,7 +1,7 @@
 import styled, { css } from "styled-components";
-import { ButtonProps } from "./Button.types";
+import { ButtonStylingProps } from "./Button.types";
 
-const commonButtonStyles = css<ButtonProps>`
+const commonButtonStyles = css<ButtonStylingProps>`
   position: relative;
   display: inline-flex;
   align-items: center;
@@ -41,7 +41,7 @@ const commonButtonStyles = css<ButtonProps>`
   }
 `;
 
-export const StyledButton = styled.button<ButtonProps>`
+export const buttonStyles = css<ButtonStylingProps>`
   ${commonButtonStyles}
   ${({ theme, variant }) =>
     variant === "fill-primary" &&
@@ -351,4 +351,12 @@ export const StyledButton = styled.button<ButtonProps>`
         }
       }
     `}
+`;
+
+export const StyledButton = styled.button<ButtonStylingProps>`
+  ${buttonStyles}
+`;
+
+export const StyledLinkButton = styled.a<ButtonStylingProps>`
+  ${buttonStyles}
 `;

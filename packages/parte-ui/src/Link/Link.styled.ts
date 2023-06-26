@@ -1,5 +1,5 @@
-import styled, { css } from 'styled-components';
-import { LinkProps } from './Link.types';
+import styled, { css } from "styled-components";
+import { LinkProps } from "./Link.types";
 
 export const Link = styled.a<LinkProps>`
   ${({ theme, size = 400 }) => {
@@ -35,14 +35,12 @@ export const Link = styled.a<LinkProps>`
       &:visited {
         color: ${theme.colorTextLinkVisited};
       }
+      &[data-disabled="true"] {
+        ${theme.typography.H400};
+        color: ${theme.colorTextLinkDisabled};
+        cursor: default;
+        pointer-events: none;
+      }
     `;
   }}
-`;
-
-export const DisabledLink = styled.span`
-  ${({ theme }) => css`
-    ${theme.typography.H400};
-    color: ${theme.colorTextLinkDisabled};
-    cursor: default;
-  `}
 `;
