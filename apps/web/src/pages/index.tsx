@@ -1,7 +1,15 @@
-import { Badge, Box, ButtonGroup, Checkbox, Toggle } from "@parte-ds/ui";
+import {
+  Badge,
+  Box,
+  ButtonGroup,
+  Checkbox,
+  Toggle,
+  LinkButton,
+  Link as ParteLink,
+} from "@parte-ds/ui";
 import Head from "next/head";
 import Link from "next/link";
-import { useState } from "react";
+import { AnchorHTMLAttributes, forwardRef, useState } from "react";
 import styled, { css, useTheme } from "styled-components";
 
 const MENU = [
@@ -80,10 +88,30 @@ export default function Home() {
             오른쪽 버튼
           </ButtonGroup.Option>
         </ButtonGroup>
+
+        <Link href="/input" passHref legacyBehavior>
+          <LinkButton>passHref 예시</LinkButton>
+        </Link>
+        <Link href="/input">네이티브</Link>
+        <ParteLink disabled href="/input">
+          파르테 링크
+        </ParteLink>
       </Box>
     </>
   );
 }
+
+const CustomAnchor = forwardRef<
+  HTMLAnchorElement,
+  AnchorHTMLAttributes<HTMLAnchorElement>
+>(({ children, ...props }, ref) => {
+  return (
+    <a ref={ref} {...props}>
+      {children}
+    </a>
+  );
+});
+CustomAnchor.displayName = "CustomAnchor";
 
 const LinkContainer = styled.div`
   ${({ theme }) => css`
