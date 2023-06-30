@@ -40,6 +40,14 @@ export default function Home() {
           </LinkContainer>
         ))}
         <Checkbox label="체크박스" />
+        <Box
+          width="fit-content"
+          padding={4}
+          backgroundColor="skyblue"
+          borderRadius={4}
+        >
+          <Checkbox label="체크박스" />
+        </Box>
         <Checkbox label="체크박스" indeterminate />
         <Checkbox label="체크박스" defaultChecked />
         <Checkbox label="체크박스" disabled />

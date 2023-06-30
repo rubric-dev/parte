@@ -16,8 +16,11 @@ export const LabelContainer = styled.label`
     -ms-user-select: none;
     user-select: none;
 
+    #${CHECKBOX_ICON_BOX} {
+      background-color: ${theme.colors.N0};
+    }
     & svg {
-      color: ${theme.colors.N0};
+      color: ${theme.colors.transparent};
     }
     &:hover #${CHECKBOX_ICON_BOX} {
       border: 1px solid ${theme.colors.N600};
@@ -33,6 +36,9 @@ export const LabelContainer = styled.label`
     }
 
     &:has(input:checked) {
+      & svg {
+        color: ${theme.colors.N0};
+      }
       &:hover #${CHECKBOX_ICON_BOX} {
         background-color: ${theme.colors.T500};
         outline: none;
