@@ -1,4 +1,4 @@
-import { Box, Checkbox, Toggle } from "@parte-ds/ui";
+import { Badge, Box, ButtonGroup, Checkbox, Toggle } from "@parte-ds/ui";
 import Head from "next/head";
 import Link from "next/link";
 import { useState } from "react";
@@ -17,6 +17,8 @@ export default function Home() {
 
   const [value, setValue] = useState("2");
   const [toggle, setToggle] = useState(true);
+
+  const [index, setIndex] = useState(0);
 
   return (
     <>
@@ -55,6 +57,29 @@ export default function Home() {
         <Checkbox label="체크박스" disabled defaultChecked />
 
         <Toggle on={toggle} onChange={(v) => setToggle(v)} label="토글" />
+        <ButtonGroup>
+          <ButtonGroup.Option
+            disabled
+            isSelected={index === 0}
+            onClick={() => setIndex(0)}
+            trailingNode={<Badge badgeColor="GREY" text="6" type="pills" />}
+          >
+            왼쪽 버튼
+          </ButtonGroup.Option>
+          <ButtonGroup.Option
+            isSelected={index === 1}
+            onClick={() => setIndex(1)}
+            trailingNode={<Badge badgeColor="GREEN" text="6" type="pills" />}
+          >
+            가운데 버튼
+          </ButtonGroup.Option>
+          <ButtonGroup.Option
+            isSelected={index === 2}
+            onClick={() => setIndex(2)}
+          >
+            오른쪽 버튼
+          </ButtonGroup.Option>
+        </ButtonGroup>
       </Box>
     </>
   );
