@@ -41,4 +41,8 @@ export const BADGE_COLOR = {
     background-color: ${COLORS.O100};
     color: ${COLORS.O600};
   `,
+  GREY: css`
+    background-color: ${COLORS.N400};
+    color: ${COLORS.N0};
+  `,
 } as const;
