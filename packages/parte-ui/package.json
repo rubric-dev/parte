@@ -19,7 +19,7 @@
     "@parte-ds/tsconfig": "workspace:*",
     "@tanstack/react-table": "^8.7.9",
     "@types/lodash-es": "^4.17.7",
-    "@types/react": "^18.2.13",
+    "@types/react": "^18.2.14",
     "@types/react-dom": "^18.2.6",
     "@types/react-transition-group": "^4.4.5",
     "@types/shallowequal": "^1.1.1",
@@ -47,5 +47,9 @@
     "react-select": "^5.7.1",
     "react-select-async-paginate": "^0.7.2",
     "styled-components": "^5.3.9"
+  },
+  "dependencies": {
+    "@types/react-ranger": "^2.0.1",
+    "react-ranger": "^2.1.0"
   }
 }
