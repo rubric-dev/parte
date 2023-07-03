@@ -28,6 +28,7 @@ export const Input = styled.input`
     width: 16px;
     height: 16px;
     cursor: pointer;
+    background-color: ${theme.colors.N0};
 
     &:hover {
       border: 1px solid ${theme.colors.N600};
