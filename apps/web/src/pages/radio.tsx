@@ -27,6 +27,14 @@ const RadioTest = () => {
       ))}
       <Radio label="테스트3" disabled />
       <Radio label="테스트4" checked disabled />
+      <Box
+        padding={8}
+        backgroundColor="skyblue"
+        borderRadius={4}
+        width="fit-content"
+      >
+        <Radio />
+      </Box>
     </Box>
   );
 };

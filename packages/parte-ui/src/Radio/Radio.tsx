@@ -7,7 +7,7 @@ export const Radio = forwardRef<HTMLInputElement, RadioProps>(
     return (
       <Styled.RadioWrapper>
         <Styled.Input ref={ref} type="radio" {...inputProps} />
-        <Styled.Label>{label}</Styled.Label>
+        {label && <Styled.Label>{label}</Styled.Label>}
       </Styled.RadioWrapper>
     );
   }
