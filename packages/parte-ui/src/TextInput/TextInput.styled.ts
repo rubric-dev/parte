@@ -107,12 +107,12 @@ export const Input = styled.input<{
       background-color: ${theme.colorBackgroundDisabled};
     }
 
-    &[type="number"][data-show-span-button="true"]::-webkit-outer-spin-button,
-    &[type="number"][data-show-span-button="true"]::-webkit-inner-spin-button {
+    &[type="number"][data-show-span-button="false"]::-webkit-outer-spin-button,
+    &[type="number"][data-show-span-button="false"]::-webkit-inner-spin-button {
       -webkit-appearance: none;
       margin: 0;
     }
-    &[type="number"][data-show-span-button="true"] {
+    &[type="number"][data-show-span-button="false"] {
       -moz-appearance: textfield;
     }
   `}

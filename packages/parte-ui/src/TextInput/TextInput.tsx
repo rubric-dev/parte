@@ -14,7 +14,7 @@ export const TextInput = forwardRef<HTMLInputElement, TextInputProps>(
       direction,
       leadingIcon,
       trailingIcon,
-      showSpinButton,
+      showSpinButton = false,
       ...inputProps
     } = props;
 
