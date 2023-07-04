@@ -22,6 +22,9 @@ const Template: Story<TextInputProps> = ({ ...args }) => {
 export const Default = Template.bind({});
 Default.args = {};
 
+export const Number = Template.bind({});
+Number.args = { type: "number", showSpinButton: true };
+
 export const Search = Template.bind({});
 Search.args = {
   leadingIcon: <ActionSearchIcon size={12} color="N600" />,

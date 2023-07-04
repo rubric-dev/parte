@@ -62,7 +62,9 @@ export const RightIconContainer = styled.div<{ $disabled?: boolean }>`
   `}
 `;
 
-export const Input = styled.input<{ $hasLeadingIcon?: boolean }>`
+export const Input = styled.input<{
+  $hasLeadingIcon?: boolean;
+}>`
   ${({ theme, $hasLeadingIcon }) => css`
     outline: none;
     border: none;
@@ -103,6 +105,15 @@ export const Input = styled.input<{ $hasLeadingIcon?: boolean }>`
         color: ${theme.colorTextPlaceholderDisabled};
       }
       background-color: ${theme.colorBackgroundDisabled};
+    }
+
+    &[type="number"][data-show-span-button="true"]::-webkit-outer-spin-button,
+    &[type="number"][data-show-span-button="true"]::-webkit-inner-spin-button {
+      -webkit-appearance: none;
+      margin: 0;
+    }
+    &[type="number"][data-show-span-button="true"] {
+      -moz-appearance: textfield;
     }
   `}
 `;
