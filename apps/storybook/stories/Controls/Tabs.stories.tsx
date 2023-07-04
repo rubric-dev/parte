@@ -8,17 +8,20 @@ import {
   TabsProps,
   TabVariant,
 } from "@parte-ds/ui";
-import { Story, Meta } from "@storybook/react";
+import { Meta, StoryObj } from "@storybook/react";
 import { useState } from "react";
 
-export default {
+const TabsStory: Meta = {
   title: "Components/Controls/Tabs",
   component: Tabs,
   parameters: {
     layout: "centered",
     viewport: "responsive",
   },
-} as Meta;
+};
+
+export default TabsStory;
+type Story = StoryObj<TabsProps & { variant?: TabVariant }>;
 
 const SAMPLE_TABS: Option<string>[] = [
   { label: "Tab 1", value: "Tab 1" },
@@ -27,10 +30,10 @@ const SAMPLE_TABS: Option<string>[] = [
   { label: "Tab 4", value: "Tab 4" },
 ];
 
-const Template: Story<TabsProps & { variant?: TabVariant }> = ({
+const Template = ({
   variant,
   ...args
-}) => {
+}: TabsProps & { variant?: TabVariant }) => {
   const [selected, setSelected] = useState<Option<string>>(SAMPLE_TABS[0]);
   return (
     <Tabs {...args}>
@@ -47,10 +50,10 @@ const Template: Story<TabsProps & { variant?: TabVariant }> = ({
     </Tabs>
   );
 };
-const IconTemplate: Story<TabsProps & { variant?: TabVariant }> = ({
+const IconTemplate = ({
   variant,
   ...args
-}) => {
+}: TabsProps & { variant?: TabVariant }) => {
   const [selected, setSelected] = useState<Option<string>>(SAMPLE_TABS[0]);
   return (
     <Tabs {...args}>
@@ -73,21 +76,31 @@ const IconTemplate: Story<TabsProps & { variant?: TabVariant }> = ({
   );
 };
 
-export const Primary = Template.bind({});
-Primary.args = {};
-
-export const Secondary = Template.bind({});
-Secondary.args = {
-  variant: "Secondary",
+export const Primary: Story = {
+  render: (args) => <Template {...args} />,
+  args: {
+    variant: "Primary",
+  },
 };
 
-export const IconTab = IconTemplate.bind({});
-IconTab.args = {};
+export const Secondary: Story = {
+  render: (args) => <Template {...args} />,
+  args: {
+    variant: "Secondary",
+  },
+};
 
-const SideBarTemplate: Story<TabsProps & { variant?: TabVariant }> = ({
+export const IconTab: Story = {
+  render: (args) => <IconTemplate {...args} />,
+  args: {
+    variant: "Primary",
+  },
+};
+
+const SideBarTemplate = ({
   variant,
   ...args
-}) => {
+}: TabsProps & { variant?: TabVariant }) => {
   const [selected, setSelected] = useState<Option<string>>(SAMPLE_TABS[0]);
   return (
     <Box>
@@ -111,8 +124,9 @@ const SideBarTemplate: Story<TabsProps & { variant?: TabVariant }> = ({
   );
 };
 
-export const SideBarTab = SideBarTemplate.bind({});
-
-SideBarTab.args = {
-  flexBasis: 200,
+export const SideBarTab: Story = {
+  render: (args) => <SideBarTemplate {...args} />,
+  args: {
+    flexBasis: 200,
+  },
 };

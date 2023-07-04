@@ -9,5 +9,9 @@ export const GlobalStyle = createGlobalStyle`
     width: 100%;
     min-height:100vh;
   }
+  body {
+    // N900
+    color: #101840;
+  }
   ${styleReset}
 `;

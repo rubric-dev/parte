@@ -19,7 +19,7 @@ export const ButtonGroup = ({
         if (index === 0) place = "left";
         if (index === children.length - 1) place = "right";
 
-        return cloneElement(button, { place });
+        return cloneElement(button, { place, key: index });
       })}
     </Box>
   );

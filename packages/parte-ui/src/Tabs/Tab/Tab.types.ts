@@ -6,10 +6,13 @@ export type TabDirection = "horizontal" | "vertical";
 export type TabProps = HTMLAttributes<HTMLDivElement> & {
   leadingIcon?: React.ReactNode;
   trailingIcon?: React.ReactNode;
-  children?: React.ReactNode;
   variant?: TabVariant;
   selected?: boolean;
   disabled?: boolean;
   direction?: TabDirection;
-  tabIndex?: number;
+};
+
+export type TabStyledProps = {
+  $variant?: TabVariant;
+  $direction?: TabDirection;
 };

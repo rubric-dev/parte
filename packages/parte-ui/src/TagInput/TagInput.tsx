@@ -126,7 +126,7 @@ export const TagInput = forwardRef<HTMLInputElement, TagInputProps>(
               ref={ref}
               id={id}
               {...props}
-              onFocus={(e) => {
+              onFocus={(e: FocusEvent<HTMLInputElement>) => {
                 onFocus?.(e);
                 setFocused(true);
               }}

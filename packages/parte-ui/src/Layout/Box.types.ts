@@ -1,5 +1,5 @@
 import { HTMLAttributes, PropsWithChildren } from "react";
-import { FlattenSimpleInterpolation } from "styled-components";
+import { RuleSet } from "styled-components";
 import { ElevationToken, SPACING, Spacing } from "../@foundations";
 import {
   AlignContent,
@@ -55,12 +55,12 @@ export type ParteStyledProps = {
 
   elevation?: ElevationToken;
   borderRadius?: number | string;
-  overrideStyles?: FlattenSimpleInterpolation;
+  overrideStyles?: RuleSet;
 };
 
 export type NativeBoxProps = PropsWithChildren<HTMLAttributes<HTMLDivElement>>;
 
 export type InnerBoxProps = NativeBoxProps & {
-  $style: FlattenSimpleInterpolation;
+  $style: RuleSet;
 };
 export type BoxProps = NativeBoxProps & ParteStyledProps;
