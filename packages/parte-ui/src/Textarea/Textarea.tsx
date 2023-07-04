@@ -1,4 +1,4 @@
-import { forwardRef, useState } from "react";
+import { FocusEvent, forwardRef, useState } from "react";
 import { InputWrapper } from "../InputWrapper";
 import * as Styled from "./Textarea.styled";
 import { TextAreaProps } from "./Textarea.types";
@@ -46,11 +46,11 @@ export const Textarea = forwardRef<HTMLTextAreaElement, TextAreaProps>(
             {...props}
             onMouseEnter={() => setHover(true)}
             onMouseLeave={() => setHover(false)}
-            onFocus={(e) => {
+            onFocus={(e: FocusEvent<HTMLTextAreaElement>) => {
               onFocus?.(e);
               setFocused(true);
             }}
-            onBlur={(e) => {
+            onBlur={(e: FocusEvent<HTMLTextAreaElement>) => {
               onBlur?.(e);
               setFocused(false);
             }}

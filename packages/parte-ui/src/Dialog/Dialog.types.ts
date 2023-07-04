@@ -1,6 +1,6 @@
 import { ReactNode } from "react";
 import { TransitionStatus } from "react-transition-group";
-import { FlattenSimpleInterpolation } from "styled-components";
+import { RuleSet } from "styled-components";
 import { ElevationToken } from "../@foundations";
 import { ButtonVariant } from "../Button/Button.types";
 
@@ -28,5 +28,5 @@ export interface DialogProps {
   width?: number;
   elevation?: ElevationToken;
   state?: TransitionStatus;
-  overrideStyles?: FlattenSimpleInterpolation;
+  overrideStyles?: RuleSet;
 }

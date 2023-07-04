@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { MouseEvent, useState } from "react";
 import { MenuRowProps } from "./MenuRow.types";
 import * as Styled from "./MenuRow.styled";
 import { Checkbox } from "../../Checkbox";
@@ -20,7 +20,7 @@ export function MenuRow(props: MenuRowProps) {
       hover={hover}
       onMouseEnter={() => setHover(true)}
       onMouseLeave={() => setHover(false)}
-      onClick={(e) => {
+      onClick={(e: MouseEvent) => {
         e.preventDefault();
         !disabled && onSelect?.();
       }}

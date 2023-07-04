@@ -1,4 +1,4 @@
-import { CSSProperties } from "styled-components";
+import { CSSProperties } from "react";
 import { DropdownPosition } from "../Dropdown.types";
 
 export const getDropdownPosition = (

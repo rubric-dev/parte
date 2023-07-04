@@ -23,9 +23,9 @@ const CommonTextStyle = ({
 `;
 
 export const Headline = styled.h2<Exclude<HeadlineProps, "children">>`
-  ${({ theme, size, color = "N900", ...marginProps }) => css`
+  ${({ theme, size, color, ...marginProps }) => css`
     ${CommonTextStyle(marginProps)}
-    color: ${theme.colors[color]};
+    ${color && `color: ${theme.colors[color]};`}
     ${size === 900 && theme.typography.H900}
     ${size === 800 && theme.typography.H800}
     ${size === 700 && theme.typography.H700}
@@ -39,9 +39,9 @@ export const Headline = styled.h2<Exclude<HeadlineProps, "children">>`
 `;
 
 export const Paragraph = styled.p<Exclude<ParagraphProps, "children">>`
-  ${({ theme, size, color = "N900", ...marginProps }) => css`
+  ${({ theme, size, color, ...marginProps }) => css`
     ${CommonTextStyle(marginProps)}
-    color: ${theme.colors[color]};
+    ${color && `color: ${theme.colors[color]};`}
     ${size === 300 && theme.typography.P300}
     ${size === 200 && theme.typography.P200}
     ${size === 100 && theme.typography.P100}
@@ -49,9 +49,9 @@ export const Paragraph = styled.p<Exclude<ParagraphProps, "children">>`
 `;
 
 export const Caption = styled.span<Exclude<CaptionProps, "children">>`
-  ${({ theme, size, color = "N900", ...marginProps }) => css`
+  ${({ theme, size, color, ...marginProps }) => css`
     ${CommonTextStyle(marginProps)}
-    color: ${theme.colors[color]};
+    ${color && `color: ${theme.colors[color]};`}
     ${size === 200 && theme.typography.C200}
     ${size === 100 && theme.typography.C100}
   `}

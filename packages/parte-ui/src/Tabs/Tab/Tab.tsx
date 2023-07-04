@@ -11,27 +11,20 @@ export const Tab = forwardRef<HTMLDivElement, TabProps>(
       variant = "Primary",
       direction = "horizontal",
       tabIndex = 0,
-      onClick,
-      onFocus,
       disabled,
+      selected,
+      ...divProps
     } = props;
 
     return (
       <Styled.Tab
         ref={ref}
         tabIndex={disabled ? -1 : tabIndex}
-        {...props}
-        variant={variant}
-        direction={direction}
-        disabled={disabled}
-        onClick={(e) => {
-          if (disabled) return;
-          onClick?.(e);
-        }}
-        onFocus={(e) => {
-          if (disabled) return;
-          onFocus?.(e);
-        }}
+        $variant={variant}
+        $direction={direction}
+        data-selected={selected}
+        data-disabled={disabled}
+        {...divProps}
       >
         {leadingIcon}
         {children}

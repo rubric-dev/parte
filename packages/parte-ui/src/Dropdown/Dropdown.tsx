@@ -6,8 +6,8 @@ import React, {
   useReducer,
   useRef,
   useState,
+  CSSProperties,
 } from "react";
-import { CSSProperties } from "styled-components";
 import { Portal } from "../Portal";
 import useOutsideClick from "../hooks/useOutsideClick";
 import * as Styled from "./Dropdown.styled";
