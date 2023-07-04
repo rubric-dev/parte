@@ -1,5 +1,13 @@
 # @parte-ds/ui
 
+## 1.4.0
+
+### Minor Changes
+
+- styled-components v6
+  RangeSlider
+  ButtonGroup
+
 ## 1.3.1
 
 ### Patch Changes
