@@ -14,6 +14,7 @@ export const TextInput = forwardRef<HTMLInputElement, TextInputProps>(
       direction,
       leadingIcon,
       trailingIcon,
+      showSpinButton = false,
       ...inputProps
     } = props;
 
@@ -38,6 +39,7 @@ export const TextInput = forwardRef<HTMLInputElement, TextInputProps>(
             ref={ref}
             {...inputProps}
             data-error={!!errorText}
+            data-show-span-button={showSpinButton}
             $hasLeadingIcon={!!leadingIcon}
           />
           {trailingIcon && (

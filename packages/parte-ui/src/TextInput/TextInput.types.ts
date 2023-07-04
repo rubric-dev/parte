@@ -5,4 +5,5 @@ export type TextInputProps = InputHTMLAttributes<HTMLInputElement> &
   Omit<InputWrapperProps, "children"> & {
     leadingIcon?: React.ReactNode;
     trailingIcon?: React.ReactNode;
+    showSpinButton?: boolean;
   };

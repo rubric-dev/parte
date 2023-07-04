@@ -11,6 +11,7 @@ import {
   Tabs,
   Tab,
   Paragraph,
+  TextInput,
 } from "@parte-ds/ui";
 import Head from "next/head";
 import Link from "next/link";
@@ -69,7 +70,12 @@ export default function Home() {
         <Checkbox label="체크박스" disabled />
         <Checkbox label="체크박스" disabled indeterminate />
         <Checkbox label="체크박스" disabled defaultChecked />
-
+        <TextInput type="number" placeholder="spin 버튼 없음" />
+        <TextInput
+          type="number"
+          placeholder="spin 버튼 보여짐"
+          showSpinButton
+        />
         <Toggle on={toggle} onChange={(v) => setToggle(v)} label="토글" />
         <ButtonGroup>
           <ButtonGroup.Option
