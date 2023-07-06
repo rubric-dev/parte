@@ -5,46 +5,42 @@ import {
   AlertSuccessIcon,
   AlertWarningIcon,
 } from "../../../parte-icons/src";
+import { Headline } from "../@foundations";
 import { IconButton } from "../IconButton";
 import * as Styled from "./Alert.styled";
 import { ALERT_ICON_COLOR } from "./Alert.styled";
 import { AlertProps, AlertStatus } from "./Alert.types";
 
-const renderIcon = (currentStatus: AlertStatus) => {
-  switch (currentStatus) {
-    case "G400":
-      return <AlertSuccessIcon size={16} color="G400" />;
+const renderIcon = (status: AlertStatus) => {
+  const color = ALERT_ICON_COLOR[status];
+  switch (status) {
+    case "success":
+      return <AlertSuccessIcon size={16} color={color} />;
     case "info":
-      return <AlertInfoIcon size={16} color="B400" />;
+      return <AlertInfoIcon size={16} color={color} />;
     case "warning":
-      return <AlertWarningIcon size={16} color="Y400" />;
+      return <AlertWarningIcon size={16} color={color} />;
     case "error":
-      return <AlertDangerIcon size={16} color="R400" />;
+      return <AlertDangerIcon size={16} color={color} />;
   }
 };
 
 export const Alert = (props: AlertProps) => {
-  if (props.type === "alert-inline") {
+  if (props.type === "inline") {
     return (
-      <Styled.Alert type={props.type} status={props.status}>
+      <Styled.AlertInline $status={props.status}>
         {renderIcon(props.status)}
-        <Styled.Title>{props.message}</Styled.Title>
-      </Styled.Alert>
+        <Headline size={400}>{props.message}</Headline>
+      </Styled.AlertInline>
     );
   }
   if (props.type === "toast") {
     return (
-      <Styled.Alert
-        {...props}
-        toastId={props.toastId}
-        type={props.type}
-        status={props.status}
-        onClose={props.onClose}
-      >
+      <Styled.Toast $status={props.status}>
         <Styled.InfoWrap>
           {renderIcon(props.status)}
           <Styled.Header>
-            <Styled.Title>{props.title}</Styled.Title>
+            <Headline size={400}>{props.title}</Headline>
             <IconButton
               variant="ghost-secondary"
               size={24}
@@ -58,21 +54,21 @@ export const Alert = (props: AlertProps) => {
             />
           </Styled.Header>
         </Styled.InfoWrap>
-        {props.description && (
-          <Styled.Description>{props.description}</Styled.Description>
+        {props.children && (
+          <Styled.Description>{props.children}</Styled.Description>
         )}
-      </Styled.Alert>
+      </Styled.Toast>
     );
   }
 
   return (
-    <Styled.Alert {...props} type={props.type} status={props.status}>
+    <Styled.Alert $status={props.status}>
       <Styled.InfoWrap>
         {renderIcon(props.status)}
-        <Styled.Title>{props.title}</Styled.Title>
+        <Headline size={400}>{props.title}</Headline>
       </Styled.InfoWrap>
-      {props.description && (
-        <Styled.Description>{props.description}</Styled.Description>
+      {props.children && (
+        <Styled.Description>{props.children}</Styled.Description>
       )}
     </Styled.Alert>
   );

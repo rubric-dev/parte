@@ -56,7 +56,7 @@ export const ToastManager = memo(function ({
   };
 
   const createToastInstance = (passedProps: ToastParams): ToastState => {
-    const { title, description, status } = passedProps;
+    const { title, children, status } = passedProps;
     const uniqueId = idCounter.current;
     idCounter.current += 1;
 
@@ -65,7 +65,7 @@ export const ToastManager = memo(function ({
     return {
       id: fixedId,
       title,
-      description: description ?? "",
+      children,
       close: () => safeCloseToast(fixedId),
       status,
     };
@@ -95,3 +95,5 @@ export const ToastManager = memo(function ({
     </Styled.ToastContainer>
   );
 });
+
+ToastManager.displayName = "ToastManager";

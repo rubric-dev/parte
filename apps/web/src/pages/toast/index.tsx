@@ -8,7 +8,7 @@ const Toast = () => {
           toaster.notify({
             status: "info",
             title: "title",
-            description: "description",
+            children: "description",
           })
         }
       >

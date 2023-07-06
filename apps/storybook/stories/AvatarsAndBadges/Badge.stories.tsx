@@ -18,7 +18,7 @@ export const Default: Story = {
   args: {
     text: "Badge",
     type: "badge",
-    badgeColor: "AUTO",
+    badgeColor: "VIOLET",
   },
   argTypes: {
     type: {
