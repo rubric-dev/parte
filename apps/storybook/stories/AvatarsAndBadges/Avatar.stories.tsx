@@ -32,6 +32,7 @@ export const Default: Story = {
     src: "https://avatars.githubusercontent.com/u/57249866?v=4",
     size: 32,
     shape: "CIRCLE",
+    avatarColor: "GREEN",
   },
   argTypes: {
     src: {
@@ -59,7 +60,7 @@ export const Default: Story = {
 export const NameInitial: Story = {
   args: {
     name: "Rafael",
-    avatarColor: "AUTO",
+    avatarColor: "ORANGE",
     size: 32,
     shape: "CIRCLE",
   },

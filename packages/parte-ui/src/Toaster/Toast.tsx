@@ -87,13 +87,13 @@ export const Toast = memo(function Toast({ toast, onRemove }: ToastProps) {
           >
             <Box ref={onRef} padding={8}>
               <Alert
-                toastId={toast.id}
                 type="toast"
                 status={toast.status}
                 title={toast.title}
-                description={toast.description}
                 onClose={close}
-              />
+              >
+                {toast.children}
+              </Alert>
             </Box>
           </Styled.ToastBox>
         );

@@ -107,7 +107,7 @@ const Table = () => {
             toaster.notify({
               title: "채팅",
               status: "info",
-              description: `${name}와 채팅하기`,
+              children: `${name}와 채팅하기`,
             });
           };
           return (

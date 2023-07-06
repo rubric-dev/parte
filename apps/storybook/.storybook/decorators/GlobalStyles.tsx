@@ -14,4 +14,10 @@ export const GlobalStyle = createGlobalStyle`
     color: #101840;
   }
   ${styleReset}
+  .sbdocs ol,
+  .sbdocs ul,
+  .sbdocs li {
+    list-style: revert;
+    list-style-type: revert;
+  }
 `;

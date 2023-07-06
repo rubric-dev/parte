@@ -21,7 +21,7 @@ const DefaultToastStory = () => {
           toaster.notify({
             title: "헤벌레",
             status: "warning",
-            description:
+            children:
               "ㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋ ㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋ",
           })
         }
@@ -45,7 +45,7 @@ const DefaultToastStory = () => {
           toaster.notify({
             title: "수정과",
             status: "info",
-            description: "이게 잣인감?ㅋㅋㅋㅋㅋㅋㅋㅋ엌ㅋㅋㅋㅋㅋㅋ",
+            children: "이게 잣인감?ㅋㅋㅋㅋㅋㅋㅋㅋ엌ㅋㅋㅋㅋㅋㅋ",
           })
         }
       >
@@ -56,8 +56,8 @@ const DefaultToastStory = () => {
         onClick={() =>
           toaster.notify({
             title: "g.o.d",
-            status: "G400",
-            description:
+            status: "success",
+            children:
               "지오디? ㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋ엌 ㅋㅋㅋㅋㅋㅋ엌ㅋㅋㅋㅋ",
           })
         }

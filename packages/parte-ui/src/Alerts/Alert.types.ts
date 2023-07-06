@@ -1,25 +1,29 @@
-export type AlertStatus = "G400" | "info" | "warning" | "error";
+import { ExtractToStyledProps } from "@parte-ds/utils";
+import { PropsWithChildren } from "react";
+
+export type AlertType = "alert" | "toast" | "inline";
+export type AlertStatus = "success" | "info" | "warning" | "error";
+
 export type AlertProps =
   | AlertBasicProps
   | AlertToastProps
   | AlertAlertInlineProps;
 
-type AlertBasicProps = {
-  status: AlertStatus;
+type AlertBasicProps = PropsWithChildren<{
   type: "alert";
-  title?: string;
-  description?: string;
-};
-export type AlertToastProps = {
-  toastId: string | number;
   status: AlertStatus;
+  title?: string;
+}>;
+export type AlertToastProps = PropsWithChildren<{
   type: "toast";
-  title?: string;
-  description?: string;
-  onClose: () => void;
-};
-type AlertAlertInlineProps = {
   status: AlertStatus;
-  type: "alert-inline";
-  message?: string;
+  title?: string;
+  onClose?: () => void;
+}>;
+type AlertAlertInlineProps = {
+  type: "inline";
+  status: AlertStatus;
+  message: string;
 };
+
+export type AlertStyleProps = ExtractToStyledProps<AlertProps, "status">;
