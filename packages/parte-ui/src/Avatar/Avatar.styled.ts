@@ -1,31 +1,31 @@
 import styled, { css } from "styled-components";
 import { getColors, getAvatarInitialsFontSize } from "../utils/badge.utils";
 import { Box } from "../Layout";
-import { AvatarProps } from "./Avatar.types";
+import { AvatarStyleProps } from "./Avatar.types";
 
-export const commonAvatarStyles = css<AvatarProps>`
-  ${({ size = 32, shape = "CIRCLE" }) => css`
-    width: ${size}px;
-    height: ${size}px;
-    border-radius: ${shape === "CIRCLE" ? "100%" : "4px"};
+export const commonAvatarStyles = css<AvatarStyleProps>`
+  ${({ $size = 32, $shape = "CIRCLE" }) => css`
+    width: ${$size}px;
+    height: ${$size}px;
+    border-radius: ${$shape === "CIRCLE" ? "100%" : "4px"};
   `}
 `;
 
-export const Avatar = styled(Box)<AvatarProps>`
-  ${({ avatarColor }) => css`
+export const Avatar = styled(Box)<AvatarStyleProps>`
+  ${({ $avatarColor }) => css`
     display: flex;
     justify-content: center;
     align-items: center;
     overflow: hidden;
-    ${getColors(avatarColor)}
+    ${getColors($avatarColor)}
     ${commonAvatarStyles}
   `}
 `;
 
-export const Text = styled.span<AvatarProps>`
-  ${({ size = 32 }) => css`
+export const Text = styled.span<AvatarStyleProps>`
+  ${({ $size = 32 }) => css`
     color: inherit;
-    font-size: ${getAvatarInitialsFontSize(size)}px;
+    font-size: ${getAvatarInitialsFontSize($size)}px;
     line-height: 16px;
     font-weight: 400;
   `}
