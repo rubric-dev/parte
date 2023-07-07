@@ -220,6 +220,9 @@ importers:
       '@parte-ds/tsconfig':
         specifier: workspace:*
         version: link:../tsconfig
+      '@parte-ds/utils':
+        specifier: workspace:*
+        version: link:../parte-utils
       '@tanstack/react-table':
         specifier: ^8.7.9
         version: 8.7.9(react-dom@18.2.0)(react@18.2.0)

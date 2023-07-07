@@ -1,9 +1,9 @@
-import { HTMLAttributes } from "react";
 import { BadgeColors } from "../@foundations";
+import { ExtractToStyledProps } from "@parte-ds/utils";
 
 export type AvatarShape = "CIRCLE" | "SQUARE";
 
-export type AvatarProps = HTMLAttributes<HTMLDivElement> & {
+export type AvatarProps = {
   avatarColor?: BadgeColors;
   size?: number;
   shape?: AvatarShape;
@@ -11,3 +11,8 @@ export type AvatarProps = HTMLAttributes<HTMLDivElement> & {
   showInitial?: boolean;
   src?: string;
 };
+
+export type AvatarStyleProps = ExtractToStyledProps<
+  AvatarProps,
+  "avatarColor" | "size" | "shape"
+>;
