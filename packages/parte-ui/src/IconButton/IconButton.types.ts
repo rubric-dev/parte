@@ -1,9 +1,14 @@
-import React, { HTMLAttributes } from "react";
+import { ExtractToStyledProps } from "@parte-ds/utils";
+import React, { ButtonHTMLAttributes } from "react";
 import { ButtonVariant } from "../Button";
 
-export type IconButtonProps = HTMLAttributes<HTMLButtonElement> & {
+export type IconButtonProps = ButtonHTMLAttributes<HTMLButtonElement> & {
   variant: ButtonVariant;
-  Icon: React.ReactElement;
   size?: number;
-  disabled?: boolean;
+  Icon: React.ReactElement;
 };
+
+export type StyledIconButtonProps = ExtractToStyledProps<
+  IconButtonProps,
+  "variant" | "size"
+>;

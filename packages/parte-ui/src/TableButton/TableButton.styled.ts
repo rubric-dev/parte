@@ -1,7 +1,7 @@
 import styled, { css } from "styled-components";
-import { TableButtonProps } from "./TableButton.types";
+import { StyledTableButtonProps } from "./TableButton.types";
 
-const commonButtonStyles = css<TableButtonProps & { isIconButton: boolean }>`
+const commonButtonStyles = css<StyledTableButtonProps>`
   position: relative;
   display: inline-flex;
   align-items: center;
@@ -15,13 +15,13 @@ const commonButtonStyles = css<TableButtonProps & { isIconButton: boolean }>`
   cursor: pointer;
   white-space: nowrap;
   box-sizing: border-box;
-  width: ${({ fullWidth }) => (fullWidth ? "100%" : "fit-content")};
+  width: ${({ $fullWidth }) => ($fullWidth ? "100%" : "fit-content")};
   -webkit-font-smoothing: antialiased;
   appearance: none;
   -webkit-appearance: none;
   -moz-appearance: none;
-  padding: ${({ theme, isIconButton }) =>
-    isIconButton
+  padding: ${({ theme, $isIconButton }) =>
+    $isIconButton
       ? `${theme.spacing.spacing4}px`
       : `${theme.spacing.spacing1}px ${theme.spacing.spacing6}px`};
   column-gap: 4px;
@@ -39,12 +39,10 @@ const commonButtonStyles = css<TableButtonProps & { isIconButton: boolean }>`
   }
 `;
 
-export const StyledButton = styled.button<
-  TableButtonProps & { isIconButton: boolean }
->`
+export const StyledButton = styled.button<StyledTableButtonProps>`
   ${commonButtonStyles}
-  ${({ theme, variant }) =>
-    variant === "fill-primary" &&
+  ${({ theme, $variant }) =>
+    $variant === "fill-primary" &&
     css`
       background-color: ${theme.colorBackgroundButtonPrimary};
       color: ${theme.colorTextButtonPrimary};
@@ -69,8 +67,8 @@ export const StyledButton = styled.button<
         color: ${theme.colorTextButtonPrimaryDisabled};
       }
     `}
-  ${({ theme, variant }) =>
-    variant === "outline-secondary" &&
+  ${({ theme, $variant }) =>
+    $variant === "outline-secondary" &&
     css`
       background-color: ${theme.colorBackgroundButtonSecondary};
       color: ${theme.colorTextButtonSecondary};

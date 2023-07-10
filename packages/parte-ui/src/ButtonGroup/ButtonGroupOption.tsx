@@ -150,7 +150,7 @@ const StyledButton = styled.button`
     }
 
     //## disabled
-    &[aria-disabled="true"] {
+    &:disabled {
       cursor: default;
       border-color: ${theme.colors.N400};
       background-color: ${theme.colors.N0};
@@ -164,7 +164,7 @@ const StyledButton = styled.button`
     }
 
     //## disabled + selected
-    &[aria-selected="true"][aria-disabled="true"] {
+    &[aria-selected="true"]:disabled {
       cursor: default;
       border-color: ${theme.colors.N400};
       background-color: ${theme.colors.N100};
