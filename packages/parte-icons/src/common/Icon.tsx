@@ -19,15 +19,7 @@ export interface IconProps
 }
 
 const Icon = forwardRef<HTMLSpanElement, IconProps>((props, ref) => {
-  const {
-    svg,
-    rotate,
-    style,
-    type,
-    color = "N700",
-    size = "16",
-    ...restProps
-  } = props;
+  const { svg, rotate, style, type, color, size = "16", ...restProps } = props;
 
   /**
    * span 에 기본 lineHeight 가 있으므로 오버라이드 해야함.
@@ -37,7 +29,7 @@ const Icon = forwardRef<HTMLSpanElement, IconProps>((props, ref) => {
   };
 
   const svgComponent = cloneElement(svg, {
-    color: COLORS[color],
+    color: color && COLORS[color],
     size,
     style: overrideStyle.style,
   });
