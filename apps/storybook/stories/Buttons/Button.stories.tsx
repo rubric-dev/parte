@@ -1,6 +1,11 @@
 import { Meta, StoryObj } from "@storybook/react";
 import { Button } from "@parte-ds/ui";
-import { InterfaceConsoleIcon } from "@parte-ds/icons";
+import {
+  ActionAddIcon,
+  ActionCrossIcon,
+  InterfaceConsoleIcon,
+} from "@parte-ds/icons";
+import { BUTTON_VARIANT_OPTIONS } from "../../.storybook/constant";
 
 const ButtonStory: Meta = {
   title: "Components/Buttons/Button",
@@ -8,6 +13,34 @@ const ButtonStory: Meta = {
   parameters: {
     layout: "centered",
     viewport: "responsive",
+  },
+  argTypes: {
+    variant: {
+      options: BUTTON_VARIANT_OPTIONS,
+      control: { type: "radio" },
+      description: "Button의 형태",
+      table: {
+        defaultValue: { summary: "fill-primary" },
+      },
+    },
+    direction: {
+      options: ["horizontal", "vertical"],
+      control: { type: "radio" },
+      description: "Button에서 텍스트와 아이콘들들의 정렬 방식",
+      table: {
+        type: { summary: "horizontal | vertical" },
+        defaultValue: { summary: "horizontal" },
+      },
+    },
+
+    trailingIcon: {
+      description: "Button 뒤쪽에 올 아이콘",
+      table: { type: { summary: "ReactNode" } },
+    },
+    leadingIcon: {
+      description: "Button 앞쪽에 올 아이콘",
+      table: { type: { summary: "ReactNode" } },
+    },
   },
 };
 
@@ -20,6 +53,20 @@ export const FillPrimary: Story = {
     leadingIcon: <InterfaceConsoleIcon />,
     children: "default button",
     variant: "fill-primary",
+    direction: "horizontal",
+  },
+  parameters: {
+    controls: { exclude: ["children", "trailingIcon", "leadingIcon"] },
+  },
+};
+export const IconArgs: Story = {
+  args: {
+    leadingIcon: <ActionAddIcon />,
+    children: "아이콘들",
+    trailingIcon: <ActionCrossIcon />,
+  },
+  parameters: {
+    controls: { exclude: ["children", "variant", "direction"] },
   },
 };
 

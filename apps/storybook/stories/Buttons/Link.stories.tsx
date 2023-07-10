@@ -19,6 +19,7 @@ export const Default: Story = {
     children: "Link",
     href: "https://google.com",
     target: "_blank",
+    disabled: false,
   },
 };
 
@@ -26,24 +27,14 @@ export const LinkInParagraph: Story = {
   render: ({ children, args }) => (
     <Box>
       <Paragraph size={200}>
-        <>
-          {`Hello! It's a `}
-          <Link {...args}>{children}</Link> {`Component`}
-        </>
+        {`Hello! It's a `}
+        <Link {...args}>{children}</Link> Component
       </Paragraph>
     </Box>
   ),
   args: {
     children: "Link",
     href: "https://google.com",
-    target: "_blank",
-  },
-};
-export const Disabled = {
-  args: {
-    children: "Disabled Link",
-    href: "https://google.com",
-    disabled: true,
     target: "_blank",
   },
 };

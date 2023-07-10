@@ -6,10 +6,16 @@ export const TableButton = ({
   leadingIcon,
   trailingIcon,
   variant = "fill-primary",
-  ...props
+  fullWidth,
+  ...buttonAttributes
 }: TableButtonProps) => {
   return (
-    <StyledButton variant={variant} {...props} isIconButton={!children}>
+    <StyledButton
+      $variant={variant}
+      $fullWidth={fullWidth}
+      $isIconButton={!children}
+      {...buttonAttributes}
+    >
       {leadingIcon}
       {children}
       {trailingIcon}

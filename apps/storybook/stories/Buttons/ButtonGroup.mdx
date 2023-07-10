@@ -1,0 +1,22 @@
+import { Canvas, Meta, Controls } from "@storybook/blocks";
+import * as ButtonGroupStories from "./ButtonGroup.stories";
+import * as ButtonGroupOptionStories from "./ButtonGroupOption.stories";
+
+<Meta of={ButtonGroupStories} />
+
+# ButtonGroup
+
+`ButtonGroup`은 한 줄에 2개 이상의 Button들을 배치하여 유저에게 선택지를 제공합니다.
+
+> 그래서 `ButtonGroup` 컴포넌트는 최소 2개의 `ButtonGroupOptioin` 컴포넌트를 포함하여야 합니다.
+
+<Canvas of={ButtonGroupStories.Default} />
+
+## ButtonGroup.Option
+
+<Canvas of={ButtonGroupOptionStories.Default} />
+
+<Canvas of={ButtonGroupOptionStories.Option} />
+<Controls of={ButtonGroupOptionStories.Option} />
+
+위의 props들을 제외하고 이벤트 핸들러의 경우 react에서 `button`의 props를 그대로 받습니다.

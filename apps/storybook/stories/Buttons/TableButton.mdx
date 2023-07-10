@@ -1,0 +1,15 @@
+import { Canvas, Meta, Controls } from "@storybook/blocks";
+import * as TableButtonStories from "./TableButton.stories";
+
+<Meta of={TableButtonStories} />
+
+# TableButton
+
+TableButton은 Table에서 버튼을 사용할때, 또는 작은 아이콘 버튼이 필요할때 사용합니다.
+
+<Canvas of={TableButtonStories.Default} />
+<Controls of={TableButtonStories.Default} />
+
+## 작은 IconButton
+
+<Canvas of={TableButtonStories.OutlineIconButton} />

@@ -1,10 +1,10 @@
 import styled, { css } from "styled-components";
-import { LinkProps } from "./Link.types";
+import { StyledLinkProps } from "./Link.types";
 
-export const Link = styled.a<LinkProps>`
-  ${({ theme, size = 400 }) => {
+export const Link = styled.a<StyledLinkProps>`
+  ${({ theme, $size = 400 }) => {
     let typo;
-    switch (size) {
+    switch ($size) {
       case 500:
         typo = theme.typography.H500;
         break;

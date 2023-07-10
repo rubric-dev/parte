@@ -42,9 +42,9 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
   ) => {
     return (
       <StyledButton
-        variant={variant}
-        direction={direction}
-        fullWidth={fullWidth}
+        $variant={variant}
+        $direction={direction}
+        $fullWidth={fullWidth}
         ref={ref}
         {...props}
       >
@@ -77,9 +77,9 @@ export const LinkButton = forwardRef<HTMLAnchorElement, LinkButtonProps>(
   ) => {
     return (
       <StyledLinkButton
-        variant={variant}
-        direction={direction}
-        fullWidth={fullWidth}
+        $variant={variant}
+        $direction={direction}
+        $fullWidth={fullWidth}
         ref={ref}
         {...props}
       >

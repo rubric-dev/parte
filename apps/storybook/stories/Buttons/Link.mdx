@@ -1,0 +1,16 @@
+import { Canvas, Meta, Controls, ArgTypes } from "@storybook/blocks";
+import * as LinkStories from "./Link.stories";
+
+<Meta of={LinkStories} />
+
+# Link
+
+Link은 유저를 다른 페이지로 이동하도록 해줍니다.
+기존의 html a tag의 attributes를 그대로 따릅니다.
+
+<Canvas of={LinkStories.Default} />
+<Controls of={LinkStories.Default} />
+
+## Link in paragraph
+
+<Canvas of={LinkStories.LinkInParagraph} />
