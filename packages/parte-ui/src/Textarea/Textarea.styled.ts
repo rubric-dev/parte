@@ -1,91 +1,54 @@
 import styled, { css } from "styled-components";
-import { TextAreaProps } from "./Textarea.types";
+import { StyledTextAreaProps } from "./Textarea.types";
 
-export const TextareaWrapper = styled.div<{
-  focused: boolean;
-  error?: boolean;
-  disabled?: boolean;
-  hover?: boolean;
-}>`
-  ${({ theme, error, hover, focused, disabled }) => css`
-    outline: none;
+export const Textarea = styled.textarea<StyledTextAreaProps>`
+  ${({ theme, $resizable }) => css`
     width: 100%;
     min-height: 80px;
     min-width: 15px;
-    background-color: ${theme.colorBackgroundDefault};
-    color: ${theme.colorParagraph};
-    ${theme.typography.P100}
-    display: inline-flex;
-    border: 1px solid ${theme.colorBorderDefault};
-    border-radius: 4px;
-    width: 100%;
-    ${hover &&
-    css`
-      border: 1px solid ${theme.colorBorderHover};
-      background: ${theme.colorBackgroundHover};
-    `}
-    ${focused &&
-    css`
-      border: 1px solid ${theme.colorBorderFocused};
-      ${theme.commonStyles.outline}
-    `}
-    ${disabled &&
-    css`
-      color: ${theme.colorTextDisabled};
-      background-color: ${theme.colorBackgroundDisabled};
-      border: 1px solid ${theme.colorBorderDisabled};
-    `}
-    ${!!error &&
-    css`
-      &,
-      &:hover,
-      &:focus {
-        border: 1px solid ${theme.colors.R400};
-      }
-    `}
-  `}
-`;
+    ${!$resizable && `resize: none;`}
 
-export const Textarea = styled.textarea<{
-  focused: boolean;
-  disabled?: boolean;
-  hover?: boolean;
-}>`
-  ${({ theme, disabled, hover, focused }) => css`
-    outline: none;
-    border: none;
-    width: 100%;
-    min-height: 80px;
-    min-width: 15px;
-    resize: none;
-    border-radius: 4px;
     padding: ${theme.spacing.spacing8}px ${theme.spacing.spacing12}px;
     background-color: ${theme.colorBackgroundDefault};
     color: ${theme.colorParagraph};
     ${theme.typography.P100}
     display: inline-flex;
     font-family: inherit;
-    ::placeholder {
+    &::placeholder {
       color: ${theme.colorTextPlaceholderDefault};
     }
-    ${hover &&
-    css`
-      ::placeholder {
+
+    border: 1px solid ${theme.colorBorderDefault};
+    border-radius: 4px;
+
+    &:hover {
+      border: 1px solid ${theme.colorBorderHover};
+      background: ${theme.colorBackgroundHover};
+      &::placeholder {
         color: ${theme.colorTextPlaceholderHover};
       }
-    `}
-    ${focused &&
-    css`
-      ::placeholder {
+    }
+    &:focus {
+      border: 1px solid ${theme.colorBorderFocused};
+      ${theme.commonStyles.outline}
+      &::placeholder {
         color: ${theme.colorTextPlaceholderFocused};
       }
-    `}
-    ${disabled &&
-    css`
+    }
+    &:disabled {
       color: ${theme.colorTextDisabled};
-      ::placeholder {
+      background-color: ${theme.colorBackgroundDisabled};
+      border: 1px solid ${theme.colorBorderDisabled};
+      &::placeholder {
         color: ${theme.colorTextPlaceholderDisabled};
       }
-    `}
+    }
+    &[data-error="true"] {
+      &,
+      &:hover,
+      &:focus {
+        border: 1px solid ${theme.colors.R400};
+      }
+    }
   `}
 `;

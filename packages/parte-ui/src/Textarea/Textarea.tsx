@@ -1,4 +1,4 @@
-import { FocusEvent, forwardRef, useState } from "react";
+import { forwardRef } from "react";
 import { InputWrapper } from "../InputWrapper";
 import * as Styled from "./Textarea.styled";
 import { TextAreaProps } from "./Textarea.types";
@@ -10,17 +10,15 @@ export const Textarea = forwardRef<HTMLTextAreaElement, TextAreaProps>(
       description,
       required = false,
       errorText,
-      onFocus,
-      onBlur,
       disabled,
       id,
       direction,
       width,
+      resizable: resizableProp,
+      ...textareaAttributes
     } = props;
 
-    const [hover, setHover] = useState(false);
-    const [focused, setFocused] = useState(false);
-
+    const resizable = width ? false : resizableProp ?? true;
     return (
       <InputWrapper
         label={label}
@@ -32,30 +30,14 @@ export const Textarea = forwardRef<HTMLTextAreaElement, TextAreaProps>(
         disabled={disabled}
         id={id}
       >
-        <Styled.TextareaWrapper
-          hover={hover}
+        <Styled.Textarea
+          ref={ref}
+          id={id}
           disabled={disabled}
-          focused={focused}
-          error={!!errorText}
-        >
-          <Styled.Textarea
-            ref={ref}
-            hover={hover}
-            focused={focused}
-            id={id}
-            {...props}
-            onMouseEnter={() => setHover(true)}
-            onMouseLeave={() => setHover(false)}
-            onFocus={(e: FocusEvent<HTMLTextAreaElement>) => {
-              onFocus?.(e);
-              setFocused(true);
-            }}
-            onBlur={(e: FocusEvent<HTMLTextAreaElement>) => {
-              onBlur?.(e);
-              setFocused(false);
-            }}
-          />
-        </Styled.TextareaWrapper>
+          data-error={errorText ? true : undefined}
+          $resizable={resizable}
+          {...textareaAttributes}
+        />
       </InputWrapper>
     );
   }

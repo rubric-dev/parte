@@ -25,6 +25,7 @@ const MENU = [
   { url: "/alert", name: "Alert 테스트" },
   { url: "/radio", name: "Radio 테스트" },
   { url: "/tab-test", name: "Tab 테스트" },
+  { url: "/forms", name: "Forms 테스트" },
 ];
 
 export default function Home() {
