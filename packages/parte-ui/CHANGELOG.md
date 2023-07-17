@@ -1,5 +1,11 @@
 # @parte-ds/ui
 
+## 1.5.0
+
+### Minor Changes
+
+- preventing props do not go to html attributes Part1
+
 ## 1.4.0
 
 ### Minor Changes
