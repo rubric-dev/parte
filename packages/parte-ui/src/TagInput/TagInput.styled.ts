@@ -68,23 +68,23 @@ export const Input = styled.input`
     color: ${theme.colorParagraph};
     ${theme.typography.P100}
 
-    ::placeholder {
+    &::placeholder {
       color: ${theme.colorTextPlaceholderDefault};
     }
 
     &:hover {
-      ::placeholder {
+      &::placeholder {
         color: ${theme.colorTextPlaceholderHover};
       }
     }
     &:focus {
-      ::placeholder {
+      &::placeholder {
         color: ${theme.colorTextPlaceholderFocused};
       }
     }
     &:disabled {
       color: ${theme.colorTextDisabled};
-      ::placeholder {
+      &::placeholder {
         color: ${theme.colorTextPlaceholderDisabled};
       }
       background-color: ${theme.colorBackgroundDisabled};

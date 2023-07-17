@@ -83,16 +83,16 @@ export const Input = styled.input<{
     color: ${theme.colorParagraph};
     ${theme.typography.P100}
     font-family: inherit;
-    ::placeholder {
+    &::placeholder {
       color: ${theme.colorTextPlaceholderDefault};
     }
     &:not(:read-only):hover {
-      ::placeholder {
+      &::placeholder {
         color: ${theme.colorTextPlaceholderHover};
       }
     }
     &:not(:read-only):focus {
-      ::placeholder {
+      &::placeholder {
         color: ${theme.colorTextPlaceholderFocused};
       }
     }
@@ -101,7 +101,7 @@ export const Input = styled.input<{
     }
     &:disabled {
       color: ${theme.colorTextDisabled};
-      ::placeholder {
+      &::placeholder {
         color: ${theme.colorTextPlaceholderDisabled};
       }
       background-color: ${theme.colorBackgroundDisabled};
