@@ -1,16 +1,18 @@
 import styled, { css } from "styled-components";
 
-export const Container = styled.label<{ disabled: boolean }>`
-  ${({ theme, disabled }) => css`
+export const Label = styled.label`
+  ${({ theme }) => css`
     display: inline-flex;
     align-items: center;
     gap: ${theme.spacing.spacing12}px;
-    cursor: ${disabled ? "default" : "pointer"};
+    cursor: pointer;
+
+    ${theme.typography.P200}
+    color: ${theme.colors.N800};
 
     &:has(input:disabled) {
-      span {
-        color: ${theme.colors.N600};
-      }
+      cursor: default;
+      color: ${theme.colors.N600};
     }
   `}
 `;
@@ -71,12 +73,5 @@ export const Input = styled.input`
         background-color: ${theme.colors.N100};
       }
     }
-  `}
-`;
-
-export const Label = styled.span`
-  ${({ theme }) => css`
-    ${theme.typography.P200};
-    color: ${theme.colors.N800};
   `}
 `;

@@ -68,23 +68,25 @@ export const Default: Story = {
             alignItems="flex-start"
           >
             <Toggle
-              on={seletable}
-              onChange={() => setSelectable(!seletable)}
+              onChange={(e) => setSelectable(e.target.checked)}
               label="선택 가능하도록 전환"
             />
             <Toggle
-              on={showleftIcon}
-              onChange={() => setShowIcons((prev) => [!prev[0], prev[1]])}
+              checked={showleftIcon}
+              onChange={(e) =>
+                setShowIcons((prev) => [e.target.checked, prev[1]])
+              }
               label="왼쪽에 아이콘 추가"
             />
             <Toggle
-              on={showRightIcon}
-              onChange={() => setShowIcons((prev) => [prev[0], !prev[1]])}
+              checked={showRightIcon}
+              onChange={(e) =>
+                setShowIcons((prev) => [prev[0], e.target.checked])
+              }
               label="오른쪽에 아이콘 추가"
             />
             <Toggle
-              on={disabled}
-              onChange={() => setDisabled(!disabled)}
+              onChange={(e) => setDisabled(e.target.checked)}
               label="비활성화 하기"
             />
           </Box>

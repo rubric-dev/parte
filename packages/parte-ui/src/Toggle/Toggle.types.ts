@@ -1,6 +1,5 @@
-export type ToggleProps = {
+import { InputHTMLAttributes } from "react";
+
+export type ToggleProps = InputHTMLAttributes<HTMLInputElement> & {
   label?: string;
-  disabled?: boolean;
-  on: boolean;
-  onChange: (on: boolean) => void;
 };

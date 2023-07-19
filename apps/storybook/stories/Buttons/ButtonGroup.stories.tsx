@@ -24,7 +24,10 @@ export const Default: Story = {
     return (
       <Box>
         <Box marginBottom={8}>
-          <Toggle label="비활성화 하기" on={disabled} onChange={setDisabeld} />
+          <Toggle
+            label="비활성화 하기"
+            onChange={(e) => setDisabeld(e.target.checked)}
+          />
         </Box>
         <ButtonGroup>
           <ButtonGroup.Option
