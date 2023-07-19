@@ -1,5 +1,11 @@
 # @parte-ds/icons
 
+## 1.4.0
+
+### Minor Changes
+
+- Icon 기본 컬러 제거
+
 ## 1.3.2
 
 ### Patch Changes
