@@ -77,7 +77,11 @@ export default function Home() {
           placeholder="spin 버튼 보여짐"
           showSpinButton
         />
-        <Toggle on={toggle} onChange={(v) => setToggle(v)} label="토글" />
+        <Toggle
+          defaultChecked={toggle}
+          onChange={(e) => setToggle(e.target.checked)}
+          label="토글"
+        />
         <ButtonGroup>
           <ButtonGroup.Option
             disabled
