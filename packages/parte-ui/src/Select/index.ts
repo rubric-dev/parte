@@ -1,8 +1,7 @@
 export {
   type CommonSelectProps,
   type SelectAdditional,
-  type StaticSelectProps,
-  type AsyncSelectProps,
   type SelectProps,
+  type AsyncSelectProps,
 } from "./Select.types";
-export { Select } from "./Select";
+export { Select, AsyncSelect } from "./Select";

@@ -1,12 +1,11 @@
 import {
   ComponentType,
-  KeyboardEventHandler,
+  ForwardedRef,
+  ReactElement,
+  forwardRef,
   useMemo,
-  useRef,
-  useState,
 } from "react";
 import StaticSelect, {
-  ActionMeta,
   ClearIndicatorProps,
   ControlProps,
   DropdownIndicatorProps,
@@ -14,11 +13,10 @@ import StaticSelect, {
   IndicatorsContainerProps,
   MenuListProps,
   MenuProps,
-  MultiValue,
   MultiValueRemoveProps,
+  NoticeProps,
   OptionProps,
   SelectInstance,
-  SingleValue,
   StylesConfig,
   components,
 } from "react-select";
@@ -39,14 +37,14 @@ import { Option } from "../Dropdown";
 import { InputWrapper } from "../InputWrapper";
 import { Box } from "../Layout";
 import { Spinner } from "../Spinner";
-import { SelectProps } from "./Select.types";
+import { AsyncSelectProps, SelectProps } from "./Select.types";
 import useSelectStyle from "./useSelectStyle";
 
-export const Control = ({
+export const Control = <T,>({
   children,
   showSearchIcon,
   ...props
-}: ControlProps<Option<unknown>, boolean> & { showSearchIcon: boolean }) => {
+}: ControlProps<Option<T>, boolean> & { showSearchIcon: boolean }) => {
   return (
     <components.Control {...props}>
       {showSearchIcon && (
@@ -59,9 +57,9 @@ export const Control = ({
   );
 };
 
-const MultiValueRemove = ({
+const MultiValueRemove = <T,>({
   ...props
-}: MultiValueRemoveProps<Option<unknown>, boolean>) => {
+}: MultiValueRemoveProps<Option<T>, boolean>) => {
   return (
     <components.MultiValueRemove {...props}>
       <ActionSmallCrossIcon size={12} />
@@ -83,10 +81,10 @@ const LoadingMessage = () => {
   );
 };
 
-export const IndicatorsContainer = ({
+export const IndicatorsContainer = <T,>({
   children,
   ...props
-}: IndicatorsContainerProps<Option<unknown>, boolean>) => {
+}: IndicatorsContainerProps<Option<T>, boolean>) => {
   return (
     <components.IndicatorsContainer {...props}>
       {children}
@@ -94,10 +92,10 @@ export const IndicatorsContainer = ({
   );
 };
 
-export const ClearIndicator = ({
+export const ClearIndicator = <T,>({
   children,
   ...props
-}: ClearIndicatorProps<Option<unknown>, boolean>) => {
+}: ClearIndicatorProps<Option<T>, boolean>) => {
   return (
     <components.ClearIndicator {...props}>
       <ActionDeleteIcon size={12} />
@@ -105,10 +103,10 @@ export const ClearIndicator = ({
   );
 };
 
-export const DropdownIndicator = ({
+export const DropdownIndicator = <T,>({
   children,
   ...props
-}: DropdownIndicatorProps<Option<unknown>, boolean>) => {
+}: DropdownIndicatorProps<Option<T>, boolean>) => {
   return (
     <components.DropdownIndicator {...props}>
       <InterfaceCaretDownIcon size={12} />
@@ -116,10 +114,10 @@ export const DropdownIndicator = ({
   );
 };
 
-export const OptionComponent = ({
+export const OptionComponent = <T,>({
   children,
   ...props
-}: OptionProps<Option<unknown>, boolean>) => {
+}: OptionProps<Option<T>, boolean>) => {
   const { label, icon } = props.data;
   return (
     <components.Option {...props}>
@@ -128,8 +126,8 @@ export const OptionComponent = ({
   );
 };
 
-export const customMenuList = (
-  props: MenuListProps<Option<unknown>, boolean>
+export const customMenuList = <T,>(
+  props: MenuListProps<Option<T>, boolean>
 ) => {
   const { isLoading } = props.selectProps;
   return (
@@ -149,50 +147,60 @@ export const customMenuList = (
   );
 };
 
-export const Menu = ({
+export const Menu = <T,>({
   children,
   ...props
-}: MenuProps<Option<unknown>, boolean>) => {
+}: MenuProps<Option<T>, boolean>) => {
   return <components.Menu {...props}>{children}</components.Menu>;
 };
 
-export const NoOptionsMessage = () => {
+export const NoOptionsMessage = <T,>({
+  children,
+  ...props
+}: NoticeProps<Option<T>, boolean, GroupBase<Option<T>>>) => {
   return (
-    <Box
-      display="flex"
-      width="100%"
-      height="120px"
-      alignItems="center"
-      justifyContent="center"
-    >
-      <Paragraph size={100} color="N800">
-        No options found
-      </Paragraph>
-    </Box>
+    <components.NoOptionsMessage {...props}>
+      <Box
+        display="flex"
+        width="100%"
+        height="120px"
+        alignItems="center"
+        justifyContent="center"
+      >
+        <Paragraph size={100} color="N800">
+          {children}
+        </Paragraph>
+      </Box>
+    </components.NoOptionsMessage>
   );
 };
 
-export function Select<T>(props: SelectProps<T>) {
+const SelectComponent = <T,>(
+  props: SelectProps<T>,
+  ref: ForwardedRef<
+    SelectInstance<Option<T>, boolean, GroupBase<Option<T>>>
+  > | null
+) => {
   const {
-    placeholder = "Select Event",
-    isDisabled = false,
-    isError = false,
-    isMulti = false,
-    errorText,
-    value,
-    onChange,
-    type,
     label,
     description,
     required,
-    menuIsOpen,
-    direction,
     width,
+    minWidth,
+    maxWidth,
+    errorText,
+    direction,
     labelWidth,
+    id,
+
+    placeholder = "선택",
+    isDisabled = false,
+    isError = false,
+    isMulti = false,
     showSearchIcon = false,
     styles: customStyles,
     components: customComponents,
-    id,
+    ...selectProps
   } = props;
 
   const styles = useSelectStyle({ isError, customStyles }) as StylesConfig<
@@ -200,111 +208,25 @@ export function Select<T>(props: SelectProps<T>) {
     boolean
   >;
 
-  /** isMulti가 true일때만 관리하면되는값 */
-  const [showMenuList, setShowMenuList] = useState(false);
-
-  const selectRef =
-    useRef<SelectInstance<Option<T>, boolean, GroupBase<Option<T>>>>(null);
-
   const defaultComponents: Partial<
     SelectComponents<Option<T>, boolean, GroupBase<Option<T>>>
   > = useMemo(
     () => ({
-      Menu: Menu as ComponentType<
-        MenuProps<Option<T>, boolean, GroupBase<Option<T>>>
-      >,
-      Control: ((props: ControlProps<Option<unknown>, boolean>) =>
-        Control({ ...props, showSearchIcon })) as ComponentType<
-        ControlProps<Option<T>, boolean, GroupBase<Option<T>>>
-      >,
-      IndicatorsContainer: IndicatorsContainer as ComponentType<
-        IndicatorsContainerProps<Option<T>, boolean, GroupBase<Option<T>>>
-      >,
-      MultiValueRemove: MultiValueRemove as ComponentType<
-        MultiValueRemoveProps<Option<T>, boolean, GroupBase<Option<T>>>
-      >,
-      DropdownIndicator: DropdownIndicator as ComponentType<
-        DropdownIndicatorProps<Option<T>, boolean, GroupBase<Option<T>>>
-      >,
-      ClearIndicator: ClearIndicator as ComponentType<
-        ClearIndicatorProps<Option<T>, boolean, GroupBase<Option<T>>>
-      >,
-      Option: OptionComponent as ComponentType<
-        OptionProps<Option<T>, boolean, GroupBase<Option<T>>>
-      >,
+      Menu,
+      Control: (props) => (
+        <Control {...props} showSearchIcon={showSearchIcon} />
+      ),
+      IndicatorsContainer,
+      MultiValueRemove,
+      DropdownIndicator,
+      ClearIndicator,
+      Option: OptionComponent,
       LoadingMessage,
       NoOptionsMessage,
       ...customComponents,
     }),
-    [customComponents]
+    [customComponents, showSearchIcon]
   );
-
-  const asyncComponents = useComponents(defaultComponents);
-  const MenuList = wrapMenuList(customMenuList) as ComponentType<
-    MenuListProps<Option<T>, boolean, GroupBase<Option<T>>>
-  >;
-
-  const onChangeSelect = (
-    newValue: MultiValue<Option<T>> | SingleValue<Option<T>>,
-    actionMeta: ActionMeta<Option<T>>
-  ) => {
-    if (!newValue) {
-      return;
-    }
-    onChange?.(newValue, actionMeta);
-  };
-
-  const onFocus = () => isMulti && setShowMenuList(true);
-  const onBlur = () => isMulti && setShowMenuList(false);
-  const onKeyDown: KeyboardEventHandler<HTMLDivElement> = (e) => {
-    if (e.key === "Escape") {
-      selectRef.current?.blur();
-    }
-  };
-
-  const SelectComponent =
-    type === "static" ? (
-      <StaticSelect
-        components={defaultComponents}
-        {...props}
-        id={id}
-        ref={selectRef}
-        onFocus={onFocus}
-        onBlur={onBlur}
-        onKeyDown={onKeyDown}
-        isDisabled={isDisabled}
-        onChange={onChangeSelect}
-        value={value}
-        hideSelectedOptions={isMulti}
-        styles={styles}
-        placeholder={placeholder}
-        isSearchable
-        menuIsOpen={isMulti ? showMenuList ?? menuIsOpen : menuIsOpen}
-        closeMenuOnSelect={!isMulti}
-      />
-    ) : (
-      <AsyncPaginate
-        components={{
-          ...asyncComponents,
-          MenuList,
-        }}
-        {...props}
-        id={id}
-        selectRef={selectRef}
-        isDisabled={isDisabled}
-        onFocus={onFocus}
-        onBlur={onBlur}
-        onKeyDown={onKeyDown}
-        onChange={onChangeSelect}
-        value={value}
-        hideSelectedOptions={isMulti}
-        styles={styles}
-        placeholder={placeholder}
-        isSearchable
-        menuIsOpen={isMulti ? showMenuList ?? menuIsOpen : menuIsOpen}
-        closeMenuOnSelect={!isMulti}
-      />
-    );
 
   return (
     <InputWrapper
@@ -312,13 +234,134 @@ export function Select<T>(props: SelectProps<T>) {
       description={description}
       required={required}
       width={width}
+      minWidth={minWidth}
+      maxWidth={maxWidth}
       errorText={errorText}
       direction={direction}
       labelWidth={labelWidth}
       disabled={isDisabled}
       id={id}
     >
-      {SelectComponent}
+      <StaticSelect
+        closeMenuOnSelect={!isMulti}
+        hideSelectedOptions={isMulti}
+        isSearchable
+        {...selectProps}
+        isMulti={isMulti}
+        components={defaultComponents}
+        id={id}
+        ref={ref}
+        isDisabled={isDisabled}
+        styles={styles}
+        placeholder={placeholder}
+      />
     </InputWrapper>
   );
-}
+};
+
+const AsyncSelectComponent = <T,>(
+  props: AsyncSelectProps<T>,
+  ref: ForwardedRef<
+    SelectInstance<Option<T>, boolean, GroupBase<Option<T>>>
+  > | null
+) => {
+  const {
+    label,
+    description,
+    required,
+    width,
+    minWidth,
+    maxWidth,
+    errorText,
+    direction,
+    labelWidth,
+    id,
+
+    placeholder = "선택",
+    isDisabled = false,
+    isError = false,
+    isMulti = false,
+    showSearchIcon = false,
+    styles: customStyles,
+    components: customComponents,
+    ...selectProps
+  } = props;
+
+  const styles = useSelectStyle({ isError, customStyles }) as StylesConfig<
+    Option<T>,
+    boolean
+  >;
+
+  const defaultComponents: Partial<
+    SelectComponents<Option<T>, boolean, GroupBase<Option<T>>>
+  > = useMemo(
+    () => ({
+      Menu,
+      Control: (props) => (
+        <Control {...props} showSearchIcon={showSearchIcon} />
+      ),
+      IndicatorsContainer,
+      MultiValueRemove,
+      DropdownIndicator,
+      ClearIndicator,
+      Option: OptionComponent,
+      LoadingMessage,
+      NoOptionsMessage,
+      ...customComponents,
+    }),
+    [customComponents, showSearchIcon]
+  );
+
+  const asyncComponents = useComponents(defaultComponents);
+  const MenuList = wrapMenuList(customMenuList) as ComponentType<
+    MenuListProps<Option<T>, boolean, GroupBase<Option<T>>>
+  >;
+  return (
+    <InputWrapper
+      label={label}
+      description={description}
+      required={required}
+      width={width}
+      minWidth={minWidth}
+      maxWidth={maxWidth}
+      errorText={errorText}
+      direction={direction}
+      labelWidth={labelWidth}
+      disabled={isDisabled}
+      id={id}
+    >
+      <AsyncPaginate
+        closeMenuOnSelect={!isMulti}
+        hideSelectedOptions={isMulti}
+        isSearchable
+        {...(selectProps as AsyncSelectProps<T>)}
+        isMulti={isMulti}
+        components={{
+          ...asyncComponents,
+          MenuList,
+        }}
+        id={id}
+        selectRef={ref}
+        isDisabled={isDisabled}
+        styles={styles}
+        placeholder={placeholder}
+      />
+    </InputWrapper>
+  );
+};
+
+export const Select = forwardRef(SelectComponent) as <T>(
+  props: SelectProps<T> & {
+    ref?: React.RefObject<
+      SelectInstance<Option<T>, boolean, GroupBase<Option<T>>>
+    > | null;
+  }
+) => ReactElement;
+
+export const AsyncSelect = forwardRef(AsyncSelectComponent) as <T>(
+  props: AsyncSelectProps<T> & {
+    ref?: React.RefObject<
+      SelectInstance<Option<T>, boolean, GroupBase<Option<T>>>
+    > | null;
+  }
+) => ReactElement;

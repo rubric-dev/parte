@@ -11,5 +11,7 @@ export type InputWrapperProps = PropsWithChildren<{
   disabled?: boolean;
   id?: string;
   width?: number | string;
+  minWidth?: number | string;
+  maxWidth?: number | string;
   labelWidth?: number | string;
 }>;

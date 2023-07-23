@@ -35,7 +35,6 @@ const InputWrapperTest = () => {
         width={260}
         label="Label"
         description="This is Description"
-        type="static"
         options={[{ label: "Option 1", value: "1" }]}
         isDisabled
       />

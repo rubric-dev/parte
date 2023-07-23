@@ -3,15 +3,10 @@ import {
   Box,
   ButtonGroup,
   Checkbox,
-  Toggle,
   LinkButton,
   Link as ParteLink,
-  TabVariant,
-  Option,
-  Tabs,
-  Tab,
-  Paragraph,
   TextInput,
+  Toggle,
 } from "@parte-ds/ui";
 import Head from "next/head";
 import Link from "next/link";
@@ -26,6 +21,7 @@ const MENU = [
   { url: "/radio", name: "Radio 테스트" },
   { url: "/tab-test", name: "Tab 테스트" },
   { url: "/forms", name: "Forms 테스트" },
+  { url: "/select", name: "Select 테스트" },
 ];
 
 export default function Home() {
