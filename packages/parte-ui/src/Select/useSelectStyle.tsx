@@ -187,6 +187,7 @@ const useSelectStyle = ({
         overflow: "hidden",
         boxShadow:
           "0px 5px 8px -4px rgba(67, 90, 111, 0.47), 0px 0px 1px rgba(16, 24, 64, 0.3)",
+        zIndex: 10,
         ...customStyles?.menu?.(css, props),
       };
     },

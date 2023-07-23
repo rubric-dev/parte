@@ -1,12 +1,7 @@
-import { type RuleSet, css } from "styled-components";
+import { css, type RuleSet } from "styled-components";
 import { ParteStyledProps } from "../Layout/Box.types";
 import { getElevation } from "./elevation.util";
-import {
-  getColorStyle,
-  getFlexBasisStyle,
-  getHeightStyle,
-  getWidthStyle,
-} from "./style.util";
+import { getColorStyle, getSizeStyle } from "./style.util";
 
 export const extractStyleFormProps = <T extends Partial<ParteStyledProps>>(
   styleProps: T
@@ -14,7 +9,11 @@ export const extractStyleFormProps = <T extends Partial<ParteStyledProps>>(
   const {
     display = "block",
     width,
+    minWidth,
+    maxWidth,
     height,
+    minHeight,
+    maxHeight,
     // ====================
     backgroundColor,
     color,
@@ -57,8 +56,12 @@ export const extractStyleFormProps = <T extends Partial<ParteStyledProps>>(
   return [
     css`
       display: ${display};
-      ${getWidthStyle(width)};
-      ${getHeightStyle(height)};
+      ${getSizeStyle(width, "width")};
+      ${getSizeStyle(minWidth, "min-width")};
+      ${getSizeStyle(maxWidth, "max-width")};
+      ${getSizeStyle(height, "height")};
+      ${getSizeStyle(minHeight, "min-height")};
+      ${getSizeStyle(maxHeight, "max-height")};
 
       ${backgroundColor && `background-color: ${backgroundColor};`}
       ${getColorStyle(color)}
@@ -75,7 +78,7 @@ export const extractStyleFormProps = <T extends Partial<ParteStyledProps>>(
       ${typeof order === "number" ? `order: ${order};` : ""};
       ${typeof flexGrow === "number" ? `flex-grow: ${flexGrow};` : ""};
       ${typeof flexShrink === "number" ? `flex-shrink: ${flexShrink};` : ""};
-      ${getFlexBasisStyle(flexBasis)}
+      ${getSizeStyle(flexBasis, "flex-basis")}
       ${flex && `flex: ${flex};`}
       ${alignSelf && `align-self: ${alignSelf};`}
       

@@ -21,11 +21,18 @@ const VerticalLayout = ({
   required = false,
   errorText,
   width,
+  minWidth,
+  maxWidth,
   disabled,
   id,
 }: InputWrapperProps) => {
   return (
-    <Styled.Container flexDirection="column" width={width}>
+    <Box
+      flexDirection="column"
+      width={width}
+      minWidth={minWidth}
+      maxWidth={maxWidth}
+    >
       {label && (
         <Box
           display="flex"
@@ -51,7 +58,7 @@ const VerticalLayout = ({
       {description && <Styled.Description>{description}</Styled.Description>}
       {children}
       {errorText && <Styled.ErrorText>{errorText}</Styled.ErrorText>}
-    </Styled.Container>
+    </Box>
   );
 };
 
@@ -62,6 +69,8 @@ const HorizontalLayout = ({
   required = false,
   errorText,
   width,
+  minWidth,
+  maxWidth,
   labelWidth,
   id,
   disabled,
@@ -69,11 +78,13 @@ const HorizontalLayout = ({
   const { spacing } = useTheme();
 
   return (
-    <Styled.Container
+    <Box
       flexDirection="row"
       gap={8}
       alignItems="flex-start"
       width={width === "100%" ? "100%" : "fit-content"}
+      minWidth={minWidth}
+      maxWidth={maxWidth}
     >
       {label && (
         <Box
@@ -108,6 +119,6 @@ const HorizontalLayout = ({
           description && <Styled.Description>{description}</Styled.Description>
         )}
       </Box>
-    </Styled.Container>
+    </Box>
   );
 };

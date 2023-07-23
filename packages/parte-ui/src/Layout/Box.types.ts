@@ -14,7 +14,11 @@ import {
 export type ParteStyledProps = {
   display?: Display;
   width?: string | number;
+  minWidth?: string | number;
+  maxWidth?: string | number;
   height?: string | number;
+  minHeight?: string | number;
+  maxHeight?: string | number;
 
   backgroundColor?: string;
   color?: string;
