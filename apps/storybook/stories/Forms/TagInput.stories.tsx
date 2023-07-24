@@ -1,16 +1,19 @@
 import { ActionCrossIcon, InterfaceCaretDownIcon } from "@parte-ds/icons";
 import { TagInput, TagInputProps, TagOption } from "@parte-ds/ui";
-import { Story, Meta } from "@storybook/react";
+import { Meta, StoryObj } from "@storybook/react";
 import { useState } from "react";
 
-export default {
+const TagInputStory: Meta = {
   title: "Components/Forms/TagInput",
   component: TagInput,
   parameters: {
     layout: "centered",
     viewport: "responsive",
   },
-} as Meta;
+};
+export default TagInputStory;
+
+type Story = StoryObj<typeof TagInput>;
 
 const OPTION_LIST: TagOption[] = [
   { label: "label1", value: "1", status: "normal" },
@@ -18,7 +21,7 @@ const OPTION_LIST: TagOption[] = [
   { label: "label3", value: "3", status: "disabled" },
 ];
 
-const Template: Story<TagInputProps> = ({ ...args }) => {
+const Template = ({ ...args }: TagInputProps) => {
   const [values, setValues] = useState<TagOption[]>(OPTION_LIST);
 
   const onAdd = (label: string) => {
@@ -52,25 +55,21 @@ const Template: Story<TagInputProps> = ({ ...args }) => {
   );
 };
 
-export const Default = Template.bind({});
-Default.args = {};
-
-export const Disabled = Template.bind({});
-Disabled.args = {
-  disabled: true,
+export const Default: Story = {
+  render: Template,
+  args: {},
 };
 
-export const WithLabel = Template.bind({});
-WithLabel.args = {
-  disabled: true,
-  description: "test description",
-  label: "this is label",
+export const Disabled: Story = {
+  render: Template,
+  args: {
+    disabled: true,
+  },
 };
-
-export const WithLabelHorizontal = Template.bind({});
-WithLabelHorizontal.args = {
-  disabled: true,
-  label: "this is label",
-  direction: "horizontal",
-  description: "test description",
+export const Error: Story = {
+  render: Template,
+  args: {
+    disabled: true,
+    isError: true,
+  },
 };

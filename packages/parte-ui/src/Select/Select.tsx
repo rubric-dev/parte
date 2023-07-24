@@ -34,7 +34,6 @@ import {
 } from "../../../parte-icons/src";
 import { Paragraph } from "../@foundations/Typography";
 import { Option } from "../Dropdown";
-import { InputWrapper } from "../InputWrapper";
 import { Box } from "../Layout";
 import { Spinner } from "../Spinner";
 import { AsyncSelectProps, SelectProps } from "./Select.types";
@@ -182,17 +181,6 @@ const SelectComponent = <T,>(
   > | null
 ) => {
   const {
-    label,
-    description,
-    required,
-    width,
-    minWidth,
-    maxWidth,
-    errorText,
-    direction,
-    labelWidth,
-    id,
-
     placeholder = "선택",
     isDisabled = false,
     isError = false,
@@ -200,13 +188,15 @@ const SelectComponent = <T,>(
     showSearchIcon = false,
     styles: customStyles,
     components: customComponents,
+    width,
     ...selectProps
   } = props;
 
-  const styles = useSelectStyle({ isError, customStyles }) as StylesConfig<
-    Option<T>,
-    boolean
-  >;
+  const styles = useSelectStyle({
+    isError,
+    customStyles,
+    width,
+  }) as StylesConfig<Option<T>, boolean>;
 
   const defaultComponents: Partial<
     SelectComponents<Option<T>, boolean, GroupBase<Option<T>>>
@@ -229,33 +219,18 @@ const SelectComponent = <T,>(
   );
 
   return (
-    <InputWrapper
-      label={label}
-      description={description}
-      required={required}
-      width={width}
-      minWidth={minWidth}
-      maxWidth={maxWidth}
-      errorText={errorText}
-      direction={direction}
-      labelWidth={labelWidth}
-      disabled={isDisabled}
-      id={id}
-    >
-      <StaticSelect
-        closeMenuOnSelect={!isMulti}
-        hideSelectedOptions={isMulti}
-        isSearchable
-        {...selectProps}
-        isMulti={isMulti}
-        components={defaultComponents}
-        id={id}
-        ref={ref}
-        isDisabled={isDisabled}
-        styles={styles}
-        placeholder={placeholder}
-      />
-    </InputWrapper>
+    <StaticSelect
+      closeMenuOnSelect={!isMulti}
+      hideSelectedOptions={isMulti}
+      isSearchable
+      {...selectProps}
+      isMulti={isMulti}
+      components={defaultComponents}
+      ref={ref}
+      isDisabled={isDisabled}
+      styles={styles}
+      placeholder={placeholder}
+    />
   );
 };
 
@@ -266,17 +241,6 @@ const AsyncSelectComponent = <T,>(
   > | null
 ) => {
   const {
-    label,
-    description,
-    required,
-    width,
-    minWidth,
-    maxWidth,
-    errorText,
-    direction,
-    labelWidth,
-    id,
-
     placeholder = "선택",
     isDisabled = false,
     isError = false,
@@ -284,13 +248,15 @@ const AsyncSelectComponent = <T,>(
     showSearchIcon = false,
     styles: customStyles,
     components: customComponents,
+    width,
     ...selectProps
   } = props;
 
-  const styles = useSelectStyle({ isError, customStyles }) as StylesConfig<
-    Option<T>,
-    boolean
-  >;
+  const styles = useSelectStyle({
+    isError,
+    customStyles,
+    width,
+  }) as StylesConfig<Option<T>, boolean>;
 
   const defaultComponents: Partial<
     SelectComponents<Option<T>, boolean, GroupBase<Option<T>>>
@@ -317,36 +283,21 @@ const AsyncSelectComponent = <T,>(
     MenuListProps<Option<T>, boolean, GroupBase<Option<T>>>
   >;
   return (
-    <InputWrapper
-      label={label}
-      description={description}
-      required={required}
-      width={width}
-      minWidth={minWidth}
-      maxWidth={maxWidth}
-      errorText={errorText}
-      direction={direction}
-      labelWidth={labelWidth}
-      disabled={isDisabled}
-      id={id}
-    >
-      <AsyncPaginate
-        closeMenuOnSelect={!isMulti}
-        hideSelectedOptions={isMulti}
-        isSearchable
-        {...(selectProps as AsyncSelectProps<T>)}
-        isMulti={isMulti}
-        components={{
-          ...asyncComponents,
-          MenuList,
-        }}
-        id={id}
-        selectRef={ref}
-        isDisabled={isDisabled}
-        styles={styles}
-        placeholder={placeholder}
-      />
-    </InputWrapper>
+    <AsyncPaginate
+      closeMenuOnSelect={!isMulti}
+      hideSelectedOptions={isMulti}
+      isSearchable
+      {...(selectProps as AsyncSelectProps<T>)}
+      isMulti={isMulti}
+      components={{
+        ...asyncComponents,
+        MenuList,
+      }}
+      selectRef={ref}
+      isDisabled={isDisabled}
+      styles={styles}
+      placeholder={placeholder}
+    />
   );
 };
 

@@ -1,4 +1,3 @@
-import { InputWrapperProps } from "../InputWrapper";
 import { TextInputProps } from "../TextInput/TextInput.types";
 import { TagOption } from "./Tag";
 

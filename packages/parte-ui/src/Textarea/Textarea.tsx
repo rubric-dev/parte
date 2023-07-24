@@ -1,18 +1,12 @@
 import { forwardRef } from "react";
-import { InputWrapper } from "../InputWrapper";
 import * as Styled from "./Textarea.styled";
 import { TextAreaProps } from "./Textarea.types";
 
 export const Textarea = forwardRef<HTMLTextAreaElement, TextAreaProps>(
   (props: TextAreaProps, ref) => {
     const {
-      label,
-      description,
-      required = false,
-      errorText,
+      isError,
       disabled,
-      id,
-      direction,
       width,
       resizable: resizableProp,
       ...textareaAttributes
@@ -20,25 +14,14 @@ export const Textarea = forwardRef<HTMLTextAreaElement, TextAreaProps>(
 
     const resizable = width ? false : resizableProp ?? true;
     return (
-      <InputWrapper
-        label={label}
-        description={description}
-        required={required}
-        errorText={errorText}
-        direction={direction}
-        width={width}
+      <Styled.Textarea
+        ref={ref}
         disabled={disabled}
-        id={id}
-      >
-        <Styled.Textarea
-          ref={ref}
-          id={id}
-          disabled={disabled}
-          data-error={errorText ? true : undefined}
-          $resizable={resizable}
-          {...textareaAttributes}
-        />
-      </InputWrapper>
+        data-error={isError ? true : undefined}
+        $resizable={resizable}
+        $width={width}
+        {...textareaAttributes}
+      />
     );
   }
 );

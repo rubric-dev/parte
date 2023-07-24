@@ -1,4 +1,4 @@
-import { Box, Option, Select } from "@parte-ds/ui";
+import { Box, Field, Option, Select } from "@parte-ds/ui";
 import { useEffect, useRef } from "react";
 import { GroupBase, SelectInstance } from "react-select";
 
@@ -21,8 +21,14 @@ const SelectPage = () => {
 
   return (
     <Box display="flex" flexDirection="column" gap={16} width={300}>
-      <Select label="멀티" options={options} isMulti minWidth={180} />
-      <Select label="싱글" options={options} ref={ref} openMenuOnFocus />
+      <Field minWidth={180}>
+        <Field.Label>멀티</Field.Label>
+        <Select options={options} isMulti />
+      </Field>
+      <Field>
+        <Field.Label>싱글</Field.Label>
+        <Select options={options} ref={ref} openMenuOnFocus />
+      </Field>
     </Box>
   );
 };
