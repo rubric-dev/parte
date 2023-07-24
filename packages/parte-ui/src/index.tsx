@@ -14,6 +14,7 @@ export * from "./CornerDialog";
 export * from "./Dialog";
 export * from "./DialogModal";
 export * from "./Dropdown";
+export * from "./Field";
 export * from "./FilePicker";
 export * from "./IconButton";
 export * from "./Layout";

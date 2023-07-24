@@ -1,9 +1,11 @@
 import styled, { css } from "styled-components";
 import { StyledTextAreaProps } from "./Textarea.types";
+import { getSizeStyle } from "../utils/style.util";
 
 export const Textarea = styled.textarea<StyledTextAreaProps>`
-  ${({ theme, $resizable }) => css`
-    width: 100%;
+  ${({ theme, $resizable, $width }) => css`
+    ${getSizeStyle($width, "width")};
+
     min-height: 80px;
     min-width: 15px;
     ${!$resizable && `resize: none;`}

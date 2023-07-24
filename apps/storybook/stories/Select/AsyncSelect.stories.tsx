@@ -44,8 +44,8 @@ const AsyncSelectStory: Meta = {
     viewport: "responsive",
   },
   args: {
-    minWidth: 180,
     loadOptions,
+    width: 180,
   },
 };
 
@@ -86,23 +86,6 @@ export const OpenMenuDefault: Story = {
   },
 };
 
-export const DefaultWithLabel: Story = {
-  args: {
-    label: "TEST",
-    description: "이것은 설명입니다.",
-    required: true,
-  },
-};
-
-export const DefaultWithHorizontalLabel: Story = {
-  args: {
-    label: "TEST",
-    description: "이것은 설명입니다.",
-    required: true,
-    direction: "horizontal",
-  },
-};
-
 export const Loading: Story = {
   args: {
     isLoading: true,
@@ -113,13 +96,13 @@ export const Multi: Story = {
     isSearchable: false,
     isClearable: true,
     isMulti: true,
+    width: 300,
   },
 };
 
 export const Error: Story = {
   args: {
     isError: true,
-    errorText: "this is error",
     isMulti: false,
   },
 };
@@ -150,5 +133,6 @@ export const GroupMultiDefault: Story = {
   args: {
     loadOptions: loadGroupOptions,
     isMulti: true,
+    width: 300,
   },
 };

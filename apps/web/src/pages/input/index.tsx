@@ -1,5 +1,5 @@
 import { ActionSearchIcon, InterfaceCaretDownIcon } from "@parte-ds/icons";
-import { Box, TextInput } from "@parte-ds/ui";
+import { Box, TextInput, Field } from "@parte-ds/ui";
 import { useState } from "react";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
@@ -9,20 +9,28 @@ const Input = () => {
   const [startDate, setStartDate] = useState<Date | null>(new Date());
   return (
     <Box display="flex" flexDirection="column" gap={16}>
-      <TextInput label="인풋" placeholder="with label" width={260} />
+      <Field width={260}>
+        <Field.Label htmlFor="Label1" required>
+          Label
+        </Field.Label>
+        <Field.Description>Description</Field.Description>
+        <TextInput placeholder="with label" id="Label1" isError />
+        <Field.ErrorMessage>Error Message</Field.ErrorMessage>
+      </Field>
+      <Field direction="horizontal">
+        <Field.Label required>Label Label Label Label</Field.Label>
+        <TextInput placeholder="with label" width={260} />
+        <Field.ErrorMessage>Error Message</Field.ErrorMessage>
+      </Field>
+      <Field.Label disabled>불가능 라벨</Field.Label>
+
       <TextInput
-        label="인풋"
         placeholder="controlled"
         width={260}
         value={value}
         onChange={(e) => setValue(e.target.value)}
       />
-      <TextInput
-        label="인풋"
-        description="설명"
-        placeholder="with label description"
-        width={260}
-      />
+      <TextInput placeholder="with label description" width={260} />
       <TextInput width={260} placeholder="placeholder" />
       <TextInput width={260} placeholder="disabled" disabled />
       <TextInput
@@ -31,7 +39,7 @@ const Input = () => {
         readOnly
         value="Read only input"
       />
-      <TextInput width={260} placeholder="error" errorText="error" />
+      <TextInput width={260} placeholder="error" isError />
       <TextInput
         width={260}
         placeholder="width icon"

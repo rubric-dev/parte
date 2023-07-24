@@ -17,7 +17,7 @@ const SelectStory: Meta = {
     layout: "centered",
     viewport: "responsive",
   },
-  args: { minWidth: 180, options: OPTIONS },
+  args: { width: 180, options: OPTIONS },
 };
 
 export default SelectStory;
@@ -39,35 +39,18 @@ export const OpenMenuDefault: Story = {
   },
 };
 
-export const DefaultWithLabel: Story = {
-  args: {
-    label: "TEST",
-    description: "이것은 설명입니다.",
-    required: true,
-  },
-};
-
-export const DefaultWithHorizontalLabel: Story = {
-  args: {
-    label: "TEST",
-    description: "이것은 설명입니다.",
-    required: true,
-    direction: "horizontal",
-  },
-};
-
 export const Multi: Story = {
   args: {
     isSearchable: false,
     isClearable: true,
     isMulti: true,
+    width: 300,
   },
 };
 
 export const Error: Story = {
   args: {
     isError: true,
-    errorText: "this is error",
   },
 };
 
@@ -99,5 +82,6 @@ export const GroupMultiDefault: Story = {
   args: {
     isMulti: true,
     options: [{ options: OPTIONS, label: `유일한 그룹` }],
+    width: 300,
   },
 };

@@ -1,13 +1,14 @@
 import styled, { css } from "styled-components";
+import { getSizeStyle } from "../utils/style.util";
 
-export const Container = styled.div`
-  ${({ theme }) => css`
+export const Container = styled.div<{ $width?: string | number }>`
+  ${({ theme, $width }) => css`
     box-sizing: border-box;
     display: inline-flex;
     overflow: hidden;
     border: 1px solid ${theme.colorBorderDefault};
     border-radius: 4px;
-    width: 100%;
+    ${getSizeStyle($width, "width")};
 
     &:has(input:hover) {
       border: 1px solid ${theme.colorBorderHover};

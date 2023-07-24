@@ -1,44 +1,39 @@
 import styled, { css } from "styled-components";
+import { getSizeStyle } from "../utils/style.util";
 
 export const InputWrapper = styled.div<{
   focused: boolean;
-  error?: boolean;
   disabled?: boolean;
   hover?: boolean;
+  $width?: string | number;
 }>`
-  ${({ theme, focused, disabled, error, hover }) => css`
+  ${({ theme, focused, disabled, hover, $width }) => css`
     box-sizing: border-box;
     display: flex;
     overflow: hidden;
     border: 1px solid ${theme.colorBorderDefault};
     border-radius: 4px;
+    ${getSizeStyle($width, "width")}
+
     ${hover &&
     css`
       border: 1px solid ${theme.colorBorderHover};
       background: ${theme.colorBackgroundHover};
-    `}
+    `};
     ${focused &&
     css`
-       {
-        border: 1px solid ${theme.colorBorderFocused};
-        ${theme.commonStyles.outline}
-      }
-    `}
+      border: 1px solid ${theme.colorBorderFocused};
+      ${theme.commonStyles.outline}
+    `};
     ${disabled &&
     css`
-       {
-        background-color: ${theme.colorBackgroundDisabled};
-        border: 1px solid ${theme.colorBorderDisabled};
-      }
-    `}
-    ${error &&
-    css`
-      &,
-      &:hover,
-      &:focus {
-        border: 1px solid ${theme.colors.R400};
-      }
-    `}
+      background-color: ${theme.colorBackgroundDisabled};
+      border: 1px solid ${theme.colorBorderDisabled};
+    `};
+
+    &[data-error="true"] {
+      border: 1px solid ${theme.colors.R400};
+    }
   `}
 `;
 

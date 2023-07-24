@@ -16,7 +16,7 @@
     "react-dom": "^18.2.0",
     "react-select": "^5.7.3",
     "react-select-async-paginate": "^0.7.2",
-    "styled-components": "^6.0.2",
+    "styled-components": "^6.0.5",
     "stylis": "^4.3.0"
   },
   "devDependencies": {

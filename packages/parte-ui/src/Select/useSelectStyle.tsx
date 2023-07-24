@@ -5,11 +5,13 @@ import { type Option } from "../Dropdown";
 const useSelectStyle = ({
   isError,
   customStyles,
+  width,
 }: {
   isError: boolean;
   customStyles?:
     | StylesConfig<Option<any>, boolean, GroupBase<Option<any>>>
     | StylesConfig<Option<any>, boolean, GroupBase<Option<any>>>;
+  width?: string | number;
 }): StylesConfig<Option<unknown>, boolean> => {
   const theme = useTheme();
 
@@ -17,7 +19,11 @@ const useSelectStyle = ({
     container: (css, props) => {
       return {
         ...css,
-        width: "100%",
+        width: width
+          ? typeof width === "string"
+            ? width
+            : `${width}px`
+          : undefined,
         backgroundColor: theme.colors.N0,
         svg: {
           color: props.isDisabled ? theme.colors.N500 : theme.colors.N600,
