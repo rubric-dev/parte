@@ -1,5 +1,11 @@
 # @parte-ds/ui
 
+## 1.8.0
+
+### Minor Changes
+
+- Field 컴포넌트 추가
+
 ## 1.7.0
 
 ### Minor Changes
