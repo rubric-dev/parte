@@ -1,5 +1,11 @@
 # @parte-ds/ui
 
+## 1.7.0
+
+### Minor Changes
+
+- Select 컴포넌트 수정
+
 ## 1.6.0
 
 ### Minor Changes
