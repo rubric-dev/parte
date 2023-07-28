@@ -2,9 +2,10 @@ import { memo, useRef, useState } from "react";
 import { Toast } from "./Toast";
 import {
   NotifyHandler,
+  PopHandler,
   RemoveHandler,
-  ToastState,
   ToastParams,
+  ToastState,
 } from "./Toaster.types";
 
 import * as Styled from "./ToastManager.styled";
@@ -12,11 +13,13 @@ import * as Styled from "./ToastManager.styled";
 type ToastManagerProps = {
   bindNotify: (handler: NotifyHandler) => void;
   bindRemove: (hanlder: RemoveHandler) => void;
+  bindPop: (hanlder: PopHandler) => void;
 };
 
 export const ToastManager = memo(function ({
   bindNotify,
   bindRemove,
+  bindPop,
 }: ToastManagerProps) {
   const [toasts, setToasts] = useState<ToastState[]>([]);
   const idCounter = useRef(0);
@@ -72,14 +75,21 @@ export const ToastManager = memo(function ({
   };
 
   const notify: NotifyHandler = (toastState) => {
-    const tempToasts = toasts;
+    const newToast = createToastInstance(toastState);
+    setToasts((t) => [newToast, ...t]);
+    return newToast.id;
+  };
 
-    const instance = createToastInstance(toastState);
-    setToasts([instance, ...tempToasts]);
+  const popToast = () => {
+    const len = toasts.length;
+    if (len === 0) return;
+    const removeId = toasts[toasts.length - 1].id;
+    safeCloseToast(removeId);
   };
 
   bindNotify(notify);
   bindRemove(safeCloseToast);
+  bindPop(popToast);
 
   return (
     <Styled.ToastContainer>
