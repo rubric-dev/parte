@@ -64,6 +64,7 @@ const DefaultToastStory = () => {
       >
         쥐가 어디있지, 쥐가 어디갔지
       </Button>
+      <Button onClick={() => toaster.pop()}>마지막 토스트 삭제</Button>
     </div>
   );
 };

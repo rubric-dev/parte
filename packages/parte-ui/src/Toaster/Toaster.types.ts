@@ -20,5 +20,6 @@ export type ToastParams = PropsWithChildren<{
   title: string;
 }>;
 
-export type NotifyHandler = (toastProps: ToastParams) => void;
+export type NotifyHandler = (toastProps: ToastParams) => number | string;
 export type RemoveHandler = (id: string | number) => void;
+export type PopHandler = () => void;

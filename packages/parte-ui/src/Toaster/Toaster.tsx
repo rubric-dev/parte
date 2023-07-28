@@ -2,7 +2,7 @@ import ReactClientDOM from "react-dom/client";
 import { ThemeProvider } from "styled-components";
 import { theme } from "../@foundations/theme";
 import { ToastManager } from "./ToastManager";
-import { NotifyHandler, RemoveHandler } from "./Toaster.types";
+import { NotifyHandler, PopHandler, RemoveHandler } from "./Toaster.types";
 
 /**
  * The Toaster manages the interactions between
@@ -12,11 +12,13 @@ import { NotifyHandler, RemoveHandler } from "./Toaster.types";
 interface IToaster {
   notify: NotifyHandler;
   remove: RemoveHandler;
+  pop: PopHandler;
 }
 
 export class Toaster implements IToaster {
-  private $notifyHandler: NotifyHandler = () => {};
+  private $notifyHandler: NotifyHandler = () => 0;
   private $removeHandler: RemoveHandler = () => {};
+  private $popHandler: PopHandler = () => {};
 
   constructor() {
     const canUseDom = Boolean(typeof window !== "undefined" && window.document);
@@ -32,6 +34,7 @@ export class Toaster implements IToaster {
           <ToastManager
             bindNotify={this._bindNotify}
             bindRemove={this._bindRemove}
+            bindPop={this._bindPop}
           />
         </ThemeProvider>
       );
@@ -47,6 +50,9 @@ export class Toaster implements IToaster {
   private _bindRemove = (handler: RemoveHandler) => {
     this.$removeHandler = handler;
   };
+  private _bindPop = (handler: PopHandler) => {
+    this.$popHandler = handler;
+  };
 
   notify: NotifyHandler = (toastProps) => {
     return this.$notifyHandler(toastProps);
@@ -54,5 +60,8 @@ export class Toaster implements IToaster {
 
   remove: RemoveHandler = (id) => {
     return this.$removeHandler(id);
+  };
+  pop: PopHandler = () => {
+    return this.$popHandler();
   };
 }
