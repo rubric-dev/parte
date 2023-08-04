@@ -1,6 +1,4 @@
-import { HTMLAttributes } from 'react';
-
-export type StepsProps = HTMLAttributes<HTMLDivElement> & {
+export type StepsProps = {
   stepList: { id: number; label: string }[];
   currentStep: number;
 };

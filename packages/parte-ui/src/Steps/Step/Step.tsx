@@ -16,14 +16,14 @@ export function Step({ label, currentStep, stepIndex }: StepProps) {
 
   return (
     <Styled.Container gap={8}>
-      <Styled.Icon status={stepStatus}>
+      <Styled.Icon $status={stepStatus}>
         {stepStatus === "complete" ? (
           <ActionTickIcon size={8} color="G400" />
         ) : (
           stepIndex
         )}
       </Styled.Icon>
-      <Styled.Label status={stepStatus}>{label}</Styled.Label>
+      <Styled.Label $status={stepStatus}>{label}</Styled.Label>
     </Styled.Container>
   );
 }
