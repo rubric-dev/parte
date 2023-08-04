@@ -1,12 +1,16 @@
 import { ReactNode } from "react";
-import { css, ThemeProvider as DefaultThemeProvider } from "styled-components";
+import {
+  DefaultTheme,
+  ThemeProvider as StyledComponentsThemeProvider,
+} from "styled-components";
 import { Colors } from ".";
-import { ColorTokenType } from "./theme/colorToken";
 import { theme as defaultTheme } from "./theme";
-import { cloneDeep } from "lodash-es";
+import { ColorTokenType } from "./theme/colorToken";
+import { CommonStyles } from "./theme/commonStyles";
 
 export type CustomTheme = Partial<ColorTokenType> & {
   colors?: Partial<Colors>;
+  commonStyles?: Partial<CommonStyles>;
 };
 
 type ThemeProviderProps = {
@@ -21,16 +25,20 @@ export function ThemeProvider({
   const customizedTheme = overrideTheme(customTheme);
 
   return (
-    <DefaultThemeProvider theme={customizedTheme}>
+    <StyledComponentsThemeProvider theme={customizedTheme}>
       {children}
-    </DefaultThemeProvider>
+    </StyledComponentsThemeProvider>
   );
 }
 
 const overrideTheme = (theme: CustomTheme) => {
-  let plate = cloneDeep(defaultTheme);
+  let plate = structuredClone(defaultTheme);
 
-  const { colors: customColors = {}, ...customTokens } = theme;
+  const {
+    colors: customColors = {},
+    commonStyles: customCommonStyles,
+    ...customTokens
+  } = theme;
 
   const {
     colors: defaultColors,
@@ -38,7 +46,6 @@ const overrideTheme = (theme: CustomTheme) => {
     elevation,
     spacing,
     typography,
-    colorModalBackground,
     ...tokens
   } = plate;
 
@@ -58,10 +65,9 @@ const overrideTheme = (theme: CustomTheme) => {
   if (customTokens) {
     plate = { ...plate, ...customTokens };
   }
+  if (customCommonStyles) {
+    plate.commonStyles = { ...commonStyles, ...customCommonStyles };
+  }
 
-  plate.commonStyles.outline = css`
-    outline: 2px solid ${plate.colors.T200};
-  `;
-
-  return plate;
+  return plate as DefaultTheme;
 };
