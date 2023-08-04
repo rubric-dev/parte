@@ -1,5 +1,11 @@
 # @parte-ds/ui
 
+## 1.9.0
+
+### Minor Changes
+
+- Support Custom theme!!
+
 ## 1.8.0
 
 ### Minor Changes
