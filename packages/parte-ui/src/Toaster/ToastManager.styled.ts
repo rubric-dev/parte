@@ -1,11 +1,11 @@
-import styled, { css, keyframes } from 'styled-components';
-import { animationEasing } from '../constant';
-import { Box } from '../Layout';
+import styled, { css, keyframes } from "styled-components";
+import { animationEasing } from "../constant";
+import { Box } from "../Layout";
 
 const ANIMATION_DURATION = 240;
 const { deceleration, acceleration, spring } = animationEasing;
 
-export const ToastContainer = styled(Box)`
+export const ToastContainer = styled.span`
   ${() => css`
     position: fixed;
     top: 0;
@@ -16,6 +16,7 @@ export const ToastContainer = styled(Box)`
     flex-direction: column;
     margin: 0 auto;
     max-width: 560px;
+    pointer-events: none;
   `}
 `;
 
@@ -40,10 +41,10 @@ const closeAnimation = keyframes`
   }
   `;
 
-export const ToastBox = styled(Box)<{ marginBottom: number; height: number }>`
-  ${({ marginBottom, height }) => css`
-    height: ${height}px;
-    margin-bottom: ${marginBottom}px;
+export const ToastBox = styled(Box)<{ $marginBottom: number; $height: number }>`
+  ${({ $marginBottom, $height, theme }) => css`
+    height: ${$height}px;
+    margin-bottom: ${$marginBottom}px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -51,15 +52,16 @@ export const ToastBox = styled(Box)<{ marginBottom: number; height: number }>`
     width: 100%;
     height: fit-content;
     transition: all ${ANIMATION_DURATION}ms ${deceleration};
+    background-color: ${theme.colors.transparent};
 
-    &[data-state='entering'] {
+    &[data-state="entering"] {
       animation: ${openAnimation} ${ANIMATION_DURATION}ms ${spring} both;
     }
-    &[data-state='entered'] {
+    &[data-state="entered"] {
       animation: ${openAnimation} ${ANIMATION_DURATION}ms ${spring} both;
     }
-    &[data-state='exiting'] {
-      animation: ${closeAnimation} ${ANIMATION_DURATION}ms ${acceleration} both;
+    &[data-state="exiting"] {
+      animation: ${closeAnimation} 120ms ${acceleration} both;
     }
   `}
 `;

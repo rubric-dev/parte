@@ -25,6 +25,19 @@ const renderIcon = (status: AlertStatus) => {
   }
 };
 
+const getDefaultTitle = (status: AlertStatus) => {
+  switch (status) {
+    case "success":
+      return "성공";
+    case "info":
+      return "정보";
+    case "warning":
+      return "경고";
+    case "error":
+      return "오류";
+  }
+};
+
 export const Alert = (props: AlertProps) => {
   if (props.type === "inline") {
     return (
@@ -40,7 +53,9 @@ export const Alert = (props: AlertProps) => {
         <Styled.InfoWrap>
           {renderIcon(props.status)}
           <Styled.Header>
-            <Headline size={400}>{props.title}</Headline>
+            <Headline size={400}>
+              {props.title ?? getDefaultTitle(props.status)}
+            </Headline>
             <IconButton
               variant="ghost-secondary"
               size={24}
@@ -65,7 +80,9 @@ export const Alert = (props: AlertProps) => {
     <Styled.Alert $status={props.status}>
       <Styled.InfoWrap>
         {renderIcon(props.status)}
-        <Headline size={400}>{props.title}</Headline>
+        <Headline size={400}>
+          {props.title ?? getDefaultTitle(props.status)}
+        </Headline>
       </Styled.InfoWrap>
       {props.children && (
         <Styled.Description>{props.children}</Styled.Description>

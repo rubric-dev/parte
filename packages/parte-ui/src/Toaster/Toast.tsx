@@ -5,7 +5,7 @@ import { Box } from "../Layout";
 import { ToastProps } from "./Toaster.types";
 import * as Styled from "./ToastManager.styled";
 
-const duration = 5;
+const DEFAULT_DURATION = 5000;
 const ANIMATION_DURATION = 240;
 
 export const Toast = memo(function Toast({ toast, onRemove }: ToastProps) {
@@ -13,6 +13,7 @@ export const Toast = memo(function Toast({ toast, onRemove }: ToastProps) {
   const [isShown, setIsShown] = useState(true);
   const [height, setHeight] = useState(0);
   const closeTimer = useRef<NodeJS.Timeout | null>(null);
+  const duration = toast.duration ?? DEFAULT_DURATION;
 
   const clearCloseTimer = useCallback(() => {
     if (closeTimer.current) {
@@ -32,9 +33,9 @@ export const Toast = memo(function Toast({ toast, onRemove }: ToastProps) {
 
       closeTimer.current = setTimeout(() => {
         close();
-      }, duration * 1000);
+      }, duration);
     }
-  }, [clearCloseTimer, close]);
+  }, [clearCloseTimer, close, duration]);
 
   useEffect(() => {
     startCloseTimer();
@@ -73,7 +74,7 @@ export const Toast = memo(function Toast({ toast, onRemove }: ToastProps) {
       unmountOnExit
       timeout={ANIMATION_DURATION}
       in={isShown}
-      onExited={onRemove}
+      onExited={() => onRemove(toast.id)}
     >
       {(state) => {
         return (
@@ -82,8 +83,8 @@ export const Toast = memo(function Toast({ toast, onRemove }: ToastProps) {
             data-state={state}
             onMouseEnter={handleMouseEnter}
             onMouseLeave={handleMouseLeave}
-            marginBottom={isShown ? 0 : -height}
-            height={height}
+            $marginBottom={isShown ? 0 : -height}
+            $height={height}
           >
             <Box ref={onRef} padding={8}>
               <Alert

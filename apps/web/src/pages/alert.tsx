@@ -1,5 +1,5 @@
 import { AlertInfoIcon } from "@parte-ds/icons";
-import { Alert, Box } from "@parte-ds/ui";
+import { Alert, Box, Button, toaster } from "@parte-ds/ui";
 
 const AlertTest = () => {
   return (
@@ -18,6 +18,45 @@ const AlertTest = () => {
         하이하이
       </Alert>
       <AlertInfoIcon color="N700" />
+      <Box display="flex" gap={8}>
+        <Button
+          type="button"
+          onClick={() =>
+            toaster.notify({
+              status: "success",
+              children:
+                "성공 토스트 텍스트 길게길게 성공 토스트 텍스트 길게길게 성공 토스트 텍스트 길게길게 성공 토스트 텍스트 길게길게 ",
+              duration: 1520512,
+            })
+          }
+        >
+          토스트 생성
+        </Button>
+        <Button
+          type="button"
+          onClick={() =>
+            toaster.notify({
+              status: "error",
+              // children: "성공 토스트 텍스트 길게길게 ",
+              duration: 1520512,
+            })
+          }
+        >
+          토스트 생성
+        </Button>
+        <Button
+          type="button"
+          onClick={() =>
+            toaster.notify({
+              status: "warning",
+              // children: "성공 토스트 텍스트 길게길게 ",
+              duration: 1520512,
+            })
+          }
+        >
+          토스트 생성
+        </Button>
+      </Box>
     </Box>
   );
 };
