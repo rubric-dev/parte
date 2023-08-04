@@ -1,4 +1,4 @@
-import { memo, useRef, useState } from "react";
+import { memo, useCallback, useRef, useState } from "react";
 import { Toast } from "./Toast";
 import {
   NotifyHandler,
@@ -24,14 +24,11 @@ export const ToastManager = memo(function ({
   const [toasts, setToasts] = useState<ToastState[]>([]);
   const idCounter = useRef(0);
 
-  const removeToast = (id: number | string) => {
-    const updatedToasts = toasts.filter(
-      (toast) => !String(toast.id).startsWith(String(id))
+  const removeToast = useCallback((id: number | string) => {
+    setToasts((prev) =>
+      prev.filter((toast) => !String(toast.id).startsWith(String(id)))
     );
-
-    setToasts(updatedToasts);
-    return updatedToasts;
-  };
+  }, []);
 
   const closeToast = (id: number | string) => {
     setToasts(
@@ -59,7 +56,7 @@ export const ToastManager = memo(function ({
   };
 
   const createToastInstance = (passedProps: ToastParams): ToastState => {
-    const { title, children, status } = passedProps;
+    const { title, children, status, duration } = passedProps;
     const uniqueId = idCounter.current;
     idCounter.current += 1;
 
@@ -71,6 +68,7 @@ export const ToastManager = memo(function ({
       children,
       close: () => safeCloseToast(fixedId),
       status,
+      duration,
     };
   };
 
@@ -94,13 +92,7 @@ export const ToastManager = memo(function ({
   return (
     <Styled.ToastContainer>
       {toasts.map((toast) => {
-        return (
-          <Toast
-            key={toast.id}
-            toast={toast}
-            onRemove={() => removeToast(toast.id)}
-          />
-        );
+        return <Toast key={toast.id} toast={toast} onRemove={removeToast} />;
       })}
     </Styled.ToastContainer>
   );

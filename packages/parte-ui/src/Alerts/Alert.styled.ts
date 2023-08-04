@@ -76,6 +76,7 @@ export const Alert = styled(Box)<AlertStyleProps>`
 
 export const Toast = styled(Alert)`
   ${theme.elevation.elevation2};
+  pointer-events: all;
 `;
 
 export const InfoWrap = styled(Box)`
