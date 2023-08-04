@@ -31,14 +31,14 @@ export function ThemeProvider({
   );
 }
 
-const overrideTheme = (theme: CustomTheme) => {
+const overrideTheme = (customTheme: CustomTheme) => {
   let plate = structuredClone(defaultTheme);
 
   const {
     colors: customColors = {},
     commonStyles: customCommonStyles,
     ...customTokens
-  } = theme;
+  } = customTheme;
 
   const {
     colors: defaultColors,
@@ -54,17 +54,14 @@ const overrideTheme = (theme: CustomTheme) => {
     plate.colors = { ...defaultColors, ...customColors };
   }
 
-  // token에 theme색상을 채워준다.
+  // token에 customTokens가 있다면 customToken으로 아니라면 기본 Theme 색상을 채워준다.
   for (const token in tokens) {
     const tokenKey = token as keyof typeof tokens;
+    const colorKey = customTokens[tokenKey] ?? tokens[tokenKey];
     // @ts-ignore
-    plate[tokenKey] = plate.colors[tokens[tokenKey]];
+    plate[tokenKey] = plate.colors[colorKey];
   }
 
-  // theme에서 customTokens들의 색상만 override한다.
-  if (customTokens) {
-    plate = { ...plate, ...customTokens };
-  }
   if (customCommonStyles) {
     plate.commonStyles = { ...commonStyles, ...customCommonStyles };
   }

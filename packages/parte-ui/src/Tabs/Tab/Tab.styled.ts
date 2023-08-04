@@ -17,7 +17,7 @@ const primaryTabStyle = css<TabStyledProps>`
         right: 0;
         height: 2px;
         border-radius: 2px 2px 0px 0px;
-        background-color: ${theme.colors.T400};
+        background-color: ${theme.colorIndicatorTabSelected};
         width: 100%;
       }
       &[data-disabled="true"] {
@@ -57,9 +57,9 @@ const primaryTabStyle = css<TabStyledProps>`
       &:hover,
       &:active,
       &:focus {
-        color: ${theme.colors.T400};
+        color: ${theme.colorTextTabSelected};
         svg {
-          color: ${theme.colors.T400};
+          color: ${theme.colorTextTabSelected};
         }
       }
     }
@@ -116,10 +116,10 @@ const secondaryTabStyle = css<TabStyledProps>`
       &:hover,
       &:active,
       &:focus {
-        color: ${theme.colors.T400};
-        background-color: ${theme.colors.T100};
+        color: ${theme.colorTextTabSelected};
+        background-color: ${theme.colorBackgroundTabSelected};
         svg {
-          color: ${theme.colors.T400};
+          color: ${theme.colorTextTabSelected};
         }
       }
     }

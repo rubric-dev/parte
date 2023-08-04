@@ -19,8 +19,8 @@ const getStepStatusColor = (status: StepStatus, theme: ParteTheme) => {
       `;
     case "inProgress":
       return css`
-        color: ${theme.colors.T500};
-        background-color: ${theme.colors.T200};
+        color: ${theme.colorTextStep};
+        background-color: ${theme.colorBackgroundStep};
       `;
     case "complete":
       return css`
@@ -47,7 +47,9 @@ export const Icon = styled(Box)<{ $status: StepStatus }>`
 `;
 export const Label = styled.span<{ $status: StepStatus }>`
   ${({ theme, $status }) => css`
-    color: ${$status === "inProgress" ? theme.colors.T400 : theme.colors.N700};
+    color: ${$status === "inProgress"
+      ? theme.colorTextStepLabel
+      : theme.colors.N700};
     ${theme.typography.H300};
   `}
 `;

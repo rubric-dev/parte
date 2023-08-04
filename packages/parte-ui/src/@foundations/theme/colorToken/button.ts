@@ -1,4 +1,4 @@
-const buttonColorToken = {
+const buttonToken = {
   colorBackgroundButtonPrimary: "B400",
   colorBackgroundButtonPrimaryHover: "B500",
   colorBackgroundButtonPrimaryActive: "B600",
@@ -42,22 +42,22 @@ const buttonColorToken = {
   colorBorderButtonSecondaryColoredFocused: "B500",
   colorBorderButtonSecondaryColoredDisabled: "B100",
 
-  colorBackgroundButtonMinimal: "Transparent",
+  colorBackgroundButtonMinimal: "transparent",
   colorBackgroundButtonMinimalHover: "N100",
   colorBackgroundButtonMinimalActive: "N200",
   colorBackgroundButtonMinimalFocused: "N50",
-  colorBackgroundButtonMinimalDisabled: "Transparent",
+  colorBackgroundButtonMinimalDisabled: "transparent",
   colorTextButtonMinimal: "N700",
   colorTextButtonMinimalHover: "N800",
   colorTextButtonMinimalActive: "N800",
   colorTextButtonMinimalFocused: "N700",
   colorTextButtonMinimalDisabled: "N400",
 
-  colorBackgroundButtonMinimalColored: "Transparent",
+  colorBackgroundButtonMinimalColored: "transparent",
   colorBackgroundButtonMinimalColoredHover: "B100",
   colorBackgroundButtonMinimalColoredActive: "B200",
   colorBackgroundButtonMinimalColoredFocused: "B50",
-  colorBackgroundButtonMinimalColoredDisabled: "Transparent",
+  colorBackgroundButtonMinimalColoredDisabled: "transparent",
   colorTextButtonMinimalColored: "B400",
   colorTextButtonMinimalColoredHover: "B600",
   colorTextButtonMinimalColoredActive: "B600",
@@ -74,6 +74,10 @@ const buttonColorToken = {
   colorTextButtonErrorActive: "N0",
   colorTextButtonErrorFocused: "N0",
   colorTextButtonErrorDisabled: "N0",
+
+  colorBorderButtonOptionFocused: "B200",
+  colorBackgroundButtonOptionSelected: "B50",
+  colorTextButtonOptionSelected: "B400",
 };
 
-export default buttonColorToken;
+export default buttonToken;

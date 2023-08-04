@@ -2,7 +2,7 @@ import { css } from "styled-components";
 import { COLORS } from "./Colors";
 import { CustomTheme } from "./ThemeProvider";
 
-const buttonColorToken = {
+const buttonToken = {
   colorBackgroundButtonPrimary: "T400",
   colorBackgroundButtonPrimaryHover: "T500",
   colorBackgroundButtonPrimaryActive: "T600",
@@ -78,18 +78,26 @@ const buttonColorToken = {
   colorTextButtonErrorActive: "N0",
   colorTextButtonErrorFocused: "N0",
   colorTextButtonErrorDisabled: "N0",
+
+  colorBorderButtonOptionFocused: "T200",
+  colorBackgroundButtonOptionSelected: "T50",
+  colorTextButtonOptionSelected: "T400",
 };
-const typographyToken = {
-  colorHeadline: "N900",
-  colorHeading: "N800",
-  colorParagraph: "N800",
-  colorCodeMinimal: "N800",
-  colorCodeDefault: "T600",
-  colorTextSuccess: "G500",
-  colorTextInfo: "T500",
-  colorTextWarning: "Y500",
-  colorTextError: "R500",
+const cardToken = {
+  colorBorderCardFocused: "T400",
 };
+const checkboxToken = {
+  colorBackgroundCheckbox: "T400",
+  colorBackgroundCheckboxHover: "T500",
+  colorBackgroundCheckboxActive: "T600",
+  colorBackgroundCheckboxDisabled: "T200",
+};
+const dropdownToken = {
+  colorBackgroundDropdown: "N0",
+  colorBackgroundDropdownHover: "N50",
+  colorBackgroundDropdownSelected: "T100",
+};
+
 const formToken = {
   colorTextPlaceholderDefault: "N600",
   colorTextPlaceholderHover: "N700",
@@ -114,14 +122,8 @@ const generalToken = {
   colorBackgroundMenu: "N0",
   colorBackgroundMenuHover: "N50",
   colorBackgroundMenuSelected: "T100",
+  colorTextMenuRowSelected: "T400",
 };
-
-const dropdownToken = {
-  colorBackgroundDropdown: "N0",
-  colorBackgroundDropdownHover: "N50",
-  colorBackgroundDropdownSelected: "T100",
-};
-
 const linkToken = {
   colorTextLink: "T400",
   colorTextLinkHover: "T500",
@@ -130,7 +132,62 @@ const linkToken = {
   colorTextLinkDisabled: "N500",
   colorTextLinkVisited: "V400",
 };
+const paginationToken = {
+  colorBackgroundPaginationSelected: "T100",
+  colorTextPaginationSelected: "T400",
+};
+const radioToken = {
+  colorBorderRadioChecked: "T400",
+  colorBorderRadioCheckedHover: "T500",
+  colorBorderRadioCheckedActive: "T600",
+  colorBorderRadioCheckedDisabled: "T200",
+};
 
+const rangeSliderToken = {
+  colorBackgroundRangeTrack: "T100",
+  colorBackgroundRangeTrackSelected: "T400",
+  colorBackgroundRangeSegment: "T100",
+  colorBackgroundRangeSegmentSelected: "T400",
+  colorBackgroundRangeHandle: "T400",
+};
+
+const selectToken = {
+  colorBorderSelectFocused: "T300",
+  colorOutlineSelectFocused: "T200",
+  colorBackgroundSelectOptionSelected: "T100",
+  colorTextSelectOptionSelected: "T400",
+};
+const selectRowToken = {
+  colorIndicatorSelectRow: "T400",
+  colorTextSelectRowSelected: "T400",
+};
+const stepToken = {
+  colorTextStep: "T500",
+  colorTextStepLabel: "T400",
+  colorBackgroundStep: "T200",
+};
+const tabToken = {
+  colorIndicatorTabSelected: "T400",
+  colorTextTabSelected: "T400",
+  colorBackgroundTabSelected: "T100",
+};
+const toggleToken = {
+  colorBackgroundToggle: "T400",
+  colorBackgroundToggleHover: "T500",
+  colorBackgroundToggleActive: "T600",
+  colorBackgroundToggleDisabled: "T200",
+};
+const typographyToken = {
+  colorHeadline: "N900",
+  colorHeading: "N800",
+  colorParagraph: "N800",
+  colorCodeMinimal: "N800",
+  colorCodeDefault: "T600",
+  colorTextSuccess: "G500",
+  colorTextInfo: "T500",
+  colorTextWarning: "Y500",
+  colorTextError: "R500",
+};
 const commonStyles = {
   outline: css`
     outline: 2px solid ${COLORS.T200};
@@ -138,11 +195,21 @@ const commonStyles = {
 };
 
 export const ErpTheme = {
-  ...buttonColorToken,
-  ...typographyToken,
+  ...buttonToken,
+  ...cardToken,
+  ...checkboxToken,
+  ...dropdownToken,
   ...formToken,
   ...generalToken,
-  ...dropdownToken,
   ...linkToken,
+  ...paginationToken,
+  ...radioToken,
+  ...rangeSliderToken,
+  ...selectToken,
+  ...selectRowToken,
+  ...stepToken,
+  ...tabToken,
+  ...toggleToken,
+  ...typographyToken,
   commonStyles,
 } as CustomTheme;

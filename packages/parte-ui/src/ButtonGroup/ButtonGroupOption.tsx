@@ -117,7 +117,7 @@ const StyledButton = styled.button`
 
     //## focused
     &:focus {
-      border-color: ${theme.colors.T200};
+      border-color: ${theme.colorBorderButtonOptionFocused};
       background-color: ${theme.colors.N0};
       color: ${theme.colors.N700};
       z-index: 2;
@@ -141,11 +141,11 @@ const StyledButton = styled.button`
     //## selected
     &[aria-selected="true"] {
       border-color: ${theme.colors.N400};
-      background-color: ${theme.colors.T50};
-      color: ${theme.colors.T400};
+      background-color: ${theme.colorBackgroundButtonOptionSelected};
+      color: ${theme.colorTextButtonOptionSelected};
       z-index: 2;
       & #${TRAILING_NODE} svg {
-        color: ${theme.colors.T400};
+        color: ${theme.colorTextButtonOptionSelected};
       }
     }
 

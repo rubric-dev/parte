@@ -43,16 +43,16 @@ export const Input = styled.input`
       background-color: ${theme.colors.N100};
     }
     &:checked {
-      border: 4px solid ${theme.colors.T400};
+      border: 4px solid ${theme.colorBorderRadioChecked};
       &:hover {
-        border: 4px solid ${theme.colors.T500};
+        border: 4px solid ${theme.colorBorderRadioCheckedHover};
       }
       &:active {
-        border: 4px solid ${theme.colors.T600};
+        border: 4px solid ${theme.colorBorderRadioCheckedActive};
         background-color: ${theme.colors.transparent};
       }
       &:disabled {
-        border: 4px solid ${theme.colors.T200};
+        border: 4px solid ${theme.colorBorderRadioCheckedDisabled};
         background-color: ${theme.colors.N100};
       }
     }

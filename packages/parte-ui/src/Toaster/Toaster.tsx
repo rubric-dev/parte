@@ -3,6 +3,7 @@ import { ThemeProvider } from "styled-components";
 import { theme } from "../@foundations/theme";
 import { ToastManager } from "./ToastManager";
 import { NotifyHandler, PopHandler, RemoveHandler } from "./Toaster.types";
+import { DefaultTheme } from "styled-components";
 
 /**
  * The Toaster manages the interactions between
@@ -30,7 +31,7 @@ export class Toaster implements IToaster {
 
     const Manager = () => {
       return (
-        <ThemeProvider theme={theme}>
+        <ThemeProvider theme={theme as DefaultTheme}>
           <ToastManager
             bindNotify={this._bindNotify}
             bindRemove={this._bindRemove}

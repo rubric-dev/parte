@@ -13,6 +13,7 @@ const generalToken = {
   colorBackgroundMenu: "N0",
   colorBackgroundMenuHover: "N50",
   colorBackgroundMenuSelected: "B100",
+  colorTextMenuRowSelected: "B400",
 };
 
 export default generalToken;
