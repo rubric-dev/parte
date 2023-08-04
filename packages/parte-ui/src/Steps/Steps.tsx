@@ -9,7 +9,7 @@ export const Steps = ({ stepList, currentStep }: StepsProps) => {
         <Step
           key={step.id}
           currentStep={currentStep}
-          stepIndex={index}
+          stepIndex={index + 1}
           label={step.label}
         />
       ))}

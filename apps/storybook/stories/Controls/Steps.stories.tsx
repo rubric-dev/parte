@@ -1,7 +1,7 @@
-import { Steps, StepsProps } from "@parte-ds/ui";
-import { Story, Meta } from "@storybook/react";
+import { Steps } from "@parte-ds/ui";
+import { Meta, StoryObj } from "@storybook/react";
 
-export default {
+const StepsStory = {
   title: "Components/Controls/Steps",
   component: Steps,
   parameters: {
@@ -10,9 +10,8 @@ export default {
   },
 } as Meta;
 
-const Template: Story<StepsProps> = ({ ...args }) => {
-  return <Steps {...args} />;
-};
+export default StepsStory;
+type Story = StoryObj<typeof Steps>;
 
 const MOCK = [
   {
@@ -36,8 +35,10 @@ const MOCK = [
     label: v.name,
   };
 });
-export const Default = Template.bind({});
-Default.args = {
-  stepList: MOCK,
-  currentStep: MOCK.findIndex((v) => v.id === 3),
+
+export const Default: Story = {
+  args: {
+    stepList: MOCK,
+    currentStep: MOCK.findIndex((v) => v.id === 3),
+  },
 };
