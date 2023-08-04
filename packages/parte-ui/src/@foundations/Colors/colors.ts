@@ -1,6 +1,3 @@
-export type ColorKey = keyof typeof COLORS;
-export type Colors = Record<ColorKey, string>;
-
 export const COLORS = {
   N900: "#101840",
   N800: "#474D66",
@@ -79,4 +76,8 @@ export const COLORS = {
   ChartPink: "#FD8ADC",
   ChartAqua: "#70B0FF",
   ChartOrange: "#FF9D66",
+  ModalBackground: "#435a6fb3",
 };
+
+export type ColorKey = keyof typeof COLORS;
+export type Colors = Record<ColorKey, string>;

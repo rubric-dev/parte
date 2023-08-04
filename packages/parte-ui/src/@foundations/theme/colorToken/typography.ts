@@ -3,13 +3,11 @@ const typographyToken = {
   colorHeading: "N800",
   colorParagraph: "N800",
   colorCodeMinimal: "N800",
-  colorCodeDefault: "T600",
+  colorCodeDefault: "B600",
   colorTextSuccess: "G500",
-  colorTextInfo: "T500",
+  colorTextInfo: "B500",
   colorTextWarning: "Y500",
   colorTextError: "R500",
 };
 
-export default {
-  ...typographyToken,
-};
+export default typographyToken;

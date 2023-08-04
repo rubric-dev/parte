@@ -7,14 +7,13 @@ const generalToken = {
   colorBorderDefault: "N400",
   colorBorderHover: "N400",
   // colorBorderDefault: 속성이 없음,
-  colorBorderFocused: "T300",
+  colorBorderFocused: "B300",
   colorBorderDisabled: "N300",
 
   colorBackgroundMenu: "N0",
   colorBackgroundMenuHover: "N50",
-  colorBackgroundMenuSelected: "T100",
+  colorBackgroundMenuSelected: "B100",
+  colorTextMenuRowSelected: "B400",
 };
 
-export default {
-  ...generalToken,
-};
+export default generalToken;

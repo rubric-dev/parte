@@ -35,8 +35,8 @@ export const PaginationButton = styled.button<{
     }
     ${isSelected &&
     css`
-      background-color: ${theme.colors.T100} !important;
-      color: ${theme.colors.T400} !important;
+      background-color: ${theme.colorBackgroundPaginationSelected} !important;
+      color: ${theme.colorTextPaginationSelected} !important;
       outline: none !important;
     `}
   `}

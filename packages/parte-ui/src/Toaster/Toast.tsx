@@ -34,7 +34,7 @@ export const Toast = memo(function Toast({ toast, onRemove }: ToastProps) {
         close();
       }, duration * 1000);
     }
-  }, [duration, clearCloseTimer, close]);
+  }, [clearCloseTimer, close]);
 
   useEffect(() => {
     startCloseTimer();

@@ -1,12 +1,16 @@
 import { ReactNode } from "react";
-import { css, ThemeProvider as DefaultThemeProvider } from "styled-components";
+import {
+  DefaultTheme,
+  ThemeProvider as StyledComponentsThemeProvider,
+} from "styled-components";
 import { Colors } from ".";
-import { ColorTokenType } from "./theme/colorToken";
 import { theme as defaultTheme } from "./theme";
-import { cloneDeep } from "lodash-es";
+import { ColorTokenType } from "./theme/colorToken";
+import { CommonStyles } from "./theme/commonStyles";
 
 export type CustomTheme = Partial<ColorTokenType> & {
   colors?: Partial<Colors>;
+  commonStyles?: Partial<CommonStyles>;
 };
 
 type ThemeProviderProps = {
@@ -21,16 +25,20 @@ export function ThemeProvider({
   const customizedTheme = overrideTheme(customTheme);
 
   return (
-    <DefaultThemeProvider theme={customizedTheme}>
+    <StyledComponentsThemeProvider theme={customizedTheme}>
       {children}
-    </DefaultThemeProvider>
+    </StyledComponentsThemeProvider>
   );
 }
 
-const overrideTheme = (theme: CustomTheme) => {
-  let plate = cloneDeep(defaultTheme);
+const overrideTheme = (customTheme: CustomTheme) => {
+  let plate = structuredClone(defaultTheme);
 
-  const { colors: customColors = {}, ...customTokens } = theme;
+  const {
+    colors: customColors = {},
+    commonStyles: customCommonStyles,
+    ...customTokens
+  } = customTheme;
 
   const {
     colors: defaultColors,
@@ -38,7 +46,6 @@ const overrideTheme = (theme: CustomTheme) => {
     elevation,
     spacing,
     typography,
-    colorModalBackground,
     ...tokens
   } = plate;
 
@@ -47,21 +54,17 @@ const overrideTheme = (theme: CustomTheme) => {
     plate.colors = { ...defaultColors, ...customColors };
   }
 
-  // token에 theme색상을 채워준다.
+  // token에 customTokens가 있다면 customToken으로 아니라면 기본 Theme 색상을 채워준다.
   for (const token in tokens) {
     const tokenKey = token as keyof typeof tokens;
+    const colorKey = customTokens[tokenKey] ?? tokens[tokenKey];
     // @ts-ignore
-    plate[tokenKey] = plate.colors[tokens[tokenKey]];
+    plate[tokenKey] = plate.colors[colorKey];
   }
 
-  // theme에서 customTokens들의 색상만 override한다.
-  if (customTokens) {
-    plate = { ...plate, ...customTokens };
+  if (customCommonStyles) {
+    plate.commonStyles = { ...commonStyles, ...customCommonStyles };
   }
 
-  plate.commonStyles.outline = css`
-    outline: 2px solid ${plate.colors.T200};
-  `;
-
-  return plate;
+  return plate as DefaultTheme;
 };

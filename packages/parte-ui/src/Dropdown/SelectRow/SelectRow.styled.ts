@@ -22,7 +22,7 @@ const indicator = css`
       left: 0;
       height: 100%;
       border-radius: 0px 2px 2px 0px;
-      background-color: ${theme.colors.T400};
+      background-color: ${theme.colorIndicatorSelectRow};
       width: 2px;
     }
   `}
@@ -86,10 +86,10 @@ export const SelectRow = styled(Box)<{
         !props.disabled &&
         css`
           background-color: ${theme.colorBackgroundDropdownSelected};
-          color: ${theme.colors.T400};
+          color: ${theme.colorTextSelectRowSelected};
           ${indicator}
           svg {
-            color: ${theme.colors.T400};
+            color: ${theme.colorTextSelectRowSelected};
           }
         `}
         ${props.disabled &&

@@ -128,24 +128,26 @@ const CustomAnchor = forwardRef<
 CustomAnchor.displayName = "CustomAnchor";
 
 const LinkContainer = styled.div`
-  ${({ theme }) => css`
-    color: ${theme.colorTextLink};
-    ${theme.typography.H400}
-    cursor: pointer;
+  ${({ theme }) => {
+    return css`
+      color: ${theme.colorTextLink};
+      ${theme.typography.H400}
+      cursor: pointer;
 
-    &:hover {
-      color: ${theme.colorTextLinkHover};
-    }
-    &:active {
-      color: ${theme.colorTextLinkPressed};
-    }
-    &:focus {
-      color: ${theme.colorTextLinkFocused};
-      ${theme.commonStyles.outline};
-      border-radius: ${theme.spacing.spacing4}px;
-    }
-    &:visited {
-      color: ${theme.colorTextLinkVisited};
-    }
-  `}
+      &:hover {
+        color: ${theme.colorTextLinkHover};
+      }
+      &:active {
+        color: ${theme.colorTextLinkPressed};
+      }
+      &:focus {
+        color: ${theme.colorTextLinkFocused};
+        ${theme.commonStyles.outline};
+        border-radius: ${theme.spacing.spacing4}px;
+      }
+      &:visited {
+        color: ${theme.colorTextLinkVisited};
+      }
+    `;
+  }}
 `;

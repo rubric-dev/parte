@@ -1,3 +1,5 @@
-export default {
-  colorModalBackground: '#435a6fb3',
+const overlayColorToken = {
+  colorModalBackground: "ModalBackground",
 };
+
+export default overlayColorToken;

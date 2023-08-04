@@ -47,15 +47,15 @@ export const Input = styled.input`
     }
 
     &:checked {
-      background-color: ${theme.colors.T400};
+      background-color: ${theme.colorBackgroundToggle};
       &::before {
         left: 14px;
       }
       &:hover {
-        background-color: ${theme.colors.T500};
+        background-color: ${theme.colorBackgroundToggleHover};
       }
       &:active {
-        background-color: ${theme.colors.T600};
+        background-color: ${theme.colorBackgroundToggleActive};
       }
     }
     &:disabled {
@@ -68,7 +68,7 @@ export const Input = styled.input`
 
     &:checked:disabled {
       cursor: default;
-      background-color: ${theme.colors.T200};
+      background-color: ${theme.colorBackgroundToggleDisabled};
       &::before {
         background-color: ${theme.colors.N100};
       }

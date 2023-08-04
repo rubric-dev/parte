@@ -140,8 +140,10 @@ const TrackContainer = styled.div<{ $isRangeValue: boolean }>`
     display: flex;
     align-items: center;
     background: ${`linear-gradient(to right, ${
-      $isRangeValue ? theme.colors.T100 : theme.colors.T400
-    } 50%, ${theme.colors.T100} 50%)`};
+      $isRangeValue
+        ? theme.colorBackgroundRangeTrack
+        : theme.colorBackgroundRangeTrackSelected
+    } 50%, ${theme.colorBackgroundRangeTrack} 50%)`};
     border-radius: 4px;
 
     &:has(button:disabled) {
@@ -181,7 +183,9 @@ export const TickLabel = styled.div<{ $type?: TickType }>`
 
 export const Segment = styled.div<{ $isInRange: boolean }>`
   ${({ theme, $isInRange }) => css`
-    background: ${$isInRange ? theme.colors.T400 : theme.colors.T100};
+    background: ${$isInRange
+      ? theme.colorBackgroundRangeSegmentSelected
+      : theme.colorBackgroundRangeSegment};
     height: 100%;
     &[data-disabled="true"] {
       background: ${$isInRange ? theme.colors.N500 : theme.colors.N300};
@@ -195,7 +199,7 @@ export const Handle = styled.div<{ active?: boolean }>`
     width: ${HANDLE_SIZE}px;
     height: ${HANDLE_SIZE}px;
     border-radius: 100%;
-    background: ${theme.colors.T400};
+    background: ${theme.colorBackgroundRangeHandle};
     ${active && theme.commonStyles.outline}
 
     &[data-disabled="true"] {

@@ -1,12 +1,10 @@
-const LinkToken = {
-  colorTextLink: "T400",
-  colorTextLinkHover: "T500",
-  colorTextLinkPressed: "T600",
-  colorTextLinkFocused: "T500",
+const linkToken = {
+  colorTextLink: "B400",
+  colorTextLinkHover: "B500",
+  colorTextLinkPressed: "B600",
+  colorTextLinkFocused: "B500",
   colorTextLinkDisabled: "N500",
   colorTextLinkVisited: "V400",
 };
 
-export default {
-  ...LinkToken,
-};
+export default linkToken;

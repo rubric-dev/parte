@@ -18,7 +18,7 @@ export const DefaultCard = styled(Box)<{ disabled?: boolean }>`
     }
     &:focus,
     &:active {
-      border: 1px solid ${theme.colors.T400};
+      border: 1px solid ${theme.colorBorderCardFocused};
       background-color: ${theme.colors.N50};
     }
     ${disabled &&
@@ -65,7 +65,7 @@ export const SelectableCard = styled(Box)<{
     `}
     ${selected &&
     css`
-      border-color: ${theme.colors.T400};
+      border-color: ${theme.colorBorderCardFocused};
       background-color: ${theme.colors.N50};
     `}
   `}

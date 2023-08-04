@@ -7,3 +7,4 @@ export * from "./Typography";
 export { styleReset } from "./styleReset";
 export * from "./ThemeProvider";
 export * from "./theme";
+export * from "./erpTheme";

@@ -18,7 +18,7 @@ const sideBarStyle = css`
     width: 2px;
     height: 100%;
     border-radius: 0px 2px 2px 0px;
-    background-color: ${({ theme }) => theme.colors.T400};
+    background-color: ${({ theme }) => theme.colorTextMenuRowSelected};
   }
 `;
 
@@ -49,7 +49,7 @@ export const Container = styled(Box)<ContainerProps>`
       css`
         ${sideBarStyle}
         background-color: ${theme.colorBackgroundMenuSelected};
-        color: ${theme.colors.T400};
+        color: ${theme.colorTextMenuRowSelected};
       `}
       ${disabled &&
       !isTitle &&
@@ -75,7 +75,7 @@ export const Icon = styled.div<{ selected?: boolean; disabled?: boolean }>`
         color: ${theme.colors.N700};
         ${selected &&
         css`
-          color: ${theme.colors.T400};
+          color: ${theme.colorTextMenuRowSelected};
         `}
         ${disabled &&
         css`

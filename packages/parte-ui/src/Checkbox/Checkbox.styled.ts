@@ -31,7 +31,7 @@ export const LabelContainer = styled.label`
     }
 
     &:has(input:checked) #${CHECKBOX_ICON_BOX} {
-      background-color: ${theme.colors.T400};
+      background-color: ${theme.colorBackgroundCheckbox};
       border: none;
     }
 
@@ -40,11 +40,11 @@ export const LabelContainer = styled.label`
         color: ${theme.colors.N0};
       }
       &:hover #${CHECKBOX_ICON_BOX} {
-        background-color: ${theme.colors.T500};
+        background-color: ${theme.colorBackgroundCheckboxHover};
         outline: none;
       }
       &:active #${CHECKBOX_ICON_BOX} {
-        background-color: ${theme.colors.T600};
+        background-color: ${theme.colorBackgroundCheckboxActive};
       }
     }
 
@@ -54,15 +54,15 @@ export const LabelContainer = styled.label`
 
     // indeterminate=true일 경우
     &:has(input[data-indeterminate="true"]) #${CHECKBOX_ICON_BOX} {
-      background-color: ${theme.colors.T400};
+      background-color: ${theme.colorBackgroundCheckbox};
       border: none;
     }
     &:has(input[data-indeterminate="true"]) {
       &:hover #${CHECKBOX_ICON_BOX} {
-        background-color: ${theme.colors.T500};
+        background-color: ${theme.colorBackgroundCheckboxHover};
       }
       &:active #${CHECKBOX_ICON_BOX} {
-        background-color: ${theme.colors.T600};
+        background-color: ${theme.colorBackgroundCheckboxActive};
       }
     }
 
@@ -85,7 +85,7 @@ export const LabelContainer = styled.label`
       }
     }
     &:has(input[type="checkbox"][disabled]:checked) #${CHECKBOX_ICON_BOX} {
-      background-color: ${theme.colors.T200};
+      background-color: ${theme.colorBackgroundCheckboxDisabled};
       & svg {
         color: ${theme.colors.N100};
       }
@@ -94,7 +94,7 @@ export const LabelContainer = styled.label`
     // disabled=true
     // indeterminate=true 동시에
     &:has(input[data-indeterminate="true"][disabled]) #${CHECKBOX_ICON_BOX} {
-      background-color: ${theme.colors.T200};
+      background-color: ${theme.colorBackgroundCheckboxDisabled};
     }
   `}
 `;

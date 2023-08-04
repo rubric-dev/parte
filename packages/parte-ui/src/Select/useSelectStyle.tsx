@@ -53,8 +53,9 @@ const useSelectStyle = ({
         },
         ...(props.isFocused
           ? {
-              borderColor: `${theme.colors.T300} !important`,
-              boxShadow: `0 0 0 2px ${theme.colors.T200}`,
+              borderColor: `${theme.colorBorderSelectFocused} !important`,
+              // TODO: outline
+              boxShadow: `0 0 0 2px ${theme.colorOutlineSelectFocused}`,
             }
           : {
               boxShadow: "none",
@@ -276,8 +277,8 @@ const useSelectStyle = ({
             }),
         ...(props.isSelected
           ? {
-              backgroundColor: `${theme.colors.T100} !important`,
-              color: theme.colors.T400,
+              backgroundColor: `${theme.colorBackgroundSelectOptionSelected} !important`,
+              color: theme.colorTextSelectOptionSelected,
               "::before": {
                 content: '""',
                 position: "absolute",
@@ -285,7 +286,7 @@ const useSelectStyle = ({
                 left: "0px",
                 height: "100%",
                 borderRadius: "0px 2px 2px 0px",
-                backgroundColor: theme.colors.T400,
+                backgroundColor: theme.colorTextSelectOptionSelected,
                 width: "2px",
               },
             }
@@ -295,7 +296,7 @@ const useSelectStyle = ({
         // ==== icon ====
         svg: props.isSelected
           ? {
-              color: theme.colors.T400,
+              color: theme.colorTextSelectOptionSelected,
             }
           : {
               color: theme.colors.N700,
