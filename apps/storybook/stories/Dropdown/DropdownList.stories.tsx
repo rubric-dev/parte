@@ -1,18 +1,17 @@
 import { DropdownList, DropdownListProps } from "@parte-ds/ui";
-import { Story, Meta } from "@storybook/react";
+import { Meta, StoryObj } from "@storybook/react";
 
-export default {
+const DropdownListStory: Meta = {
   title: "Components/Dropdown/DropdownList",
   component: DropdownList,
   parameters: {
     layout: "centered",
     viewport: "responsive",
   },
-} as Meta;
-
-const Template: Story<DropdownListProps<string>> = ({ ...args }) => {
-  return <DropdownList {...args} />;
 };
+
+export default DropdownListStory;
+type Story = StoryObj<typeof DropdownList>;
 
 const OPTION = [
   {
@@ -40,16 +39,19 @@ const createOption = (groupNames: string[]) => {
   });
 };
 
-export const Default = Template.bind({});
-Default.args = {
-  options: OPTION,
-  value: {
-    label: "label1-2",
-    value: "value1-2",
+export const Default: Story = {
+  args: {
+    options: OPTION,
+    value: {
+      label: "label1-2",
+      value: "value1-2",
+    },
   },
 };
-export const GroupOptions = Template.bind({});
-GroupOptions.args = {
-  options: createOption(["tjthfa", "asd", "rff"]),
-  isSearchable: true,
+
+export const GroupOptions: Story = {
+  args: {
+    options: createOption(["tjthfa", "asd", "rff"]),
+    isSearchable: true,
+  },
 };

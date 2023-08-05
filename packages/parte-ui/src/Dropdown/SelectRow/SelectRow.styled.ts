@@ -1,4 +1,4 @@
-import styled, { css } from "styled-components";
+import styled, { DefaultTheme, css } from "styled-components";
 import { Box } from "../../Layout";
 import { SelectRowProps, SelectRowType } from "./SelectRow.types";
 
@@ -28,102 +28,83 @@ const indicator = css`
   `}
 `;
 
-const titleStyle = css`
-  ${({ theme }) => css`
+const titleStyle = (theme: DefaultTheme) => css`
+  background-color: ${theme.colors.N0};
+  color: ${theme.colors.N600};
+  ${theme.typography.C200}
+  &:not(:last-child) {
+    border-bottom: 1px solid ${theme.colors.N300};
+  }
+`;
+
+const searchStyle = (theme: DefaultTheme) => css`
+  background-color: ${theme.colors.N50};
+  ${theme.typography.C200}
+  color: ${theme.colors.N600};
+  &:not(:last-child) {
+    border-bottom: 1px solid ${theme.colors.N400};
+  }
+`;
+
+const elementStyle = (theme: DefaultTheme) => css`
+  background-color: ${theme.colorBackgroundDropdown};
+  &:not(:last-child) {
+    border-bottom: 1px solid ${theme.colors.N300};
+  }
+  color: ${theme.colors.N800};
+  box-sizing: border-box;
+  ${theme.typography.P100}
+  cursor: pointer;
+
+  &:hover,
+  &:focus {
+    background-color: ${theme.colorBackgroundDropdownHover};
+  }
+
+  &[data-selected="true"] {
+    background-color: ${theme.colorBackgroundDropdownSelected};
+    color: ${theme.colorTextSelectRowSelected};
+    ${indicator}
+    svg {
+      color: ${theme.colorTextSelectRowSelected};
+    }
+  }
+
+  &[data-disabled="true"] {
     background-color: ${theme.colors.N0};
-    color: ${theme.colors.N600};
-    ${theme.typography.C200}
-    &:not(:last-child) {
-      border-bottom: 1px solid ${theme.colors.N300};
+    color: ${theme.colors.N500};
+    cursor: default;
+    svg {
+      color: ${theme.colors.N400};
     }
-  `}
+  }
 `;
 
-const searchStyle = css`
-  ${({ theme }) => css`
-    background-color: ${theme.colors.N50};
-    ${theme.typography.C200}
-    color: ${theme.colors.N600};
-    &:not(:last-child) {
-      border-bottom: 1px solid ${theme.colors.N400};
-    }
-  `}
-`;
-
-export const SelectRow = styled(Box)<{
-  variant: SelectRowType;
-  selected?: boolean;
-  disabled?: boolean;
-}>`
+export const SelectRow = styled(Box)<{ $variant: SelectRowType }>`
   ${commonSelectRowStyle}
-  ${(props) => {
-    const { variant, theme } = props;
-    if (variant === "title") {
-      return css`
-        ${titleStyle}
-      `;
-    }
-    if (variant === "element") {
-      return css`
-        background-color: ${theme.colorBackgroundDropdown};
-        &:not(:last-child) {
-          border-bottom: 1px solid ${theme.colors.N300};
-        }
-        color: ${theme.colors.N800};
-        box-sizing: border-box;
-        ${theme.typography.P100}
-        cursor: pointer;
-
-        &:hover,
-        &:focus {
-          ${!props.selected &&
-          !props.disabled &&
-          css`
-            background-color: ${theme.colorBackgroundDropdownHover};
-          `}
-        }
-        ${props.selected &&
-        !props.disabled &&
-        css`
-          background-color: ${theme.colorBackgroundDropdownSelected};
-          color: ${theme.colorTextSelectRowSelected};
-          ${indicator}
-          svg {
-            color: ${theme.colorTextSelectRowSelected};
-          }
-        `}
-        ${props.disabled &&
-        css`
-          background-color: ${theme.colors.N0};
-          color: ${theme.colors.N500};
-          cursor: default;
-          svg {
-            color: ${theme.colors.N400};
-          }
-        `}
-      `;
-    }
-    if (variant === "search") {
-      return css`
-        ${searchStyle}
-      `;
+  ${({ theme, $variant }) => {
+    switch ($variant) {
+      case "search":
+        return searchStyle(theme);
+      case "title":
+        return titleStyle(theme);
+      case "element":
+        return elementStyle(theme);
     }
   }}
 `;
 
 export const SearchInput = styled.input<SelectRowProps>`
-  ${({ theme }) => {
-    return css`
-      background-color: transparent;
-      border: none;
-      outline: none;
-      margin-left: ${theme.spacing.spacing8}px;
-      width: 100%;
-      color: ${theme.colors.N800};
-      &::placeholder {
-        ${theme.typography.P100}
-        color: ${theme.colors.N600};
-      }
-    `;
-  }}
+  ${({ theme }) => css`
+    background-color: transparent;
+    border: none;
+    outline: none;
+    margin-left: ${theme.spacing.spacing8}px;
+    width: 100%;
+    color: ${theme.colors.N800};
+    &::placeholder {
+      ${theme.typography.P100}
+      color: ${theme.colors.N600};
+    }
+  `}
 `;

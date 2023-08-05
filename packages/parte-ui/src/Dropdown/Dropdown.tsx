@@ -35,7 +35,6 @@ export const Dropdown = ({ children, ...rest }: DropdownProps) => {
     setIsOpen(false);
   }, []);
 
-  useOutsideClick([dropdownRef], onClose);
   const onKeyDown: React.KeyboardEventHandler<HTMLDivElement> = (e) => {
     if (e.key === "Escape") onClose();
   };
@@ -111,6 +110,7 @@ const menuReducer: Reducer<MenuState, MenuAction> = (state, action) => {
 const Menu = ({ children }: DropdownMenuProps) => {
   const { usePortal, isOpen, dropdownRef, offset, onClose } =
     useContext(DropdownContext);
+
   const menuRef = useRef<HTMLDivElement | null>(null);
 
   const [{ position, menuStyle }, dispatch] = useReducer(
@@ -135,7 +135,7 @@ const Menu = ({ children }: DropdownMenuProps) => {
     });
   }, [offset, usePortal]);
 
-  useOutsideClick([menuRef], onClose);
+  useOutsideClick([menuRef, dropdownRef], onClose);
 
   useEffect(() => {
     return () => {
@@ -168,9 +168,9 @@ const Menu = ({ children }: DropdownMenuProps) => {
       <Portal>
         <Styled.Menu
           ref={handleSetRef}
-          hidden={!menuStyle}
+          $hidden={!menuStyle}
           style={menuStyle}
-          usePortal
+          $usePortal
         >
           {typeof children === "function" ? children({ onClose }) : children}
         </Styled.Menu>
@@ -181,7 +181,7 @@ const Menu = ({ children }: DropdownMenuProps) => {
   return (
     <Styled.Menu
       ref={handleSetRef}
-      hidden={!menuStyle}
+      $hidden={!menuStyle}
       display="flex"
       flexDirection="column"
       style={menuStyle}

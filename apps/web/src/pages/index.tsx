@@ -23,6 +23,7 @@ const MENU = [
   { url: "/forms", name: "Forms 테스트" },
   { url: "/select", name: "Select 테스트" },
   { url: "/step", name: "Step 테스트" },
+  { url: "/dropdown", name: "Dropdown 테스트" },
 ];
 
 export default function Home() {

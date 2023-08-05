@@ -1,19 +1,19 @@
-import { RefObject, ReactNode } from "react";
+import { RefObject, ReactNode, PropsWithChildren } from "react";
 import { DROPDOWN_POSITION } from "../constant";
 
 export type DropdownPosition =
   (typeof DROPDOWN_POSITION)[keyof typeof DROPDOWN_POSITION];
-export interface DropdownProps {
-  children?: ReactNode;
+
+export type DropdownProps = PropsWithChildren<{
   usePortal?: boolean;
   offset?: number;
-}
+}>;
 
 export interface DropdownContextState extends DropdownProps {
   isOpen: boolean;
   onClick?: () => void;
   onClose: () => void;
-  dropdownRef?: RefObject<HTMLDivElement>;
+  dropdownRef: RefObject<HTMLDivElement>;
 }
 
 export interface DropdownTriggerProps {
@@ -22,5 +22,5 @@ export interface DropdownTriggerProps {
 export interface DropdownMenuProps {
   children:
     | React.ReactNode
-    | (({ onClose }: { onClose?: () => void }) => React.ReactNode);
+    | (({ onClose }: { onClose: () => void }) => React.ReactNode);
 }
