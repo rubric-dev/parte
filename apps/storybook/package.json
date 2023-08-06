@@ -14,7 +14,7 @@
     "@parte-ds/ui": "workspace:*",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "react-select": "^5.7.4",
+    "react-select": "^5.7.1",
     "react-select-async-paginate": "^0.7.3",
     "styled-components": "^6.0.7",
     "stylis": "^4.3.0"
