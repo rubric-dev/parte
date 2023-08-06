@@ -1,13 +1,15 @@
 import { ActionChatIcon } from "@parte-ds/icons";
 import {
+  Box,
   Button,
   Dropdown,
   DropdownList,
   DropdownProps,
   GroupOption,
   Option,
+  Toggle,
 } from "@parte-ds/ui";
-import { Meta, Story } from "@storybook/react";
+import { Meta, StoryObj } from "@storybook/react";
 import { useState } from "react";
 
 const OPTIONS: Option<string>[] = [
@@ -90,32 +92,37 @@ const GROUP_OPTIONS: GroupOption<string>[] = [
   },
 ];
 
-export default {
+const DropdownStory: Meta = {
   title: "Components/Dropdown",
   component: Dropdown,
   parameters: {
     layout: "centered",
     viewport: "responsive",
   },
-} as Meta;
+};
 
-const Template: Story<DropdownProps> = ({ ...args }) => {
+export default DropdownStory;
+type Story = StoryObj<typeof Dropdown>;
+
+const Template = ({ ...args }) => {
   const [selectValue, setSelectValue] = useState<Option<string>>({
     label: "label3",
     value: "value3",
   });
 
-  const onSelect = (value: Option<string>) => {
-    setSelectValue(value);
+  const onSelect = (option: Option<string>) => {
+    setSelectValue(option);
+    alert(option.label);
   };
   return (
-    <div
+    <Box
+      width="300px"
+      minHeight={300}
+      display="flex"
+      flexDirection="column"
+      padding={30}
       style={{
-        height: "1600px",
         overflowY: "auto",
-        display: "flex",
-        flexDirection: "column",
-        padding: "30px",
         // alignItems: 'flex-end',
       }}
     >
@@ -132,29 +139,35 @@ const Template: Story<DropdownProps> = ({ ...args }) => {
           />
         </Dropdown.Menu>
       </Dropdown>
-    </div>
+    </Box>
   );
 };
 
-const GroupedTemplate: Story<DropdownProps & { isSearchable?: boolean }> = ({
-  isSearchable,
-  ...args
-}) => {
+const GroupedTemplate = ({ ...args }) => {
   const [selectValue, setSelectValue] = useState<Option<string>>();
 
   const onSelect = (value: Option<string>) => {
     setSelectValue(value);
   };
+
+  const [isSearchable, setIsSearchable] = useState(false);
   return (
-    <div
+    <Box
+      width="400px"
+      minHeight={300}
+      display="flex"
+      flexDirection="column"
+      padding={30}
+      gap={8}
       style={{
-        height: "1600px",
         overflowY: "auto",
-        display: "flex",
-        flexDirection: "column",
-        padding: "30px",
       }}
     >
+      <Toggle
+        label="검색 input 표시"
+        checked={isSearchable}
+        onChange={() => setIsSearchable(!isSearchable)}
+      />
       <Dropdown {...args}>
         <Dropdown.Trigger>
           <Button variant="fill-primary">
@@ -170,25 +183,37 @@ const GroupedTemplate: Story<DropdownProps & { isSearchable?: boolean }> = ({
           />
         </Dropdown.Menu>
       </Dropdown>
-    </div>
+    </Box>
   );
 };
-const MultiTemplate: Story<DropdownProps & { closeOnSelect: boolean }> = ({
-  closeOnSelect,
-  ...args
-}) => {
+const MultiTemplate = ({ ...args }) => {
   const [selectValue, setSelectValue] = useState<Option<string>[]>();
+  const [isSearchable, setIsSearchable] = useState(false);
+  const [closeOnSelect, setCloseOnSelect] = useState(false);
 
   return (
-    <div
+    <Box
+      width="400px"
+      minHeight={300}
+      display="flex"
+      flexDirection="column"
+      padding={30}
+      gap={8}
       style={{
-        height: "1600px",
         overflowY: "auto",
-        display: "flex",
-        flexDirection: "column",
-        padding: "30px",
       }}
     >
+      <Toggle
+        label="검색 input 표시"
+        checked={isSearchable}
+        onChange={() => setIsSearchable(!isSearchable)}
+      />
+      <Toggle
+        label="선택시 메뉴 닫힘"
+        checked={closeOnSelect}
+        onChange={() => setCloseOnSelect(!closeOnSelect)}
+      />
+
       <Dropdown {...args}>
         <Dropdown.Trigger>
           <Button variant="fill-primary">
@@ -205,28 +230,26 @@ const MultiTemplate: Story<DropdownProps & { closeOnSelect: boolean }> = ({
                 setSelectValue(options);
               }
             }}
-            isSearchable
+            isSearchable={isSearchable}
             closeOnSelect={closeOnSelect}
           />
         </Dropdown.Menu>
       </Dropdown>
-    </div>
+    </Box>
   );
 };
 
-export const Default = Template.bind({});
-
-Default.args = {};
-
-export const Portal = Template.bind({});
-
-Portal.args = {
-  usePortal: true,
+export const Default: Story = {
+  render: Template,
+  args: {
+    usePortal: false,
+  },
 };
-export const Grouped = GroupedTemplate.bind({});
-export const GroupedSearch = GroupedTemplate.bind({});
 
-Grouped.args = {};
-GroupedSearch.args = { isSearchable: true };
-export const MultiSelect = MultiTemplate.bind({});
-MultiSelect.args = { closeOnSelect: false };
+export const Grouped: Story = {
+  render: GroupedTemplate,
+};
+
+export const MultiSelect: Story = {
+  render: MultiTemplate,
+};
