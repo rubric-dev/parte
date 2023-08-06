@@ -1,5 +1,11 @@
 # @parte-ds/ui
 
+## 1.9.1
+
+### Patch Changes
+
+- Dropdown bug fix
+
 ## 1.9.0
 
 ### Minor Changes
