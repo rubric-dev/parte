@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect } from "react";
 
 export default function useOutsideClick(
   refs: React.RefObject<HTMLElement>[],
@@ -18,9 +18,9 @@ export default function useOutsideClick(
       if (!targetMatched) onOutsideClicked();
     };
 
-    document.addEventListener('mouseup', handleClickOutside);
+    document.addEventListener("mouseup", handleClickOutside);
     return () => {
-      document.removeEventListener('mouseup', handleClickOutside);
+      document.removeEventListener("mouseup", handleClickOutside);
     };
   }, [onOutsideClicked]);
 }

@@ -1,29 +1,32 @@
-import { ChangeEvent, KeyboardEvent, ReactNode } from 'react';
+import {
+  ChangeEvent,
+  KeyboardEvent,
+  PropsWithChildren,
+  ReactNode,
+} from "react";
 
-export type SelectRowType = 'search' | 'title' | 'element';
+export type SelectRowType = "search" | "title" | "element";
 
-export type SelectRowElement = {
-  variant?: 'element';
-  children?: ReactNode;
+export type SelectRowElement = PropsWithChildren<{
+  variant?: "element";
   icon?: ReactNode;
   disabled?: boolean;
   selected?: boolean;
   onClick?: () => void;
   onKeyDown?: (e: KeyboardEvent<HTMLDivElement>) => void;
   shouldFocusWhenSelected?: boolean;
-};
+}>;
 export type SelectRowSearch = {
-  variant: 'search';
+  variant: "search";
   inputValue?: string;
   onChange?: (e: ChangeEvent<HTMLInputElement>) => void;
   placeholder?: string;
   disabled?: boolean;
 };
-export type SelectRowTitle = {
-  variant: 'title';
-  children?: ReactNode;
+export type SelectRowTitle = PropsWithChildren<{
+  variant: "title";
   icon?: ReactNode;
-};
+}>;
 
 export type SelectRowProps =
   | SelectRowElement

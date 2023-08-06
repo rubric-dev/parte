@@ -11,15 +11,9 @@ import { ActionSearchIcon } from "../../../../parte-icons/src";
 const SearchRow = forwardRef<HTMLDivElement, SelectRowSearch>((props, ref) => {
   const { inputValue, onChange } = props;
   return (
-    <Styled.SelectRow
-      variant="search"
-      ref={ref}
-      role="selectItemSearch"
-      disabled={props.disabled}
-    >
+    <Styled.SelectRow $variant="search" ref={ref} role="selectItemSearch">
       <ActionSearchIcon size={12} color="N600" />
       <Styled.SearchInput
-        variant="search"
         role="selectItemSearchInput"
         placeholder={props.placeholder ?? "Search"}
         value={inputValue}
@@ -32,7 +26,7 @@ const SearchRow = forwardRef<HTMLDivElement, SelectRowSearch>((props, ref) => {
 
 const TitleRow = forwardRef<HTMLDivElement, SelectRowTitle>((props, ref) => {
   return (
-    <Styled.SelectRow variant="title" ref={ref} role="selectItemTitle">
+    <Styled.SelectRow $variant="title" ref={ref} role="selectItemTitle">
       {props.icon}
       {props.children}
     </Styled.SelectRow>
@@ -71,12 +65,12 @@ const ElementRow = forwardRef<HTMLDivElement, SelectRowElement>(
 
     return (
       <Styled.SelectRow
-        variant="element"
+        $variant="element"
         tabIndex={disabled ? -1 : 0}
         ref={rowRef}
         role="selectItem"
-        disabled={disabled}
-        selected={selected}
+        data-disabled={disabled}
+        data-selected={selected}
         onClick={onClick}
         onKeyDown={onKeyDown}
       >
