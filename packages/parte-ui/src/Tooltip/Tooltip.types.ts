@@ -1,9 +1,9 @@
-import React, { HTMLAttributes } from 'react';
-import { Position } from '../Positioner';
+import React from "react";
+import { Position } from "../Positioner";
 
-export type TooltipProps = HTMLAttributes<HTMLDivElement> & {
+export type TooltipProps = {
   position?: Position;
-  content: React.ReactNode | string;
+  content: React.ReactNode;
   children: React.ReactNode;
   hideDelay?: number;
   showDelay?: number;

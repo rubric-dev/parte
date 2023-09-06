@@ -50,9 +50,18 @@ export const Dropdown = ({ children, ...rest }: DropdownProps) => {
   );
 };
 
-const Trigger = ({ children }: DropdownTriggerProps) => {
+const Trigger = ({ children, onClick: onClickProp }: DropdownTriggerProps) => {
   const { onClick } = useContext(DropdownContext);
-  return <Styled.Trigger onClick={onClick}>{children}</Styled.Trigger>;
+  return (
+    <Styled.Trigger
+      onClick={(e) => {
+        onClick?.();
+        onClickProp?.(e);
+      }}
+    >
+      {children}
+    </Styled.Trigger>
+  );
 };
 
 type MenuState = {
@@ -133,6 +142,7 @@ const Menu = ({ children }: DropdownMenuProps) => {
       usePortal,
       offset,
     });
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [offset, usePortal]);
 
   useOutsideClick([menuRef, dropdownRef], onClose);
