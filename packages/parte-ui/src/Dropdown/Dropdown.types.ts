@@ -18,7 +18,9 @@ export interface DropdownContextState extends DropdownProps {
 
 export interface DropdownTriggerProps {
   children: React.ReactNode;
+  onClick?: (e: React.MouseEvent) => void;
 }
+
 export interface DropdownMenuProps {
   children:
     | React.ReactNode
