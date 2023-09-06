@@ -1,5 +1,11 @@
 # @parte-ds/ui
 
+## 1.9.2
+
+### Patch Changes
+
+- Edit props of Dropdown Trigger
+
 ## 1.9.1
 
 ### Patch Changes
