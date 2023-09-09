@@ -18,24 +18,24 @@
   "devDependencies": {
     "@parte-ds/tsconfig": "workspace:*",
     "@parte-ds/utils": "workspace:*",
-    "@tanstack/react-table": "^8.9.3",
-    "@types/node": "^18.17.2",
-    "@types/react": "^18.2.18",
+    "@tanstack/react-table": "^8.9.7",
+    "@types/node": "^18.17.15",
+    "@types/react": "^18.2.21",
     "@types/react-dom": "^18.2.7",
     "@types/react-transition-group": "^4.4.6",
     "@types/shallowequal": "^1.1.1",
-    "eslint": "^8.46.0",
+    "eslint": "^8.49.0",
     "eslint-config-parte": "workspace:*",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "react-select": "^5.7.1",
+    "react-select": "^5.7.4",
     "react-select-async-paginate": "^0.7.3",
     "react-transition-group": "^4.4.5",
     "rxjs": "^7.8.1",
     "shallowequal": "^1.1.0",
     "styled-components": "^6.0.7",
     "tsup": "^7.2.0",
-    "typescript": "^5.1.6"
+    "typescript": "^5.2.2"
   },
   "publishConfig": {
     "access": "public"
