@@ -1,6 +1,6 @@
 import { Box, Field, Option, Select } from "@parte-ds/ui";
 import { useEffect, useRef } from "react";
-import { GroupBase, SelectInstance } from "react-select";
+import { GroupBase, Props, SelectInstance } from "react-select";
 
 const options = [
   { label: "label1", value: "value1" },
@@ -29,7 +29,24 @@ const SelectPage = () => {
         <Field.Label>싱글</Field.Label>
         <Select options={options} ref={ref} openMenuOnFocus />
       </Field>
+      <CustomSelect<Option<string>, true>
+        onChange={(option) => {
+          if (!option) return;
+          option;
+        }}
+        isMulti
+      />
     </Box>
   );
 };
 export default SelectPage;
+
+function CustomSelect<
+  Option,
+  IsMulti extends boolean = false,
+  Group extends GroupBase<Option> = GroupBase<Option>
+>(props: Props<Option, IsMulti, Group>) {
+  return (
+    <Select {...props} theme={(theme) => ({ ...theme, borderRadius: 0 })} />
+  );
+}

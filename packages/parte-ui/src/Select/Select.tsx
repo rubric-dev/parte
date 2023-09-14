@@ -2,6 +2,7 @@ import {
   ComponentType,
   ForwardedRef,
   ReactElement,
+  ReactNode,
   forwardRef,
   useMemo,
 } from "react";
@@ -17,7 +18,6 @@ import StaticSelect, {
   NoticeProps,
   OptionProps,
   SelectInstance,
-  StylesConfig,
   components,
 } from "react-select";
 import {
@@ -25,7 +25,6 @@ import {
   useComponents,
   wrapMenuList,
 } from "react-select-async-paginate";
-import { SelectComponents } from "react-select/dist/declarations/src/components";
 import {
   ActionDeleteIcon,
   ActionSearchIcon,
@@ -39,11 +38,15 @@ import { Spinner } from "../Spinner";
 import { AsyncSelectProps, SelectProps } from "./Select.types";
 import useSelectStyle from "./useSelectStyle";
 
-export const Control = <T,>({
+export const Control = <
+  T,
+  K extends boolean,
+  G extends GroupBase<T> = GroupBase<T>
+>({
   children,
   showSearchIcon,
   ...props
-}: ControlProps<Option<T>, boolean> & { showSearchIcon: boolean }) => {
+}: ControlProps<T, K, G> & { showSearchIcon: boolean }) => {
   return (
     <components.Control {...props}>
       {showSearchIcon && (
@@ -56,9 +59,13 @@ export const Control = <T,>({
   );
 };
 
-const MultiValueRemove = <T,>({
+const MultiValueRemove = <
+  T,
+  K extends boolean,
+  G extends GroupBase<T> = GroupBase<T>
+>({
   ...props
-}: MultiValueRemoveProps<Option<T>, boolean>) => {
+}: MultiValueRemoveProps<T, K, G>) => {
   return (
     <components.MultiValueRemove {...props}>
       <ActionSmallCrossIcon size={12} />
@@ -80,10 +87,14 @@ const LoadingMessage = () => {
   );
 };
 
-export const IndicatorsContainer = <T,>({
+export const IndicatorsContainer = <
+  T,
+  K extends boolean,
+  G extends GroupBase<T> = GroupBase<T>
+>({
   children,
   ...props
-}: IndicatorsContainerProps<Option<T>, boolean>) => {
+}: IndicatorsContainerProps<T, K, G>) => {
   return (
     <components.IndicatorsContainer {...props}>
       {children}
@@ -91,10 +102,14 @@ export const IndicatorsContainer = <T,>({
   );
 };
 
-export const ClearIndicator = <T,>({
+export const ClearIndicator = <
+  T,
+  K extends boolean,
+  G extends GroupBase<T> = GroupBase<T>
+>({
   children,
   ...props
-}: ClearIndicatorProps<Option<T>, boolean>) => {
+}: ClearIndicatorProps<T, K, G>) => {
   return (
     <components.ClearIndicator {...props}>
       <ActionDeleteIcon size={12} />
@@ -102,10 +117,14 @@ export const ClearIndicator = <T,>({
   );
 };
 
-export const DropdownIndicator = <T,>({
+export const DropdownIndicator = <
+  T,
+  K extends boolean,
+  G extends GroupBase<T> = GroupBase<T>
+>({
   children,
   ...props
-}: DropdownIndicatorProps<Option<T>, boolean>) => {
+}: DropdownIndicatorProps<T, K, G>) => {
   return (
     <components.DropdownIndicator {...props}>
       <InterfaceCaretDownIcon size={12} />
@@ -113,20 +132,36 @@ export const DropdownIndicator = <T,>({
   );
 };
 
-export const OptionComponent = <T,>({
+export const OptionComponent = <
+  T,
+  K extends boolean,
+  G extends GroupBase<T> = GroupBase<T>
+>({
   children,
   ...props
-}: OptionProps<Option<T>, boolean>) => {
-  const { label, icon } = props.data;
-  return (
-    <components.Option {...props}>
-      {icon} {label}
-    </components.Option>
-  );
+}: OptionProps<T, K, G>) => {
+  let icon: ReactNode | undefined;
+  if ("icon" in (props.data as unknown as object))
+    icon = props.data as ReactNode;
+  const label = (props.data as unknown as Option<T>).label;
+
+  if (icon) {
+    return (
+      <components.Option {...props}>
+        {icon} {label}
+      </components.Option>
+    );
+  }
+
+  return <components.Option {...props}>{label}</components.Option>;
 };
 
-export const customMenuList = <T,>(
-  props: MenuListProps<Option<T>, boolean>
+export const customMenuList = <
+  T,
+  K extends boolean,
+  G extends GroupBase<T> = GroupBase<T>
+>(
+  props: MenuListProps<T, K, G>
 ) => {
   const { isLoading } = props.selectProps;
   return (
@@ -146,17 +181,25 @@ export const customMenuList = <T,>(
   );
 };
 
-export const Menu = <T,>({
+export const Menu = <
+  T,
+  K extends boolean,
+  G extends GroupBase<T> = GroupBase<T>
+>({
   children,
   ...props
-}: MenuProps<Option<T>, boolean>) => {
+}: MenuProps<T, K, G>) => {
   return <components.Menu {...props}>{children}</components.Menu>;
 };
 
-export const NoOptionsMessage = <T,>({
+export const NoOptionsMessage = <
+  T,
+  K extends boolean,
+  G extends GroupBase<T> = GroupBase<T>
+>({
   children,
   ...props
-}: NoticeProps<Option<T>, boolean, GroupBase<Option<T>>>) => {
+}: NoticeProps<T, K, G>) => {
   return (
     <components.NoOptionsMessage {...props}>
       <Box
@@ -174,17 +217,19 @@ export const NoOptionsMessage = <T,>({
   );
 };
 
-const SelectComponent = <T,>(
-  props: SelectProps<T>,
-  ref: ForwardedRef<
-    SelectInstance<Option<T>, boolean, GroupBase<Option<T>>>
-  > | null
+const SelectComponent = <
+  T,
+  K extends boolean,
+  G extends GroupBase<T> = GroupBase<T>
+>(
+  props: SelectProps<T, K, G>,
+  ref: ForwardedRef<SelectInstance<T, K, G>>
 ) => {
   const {
     placeholder = "선택",
     isDisabled = false,
     isError = false,
-    isMulti = false,
+    isMulti,
     showSearchIcon = false,
     styles: customStyles,
     components: customComponents,
@@ -192,18 +237,16 @@ const SelectComponent = <T,>(
     ...selectProps
   } = props;
 
-  const styles = useSelectStyle({
+  const styles = useSelectStyle<T, K, G>({
     isError,
     customStyles,
     width,
-  }) as StylesConfig<Option<T>, boolean>;
+  });
 
-  const defaultComponents: Partial<
-    SelectComponents<Option<T>, boolean, GroupBase<Option<T>>>
-  > = useMemo(
+  const defaultComponents = useMemo(
     () => ({
       Menu,
-      Control: (props) => (
+      Control: (props: ControlProps<T, K, G>) => (
         <Control {...props} showSearchIcon={showSearchIcon} />
       ),
       IndicatorsContainer,
@@ -219,14 +262,14 @@ const SelectComponent = <T,>(
   );
 
   return (
-    <StaticSelect
+    <StaticSelect<T, K, G>
+      ref={ref as any}
       closeMenuOnSelect={!isMulti}
       hideSelectedOptions={isMulti}
       isSearchable
       {...selectProps}
       isMulti={isMulti}
       components={defaultComponents}
-      ref={ref}
       isDisabled={isDisabled}
       styles={styles}
       placeholder={placeholder}
@@ -234,8 +277,12 @@ const SelectComponent = <T,>(
   );
 };
 
-const AsyncSelectComponent = <T,>(
-  props: AsyncSelectProps<T>,
+const AsyncSelectComponent = <
+  T,
+  K extends boolean,
+  G extends GroupBase<T> = GroupBase<T>
+>(
+  props: AsyncSelectProps<T, K, G>,
   ref: ForwardedRef<
     SelectInstance<Option<T>, boolean, GroupBase<Option<T>>>
   > | null
@@ -244,7 +291,7 @@ const AsyncSelectComponent = <T,>(
     placeholder = "선택",
     isDisabled = false,
     isError = false,
-    isMulti = false,
+    isMulti,
     showSearchIcon = false,
     styles: customStyles,
     components: customComponents,
@@ -256,14 +303,12 @@ const AsyncSelectComponent = <T,>(
     isError,
     customStyles,
     width,
-  }) as StylesConfig<Option<T>, boolean>;
+  });
 
-  const defaultComponents: Partial<
-    SelectComponents<Option<T>, boolean, GroupBase<Option<T>>>
-  > = useMemo(
+  const defaultComponents = useMemo(
     () => ({
       Menu,
-      Control: (props) => (
+      Control: (props: ControlProps<T, K, G>) => (
         <Control {...props} showSearchIcon={showSearchIcon} />
       ),
       IndicatorsContainer,
@@ -280,20 +325,20 @@ const AsyncSelectComponent = <T,>(
 
   const asyncComponents = useComponents(defaultComponents);
   const MenuList = wrapMenuList(customMenuList) as ComponentType<
-    MenuListProps<Option<T>, boolean, GroupBase<Option<T>>>
+    MenuListProps<T, K, G>
   >;
   return (
     <AsyncPaginate
+      selectRef={ref as any}
       closeMenuOnSelect={!isMulti}
       hideSelectedOptions={isMulti}
       isSearchable
-      {...(selectProps as AsyncSelectProps<T>)}
+      {...selectProps}
       isMulti={isMulti}
       components={{
         ...asyncComponents,
         MenuList,
       }}
-      selectRef={ref}
       isDisabled={isDisabled}
       styles={styles}
       placeholder={placeholder}
@@ -301,18 +346,22 @@ const AsyncSelectComponent = <T,>(
   );
 };
 
-export const Select = forwardRef(SelectComponent) as <T>(
-  props: SelectProps<T> & {
-    ref?: React.RefObject<
-      SelectInstance<Option<T>, boolean, GroupBase<Option<T>>>
-    > | null;
+export const Select = forwardRef(SelectComponent) as <
+  T,
+  K extends boolean,
+  G extends GroupBase<T> = GroupBase<T>
+>(
+  props: SelectProps<T, K, G> & {
+    ref?: React.RefObject<SelectInstance<T, K, G>> | null;
   }
 ) => ReactElement;
 
-export const AsyncSelect = forwardRef(AsyncSelectComponent) as <T>(
-  props: AsyncSelectProps<T> & {
-    ref?: React.RefObject<
-      SelectInstance<Option<T>, boolean, GroupBase<Option<T>>>
-    > | null;
+export const AsyncSelect = forwardRef(AsyncSelectComponent) as <
+  T,
+  K extends boolean,
+  G extends GroupBase<T> = GroupBase<T>
+>(
+  props: AsyncSelectProps<T, K, G> & {
+    ref?: React.RefObject<SelectInstance<T, K, G>> | null;
   }
 ) => ReactElement;
