@@ -1,18 +1,19 @@
 import { useTheme } from "styled-components";
 import { GroupBase, StylesConfig } from "react-select";
-import { type Option } from "../Dropdown";
 
-const useSelectStyle = ({
+const useSelectStyle = <
+  T,
+  K extends boolean,
+  G extends GroupBase<T> = GroupBase<T>
+>({
   isError,
   customStyles,
   width,
 }: {
   isError: boolean;
-  customStyles?:
-    | StylesConfig<Option<any>, boolean, GroupBase<Option<any>>>
-    | StylesConfig<Option<any>, boolean, GroupBase<Option<any>>>;
+  customStyles?: StylesConfig<T, K, G>;
   width?: string | number;
-}): StylesConfig<Option<unknown>, boolean> => {
+}): StylesConfig<T, K, G> => {
   const theme = useTheme();
 
   return {

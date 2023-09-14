@@ -4,7 +4,6 @@ import {
   type Props as ReactSelectProps,
 } from "react-select";
 import { type AsyncPaginateProps } from "react-select-async-paginate";
-import { type Option } from "../Dropdown";
 
 export type SelectAdditional =
   | {
@@ -13,17 +12,25 @@ export type SelectAdditional =
     }
   | undefined;
 
-export type CommonSelectProps<T = any> = {
-  ref?: React.RefObject<
-    SelectInstance<Option<T>, boolean, GroupBase<Option<T>>>
-  > | null;
+export type CommonSelectProps<
+  T,
+  K extends boolean,
+  G extends GroupBase<T> = GroupBase<T>
+> = {
+  ref?: React.RefObject<SelectInstance<T, K, G>> | null;
   isError?: boolean;
   showSearchIcon?: boolean;
   width?: string | number;
 };
 
-export type SelectProps<T> = CommonSelectProps &
-  ReactSelectProps<Option<T>, boolean, GroupBase<Option<T>>>;
+export type SelectProps<
+  T,
+  K extends boolean,
+  G extends GroupBase<T> = GroupBase<T>
+> = CommonSelectProps<T, K, G> & ReactSelectProps<T, K, G>;
 
-export type AsyncSelectProps<T> = CommonSelectProps &
-  AsyncPaginateProps<Option<T>, GroupBase<Option<T>>, any, boolean>;
+export type AsyncSelectProps<
+  T,
+  K extends boolean,
+  G extends GroupBase<T> = GroupBase<T>
+> = CommonSelectProps<T, K, G> & AsyncPaginateProps<T, G, any, K>;
