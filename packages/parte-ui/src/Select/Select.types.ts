@@ -32,5 +32,6 @@ export type SelectProps<
 export type AsyncSelectProps<
   T,
   K extends boolean,
-  G extends GroupBase<T> = GroupBase<T>
-> = CommonSelectProps<T, K, G> & AsyncPaginateProps<T, G, any, K>;
+  G extends GroupBase<T> = GroupBase<T>,
+  Additional extends SelectAdditional = SelectAdditional
+> = CommonSelectProps<T, K, G> & AsyncPaginateProps<T, G, Additional, K>;
