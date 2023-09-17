@@ -146,7 +146,7 @@ export const OptionComponent = <
 }: OptionProps<T, K, G>) => {
   let icon: ReactNode | undefined;
   if ("icon" in (props.data as unknown as object))
-    icon = props.data as ReactNode;
+    icon = (props.data as unknown as Option<T>).icon as ReactNode;
   const label = (props.data as unknown as Option<T>).label;
 
   if (icon) {
