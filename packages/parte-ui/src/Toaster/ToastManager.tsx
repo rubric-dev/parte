@@ -1,4 +1,5 @@
-import { memo, useCallback, useRef, useState } from "react";
+import { memo, useCallback, useState } from "react";
+import { v4 as uuidv4 } from "uuid";
 import { Toast } from "./Toast";
 import {
   NotifyHandler,
@@ -22,43 +23,23 @@ export const ToastManager = memo(function ({
   bindPop,
 }: ToastManagerProps) {
   const [toasts, setToasts] = useState<ToastState[]>([]);
-  const idCounter = useRef(0);
 
-  const removeToast = useCallback((id: number | string) => {
+  const closeToast = useCallback((id: string) => {
     setToasts((prev) =>
-      prev.filter((toast) => !String(toast.id).startsWith(String(id)))
+      prev.map((toast) =>
+        toast.id === id
+          ? {
+              ...toast,
+              isShown: false,
+            }
+          : toast
+      )
     );
   }, []);
 
-  const closeToast = (id: number | string) => {
-    setToasts(
-      toasts.map((toast) => {
-        if (toast.id === id) {
-          return {
-            ...toast,
-            isShown: false,
-          };
-        }
-
-        return toast;
-      })
-    );
-  };
-
-  const safeCloseToast = (id: number | string) => {
-    const toastToRemove = toasts.find(
-      (toast) => String(toast.id) === String(id)
-    );
-
-    if (toastToRemove) {
-      closeToast(toastToRemove.id);
-    }
-  };
-
   const createToastInstance = (passedProps: ToastParams): ToastState => {
     const { title, children, status, duration } = passedProps;
-    const uniqueId = idCounter.current;
-    idCounter.current += 1;
+    const uniqueId = uuidv4();
 
     const fixedId = uniqueId;
 
@@ -66,7 +47,7 @@ export const ToastManager = memo(function ({
       id: fixedId,
       title,
       children,
-      close: () => safeCloseToast(fixedId),
+      close: () => closeToast(fixedId),
       status,
       duration,
     };
@@ -78,21 +59,35 @@ export const ToastManager = memo(function ({
     return newToast.id;
   };
 
-  const popToast = () => {
-    const len = toasts.length;
-    if (len === 0) return;
-    const removeId = toasts[toasts.length - 1].id;
-    safeCloseToast(removeId);
-  };
+  const popToast = useCallback(() => {
+    let toast: ToastState | null = null;
+
+    setToasts((prev) => {
+      if (prev.length > 0) {
+        toast = prev[prev.length - 1];
+        const targetId = toast.id;
+        return prev.map((toast) =>
+          toast.id === targetId
+            ? {
+                ...toast,
+                isShown: false,
+              }
+            : toast
+        );
+      }
+      return prev;
+    });
+    return toast;
+  }, []);
 
   bindNotify(notify);
-  bindRemove(safeCloseToast);
+  bindRemove(closeToast);
   bindPop(popToast);
 
   return (
     <Styled.ToastContainer>
       {toasts.map((toast) => {
-        return <Toast key={toast.id} toast={toast} onRemove={removeToast} />;
+        return <Toast key={toast.id} toast={toast} onRemove={closeToast} />;
       })}
     </Styled.ToastContainer>
   );

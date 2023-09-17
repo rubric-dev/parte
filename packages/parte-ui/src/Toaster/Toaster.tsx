@@ -1,9 +1,8 @@
 import ReactClientDOM from "react-dom/client";
-import { ThemeProvider } from "styled-components";
+import { DefaultTheme, ThemeProvider } from "styled-components";
 import { theme } from "../@foundations/theme";
 import { ToastManager } from "./ToastManager";
 import { NotifyHandler, PopHandler, RemoveHandler } from "./Toaster.types";
-import { DefaultTheme } from "styled-components";
 
 /**
  * The Toaster manages the interactions between
@@ -17,9 +16,9 @@ interface IToaster {
 }
 
 export class Toaster implements IToaster {
-  private $notifyHandler: NotifyHandler = () => 0;
+  private $notifyHandler: NotifyHandler = () => "";
   private $removeHandler: RemoveHandler = () => {};
-  private $popHandler: PopHandler = () => {};
+  private $popHandler: PopHandler = () => null;
 
   constructor() {
     const canUseDom = Boolean(typeof window !== "undefined" && window.document);

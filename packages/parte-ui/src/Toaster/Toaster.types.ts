@@ -3,12 +3,12 @@ import { AlertStatus } from "../Alerts";
 
 export type ToastProps = {
   toast: ToastState;
-  onRemove: (id: string | number) => void;
+  onRemove: (id: string) => void;
 };
 
 export type ToastState = PropsWithChildren<{
   close: () => void;
-  id: number | string;
+  id: string;
   status: AlertStatus;
   title?: string;
   isShown?: boolean;
@@ -16,17 +16,17 @@ export type ToastState = PropsWithChildren<{
 }>;
 
 export type ToastParams = PropsWithChildren<{
-  customId?: number;
+  customId?: string;
   status: AlertStatus;
   title?: string;
   duration?: number;
 }>;
 export type TypedToastParams = PropsWithChildren<{
-  customId?: number;
+  customId?: string;
   title?: string;
   duration?: number;
 }>;
 
-export type NotifyHandler = (toastProps: ToastParams) => number | string;
-export type RemoveHandler = (id: string | number) => void;
-export type PopHandler = () => void;
+export type NotifyHandler = (toastProps: ToastParams) => string;
+export type RemoveHandler = (id: string) => void;
+export type PopHandler = () => ToastState | null;
