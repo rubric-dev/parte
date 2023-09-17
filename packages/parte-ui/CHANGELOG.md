@@ -1,5 +1,11 @@
 # @parte-ds/ui
 
+## 1.9.4
+
+### Patch Changes
+
+- Fix toast bug when removing
+
 ## 1.9.3
 
 ### Patch Changes
