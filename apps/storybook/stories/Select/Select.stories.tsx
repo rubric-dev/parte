@@ -22,7 +22,7 @@ const SelectStory: Meta = {
 
 export default SelectStory;
 
-type Story = StoryObj<typeof Select<string>>;
+type Story = StoryObj<typeof Select>;
 
 export const Default: Story = {
   args: {

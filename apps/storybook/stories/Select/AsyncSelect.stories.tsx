@@ -2,13 +2,14 @@ import { ActionAddIcon } from "@parte-ds/icons";
 import { Option, AsyncSelect, SelectAdditional } from "@parte-ds/ui";
 import { Meta, StoryObj } from "@storybook/react";
 import { GroupBase, OptionsOrGroups } from "react-select";
+import { LoadOptions } from "react-select-async-paginate";
 
-const loadOptions = async (
-  search: string,
-  loadedOptions: OptionsOrGroups<Option<string>, GroupBase<Option<string>>>,
-  additional: SelectAdditional = { page: 0 }
-) => {
-  const OPTION = await getOptionsAsync(additional.page);
+const loadOptions: LoadOptions<
+  Option<string>,
+  GroupBase<Option<string>>,
+  { page: number }
+> = async (search, loadedOptions, additional) => {
+  const OPTION = await getOptionsAsync(additional?.page ?? 0);
   return {
     options: OPTION,
     hasMore: true,
@@ -19,19 +20,20 @@ const loadOptions = async (
   };
 };
 
-const loadGroupOptions = async (
-  search: string,
-  loadedOptions: OptionsOrGroups<Option<string>, GroupBase<Option<string>>>,
-  additional: SelectAdditional = { page: 0 }
-) => {
-  const OPTION = await getOptionsAsync(additional.page);
+const loadGroupOptions: LoadOptions<
+  Option<string>,
+  GroupBase<Option<string>>,
+  { page: number }
+> = async (search, loadedOptions, additional) => {
+  const page = additional?.page ?? 0;
+  const OPTION = await getOptionsAsync(page);
 
   return {
-    options: [{ options: OPTION, label: `${additional.page + 1}번째 그룹` }],
+    options: [{ options: OPTION, label: `${page + 1}번째 그룹` }],
     hasMore: true,
     additional: {
       ...additional,
-      page: (additional?.page ?? 0) + 1,
+      page: page + 1,
     },
   };
 };
@@ -51,7 +53,7 @@ const AsyncSelectStory: Meta = {
 
 export default AsyncSelectStory;
 
-type Story = StoryObj<typeof AsyncSelect<string>>;
+type Story = StoryObj<typeof AsyncSelect>;
 
 let counts = 1;
 const getOptionsAsync = (page: number): Promise<Option<string>[]> => {
@@ -117,7 +119,7 @@ export const Disabled: Story = {
 export const GroupDefault: Story = {
   args: {
     isSearchable: false,
-    loadOptions: loadGroupOptions,
+    loadOptions: loadGroupOptions as any,
   },
 };
 
@@ -125,13 +127,13 @@ export const OpenMenuGroupDefault: Story = {
   args: {
     isSearchable: false,
     menuIsOpen: true,
-    loadOptions: loadGroupOptions,
+    loadOptions: loadGroupOptions as any,
   },
 };
 
 export const GroupMultiDefault: Story = {
   args: {
-    loadOptions: loadGroupOptions,
+    loadOptions: loadGroupOptions as any,
     isMulti: true,
     width: 300,
   },

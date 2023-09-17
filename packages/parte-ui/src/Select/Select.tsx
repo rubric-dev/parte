@@ -35,7 +35,11 @@ import { Paragraph } from "../@foundations/Typography";
 import { Option } from "../Dropdown";
 import { Box } from "../Layout";
 import { Spinner } from "../Spinner";
-import { AsyncSelectProps, SelectProps } from "./Select.types";
+import {
+  AsyncSelectProps,
+  SelectAdditional,
+  SelectProps,
+} from "./Select.types";
 import useSelectStyle from "./useSelectStyle";
 
 export const Control = <
@@ -359,9 +363,10 @@ export const Select = forwardRef(SelectComponent) as <
 export const AsyncSelect = forwardRef(AsyncSelectComponent) as <
   T,
   K extends boolean,
-  G extends GroupBase<T> = GroupBase<T>
+  G extends GroupBase<T> = GroupBase<T>,
+  Additional extends SelectAdditional = SelectAdditional
 >(
-  props: AsyncSelectProps<T, K, G> & {
+  props: AsyncSelectProps<T, K, G, Additional> & {
     ref?: React.RefObject<SelectInstance<T, K, G>> | null;
   }
 ) => ReactElement;
