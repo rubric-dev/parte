@@ -1,5 +1,11 @@
 # @parte-ds/ui
 
+## 1.9.5
+
+### Patch Changes
+
+- Fix Spinner style
+
 ## 1.9.4
 
 ### Patch Changes
