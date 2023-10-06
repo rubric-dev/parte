@@ -30,8 +30,8 @@ export const Circle = styled.circle`
     stroke: ${theme.colors.N600};
     stroke-dasharray: 300;
     stroke-dashoffset: 600;
-    strokelinecap: round;
+    stroke-linecap: round;
     stroke-miterlimit: 10;
-    strokewidth: 12;
+    stroke-width: 12;
   `}
 `;

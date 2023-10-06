@@ -38,16 +38,14 @@ export const ToastManager = memo(function ({
   }, []);
 
   const createToastInstance = (passedProps: ToastParams): ToastState => {
-    const { title, children, status, duration } = passedProps;
+    const { title, children, status, duration, customId } = passedProps;
     const uniqueId = uuidv4();
 
-    const fixedId = uniqueId;
-
     return {
-      id: fixedId,
+      id: customId || uniqueId,
       title,
       children,
-      close: () => closeToast(fixedId),
+      close: () => closeToast(uniqueId),
       status,
       duration,
     };
