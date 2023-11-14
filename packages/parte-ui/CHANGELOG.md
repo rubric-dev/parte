@@ -1,5 +1,11 @@
 # @parte-ds/ui
 
+## 1.9.6
+
+### Patch Changes
+
+- 아이콘 추가 및 버튼 높이 변경
+
 ## 1.9.5
 
 ### Patch Changes
