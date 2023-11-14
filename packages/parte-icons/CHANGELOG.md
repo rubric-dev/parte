@@ -1,5 +1,11 @@
 # @parte-ds/icons
 
+## 1.4.2
+
+### Patch Changes
+
+- fix JSX attribute error
+
 ## 1.4.1
 
 ### Patch Changes
