@@ -1,5 +1,11 @@
 # @parte-ds/icons
 
+## 1.4.1
+
+### Patch Changes
+
+- 아이콘 추가 및 버튼 높이 변경
+
 ## 1.4.0
 
 ### Minor Changes
