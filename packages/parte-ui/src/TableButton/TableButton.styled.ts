@@ -30,7 +30,7 @@ const commonButtonStyles = css<StyledTableButtonProps>`
   white-space: nowrap;
   font-size: 12px;
   font-weight: 600;
-  line-height: 16px;
+  line-height: 14px;
   &:disabled {
     cursor: default;
   }
