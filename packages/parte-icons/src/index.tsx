@@ -488,6 +488,8 @@ export { default as StyleInfoIcon } from "./Icons/StyleInfoIcon";
 export { default as StylePercentageIcon } from "./Icons/StylePercentageIcon";
 export { default as StyleRankingIcon } from "./Icons/StyleRankingIcon";
 export { default as StyleRingIcon } from "./Icons/StyleRingIcon";
+export { default as StyleExcelIcon } from "./Icons/StyleExcelIcon";
+export { default as StylePictureIcon } from "./Icons/StylePictureIcon";
 export { default as StyleRulerIcon } from "./Icons/StyleRulerIcon";
 export { default as StyleShareIcon } from "./Icons/StyleShareIcon";
 export { default as StyleShopIcon } from "./Icons/StyleShopIcon";
