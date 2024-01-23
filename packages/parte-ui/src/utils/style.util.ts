@@ -1,4 +1,4 @@
-import { css } from "styled-components";
+import { DefaultTheme, css } from "styled-components";
 import { COLORS, ColorKey } from "../@foundations";
 
 export const getSizeStyle = (size?: number | string, key?: string) => {
@@ -8,9 +8,9 @@ export const getSizeStyle = (size?: number | string, key?: string) => {
   `;
 };
 
-export const getColorStyle = (color?: string) => {
+export const getColorStyle = (theme: DefaultTheme, color?: string) => {
   if (!color) return;
-  const colorInTheme = COLORS[color as ColorKey];
+  const colorInTheme = theme.colors[color as ColorKey];
   if (colorInTheme) {
     return css`
       color: ${colorInTheme};
