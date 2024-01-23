@@ -1,5 +1,11 @@
 # @parte-ds/ui
 
+## 1.9.7
+
+### Patch Changes
+
+- Typography color props가 적용된 theme을 보도록 변경
+
 ## 1.9.6
 
 ### Patch Changes

@@ -64,7 +64,7 @@ export const extractStyleFormProps = <T extends Partial<ParteStyledProps>>(
       ${getSizeStyle(maxHeight, "max-height")};
 
       ${backgroundColor && `background-color: ${backgroundColor};`}
-      ${getColorStyle(color)}
+      ${({ theme }) => getColorStyle(theme, color)}
 
       ${flexDirection && `flex-direction: ${flexDirection};`}
       ${justifyContent && `justify-content: ${justifyContent};`}

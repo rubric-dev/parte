@@ -1,5 +1,19 @@
 # @parte-ds/web
 
+## 0.1.24
+
+### Patch Changes
+
+- Updated dependencies
+  - @parte-ds/icons@1.4.3
+
+## 0.1.23
+
+### Patch Changes
+
+- Updated dependencies
+  - @parte-ds/ui@1.9.7
+
 ## 0.1.22
 
 ### Patch Changes
