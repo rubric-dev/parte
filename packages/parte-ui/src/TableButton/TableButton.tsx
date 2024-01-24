@@ -1,24 +1,33 @@
+import { forwardRef } from "react";
 import { StyledButton } from "./TableButton.styled";
 import { TableButtonProps } from "./TableButton.types";
 
-export const TableButton = ({
-  children,
-  leadingIcon,
-  trailingIcon,
-  variant = "fill-primary",
-  fullWidth,
-  ...buttonAttributes
-}: TableButtonProps) => {
-  return (
-    <StyledButton
-      $variant={variant}
-      $fullWidth={fullWidth}
-      $isIconButton={!children}
-      {...buttonAttributes}
-    >
-      {leadingIcon}
-      {children}
-      {trailingIcon}
-    </StyledButton>
-  );
-};
+export const TableButton = forwardRef<HTMLButtonElement, TableButtonProps>(
+  (
+    {
+      variant,
+      fullWidth,
+      children,
+      leadingIcon,
+      trailingIcon,
+      ...buttonAttributes
+    },
+    ref
+  ) => {
+    return (
+      <StyledButton
+        ref={ref}
+        $variant={variant}
+        $fullWidth={fullWidth}
+        $isIconButton={!children}
+        {...buttonAttributes}
+      >
+        {leadingIcon}
+        {children}
+        {trailingIcon}
+      </StyledButton>
+    );
+  }
+);
+
+TableButton.displayName = "TableButton";
