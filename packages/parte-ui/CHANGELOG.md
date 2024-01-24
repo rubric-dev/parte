@@ -1,5 +1,11 @@
 # @parte-ds/ui
 
+## 1.9.9
+
+### Patch Changes
+
+- TableButton 기본 props 수정
+
 ## 1.9.8
 
 ### Patch Changes
