@@ -1,5 +1,11 @@
 # @parte-ds/ui
 
+## 1.9.8
+
+### Patch Changes
+
+- TableButton fowardRef로 변경
+
 ## 1.9.7
 
 ### Patch Changes
