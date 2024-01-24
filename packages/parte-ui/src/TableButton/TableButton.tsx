@@ -5,7 +5,7 @@ import { TableButtonProps } from "./TableButton.types";
 export const TableButton = forwardRef<HTMLButtonElement, TableButtonProps>(
   (
     {
-      variant,
+      variant = "fill-primary",
       fullWidth,
       children,
       leadingIcon,
