@@ -1,5 +1,11 @@
 # @parte-ds/icons
 
+## 1.4.4
+
+### Patch Changes
+
+- style picture icon size 수정
+
 ## 1.4.3
 
 ### Patch Changes
