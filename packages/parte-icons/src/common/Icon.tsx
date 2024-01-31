@@ -34,7 +34,11 @@ const Icon = forwardRef<HTMLSpanElement, IconProps>((props, ref) => {
     style: overrideStyle.style,
   });
 
-  const outerStyle: CSSProperties = { lineHeight: 0 };
+  const outerStyle: CSSProperties = {
+    lineHeight: 0,
+    display: "inline-block",
+  };
+
   if (Number.isSafeInteger(rotate))
     outerStyle.transform = `rotate(${rotate}deg)`;
   Object.assign(outerStyle, style);

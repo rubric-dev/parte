@@ -1,5 +1,11 @@
 # @parte-ds/ui
 
+## 1.10.0
+
+### Minor Changes
+
+- 필드 타이틀에 툴팁이 옵셔널하게 보여지는 기능 추가
+
 ## 1.9.9
 
 ### Patch Changes

@@ -1,5 +1,11 @@
 # @parte-ds/icons
 
+## 1.4.5
+
+### Patch Changes
+
+- 필드 타이틀에 툴팁이 옵셔널하게 보여지는 기능 추가
+
 ## 1.4.4
 
 ### Patch Changes
