@@ -6,6 +6,9 @@ import { POSITION, Positioner } from "../Positioner";
 export const Tooltip = ({
   children,
   content,
+  width,
+  maxWidth,
+  minWidth,
   showDelay = 100,
   hideDelay = 100,
   position = POSITION.BOTTOM,
@@ -25,7 +28,9 @@ export const Tooltip = ({
           hideDelay={hideDelay}
           targetEl={targetRef}
         >
-          <Styled.Content>{child}</Styled.Content>
+          <Styled.Content width={width} maxWidth={maxWidth} minWidth={minWidth}>
+            {child}
+          </Styled.Content>
         </Positioner>
       )}
     </Fragment>

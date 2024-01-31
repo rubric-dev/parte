@@ -90,6 +90,15 @@ const FieldExample = () => {
         </Box>
       </Field>
       <Field>
+        <Field.Label tooltip="예시 툴팁입니다.">
+          툴팁이 보여지는 타이틀
+        </Field.Label>
+        <Toggle
+          defaultChecked={description}
+          onChange={() => setDescription(!description)}
+        />
+      </Field>
+      <Field>
         <Field.Label>Description</Field.Label>
         <Toggle
           defaultChecked={description}

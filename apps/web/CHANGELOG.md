@@ -1,5 +1,14 @@
 # @parte-ds/web
 
+## 0.1.28
+
+### Patch Changes
+
+- 필드 타이틀에 툴팁이 옵셔널하게 보여지는 기능 추가
+- Updated dependencies
+  - @parte-ds/ui@1.10.0
+  - @parte-ds/icons@1.4.5
+
 ## 0.1.27
 
 ### Patch Changes

@@ -8,6 +8,8 @@ import {
   FieldLabelProps,
   FieldProps,
 } from "./Field.types";
+import { Tooltip } from "../Tooltip";
+import { AlertInfoIcon } from "../../../parte-icons/src";
 
 export const Field = ({ direction = "vertical", ...props }: FieldProps) => {
   if (direction === "vertical") {
@@ -17,15 +19,22 @@ export const Field = ({ direction = "vertical", ...props }: FieldProps) => {
 };
 
 const Label = (props: FieldLabelProps) => {
-  const { required, disabled, children, ...labelAttributes } = props;
+  const { required, disabled, children, tooltip, ...labelAttributes } = props;
   return (
-    <Styled.Label
-      aria-disabled={disabled}
-      aria-required={required}
-      {...labelAttributes}
-    >
-      {children}
-    </Styled.Label>
+    <Box display="flex" flexDirection="row" columnGap={4} alignItems="center">
+      <Styled.Label
+        aria-disabled={disabled}
+        aria-required={required}
+        {...labelAttributes}
+      >
+        {children}
+      </Styled.Label>
+      {tooltip && (
+        <Tooltip content={tooltip} position="TOP">
+          <AlertInfoIcon color="N700" />
+        </Tooltip>
+      )}
+    </Box>
   );
 };
 

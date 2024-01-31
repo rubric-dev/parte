@@ -14,6 +14,7 @@ export type FieldProps = Pick<
 export type FieldLabelProps = LabelHTMLAttributes<HTMLLabelElement> & {
   required?: boolean;
   disabled?: boolean;
+  tooltip?: string;
 };
 
 export type FieldDescriptionProps = PropsWithChildren<{}>;
