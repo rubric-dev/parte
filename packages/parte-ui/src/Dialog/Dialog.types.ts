@@ -18,6 +18,7 @@ export interface DialogProps {
   title?: string;
   footer?: DialogSubComponent;
   hasFooter?: boolean;
+  hasConfirm?: boolean;
   hasCancel?: boolean;
   cancelLabel?: string;
   confirmLabel?: string;

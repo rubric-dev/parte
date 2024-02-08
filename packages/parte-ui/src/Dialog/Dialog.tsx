@@ -15,6 +15,7 @@ export const Dialog = memo(
     header,
     title,
     footer,
+    hasConfirm = true,
     hasCancel = true,
     hasClose = true,
     hasFooter = true,
@@ -106,16 +107,17 @@ export const Dialog = memo(
                   {cancelLabel}
                 </Button>
               )}
-
-              <Button
-                tabIndex={0}
-                variant={confirmVariant}
-                isLoading={isConfirmLoading}
-                disabled={isConfirmDisabled}
-                onClick={handleConfirm}
-              >
-                {confirmLabel}
-              </Button>
+              {hasConfirm && (
+                <Button
+                  tabIndex={0}
+                  variant={confirmVariant}
+                  isLoading={isConfirmLoading}
+                  disabled={isConfirmDisabled}
+                  onClick={handleConfirm}
+                >
+                  {confirmLabel}
+                </Button>
+              )}
             </>
           )}
         </Styled.Footer>
