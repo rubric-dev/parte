@@ -1,5 +1,11 @@
 # @parte-ds/icons
 
+## 1.5.0
+
+### Minor Changes
+
+- add iceberg icons
+
 ## 1.4.5
 
 ### Patch Changes
