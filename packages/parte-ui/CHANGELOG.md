@@ -1,5 +1,11 @@
 # @parte-ds/ui
 
+## 1.11.0
+
+### Minor Changes
+
+- change colors
+
 ## 1.10.1
 
 ### Patch Changes
