@@ -5,7 +5,7 @@
 ### Patch Changes
 
 - Updated dependencies
-  - @parte-ds/ui@1.10.1
+  - @parte-ds/ui@1.11.0
 
 ## 0.1.28
 
