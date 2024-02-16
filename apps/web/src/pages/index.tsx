@@ -1,4 +1,17 @@
 import {
+  FileStaffOneIcon,
+  ViewListIcon,
+  HomeIcon,
+  SettingTwoIcon,
+  RightUserIcon,
+  ShoppingBagOneIcon,
+  TicketIcon,
+  BellIcon,
+  SearchIcon,
+  MoreIcon,
+  FillViewListIcon,
+} from "@parte-ds/icons";
+import {
   Badge,
   Box,
   ButtonGroup,
@@ -111,6 +124,19 @@ export default function Home() {
         <ParteLink disabled href="/input">
           파르테 링크
         </ParteLink>
+        <Box display="flex">
+          <HomeIcon size={26} color="B600" />
+          <FileStaffOneIcon size={26} color="B600" />
+          <ViewListIcon size={26} color="B600" />
+          <SettingTwoIcon size={26} color="B600" />
+          <RightUserIcon size={26} color="B600" />
+          <ShoppingBagOneIcon size={26} color="B600" />
+          <TicketIcon size={26} color="B600" />
+          <BellIcon size={26} color="B600" />
+          <SearchIcon size={26} color="B600" />
+          <MoreIcon size={26} color="B600" />
+          <FillViewListIcon size={26} color="B600" />
+        </Box>
       </Box>
     </>
   );
