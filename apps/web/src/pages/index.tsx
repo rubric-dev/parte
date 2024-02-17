@@ -12,6 +12,7 @@ import {
   FillViewListIcon,
 } from "@parte-ds/icons";
 import {
+  Avatar,
   Badge,
   Box,
   ButtonGroup,
@@ -136,6 +137,10 @@ export default function Home() {
           <SearchIcon size={26} color="B600" />
           <MoreIcon size={26} color="B600" />
           <FillViewListIcon size={26} color="B600" />
+        </Box>
+        <Box display="flex">
+          <Avatar avatarColor="BLUE" name="sowon baek" />
+          <Avatar size="medium" name="sowon baek" />
         </Box>
       </Box>
     </>
