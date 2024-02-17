@@ -30,6 +30,12 @@ const TextInputStory: Meta = {
       description:
         "`type`이 number 일 경우 input의 오른쪽에 up/down 버튼을 보일지 말지 결정합니다. `type`이 number 가 아닐 경우에는 무시됩니다.",
     },
+    textInputSize: {
+      type: "string",
+      options: ["medium", "large", "x-large"],
+      defaultValue: "medium",
+      control: { type: "radio" },
+    },
   },
 };
 export default TextInputStory;

@@ -1,7 +1,7 @@
 const typographyToken = {
   colorHeadline: "N900",
   colorHeading: "N800",
-  colorParagraph: "N800",
+  colorParagraph: "N700",
   colorCodeMinimal: "N800",
   colorCodeDefault: "B600",
   colorTextSuccess: "G500",
