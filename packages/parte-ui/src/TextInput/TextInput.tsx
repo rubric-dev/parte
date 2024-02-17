@@ -10,6 +10,7 @@ export const TextInput = forwardRef<HTMLInputElement, TextInputProps>(
       showSpinButton = false,
       isError,
       width,
+      textInputSize = "medium",
       ...inputProps
     } = props;
 
@@ -25,7 +26,9 @@ export const TextInput = forwardRef<HTMLInputElement, TextInputProps>(
           {...inputProps}
           data-error={isError}
           data-show-span-button={showSpinButton}
+          $textInputSize={textInputSize}
           $hasLeadingIcon={!!leadingIcon}
+          $hasTrailingIcon={!!trailingIcon}
         />
         {trailingIcon && (
           <Styled.RightIconContainer $disabled={inputProps.disabled}>

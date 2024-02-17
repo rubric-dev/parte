@@ -83,11 +83,16 @@ export default function Home() {
         <Checkbox label="체크박스" disabled />
         <Checkbox label="체크박스" disabled indeterminate />
         <Checkbox label="체크박스" disabled defaultChecked />
-        <TextInput type="number" placeholder="spin 버튼 없음" />
+        <TextInput
+          type="number"
+          placeholder="spin 버튼 없음"
+          textInputSize="large"
+        />
         <TextInput
           type="number"
           placeholder="spin 버튼 보여짐"
           showSpinButton
+          textInputSize="x-large"
         />
         <Toggle
           defaultChecked={toggle}

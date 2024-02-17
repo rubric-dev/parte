@@ -1,13 +1,18 @@
 import styled, { css } from "styled-components";
 import { getSizeStyle } from "../utils/style.util";
+import { TextInputSize } from "./TextInput.types";
+import { sizeHandler } from "../utils/textInput.utils";
 
-export const Container = styled.div<{ $width?: string | number }>`
+export const Container = styled.div<{
+  $width?: string | number;
+}>`
   ${({ theme, $width }) => css`
     box-sizing: border-box;
     display: inline-flex;
     overflow: hidden;
     border: 1px solid ${theme.colorBorderDefault};
     border-radius: 4px;
+    font-weight: 400;
     ${getSizeStyle($width, "width")};
 
     &:has(input:hover) {
@@ -65,25 +70,29 @@ export const RightIconContainer = styled.div<{ $disabled?: boolean }>`
 
 export const Input = styled.input<{
   $hasLeadingIcon?: boolean;
+  $hasTrailingIcon?: boolean;
+  $textInputSize?: TextInputSize;
 }>`
-  ${({ theme, $hasLeadingIcon }) => css`
+  ${({ theme, $hasLeadingIcon, $hasTrailingIcon, $textInputSize }) => css`
     outline: none;
     border: none;
     box-sizing: border-box;
-    padding: ${theme.spacing.spacing8 - 1}px ${theme.spacing.spacing12}px;
     padding-left: ${$hasLeadingIcon
       ? css`
           ${theme.spacing.spacing8}px
         `
-      : css`
+      : css``};
+    padding-right: ${$hasTrailingIcon
+      ? css`
           ${theme.spacing.spacing12}px
-        `};
-    padding-right: ${theme.spacing.spacing12}px;
+        `
+      : css``};
     background-color: ${theme.colorBackgroundDefault};
     width: 100%;
     color: ${theme.colorParagraph};
     ${theme.typography.P100}
     font-family: inherit;
+    ${sizeHandler($textInputSize)};
     &::placeholder {
       color: ${theme.colorTextPlaceholderDefault};
     }
