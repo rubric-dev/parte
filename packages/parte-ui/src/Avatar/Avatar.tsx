@@ -7,7 +7,7 @@ export const Avatar = forwardRef<HTMLDivElement, AvatarProps>(
   (
     {
       avatarColor = "AUTO",
-      size = 32,
+      size = "small",
       shape = "CIRCLE",
       name,
       showInitial,

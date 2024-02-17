@@ -4,9 +4,9 @@ import { Box } from "../Layout";
 import { AvatarStyleProps } from "./Avatar.types";
 
 export const commonAvatarStyles = css<AvatarStyleProps>`
-  ${({ $size = 32, $shape = "CIRCLE" }) => css`
-    width: ${$size}px;
-    height: ${$size}px;
+  ${({ $size = "small", $shape = "CIRCLE" }) => css`
+    width: ${$size === "small" ? "32px" : "48px"};
+    height: ${$size === "small" ? "32px" : "48px"};
     border-radius: ${$shape === "CIRCLE" ? "100%" : "4px"};
   `}
 `;
@@ -23,9 +23,9 @@ export const Avatar = styled(Box)<AvatarStyleProps>`
 `;
 
 export const Text = styled.span<AvatarStyleProps>`
-  ${({ $size = 32 }) => css`
+  ${({ $size = "small" }) => css`
     color: inherit;
-    font-size: ${getAvatarInitialsFontSize($size)}px;
+    font-size: ${$size === "small" ? "12px" : "16px"};
     line-height: 16px;
     font-weight: 400;
   `}

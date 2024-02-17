@@ -30,7 +30,7 @@ const BADGE_COLOR_OPTIONS: BadgeColors[] = [
 export const Default: Story = {
   args: {
     src: "https://avatars.githubusercontent.com/u/57249866?v=4",
-    size: 32,
+    size: "medium",
     shape: "CIRCLE",
     avatarColor: "GREEN",
   },
@@ -40,10 +40,12 @@ export const Default: Story = {
       type: "string",
     },
     size: {
+      options: ["small", "medium"],
       name: "size",
-      type: "number",
+      type: "string",
+      control: { type: "radio" },
       description: "Avatar의 크기",
-      table: { type: { summary: "number" } },
+      table: { type: { summary: "string" } },
     },
     shape: {
       options: ["CIRCLE", "SQUARE"],
@@ -61,7 +63,7 @@ export const NameInitial: Story = {
   args: {
     name: "Rafael",
     avatarColor: "ORANGE",
-    size: 32,
+    size: "medium",
     shape: "CIRCLE",
   },
   argTypes: {
@@ -79,10 +81,12 @@ export const NameInitial: Story = {
       },
     },
     size: {
+      options: ["small", "medium"],
       name: "size",
-      type: "number",
+      type: "string",
+      control: { type: "radio" },
       description: "Avatar의 크기",
-      table: { type: { summary: "number" } },
+      table: { type: { summary: "string" } },
     },
     shape: {
       options: ["CIRCLE", "SQUARE"],
