@@ -1,11 +1,11 @@
 import * as React from "react";
-import { ThemeProvider, ErpTheme } from "@parte-ds/ui";
+import { ThemeProvider } from "@parte-ds/ui";
 import { GlobalStyle } from "./decorators/GlobalStyles";
 
 export const decorators = [
   (Story) => {
     return (
-      <ThemeProvider customTheme={ErpTheme}>
+      <ThemeProvider>
         <GlobalStyle />
         <Story />
       </ThemeProvider>
