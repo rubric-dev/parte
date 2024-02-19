@@ -1,6 +1,6 @@
 import { GlobalStyle } from "@/styles/GlobalStyles";
 import { InterfaceArrowLeftIcon } from "@parte-ds/icons";
-import { Box, CustomTheme, IconButton, ThemeProvider } from "@parte-ds/ui";
+import { Box, IconButton, ThemeProvider } from "@parte-ds/ui";
 import type { AppProps } from "next/app";
 import Link from "next/link";
 import { useRouter } from "next/router";

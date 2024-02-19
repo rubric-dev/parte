@@ -87,6 +87,12 @@ export const TYPOGRAPHY = {
     font-size: 12px;
     line-height: 16px;
   `,
+  C300: css`
+    ${commonBaseTextStyle}
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 18px;
+  `,
   C200: css`
     ${commonBaseTextStyle}
     font-weight: 600;

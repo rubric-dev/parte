@@ -15,6 +15,7 @@ import {
   Avatar,
   Badge,
   Box,
+  Button,
   ButtonGroup,
   Checkbox,
   LinkButton,
@@ -147,6 +148,13 @@ export default function Home() {
           <Avatar avatarColor="BLUE" name="sowon baek" />
           <Avatar size="medium" name="sowon baek" />
         </Box>
+        <Button
+          size="x-large"
+          variant="fill-secondary"
+          leadingIcon={<BellIcon />}
+        >
+          button
+        </Button>
       </Box>
     </>
   );

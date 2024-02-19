@@ -2,6 +2,8 @@ import React, { AnchorHTMLAttributes, ButtonHTMLAttributes } from "react";
 
 export type ButtonVariant =
   | "fill-primary"
+  | "fill-secondary"
+  | "fill-tertiary"
   | "outline-secondary"
   | "outline-primary"
   | "ghost-secondary"
@@ -10,14 +12,14 @@ export type ButtonVariant =
   | "text-secondary"
   | "text-primary";
 
-export type ButtonDirection = "horizontal" | "vertical";
+export type ButtonSize = "medium" | "large" | "x-large";
 export type ButtonStylingProps = {
   variant?: ButtonVariant;
   leadingIcon?: React.ReactNode;
   trailingIcon?: React.ReactNode;
   isLoading?: boolean;
   fullWidth?: boolean;
-  direction?: ButtonDirection;
+  size?: ButtonSize;
 };
 
 export type LinkButtonProps = AnchorHTMLAttributes<HTMLAnchorElement> &

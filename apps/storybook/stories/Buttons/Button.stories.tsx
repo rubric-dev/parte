@@ -5,7 +5,10 @@ import {
   ActionCrossIcon,
   InterfaceConsoleIcon,
 } from "@parte-ds/icons";
-import { BUTTON_VARIANT_OPTIONS } from "../../.storybook/constant";
+import {
+  BUTTON_SIZE_OPTIONS,
+  BUTTON_VARIANT_OPTIONS,
+} from "../../.storybook/constant";
 
 const ButtonStory: Meta = {
   title: "Components/Buttons/Button",
@@ -15,6 +18,12 @@ const ButtonStory: Meta = {
     viewport: "responsive",
   },
   argTypes: {
+    disabled: {
+      control: { type: "boolean" },
+      table: {
+        defaultValue: { summary: "false" },
+      },
+    },
     variant: {
       options: BUTTON_VARIANT_OPTIONS,
       control: { type: "radio" },
@@ -23,13 +32,13 @@ const ButtonStory: Meta = {
         defaultValue: { summary: "fill-primary" },
       },
     },
-    direction: {
-      options: ["horizontal", "vertical"],
+    size: {
+      options: BUTTON_SIZE_OPTIONS,
       control: { type: "radio" },
-      description: "Button에서 텍스트와 아이콘들들의 정렬 방식",
+      description: "Button 사이즈",
+      type: "string",
       table: {
-        type: { summary: "horizontal | vertical" },
-        defaultValue: { summary: "horizontal" },
+        defaultValue: { summary: "medium" },
       },
     },
 
@@ -53,7 +62,7 @@ export const FillPrimary: Story = {
     leadingIcon: <InterfaceConsoleIcon />,
     children: "default button",
     variant: "fill-primary",
-    direction: "horizontal",
+    size: "medium",
   },
   parameters: {
     controls: { exclude: ["children", "trailingIcon", "leadingIcon"] },
@@ -66,7 +75,7 @@ export const IconArgs: Story = {
     trailingIcon: <ActionCrossIcon />,
   },
   parameters: {
-    controls: { exclude: ["children", "variant", "direction"] },
+    controls: { exclude: ["children", "variant", "size"] },
   },
 };
 
@@ -75,7 +84,7 @@ export const FillPrimaryColumn: Story = {
     leadingIcon: <InterfaceConsoleIcon />,
     children: "default button",
     variant: "fill-primary",
-    direction: "vertical",
+    size: "medium",
   },
 };
 
@@ -84,6 +93,7 @@ export const OutlinePrimary: Story = {
     leadingIcon: <InterfaceConsoleIcon />,
     children: "secondary colored button",
     variant: "outline-primary",
+    size: "medium",
   },
 };
 
@@ -92,6 +102,15 @@ export const OutlineSecondary: Story = {
     leadingIcon: <InterfaceConsoleIcon />,
     children: "secondary button",
     variant: "outline-secondary",
+    size: "medium",
+  },
+};
+export const FillTertiary: Story = {
+  args: {
+    leadingIcon: <InterfaceConsoleIcon />,
+    children: "default button",
+    variant: "fill-tertiary",
+    size: "medium",
   },
 };
 export const GhostPrimary: Story = {
@@ -99,6 +118,7 @@ export const GhostPrimary: Story = {
     leadingIcon: <InterfaceConsoleIcon />,
     children: "minimal colored button",
     variant: "ghost-primary",
+    size: "medium",
   },
 };
 
@@ -107,6 +127,7 @@ export const GhostSecondary: Story = {
     leadingIcon: <InterfaceConsoleIcon />,
     children: "minimal button",
     variant: "ghost-secondary",
+    size: "medium",
   },
 };
 
@@ -115,6 +136,7 @@ export const FillError: Story = {
     leadingIcon: <InterfaceConsoleIcon />,
     children: "error button",
     variant: "fill-error",
+    size: "medium",
   },
 };
 
@@ -123,6 +145,7 @@ export const TextPrimary: Story = {
     leadingIcon: <InterfaceConsoleIcon />,
     children: "text colored button",
     variant: "text-primary",
+    size: "medium",
   },
 };
 export const TextSecondary: Story = {
@@ -130,5 +153,6 @@ export const TextSecondary: Story = {
     leadingIcon: <InterfaceConsoleIcon />,
     children: "text button",
     variant: "text-secondary",
+    size: "medium",
   },
 };
