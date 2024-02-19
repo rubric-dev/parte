@@ -15,11 +15,11 @@ export const BADGE_COLOR = {
   `,
   GREEN: css`
     background-color: ${COLORS.G100};
-    color: ${COLORS.G400};
+    color: ${COLORS.G500};
   `,
   YELLOW: css`
     background-color: ${COLORS.Y100};
-    color: ${COLORS.Y400};
+    color: ${COLORS.Y500};
   `,
   RED: css`
     background-color: ${COLORS.R100};
@@ -40,9 +40,5 @@ export const BADGE_COLOR = {
   ORANGE: css`
     background-color: ${COLORS.O100};
     color: ${COLORS.O400};
-  `,
-  GREY: css`
-    background-color: ${COLORS.N400};
-    color: ${COLORS.N0};
   `,
 } as const;

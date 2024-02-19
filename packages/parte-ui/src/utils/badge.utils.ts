@@ -1,4 +1,6 @@
+import { css } from "styled-components";
 import { BADGE_COLOR, BadgeColors } from "../@foundations";
+import { BadgeSize } from "../Badge/Badge.types";
 
 export const getInitial = (name: string, fallback = "?") => {
   if (!name) return fallback;
@@ -24,4 +26,27 @@ export const getColors = (avatarColor: BadgeColors = "AUTO") => {
 
 export const getAvatarInitialsFontSize = (size: number) => {
   return Math.floor(size / 2.6);
+};
+
+export const sizeHandler = (size?: BadgeSize) => {
+  switch (size) {
+    case "small":
+      return css`
+        height: 16px;
+        padding: 0px 6px;
+        font-weight: 600;
+        font-size: 11px;
+        line-height: 16px;
+      `;
+    case "medium":
+      return css`
+        height: 22px;
+        padding: 2px 8px;
+        font-weight: 500;
+        font-size: 14px;
+        line-height: 18px;
+      `;
+    default:
+      return ``;
+  }
 };
