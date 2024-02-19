@@ -1,11 +1,11 @@
 import { ActionLockIcon } from "@parte-ds/icons";
-import { Tab } from "@parte-ds/ui";
+import { Stacked } from "@parte-ds/ui";
 import { Meta, StoryObj } from "@storybook/react";
 import { TAB_VARIANT_OPTIONS } from "../../.storybook/constant";
 
-const TabStory: Meta = {
-  title: "Components/Controls/Tabs/Tab",
-  component: Tab,
+const StackedStory: Meta = {
+  title: "Components/Controls/Tabs/Stacked",
+  component: Stacked,
   parameters: {
     layout: "centered",
     viewport: "responsive",
@@ -14,7 +14,7 @@ const TabStory: Meta = {
     size: {
       options: ["medium", "large"],
       control: { type: "radio" },
-      description: "Tab size",
+      description: "Stacked size",
       table: {
         defaultValue: { summary: "medium" },
       },
@@ -22,16 +22,16 @@ const TabStory: Meta = {
     variant: {
       options: TAB_VARIANT_OPTIONS,
       control: { type: "radio" },
-      description: "Tab의 형태",
+      description: "Stacked의 타입",
       table: {
-        defaultValue: { summary: "primary" },
+        defaultValue: { summary: "Primary" },
       },
     },
   },
 };
 
-export default TabStory;
-type Story = StoryObj<typeof Tab>;
+export default StackedStory;
+type Story = StoryObj<typeof Stacked>;
 
 export const Default: Story = {
   args: {

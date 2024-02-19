@@ -1,4 +1,13 @@
-import { Box, Option, Paragraph, Tab, TabVariant, Tabs } from "@parte-ds/ui";
+import { BellIcon } from "@parte-ds/icons";
+import {
+  Box,
+  Option,
+  Paragraph,
+  Stacked,
+  Tab,
+  TabVariant,
+  Tabs,
+} from "@parte-ds/ui";
 import { useState } from "react";
 const SAMPLE_TABS: Option<string>[] = [
   { label: "Tab 1", value: "Tab 1" },
@@ -17,6 +26,8 @@ const Template = ({ variant }: { variant?: TabVariant }) => {
           onClick={() => setSelected(option)}
           selected={selected.label === option.label}
           variant={variant}
+          leadingIcon={<BellIcon />}
+          // size="large"
         >
           {/* <Box height={42} display="flex" alignItems="center"> */}
           {/* <Paragraph size={300}>{option.label}</Paragraph> */}
@@ -25,6 +36,23 @@ const Template = ({ variant }: { variant?: TabVariant }) => {
 
           {/* </Box> */}
         </Tab>
+      ))}
+      {SAMPLE_TABS.map((option) => (
+        <Stacked
+          key={option.label}
+          onClick={() => setSelected(option)}
+          selected={selected.label === option.label}
+          variant={variant}
+          leadingIcon={<BellIcon />}
+          // size="large"
+        >
+          {/* <Box height={42} display="flex" alignItems="center"> */}
+          {/* <Paragraph size={300}>{option.label}</Paragraph> */}
+
+          {option.label}
+
+          {/* </Box> */}
+        </Stacked>
       ))}
     </Tabs>
   );
