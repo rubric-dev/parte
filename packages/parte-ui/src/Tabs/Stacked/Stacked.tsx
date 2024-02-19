@@ -1,9 +1,9 @@
 import { forwardRef } from "react";
-import * as Styled from "./Tab.styled";
-import { TabProps } from "./Tab.types";
+import * as Styled from "./Stacked.styled";
+import { StackedProps } from "./Stacked.types";
 
-export const Tab = forwardRef<HTMLDivElement, TabProps>(
-  (props: TabProps, ref) => {
+export const Stacked = forwardRef<HTMLDivElement, StackedProps>(
+  (props: StackedProps, ref) => {
     const {
       leadingIcon,
       trailingIcon,
@@ -18,7 +18,7 @@ export const Tab = forwardRef<HTMLDivElement, TabProps>(
       ...divProps
     } = props;
     return (
-      <Styled.Tab
+      <Styled.Stacked
         ref={ref}
         tabIndex={disabled ? -1 : tabIndex}
         $variant={variant}
@@ -32,7 +32,7 @@ export const Tab = forwardRef<HTMLDivElement, TabProps>(
         }}
         {...divProps}
       >
-        <Styled.TabContent
+        <Styled.StackedContent
           $variant={variant}
           $size={size}
           data-selected={selected}
@@ -41,17 +41,9 @@ export const Tab = forwardRef<HTMLDivElement, TabProps>(
           {leadingIcon}
           {children}
           {trailingIcon}
-        </Styled.TabContent>
-        <Styled.TabLine
-          width="100%"
-          height={2}
-          $variant={variant}
-          data-selected={selected}
-          data-disabled={disabled}
-          borderRadius={30}
-        />
-      </Styled.Tab>
+        </Styled.StackedContent>
+      </Styled.Stacked>
     );
   }
 );
-Tab.displayName = "Tab";
+Stacked.displayName = "Stacked";

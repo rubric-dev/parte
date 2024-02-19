@@ -4,9 +4,7 @@ import { SidebarTabProps } from "./SidebarTab.types";
 
 export const SidebarTab = forwardRef<HTMLDivElement, SidebarTabProps>(
   (props: SidebarTabProps, ref) => {
-    return (
-      <Tab ref={ref} {...props} variant="Secondary" direction="vertical" />
-    );
+    return <Tab ref={ref} {...props} variant="Primary" direction="vertical" />;
   }
 );
 
