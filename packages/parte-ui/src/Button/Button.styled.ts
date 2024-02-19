@@ -1,18 +1,18 @@
 import { ExtractToStyledProps } from "@parte-ds/utils";
 import styled, { css } from "styled-components";
 import { ButtonProps } from "./Button.types";
+import { sizeHandler } from "../utils/button.util";
 
 type StyledButtonProps = ExtractToStyledProps<
   ButtonProps,
-  "variant" | "fullWidth" | "direction"
+  "variant" | "fullWidth" | "size"
 >;
 
 const commonButtonStyles = css<StyledButtonProps>`
   position: relative;
   display: inline-flex;
   align-items: center;
-  flex-direction: ${({ $direction }) =>
-    $direction === "horizontal" ? "row" : "column"};
+  flex-direction: row;
   justify-content: center;
   text-decoration: none;
   vertical-align: middle;
@@ -27,18 +27,14 @@ const commonButtonStyles = css<StyledButtonProps>`
   appearance: none;
   -webkit-appearance: none;
   -moz-appearance: none;
-  padding: ${({ theme, $direction }) =>
-    $direction === "horizontal"
-      ? `${theme.spacing.spacing8 - 1}px ${theme.spacing.spacing16}px`
-      : `${theme.spacing.spacing8 - 1}px ${theme.spacing.spacing8}px`};
+  padding: ${({ theme }) => `${theme.spacing.spacing16}px`};
   column-gap: 8px;
   row-gap: 4px;
   border-radius: 4px;
   font-family: inherit;
   white-space: nowrap;
-  font-size: 12px;
-  font-weight: 600;
-  line-height: 16px;
+  ${({ $size }) => sizeHandler($size)};
+
   &:disabled {
     cursor: default;
   }
@@ -73,33 +69,123 @@ export const buttonStyles = css<StyledButtonProps>`
         color: ${theme.colorTextButtonPrimaryDisabled};
       }
     `}
+    ${({ theme, $variant }) =>
+    $variant === "fill-secondary" &&
+    css`
+      background-color: ${theme.colorBackgroundButtonFillSecondary};
+      color: ${theme.colorTextButtonFillSecondary};
+      svg {
+        color: ${theme.colors.N600};
+      }
+      &:hover {
+        background-color: ${theme.colorBackgroundButtonFillSecondaryHover};
+        color: ${theme.colorTextButtonFillSecondaryHover};
+        svg {
+          color: ${theme.colors.N700};
+        }
+      }
+      &:focus {
+        background-color: ${theme.colorBackgroundButtonFillSecondaryFocused};
+        color: ${theme.colorTextButtonFillSecondaryFocused};
+        ${theme.commonStyles.outline}
+        svg {
+          color: ${theme.colors.N700};
+        }
+      }
+      &:active {
+        background-color: ${theme.colorBackgroundButtonFillSecondaryActive};
+        color: ${theme.colorTextButtonFillSecondaryActive};
+        svg {
+          color: ${theme.colors.N700};
+        }
+      }
+      &:disabled {
+        background-color: ${theme.colorBackgroundButtonFillSecondaryDisabled};
+        color: ${theme.colorTextButtonFillSecondaryDisabled};
+        svg {
+          color: ${theme.colors.N400};
+        }
+      }
+    `}
+  ${({ theme, $variant }) =>
+    $variant === "fill-tertiary" &&
+    css`
+      background-color: ${theme.colorBackgroundButtonTertiary};
+      color: ${theme.colorTextButtonTertiary};
+      svg {
+        color: ${theme.colors.B300};
+      }
+      &:hover {
+        background-color: ${theme.colorBackgroundButtonTertiaryHover};
+        color: ${theme.colorTextButtonTertiaryHover};
+        svg {
+          color: ${theme.colors.B400};
+        }
+      }
+      &:focus {
+        background-color: ${theme.colorBackgroundButtonTertiaryFocused};
+        color: ${theme.colorTextButtonTertiaryFocused};
+        ${theme.commonStyles.outline}
+        svg {
+          color: ${theme.colors.B400};
+        }
+      }
+      &:active {
+        background-color: ${theme.colorBackgroundButtonTertiaryActive};
+        color: ${theme.colorTextButtonTertiaryActive};
+        svg {
+          color: ${theme.colors.B400};
+        }
+      }
+      &:disabled {
+        background-color: ${theme.colorBackgroundButtonTertiaryDisabled};
+        color: ${theme.colorTextButtonTertiaryDisabled};
+        svg {
+          color: ${theme.colors.B200};
+        }
+      }
+    `}
   ${({ theme, $variant }) =>
     $variant === "outline-secondary" &&
     css`
       background-color: ${theme.colorBackgroundButtonSecondary};
       color: ${theme.colorTextButtonSecondary};
       border: 1px solid ${theme.colorBorderButtonSecondary};
-
+      svg {
+        color: ${theme.colors.N600};
+      }
       &:hover {
         background-color: ${theme.colorBackgroundButtonSecondaryHover};
         color: ${theme.colorTextButtonSecondaryHover};
         border: 1px solid ${theme.colorBorderButtonSecondaryHover};
+        svg {
+          color: ${theme.colors.N700};
+        }
       }
       &:focus {
         background-color: ${theme.colorBackgroundButtonSecondaryFocused};
         color: ${theme.colorTextButtonSecondaryFocused};
         border: 1px solid ${theme.colorBorderButtonSecondaryFocused};
         ${theme.commonStyles.outline}
+        svg {
+          color: ${theme.colors.N700};
+        }
       }
       &:active {
         background-color: ${theme.colorBackgroundButtonSecondaryActive};
         color: ${theme.colorTextButtonSecondaryActive};
         border: 1px solid ${theme.colorBorderButtonSecondaryActive};
+        svg {
+          color: ${theme.colors.N700};
+        }
       }
       &:disabled {
         background-color: ${theme.colorBackgroundButtonSecondaryDisabled};
         color: ${theme.colorTextButtonSecondaryDisabled};
         border: 1px solid ${theme.colorBorderButtonSecondaryDisabled};
+        svg {
+          color: ${theme.colors.N400};
+        }
       }
     `}
     ${({ theme, $variant }) =>
@@ -136,23 +222,37 @@ export const buttonStyles = css<StyledButtonProps>`
     css`
       background-color: ${theme.colorBackgroundButtonMinimal};
       color: ${theme.colorTextButtonMinimal};
-
+      svg {
+        color: ${theme.colors.N600};
+      }
       &:hover {
         background-color: ${theme.colorBackgroundButtonMinimalHover};
         color: ${theme.colorTextButtonMinimalHover};
+        svg {
+          color: ${theme.colors.N700};
+        }
       }
       &:focus {
         background-color: ${theme.colorBackgroundButtonMinimalFocused};
         color: ${theme.colorTextButtonMinimalFocused};
         ${theme.commonStyles.outline};
+        svg {
+          color: ${theme.colors.N600};
+        }
       }
       &:active {
         background-color: ${theme.colorBackgroundButtonMinimalActive};
         color: ${theme.colorTextButtonMinimalActive};
+        svg {
+          color: ${theme.colors.N700};
+        }
       }
       &:disabled {
         background-color: ${theme.colorBackgroundButtonMinimalDisabled};
         color: ${theme.colorTextButtonMinimalDisabled};
+        svg {
+          color: ${theme.colors.N400};
+        }
       }
     `}
     ${({ theme, $variant }) =>
@@ -210,21 +310,36 @@ export const buttonStyles = css<StyledButtonProps>`
     css`
       padding: 0;
       background-color: transparent;
-      column-gap: 4px;
+      column-gap: 8px;
+      gap: 8px;
       color: ${theme.colorTextButtonMinimal};
-
+      svg {
+        color: ${theme.colors.N600};
+      }
       &:hover {
         color: ${theme.colorTextButtonMinimalHover};
+        svg {
+          color: ${theme.colors.N700};
+        }
       }
       &:focus {
         color: ${theme.colorTextButtonMinimalFocused};
         ${theme.commonStyles.outline};
+        svg {
+          color: ${theme.colors.N600};
+        }
       }
       &:active {
         color: ${theme.colorTextButtonMinimalActive};
+        svg {
+          color: ${theme.colors.N700};
+        }
       }
       &:disabled {
         color: ${theme.colorTextButtonMinimalDisabled};
+        svg {
+          color: ${theme.colors.N400};
+        }
       }
     `}
     ${({ theme, $variant }) =>
@@ -232,7 +347,8 @@ export const buttonStyles = css<StyledButtonProps>`
     css`
       padding: 0;
       background-color: transparent;
-      column-gap: 4px;
+      column-gap: 8px;
+      gap: 8px;
       color: ${theme.colorTextButtonMinimalColored};
 
       &:hover {

@@ -8,7 +8,6 @@ import {
 
 export const ButtonChildren = ({
   leadingIcon,
-  direction,
   trailingIcon,
   children,
 }: PropsWithChildren<ButtonStylingProps>) => {
@@ -16,12 +15,12 @@ export const ButtonChildren = ({
     <>
       {leadingIcon &&
         React.cloneElement(leadingIcon as ReactElement, {
-          size: direction === "horizontal" ? 12 : 16,
+          size: 16,
         })}
       {children}
       {trailingIcon &&
         React.cloneElement(trailingIcon as ReactElement, {
-          size: direction === "horizontal" ? 12 : 16,
+          size: 16,
         })}
     </>
   );
@@ -34,8 +33,8 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
       leadingIcon,
       trailingIcon,
       variant = "fill-primary",
-      direction = "horizontal",
       fullWidth,
+      size = "medium",
       ...props
     },
     ref
@@ -43,16 +42,12 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
     return (
       <StyledButton
         $variant={variant}
-        $direction={direction}
         $fullWidth={fullWidth}
+        $size={size}
         ref={ref}
         {...props}
       >
-        <ButtonChildren
-          trailingIcon={trailingIcon}
-          leadingIcon={leadingIcon}
-          direction={direction}
-        >
+        <ButtonChildren trailingIcon={trailingIcon} leadingIcon={leadingIcon}>
           {children}
         </ButtonChildren>
       </StyledButton>
@@ -69,7 +64,6 @@ export const LinkButton = forwardRef<HTMLAnchorElement, LinkButtonProps>(
       leadingIcon,
       trailingIcon,
       variant = "fill-primary",
-      direction = "horizontal",
       fullWidth,
       ...props
     },
@@ -78,16 +72,11 @@ export const LinkButton = forwardRef<HTMLAnchorElement, LinkButtonProps>(
     return (
       <StyledLinkButton
         $variant={variant}
-        $direction={direction}
         $fullWidth={fullWidth}
         ref={ref}
         {...props}
       >
-        <ButtonChildren
-          trailingIcon={trailingIcon}
-          leadingIcon={leadingIcon}
-          direction={direction}
-        >
+        <ButtonChildren trailingIcon={trailingIcon} leadingIcon={leadingIcon}>
           {children}
         </ButtonChildren>
       </StyledLinkButton>
