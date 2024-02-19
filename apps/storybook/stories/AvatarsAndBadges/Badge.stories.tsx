@@ -43,5 +43,13 @@ export const Default: Story = {
         defaultValue: { summary: "AUTO" },
       },
     },
+    size: {
+      options: ["small", "medium"],
+      control: { type: "radio" },
+      description: "Badge의 사이즈를 정합니다.",
+      table: {
+        defaultValue: { summary: "small" },
+      },
+    },
   },
 };

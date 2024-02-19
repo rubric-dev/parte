@@ -99,7 +99,7 @@ export default function Home() {
             disabled
             isSelected={index === 0}
             onClick={() => setIndex(0)}
-            trailingNode={<Badge badgeColor="GREY" text="6" type="pills" />}
+            trailingNode={<Badge badgeColor="BLUE" text="6" type="pills" />}
           >
             왼쪽 버튼
           </ButtonGroup.Option>

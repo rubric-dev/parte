@@ -5,9 +5,10 @@ export const Badge = ({
   type = "badge",
   badgeColor = "AUTO",
   text,
+  size = "small",
 }: BadgeProps) => {
   return (
-    <Styled.Badge $badgeColor={badgeColor} $type={type}>
+    <Styled.Badge $badgeColor={badgeColor} $type={type} $size={size}>
       {text}
     </Styled.Badge>
   );
