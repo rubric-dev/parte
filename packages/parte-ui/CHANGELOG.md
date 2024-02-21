@@ -1,5 +1,11 @@
 # @parte-ds/ui
 
+## 1.12.0
+
+### Minor Changes
+
+- 컴포넌트 수정
+
 ## 1.11.0
 
 ### Minor Changes

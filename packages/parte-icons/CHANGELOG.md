@@ -1,5 +1,11 @@
 # @parte-ds/icons
 
+## 1.6.0
+
+### Minor Changes
+
+- 컴포넌트 수정
+
 ## 1.5.0
 
 ### Minor Changes
