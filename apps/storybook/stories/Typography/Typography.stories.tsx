@@ -45,6 +45,7 @@ export const CaptionSize: Story = {
   render: () => {
     return (
       <Box display="flex" flexDirection="column" gap={10}>
+        <Caption size={300}>Caption 300</Caption>
         <Caption size={200}>Caption 200</Caption>
         <Caption size={100}>Caption 100</Caption>
       </Box>

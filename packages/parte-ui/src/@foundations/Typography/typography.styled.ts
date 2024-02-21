@@ -32,6 +32,7 @@ export const Paragraph = styled.p<TypograhpyStyleProps>`
 export const Caption = styled.span<TypograhpyStyleProps>`
   ${({ theme, $size, $style }) => css`
     ${$style}
+    ${$size === 300 && theme.typography.C300}
     ${$size === 200 && theme.typography.C200}
     ${$size === 100 && theme.typography.C100}
   `}
