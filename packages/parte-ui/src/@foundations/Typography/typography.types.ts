@@ -25,7 +25,7 @@ export type ParagraphProps = HTMLAttributes<HTMLParagraphElement> &
 
 export type CaptionProps = HTMLAttributes<HTMLSpanElement> &
   CommonProps & {
-    size: 100 | 200;
+    size: 100 | 200 | 300;
   };
 
 export type CodeProps = Omit<CommonProps, "color"> & {

@@ -17,6 +17,7 @@ import {
   Box,
   Button,
   ButtonGroup,
+  Caption,
   Checkbox,
   LinkButton,
   Link as ParteLink,
@@ -155,6 +156,9 @@ export default function Home() {
         >
           button
         </Button>
+        <Caption size={300}>300</Caption>
+        <Caption size={200}>200</Caption>
+        <Caption size={100}>100</Caption>
       </Box>
     </>
   );
