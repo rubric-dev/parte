@@ -1,5 +1,11 @@
 # @parte-ds/ui
 
+## 1.13.0
+
+### Minor Changes
+
+- Caption 300 추가
+
 ## 1.12.0
 
 ### Minor Changes
