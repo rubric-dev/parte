@@ -36,6 +36,12 @@ const TextInputStory: Meta = {
       defaultValue: "medium",
       control: { type: "radio" },
     },
+    variant: {
+      type: "string",
+      options: ["text", "ghost-text"],
+      defaultValue: "text",
+      control: { type: "radio" },
+    },
   },
 };
 export default TextInputStory;

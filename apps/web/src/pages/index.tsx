@@ -1,23 +1,7 @@
 import {
-  FileStaffOneIcon,
-  ViewListIcon,
-  HomeIcon,
-  SettingTwoIcon,
-  RightUserIcon,
-  ShoppingBagOneIcon,
-  TicketIcon,
-  BellIcon,
-  SearchIcon,
-  MoreIcon,
-  FillViewListIcon,
-} from "@parte-ds/icons";
-import {
-  Avatar,
   Badge,
   Box,
-  Button,
   ButtonGroup,
-  Caption,
   Checkbox,
   LinkButton,
   Link as ParteLink,
@@ -124,36 +108,10 @@ export default function Home() {
             오른쪽 버튼
           </ButtonGroup.Option>
         </ButtonGroup>
-        <Link href="/input" passHref legacyBehavior>
-          <LinkButton>passHref 예시</LinkButton>
-        </Link>
-        <Button variant="text-primary" size="x-large">
-          Text
-        </Button>
-        <Link href="/input">네이티브</Link>
-        <ParteLink disabled href="/input">
-          파르테 링크
-        </ParteLink>
-        <Box display="flex">
-          <HomeIcon size={26} color="B600" />
-          <FileStaffOneIcon size={26} color="B600" />
-          <ViewListIcon size={26} color="B600" />
-          <SettingTwoIcon size={26} color="B600" />
-          <RightUserIcon size={26} color="B600" />
-          <ShoppingBagOneIcon size={26} color="B600" />
-          <TicketIcon size={26} color="B600" />
-          <BellIcon size={26} color="B600" />
-          <SearchIcon size={26} color="B600" />
-          <MoreIcon size={26} color="B600" />
-          <FillViewListIcon size={26} color="B600" />
-        </Box>
-        <Box display="flex">
-          <Avatar avatarColor="BLUE" name="sowon baek" />
-          <Avatar size="medium" name="sowon baek" />
-        </Box>
-        <Caption size={300}>300</Caption>
-        <Caption size={200}>200</Caption>
-        <Caption size={100}>100</Caption>
+
+        <TextInput placeholder="Placeholder" />
+        <TextInput placeholder="Placeholder" textInputSize="large" />
+        <TextInput placeholder="Placeholder" textInputSize="x-large" isError />
       </Box>
     </>
   );
