@@ -1,5 +1,11 @@
 # @parte-ds/ui
 
+## 1.14.0
+
+### Minor Changes
+
+- 텍스트 인풋 타입 추가, 수정사항 반영
+
 ## 1.13.0
 
 ### Minor Changes
