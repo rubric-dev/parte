@@ -17,7 +17,7 @@ const commonButtonStyles = css<StyledButtonProps>`
   text-decoration: none;
   vertical-align: middle;
   outline: none;
-  border: 1px solid transparent;
+  border: none;
   user-select: none;
   cursor: pointer;
   white-space: nowrap;
@@ -33,7 +33,7 @@ const commonButtonStyles = css<StyledButtonProps>`
   border-radius: 4px;
   font-family: inherit;
   white-space: nowrap;
-  ${({ $size }) => sizeHandler($size)};
+  ${({ $size, $variant }) => sizeHandler($size, $variant)};
 
   &:disabled {
     cursor: default;
