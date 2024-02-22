@@ -11,11 +11,16 @@ export const TextInput = forwardRef<HTMLInputElement, TextInputProps>(
       isError,
       width,
       textInputSize = "medium",
+      variant = "text",
       ...inputProps
     } = props;
 
     return (
-      <Styled.Container $width={width}>
+      <Styled.Container
+        $width={width}
+        $variant={variant}
+        $textInputSize={textInputSize}
+      >
         {leadingIcon && (
           <Styled.LeftIconContainer $disabled={inputProps.disabled}>
             {leadingIcon}
@@ -29,6 +34,7 @@ export const TextInput = forwardRef<HTMLInputElement, TextInputProps>(
           $textInputSize={textInputSize}
           $hasLeadingIcon={!!leadingIcon}
           $hasTrailingIcon={!!trailingIcon}
+          $variant={variant}
         />
         {trailingIcon && (
           <Styled.RightIconContainer $disabled={inputProps.disabled}>
