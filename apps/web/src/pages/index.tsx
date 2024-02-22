@@ -124,10 +124,12 @@ export default function Home() {
             오른쪽 버튼
           </ButtonGroup.Option>
         </ButtonGroup>
-
         <Link href="/input" passHref legacyBehavior>
           <LinkButton>passHref 예시</LinkButton>
         </Link>
+        <Button variant="text-primary" size="x-large">
+          Text
+        </Button>
         <Link href="/input">네이티브</Link>
         <ParteLink disabled href="/input">
           파르테 링크
@@ -149,13 +151,6 @@ export default function Home() {
           <Avatar avatarColor="BLUE" name="sowon baek" />
           <Avatar size="medium" name="sowon baek" />
         </Box>
-        <Button
-          size="x-large"
-          variant="fill-secondary"
-          leadingIcon={<BellIcon />}
-        >
-          button
-        </Button>
         <Caption size={300}>300</Caption>
         <Caption size={200}>200</Caption>
         <Caption size={100}>100</Caption>

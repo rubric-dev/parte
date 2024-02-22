@@ -10,7 +10,7 @@ const commonButtonStyles = css<StyledTableButtonProps>`
   text-decoration: none;
   vertical-align: middle;
   outline: none;
-  border: 1px solid transparent;
+  border: none;
   user-select: none;
   cursor: pointer;
   white-space: nowrap;
