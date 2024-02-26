@@ -1,4 +1,9 @@
-import { CloseIcon } from "@parte-ds/icons";
+import {
+  ArrowDownIcon,
+  ArrowUpIcon,
+  CloseIcon,
+  ListTwoIcon,
+} from "@parte-ds/icons";
 import {
   Badge,
   Box,
@@ -114,6 +119,9 @@ export default function Home() {
         <TextInput placeholder="Placeholder" textInputSize="large" />
         <TextInput placeholder="Placeholder" textInputSize="x-large" isError />
         <CloseIcon />
+        <ListTwoIcon />
+        <ArrowUpIcon />
+        <ArrowDownIcon />
       </Box>
     </>
   );

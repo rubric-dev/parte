@@ -1,5 +1,11 @@
 # @parte-ds/icons
 
+## 1.7.1
+
+### Patch Changes
+
+- listTwoIcon 수정
+
 ## 1.7.0
 
 ### Minor Changes
