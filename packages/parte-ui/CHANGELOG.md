@@ -1,5 +1,11 @@
 # @parte-ds/ui
 
+## 1.14.1
+
+### Patch Changes
+
+- 텍스트 인풋 width 추가
+
 ## 1.14.0
 
 ### Minor Changes

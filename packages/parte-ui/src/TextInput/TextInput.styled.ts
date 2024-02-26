@@ -179,6 +179,7 @@ export const Input = styled.input<{
             ${theme.spacing.spacing12}px
           `
         : css``};
+      width: 100%;
       background-color: ${theme.colorBackgroundDefault};
       color: ${$textInputSize === "medium"
         ? theme.colors.N700
