@@ -1,3 +1,4 @@
+import { CloseIcon } from "@parte-ds/icons";
 import {
   Badge,
   Box,
@@ -112,6 +113,7 @@ export default function Home() {
         <TextInput placeholder="Placeholder" />
         <TextInput placeholder="Placeholder" textInputSize="large" />
         <TextInput placeholder="Placeholder" textInputSize="x-large" isError />
+        <CloseIcon />
       </Box>
     </>
   );

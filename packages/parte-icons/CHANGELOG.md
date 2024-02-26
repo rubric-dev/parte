@@ -1,5 +1,11 @@
 # @parte-ds/icons
 
+## 1.7.0
+
+### Minor Changes
+
+- 아이스 버그 아이콘 추가
+
 ## 1.6.0
 
 ### Minor Changes
