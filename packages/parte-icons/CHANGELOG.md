@@ -1,5 +1,11 @@
 # @parte-ds/icons
 
+## 1.8.0
+
+### Minor Changes
+
+- 아이스버그 질문지/설정 아이콘 추가
+
 ## 1.7.1
 
 ### Patch Changes
