@@ -1,5 +1,11 @@
 # @parte-ds/ui
 
+## 1.14.2
+
+### Patch Changes
+
+- 카드 호버 시 box-shadow 수정
+
 ## 1.14.1
 
 ### Patch Changes

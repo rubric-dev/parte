@@ -14,7 +14,7 @@ export const DefaultCard = styled(Box)<{ disabled?: boolean }>`
   ${({ theme, disabled }) => css`
     ${CommonStyle}
     &:hover {
-      ${theme.elevation.elevation0}
+      ${theme.elevation.elevation4}
     }
     &:focus,
     &:active {

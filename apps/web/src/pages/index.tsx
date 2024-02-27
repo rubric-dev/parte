@@ -8,6 +8,7 @@ import {
   Badge,
   Box,
   ButtonGroup,
+  Card,
   Checkbox,
   LinkButton,
   Link as ParteLink,
@@ -114,14 +115,7 @@ export default function Home() {
             오른쪽 버튼
           </ButtonGroup.Option>
         </ButtonGroup>
-
-        <TextInput placeholder="Placeholder" />
-        <TextInput placeholder="Placeholder" textInputSize="large" />
-        <TextInput placeholder="Placeholder" textInputSize="x-large" isError />
-        <CloseIcon />
-        <ListTwoIcon />
-        <ArrowUpIcon />
-        <ArrowDownIcon />
+        <Card width={300} height={200}></Card>
       </Box>
     </>
   );
