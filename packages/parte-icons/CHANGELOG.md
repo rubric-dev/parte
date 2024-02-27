@@ -1,5 +1,11 @@
 # @parte-ds/icons
 
+## 1.8.1
+
+### Patch Changes
+
+- 아이콘 color 수정
+
 ## 1.8.0
 
 ### Minor Changes
