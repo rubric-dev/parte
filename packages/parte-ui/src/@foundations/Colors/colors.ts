@@ -76,7 +76,7 @@ export const COLORS = {
   ChartPink: "#FD8ADC",
   ChartAqua: "#70B0FF",
   ChartOrange: "#FF9D66",
-  ModalBackground: "#435a6fb3",
+  ModalBackground: "rgba(67, 90, 111, 0.30)",
 };
 
 export type ColorKey = keyof typeof COLORS;
