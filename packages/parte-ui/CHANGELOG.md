@@ -1,5 +1,11 @@
 # @parte-ds/ui
 
+## 1.14.3
+
+### Patch Changes
+
+- dialog modal 배경 색 변경
+
 ## 1.14.2
 
 ### Patch Changes
