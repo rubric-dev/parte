@@ -1,8 +1,8 @@
 import { memo } from "react";
 import { css } from "styled-components";
+import { CloseIcon } from "../../../parte-icons/src";
 import { Button } from "../Button";
 import { IconButton } from "../IconButton";
-import { ActionCrossIcon } from "../../../parte-icons/src";
 import * as Styled from "./Dialog.styled";
 import { DialogProps, DialogSubComponent } from "./Dialog.types";
 
@@ -74,8 +74,8 @@ export const Dialog = memo(
               {hasClose && (
                 <IconButton
                   variant="ghost-secondary"
-                  size={24}
-                  Icon={<ActionCrossIcon size={12} />}
+                  size={32}
+                  Icon={<CloseIcon size={16} />}
                   onClick={handleCancel}
                 />
               )}
@@ -102,6 +102,7 @@ export const Dialog = memo(
                   variant="outline-secondary"
                   tabIndex={0}
                   onClick={handleCancel}
+                  size="large"
                 >
                   {cancelLabel}
                 </Button>
@@ -113,6 +114,7 @@ export const Dialog = memo(
                 isLoading={isConfirmLoading}
                 disabled={isConfirmDisabled}
                 onClick={handleConfirm}
+                size="large"
               >
                 {confirmLabel}
               </Button>
