@@ -1,5 +1,11 @@
 # @parte-ds/ui
 
+## 1.14.4
+
+### Patch Changes
+
+- dialog modal 버튼 사이즈, 아이콘 수정
+
 ## 1.14.3
 
 ### Patch Changes
