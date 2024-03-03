@@ -1,5 +1,11 @@
 # @parte-ds/icons
 
+## 1.8.2
+
+### Patch Changes
+
+- 사이드메뉴 아이콘 추가
+
 ## 1.8.1
 
 ### Patch Changes
