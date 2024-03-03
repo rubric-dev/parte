@@ -6,6 +6,7 @@
 
 - Updated dependencies
   - @parte-ds/ui@1.14.5
+  - @parte-ds/icons@1.8.2
 
 ## 0.1.40
 
