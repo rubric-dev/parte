@@ -1,5 +1,11 @@
 # @parte-ds/ui
 
+## 1.14.5
+
+### Patch Changes
+
+- menu onlick 받을 수 있도록 수정
+
 ## 1.14.4
 
 ### Patch Changes
