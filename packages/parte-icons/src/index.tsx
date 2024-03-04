@@ -592,3 +592,4 @@ export { default as ChevronLeftIcon } from "./Icons/ChevronLeftIcon";
 export { default as ChevronUpIcon } from "./Icons/ChevronUpIcon";
 export { default as ChevronDownIcon } from "./Icons/ChevronDownIcon";
 export { default as LogoutIcon } from "./Icons/LogoutIcon";
+export { default as WriteIcon } from "./Icons/WriteIcon";
