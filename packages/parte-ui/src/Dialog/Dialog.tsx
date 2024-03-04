@@ -75,7 +75,7 @@ export const Dialog = memo(
                 <IconButton
                   variant="ghost-secondary"
                   size={32}
-                  Icon={<CloseIcon size={16} />}
+                  Icon={<CloseIcon size={16} color="N600" />}
                   onClick={handleCancel}
                 />
               )}
