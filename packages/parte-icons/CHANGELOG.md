@@ -1,5 +1,11 @@
 # @parte-ds/icons
 
+## 1.8.3
+
+### Patch Changes
+
+- write 아이콘 추가
+
 ## 1.8.2
 
 ### Patch Changes
