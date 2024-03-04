@@ -1,5 +1,11 @@
 # @parte-ds/ui
 
+## 1.14.6
+
+### Patch Changes
+
+- dialog 수정
+
 ## 1.14.5
 
 ### Patch Changes

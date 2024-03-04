@@ -14,8 +14,8 @@ export const Header = styled(Box)`
 `;
 export const Title = styled.h2`
   ${({ theme }) => css`
-    ${theme.typography.H600};
-    color: ${theme.colors.N900};
+    ${theme.typography.H900};
+    color: ${theme.colors.N800};
   `}
 `;
 
