@@ -1,5 +1,11 @@
 # @parte-ds/ui
 
+## 1.14.8
+
+### Patch Changes
+
+- step 색상 수정 및 divider 추가
+
 ## 1.14.7
 
 ### Patch Changes
