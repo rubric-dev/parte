@@ -1,5 +1,11 @@
 # @parte-ds/ui
 
+## 1.14.8
+
+### Patch Changes
+
+- dropdown 리스트 중앙 정렬
+
 ## 1.14.7
 
 ### Patch Changes

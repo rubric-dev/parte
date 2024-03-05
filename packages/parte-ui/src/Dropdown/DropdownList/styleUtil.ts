@@ -56,7 +56,7 @@ export const getDropdownStyle = (
   }
   switch (horizontal) {
     case "LEFT":
-      style.left = usePortal ? parentLeft : 0;
+      style.left = usePortal ? parentLeft - (width + parentWidth) / 4 : 0;
       break;
     case "RIGHT":
       if (usePortal) {
