@@ -24,6 +24,7 @@ const getStepStatusColor = (status: StepStatus, theme: ParteTheme) => {
       `;
     case "complete":
       return css`
+        color: ${theme.colors.G500};
         background-color: ${theme.colors.G200};
       `;
   }
