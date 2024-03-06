@@ -8,7 +8,7 @@ const { deceleration, acceleration, spring } = animationEasing;
 export const ToastContainer = styled.span`
   ${() => css`
     position: fixed;
-    top: 24px;
+    top: 10px;
     left: 0;
     right: 0;
     display: flex;
