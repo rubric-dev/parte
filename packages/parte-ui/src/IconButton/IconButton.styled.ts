@@ -50,6 +50,29 @@ export const StyledButton = styled.button<StyledIconButtonProps>`
         background-color: ${theme.colorBackgroundButtonPrimaryDisabled};
         color: ${theme.colorTextButtonPrimaryDisabled};
       }
+    `}  
+${({ theme, $variant }) =>
+    $variant === "fill-secondary" &&
+    css`
+      background-color: ${theme.colorBackgroundButtonFillSecondary};
+      color: ${theme.colorTextButtonFillSecondary};
+      &:hover {
+        background-color: ${theme.colorBackgroundButtonFillSecondaryHover};
+        color: ${theme.colorTextButtonSecondaryHover};
+      }
+      &:focus {
+        background-color: ${theme.colorBackgroundButtonFillSecondaryFocused};
+        ${theme.commonStyles.outline}
+        color: ${theme.colorTextButtonFillSecondaryFocused};
+      }
+      &:active {
+        background-color: ${theme.colorBackgroundButtonFillSecondaryActive};
+        color: ${theme.colorTextButtonFillSecondaryActive};
+      }
+      &:disabled {
+        background-color: ${theme.colorBackgroundButtonFillSecondaryDisabled};
+        color: ${theme.colorTextButtonFillSecondaryDisabled};
+      }
     `}
   ${({ theme, $variant }) =>
     $variant === "outline-secondary" &&

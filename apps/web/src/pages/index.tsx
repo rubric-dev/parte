@@ -3,6 +3,7 @@ import {
   ArrowUpIcon,
   CloseIcon,
   ListTwoIcon,
+  PreviewCloseOneIcon,
 } from "@parte-ds/icons";
 import {
   Badge,
@@ -10,6 +11,7 @@ import {
   ButtonGroup,
   Card,
   Checkbox,
+  IconButton,
   LinkButton,
   Link as ParteLink,
   TextInput,
@@ -116,6 +118,7 @@ export default function Home() {
           </ButtonGroup.Option>
         </ButtonGroup>
         <Card width={300} height={200}></Card>
+        <IconButton Icon={<PreviewCloseOneIcon />} variant="fill-secondary" />
       </Box>
     </>
   );
