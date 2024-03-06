@@ -52,7 +52,6 @@ export const ToastBox = styled(Box)<{ $marginBottom: number; $height: number }>`
     width: 100%;
     height: fit-content;
     transition: all ${ANIMATION_DURATION}ms ${deceleration};
-    background-color: ${theme.colors.transparent};
 
     &[data-state="entering"] {
       animation: ${openAnimation} ${ANIMATION_DURATION}ms ${spring} both;
