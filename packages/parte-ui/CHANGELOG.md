@@ -1,5 +1,11 @@
 # @parte-ds/ui
 
+## 1.14.11
+
+### Patch Changes
+
+- card box shadow 수정
+
 ## 1.14.10
 
 ### Patch Changes
