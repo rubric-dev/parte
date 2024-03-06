@@ -14,7 +14,7 @@ export const DefaultCard = styled(Box)<{ disabled?: boolean }>`
   ${({ theme, disabled }) => css`
     ${CommonStyle}
     &:hover {
-      ${theme.elevation.elevation2}
+      box-shadow: 0px 4px 8px 0px rgba(16, 24, 64, 0.08);
     }
     &:focus,
     &:active {
@@ -43,7 +43,7 @@ export const SelectableCard = styled(Box)<{
     ${CommonStyle}
     cursor: pointer;
     &:hover {
-      ${theme.elevation.elevation0}
+      box-shadow: 0px 4px 8px 0px rgba(16, 24, 64, 0.08);
     }
     &:focus,
     &:active {
