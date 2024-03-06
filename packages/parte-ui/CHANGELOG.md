@@ -1,5 +1,11 @@
 # @parte-ds/ui
 
+## 1.14.12
+
+### Patch Changes
+
+- toast top 수정
+
 ## 1.14.11
 
 ### Patch Changes
