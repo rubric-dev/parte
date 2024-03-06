@@ -1,9 +1,9 @@
 import {
   ActionCrossIcon,
-  AlertDangerIcon,
-  AlertInfoIcon,
-  AlertSuccessIcon,
-  AlertWarningIcon,
+  FillDangerIcon,
+  FillInfoIcon,
+  FillSuccessIcon,
+  FillWarningIcon,
 } from "../../../parte-icons/src";
 import { Headline } from "../@foundations";
 import { IconButton } from "../IconButton";
@@ -15,13 +15,13 @@ const renderIcon = (status: AlertStatus) => {
   const color = ALERT_ICON_COLOR[status];
   switch (status) {
     case "success":
-      return <AlertSuccessIcon size={16} color={color} />;
+      return <FillSuccessIcon size={16} color={color} />;
     case "info":
-      return <AlertInfoIcon size={16} color={color} />;
+      return <FillInfoIcon size={16} color={color} />;
     case "warning":
-      return <AlertWarningIcon size={16} color={color} />;
+      return <FillWarningIcon size={16} color={color} />;
     case "error":
-      return <AlertDangerIcon size={16} color={color} />;
+      return <FillDangerIcon size={16} color={color} />;
   }
 };
 

@@ -17,25 +17,25 @@ const colorByStatus = {
     icon: theme.colors.G400,
     border: theme.colors.G400,
     background: theme.colors.G50,
-    color: theme.colors.G500,
+    color: theme.colors.G400,
   },
   info: {
     icon: theme.colors.B400,
     border: theme.colors.B400,
     background: theme.colors.B50,
-    color: theme.colors.B500,
+    color: theme.colors.B400,
   },
   warning: {
     icon: theme.colors.Y400,
     border: theme.colors.Y400,
     background: theme.colors.Y50,
-    color: theme.colors.Y500,
+    color: theme.colors.Y400,
   },
   error: {
     icon: theme.colors.R400,
     border: theme.colors.R400,
     background: theme.colors.R50,
-    color: theme.colors.R500,
+    color: theme.colors.R400,
   },
 } as const;
 
@@ -45,7 +45,7 @@ export const AlertInline = styled(Box)<AlertStyleProps>`
       display: inline-flex;
       align-items: center;
       color: ${colorByStatus[$status].color};
-      gap: ${theme.spacing.spacing16}px;
+      gap: ${theme.spacing.spacing12}px;
     `;
   }}
 `;
@@ -55,18 +55,16 @@ export const Alert = styled(Box)<AlertStyleProps>`
     const { border, background, color } = colorByStatus[$status];
     return css`
       min-width: 110px;
-      max-width: 487px;
+      max-width: 488px;
       width: 100%;
       height: fit-content;
 
       display: flex;
       flex-direction: column;
       gap: ${theme.spacing.spacing4}px;
-      padding: ${theme.spacing.spacing12 - borderPixel}px
-        ${theme.spacing.spacing16 - borderPixel}px;
+      padding: 12px 16px 16px 16px;
       box-sizing: border-box;
 
-      border: ${borderPixel}px solid ${border};
       border-radius: 8px;
       background-color: ${background};
       color: ${color};
@@ -77,13 +75,14 @@ export const Alert = styled(Box)<AlertStyleProps>`
 export const Toast = styled(Alert)`
   ${theme.elevation.elevation2};
   pointer-events: all;
+  background-color: ${theme.colors.N0};
 `;
 
 export const InfoWrap = styled(Box)`
   ${({ theme }) => {
     return css`
       display: flex;
-      gap: ${theme.spacing.spacing16}px;
+      gap: ${theme.spacing.spacing12}px;
       align-items: center;
       width: 100%;
     `;
@@ -108,7 +107,7 @@ export const Description = styled.div`
   ${({ theme }) => css`
     word-break: break-word;
     color: ${theme.colors.N700};
-    padding-left: ${theme.spacing.spacing32}px;
+    padding-left: ${theme.spacing.spacing28}px;
     ${theme.typography.P200};
   `}
 `;

@@ -117,13 +117,13 @@ export default function Home() {
             오른쪽 버튼
           </ButtonGroup.Option>
         </ButtonGroup>
-        <Card width={300} height={200}></Card>
-        <IconButton Icon={<PreviewCloseOneIcon />} variant="fill-secondary" />
+        <Card width={300} height={200} type="default">
+          qw
+        </Card>
       </Box>
     </>
   );
 }
-
 const CustomAnchor = forwardRef<
   HTMLAnchorElement,
   AnchorHTMLAttributes<HTMLAnchorElement>
