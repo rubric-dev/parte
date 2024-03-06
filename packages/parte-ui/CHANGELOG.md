@@ -1,5 +1,11 @@
 # @parte-ds/ui
 
+## 1.14.9
+
+### Patch Changes
+
+- 아이콘 버튼 fill-secondary 수정
+
 ## 1.14.8
 
 ### Patch Changes
