@@ -20,6 +20,7 @@ const useSelectStyle = <
     container: (css, props) => {
       return {
         ...css,
+
         width: width
           ? typeof width === "string"
             ? width
@@ -35,6 +36,7 @@ const useSelectStyle = <
     control: (css, props) => {
       return {
         ...css,
+        cursor: "pointer",
         minHeight: "unset",
         height: "fit-content",
         borderRadius: "4px",
