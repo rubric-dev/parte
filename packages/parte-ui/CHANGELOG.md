@@ -1,5 +1,11 @@
 # @parte-ds/ui
 
+## 1.14.14
+
+### Patch Changes
+
+- 셀렉터 cursor 수정
+
 ## 1.14.13
 
 ### Patch Changes
