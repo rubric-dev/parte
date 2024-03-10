@@ -232,7 +232,7 @@ const SelectComponent = <
     styles: customStyles,
     components: customComponents,
     width,
-    height = 40,
+    height = 32,
     ...selectProps
   } = props;
 

@@ -40,6 +40,7 @@ const useSelectStyle = <
       return {
         ...css,
         cursor: "pointer",
+        minHeight: "unset",
         height: height,
         borderRadius: "4px",
         backgroundColor: theme.colors.N0,
