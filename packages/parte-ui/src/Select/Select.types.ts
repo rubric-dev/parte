@@ -4,6 +4,7 @@ import {
   type Props as ReactSelectProps,
 } from "react-select";
 import { type AsyncPaginateProps } from "react-select-async-paginate";
+export type SelectSize = "medium" | "large" | "x-large";
 
 export type SelectAdditional =
   | {
@@ -21,6 +22,7 @@ export type CommonSelectProps<
   isError?: boolean;
   showSearchIcon?: boolean;
   width?: string | number;
+  height?: string | number;
 };
 
 export type SelectProps<

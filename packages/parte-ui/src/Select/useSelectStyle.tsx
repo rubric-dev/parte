@@ -9,10 +9,12 @@ const useSelectStyle = <
   isError,
   customStyles,
   width,
+  height,
 }: {
   isError: boolean;
   customStyles?: StylesConfig<T, K, G>;
   width?: string | number;
+  height?: string | number;
 }): StylesConfig<T, K, G> => {
   const theme = useTheme();
 
@@ -26,6 +28,7 @@ const useSelectStyle = <
             ? width
             : `${width}px`
           : undefined,
+        height: height,
         backgroundColor: theme.colors.N0,
         svg: {
           color: props.isDisabled ? theme.colors.N500 : theme.colors.N600,
@@ -37,14 +40,13 @@ const useSelectStyle = <
       return {
         ...css,
         cursor: "pointer",
-        minHeight: "unset",
-        height: "fit-content",
+        height: height,
         borderRadius: "4px",
         backgroundColor: theme.colors.N0,
         // 원래는 상하 패딩은 8인데, border는 control 컴포넌트에서 관리하기때문에, boxSizing이 적용안됨
         padding: "7px 10px 7px 12px",
         display: "flex",
-        alignItems: "flex-start",
+        alignItems: "center",
         svg: {
           color: theme.colors.N600,
         },
@@ -313,7 +315,7 @@ const useSelectStyle = <
       paddingLeft: "12px",
       paddingTop: "2px",
       columnGap: "8px",
-      alignSelf: "flex-start",
+      alignSelf: "center",
       svg: {
         color: theme.colors.N600,
       },

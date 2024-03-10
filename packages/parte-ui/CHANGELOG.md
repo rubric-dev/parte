@@ -1,5 +1,11 @@
 # @parte-ds/ui
 
+## 1.14.15
+
+### Patch Changes
+
+- select height props 추가
+
 ## 1.14.14
 
 ### Patch Changes
