@@ -23,19 +23,16 @@ const SelectPage = () => {
     <Box display="flex" flexDirection="column" gap={16} width={300}>
       <Field minWidth={180}>
         <Field.Label>멀티</Field.Label>
-        <Select options={options} isMulti />
+        <Select options={options} isMulti height={38}/>
       </Field>
       <Field>
         <Field.Label>싱글</Field.Label>
         <Select options={options} ref={ref} openMenuOnFocus />
       </Field>
-      <CustomSelect<Option<string>, true>
-        onChange={(option) => {
-          if (!option) return;
-          option;
-        }}
-        isMulti
-      />
+      <Field>
+        <Field.Label>height</Field.Label>
+        <Select options={options} ref={ref} openMenuOnFocus height={50} />
+      </Field>
     </Box>
   );
 };

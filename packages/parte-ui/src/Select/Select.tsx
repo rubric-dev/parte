@@ -41,7 +41,6 @@ import {
   SelectProps,
 } from "./Select.types";
 import useSelectStyle from "./useSelectStyle";
-
 export const Control = <
   T,
   K extends boolean,
@@ -172,12 +171,7 @@ export const customMenuList = <
     <components.MenuList {...props}>
       {props.children}
       {!!props.options.length && isLoading && (
-        <Box
-          display="flex"
-          alignItems="center"
-          justifyContent="center"
-          height={32}
-        >
+        <Box display="flex" alignItems="center" justifyContent="center">
           <Spinner size={12} />
         </Box>
       )}
@@ -238,6 +232,7 @@ const SelectComponent = <
     styles: customStyles,
     components: customComponents,
     width,
+    height = 40,
     ...selectProps
   } = props;
 
@@ -245,6 +240,7 @@ const SelectComponent = <
     isError,
     customStyles,
     width,
+    height,
   });
 
   const defaultComponents = useMemo(
@@ -300,6 +296,7 @@ const AsyncSelectComponent = <
     styles: customStyles,
     components: customComponents,
     width,
+    height,
     ...selectProps
   } = props;
 
@@ -307,6 +304,7 @@ const AsyncSelectComponent = <
     isError,
     customStyles,
     width,
+    height,
   });
 
   const defaultComponents = useMemo(
