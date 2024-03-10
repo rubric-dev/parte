@@ -1,5 +1,11 @@
 # @parte-ds/ui
 
+## 1.14.16
+
+### Patch Changes
+
+- select minHeight 수정
+
 ## 1.14.15
 
 ### Patch Changes
