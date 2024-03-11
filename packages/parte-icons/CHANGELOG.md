@@ -1,5 +1,11 @@
 # @parte-ds/icons
 
+## 1.8.5
+
+### Patch Changes
+
+- 아이스버그 아이콘 추가
+
 ## 1.8.4
 
 ### Patch Changes
