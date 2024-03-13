@@ -1,5 +1,11 @@
 # @parte-ds/ui
 
+## 1.14.17
+
+### Patch Changes
+
+- N50 컬러 변경
+
 ## 1.14.16
 
 ### Patch Changes

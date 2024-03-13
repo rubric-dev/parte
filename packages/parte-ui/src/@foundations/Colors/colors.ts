@@ -9,7 +9,7 @@ export const COLORS = {
   N200: "#F0F2F5",
   N100: "#F4F6FA",
   N75: "#F9FAFC",
-  N50: "#FAFBFF",
+  N50: "#FBFCFD",
   N0: "#FFFFFF",
   B600: "#204A8F",
   B500: "#2B64BF",
