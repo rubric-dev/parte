@@ -17,31 +17,31 @@ const commonCodeStyle = css`
 export const TYPOGRAPHY = {
   H900: css`
     ${commonBaseTextStyle}
-    font-weight: 600;
+    font-weight: 500;
     font-size: 32px;
     line-height: 40px;
   `,
   H800: css`
     ${commonBaseTextStyle}
-    font-weight: 600;
+    font-weight: 500;
     font-size: 24px;
     line-height: 32px;
   `,
   H700: css`
     ${commonBaseTextStyle}
-    font-weight: 600;
+    font-weight: 500;
     font-size: 20px;
     line-height: 24px;
   `,
   H600: css`
     ${commonBaseTextStyle}
-    font-weight: 600;
+    font-weight: 500;
     font-size: 18px;
     line-height: 24px;
   `,
   H500: css`
     ${commonBaseTextStyle}
-    font-weight: 600;
+    font-weight: 500;
     font-size: 16px;
     line-height: 20px;
   `,
