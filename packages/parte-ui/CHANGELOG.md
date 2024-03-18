@@ -1,5 +1,11 @@
 # @parte-ds/ui
 
+## 1.14.18
+
+### Patch Changes
+
+- dropdown zindex 수정
+
 ## 1.14.17
 
 ### Patch Changes
