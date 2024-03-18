@@ -1,5 +1,11 @@
 # @parte-ds/ui
 
+## 1.14.19
+
+### Patch Changes
+
+- 폰트 weight 수정
+
 ## 1.14.18
 
 ### Patch Changes
