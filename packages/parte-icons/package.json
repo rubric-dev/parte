@@ -1,6 +1,6 @@
 {
   "name": "@parte-ds/icons",
-  "version": "1.8.5",
+  "version": "1.8.6",
   "main": "./dist/index.js",
   "module": "./dist/index.mjs",
   "types": "./dist/index.d.ts",
