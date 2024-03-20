@@ -1,5 +1,11 @@
 # @parte-ds/icons
 
+## 1.8.6
+
+### Patch Changes
+
+- box 아이콘 추가
+
 ## 1.8.5
 
 ### Patch Changes

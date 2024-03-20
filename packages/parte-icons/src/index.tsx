@@ -607,3 +607,4 @@ export { default as EveryUserIcon } from "./Icons/EveryUserIcon";
 export { default as FillEveryUserIcon } from "./Icons/FillEveryUserIcon";
 export { default as UserToUserTransmissionIcon } from "./Icons/UserToUserTransmissionIcon";
 export { default as FillUserToUserTransmissionIcon } from "./Icons/FillUserToUserTransmissionIcon";
+export { default as BoxIcon } from "./Icons/BoxIcon";
