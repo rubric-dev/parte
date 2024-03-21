@@ -1,7 +1,7 @@
 import {
   ActionCrossIcon,
   ActionSearchIcon,
-  InterfaceCaretDownIcon,
+  CaretDownIcon,
 } from "@parte-ds/icons";
 import { TextInput } from "@parte-ds/ui";
 import { Meta, StoryObj } from "@storybook/react";
@@ -72,7 +72,7 @@ export const Disabled: Story = {
     trailingIcon: (
       <div style={{ display: "flex", gap: "8px" }}>
         <ActionCrossIcon size={12} color="N600" />
-        <InterfaceCaretDownIcon size={12} color="N600" />
+        <CaretDownIcon size={12} color="N600" />
       </div>
     ),
     disabled: true,
@@ -89,7 +89,7 @@ export const Error: Story = {
 export const WithTrailingIcon: Story = {
   args: {
     leadingIcon: <ActionSearchIcon size={12} color="N600" />,
-    trailingIcon: <InterfaceCaretDownIcon size={12} color="N600" />,
+    trailingIcon: <CaretDownIcon size={12} color="N600" />,
   },
 };
 
@@ -102,7 +102,7 @@ export const WithManyIcon: Story = {
       // 그런데 사용측에서 직접 8px을 넘겨줘야해요
       <div style={{ display: "flex", gap: "8px" }}>
         <ActionCrossIcon size={12} color="N600" />
-        <InterfaceCaretDownIcon size={12} color="N600" />
+        <CaretDownIcon size={12} color="N600" />
       </div>
     ),
   },

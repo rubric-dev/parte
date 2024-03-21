@@ -18,5 +18,5 @@ function Icon({ size, ...rest }: Pick<IconProps, "style" | "color" | "size">) {
     </svg>
   );
 }
-const InterfaceCaretDownIcon = convertIcon(Icon, "interface-caret-down");
-export default InterfaceCaretDownIcon;
+const CaretDownIcon = convertIcon(Icon, "caret-down");
+export default CaretDownIcon;

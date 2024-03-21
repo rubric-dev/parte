@@ -271,10 +271,6 @@ export { default as InterfaceArrowsHorizontalIcon } from "./Icons/InterfaceArrow
 export { default as InterfaceArrowsVerticalIcon } from "./Icons/InterfaceArrowsVerticalIcon";
 export { default as InterfaceBlockedPersonIcon } from "./Icons/InterfaceBlockedPersonIcon";
 export { default as InterfaceCalendarIcon } from "./Icons/InterfaceCalendarIcon";
-export { default as InterfaceCaretDownIcon } from "./Icons/InterfaceCaretDownIcon";
-export { default as InterfaceCaretLeftIcon } from "./Icons/InterfaceCaretLeftIcon";
-export { default as InterfaceCaretRightIcon } from "./Icons/InterfaceCaretRightIcon";
-export { default as InterfaceCaretUpIcon } from "./Icons/InterfaceCaretUpIcon";
 export { default as InterfaceChevronBackwardIcon } from "./Icons/InterfaceChevronBackwardIcon";
 export { default as InterfaceChevronDownIcon } from "./Icons/InterfaceChevronDownIcon";
 export { default as InterfaceChevronForwardIcon } from "./Icons/InterfaceChevronForwardIcon";
@@ -608,3 +604,7 @@ export { default as FillEveryUserIcon } from "./Icons/FillEveryUserIcon";
 export { default as UserToUserTransmissionIcon } from "./Icons/UserToUserTransmissionIcon";
 export { default as FillUserToUserTransmissionIcon } from "./Icons/FillUserToUserTransmissionIcon";
 export { default as BoxIcon } from "./Icons/BoxIcon";
+export { default as CaretDownIcon } from "./Icons/CaretDownIcon";
+export { default as CaretLeftIcon } from "./Icons/CaretLeftIcon";
+export { default as CaretRightIcon } from "./Icons/CaretRightIcon";
+export { default as CaretUpIcon } from "./Icons/CaretUpIcon";
