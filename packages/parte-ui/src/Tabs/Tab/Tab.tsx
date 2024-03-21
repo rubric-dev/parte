@@ -14,6 +14,7 @@ export const Tab = forwardRef<HTMLDivElement, TabProps>(
       disabled,
       selected,
       size = "medium",
+      gap = 24,
       onClick,
       ...divProps
     } = props;
@@ -24,6 +25,7 @@ export const Tab = forwardRef<HTMLDivElement, TabProps>(
         $variant={variant}
         $direction={direction}
         $size={size}
+        $gap={gap}
         data-selected={selected}
         data-disabled={disabled}
         onClick={(e) => {

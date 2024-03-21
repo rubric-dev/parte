@@ -1,13 +1,16 @@
-import { ActionChatIcon } from "@parte-ds/icons";
+import { ActionChatIcon, LogoutIcon } from "@parte-ds/icons";
 import {
   Box,
   Button,
   Dropdown,
   DropdownList,
+  Headline,
+  Menu,
   Option,
+  Paragraph,
   SelectRow,
 } from "@parte-ds/ui";
-import { useState } from "react";
+import { Fragment, useState } from "react";
 
 const OPTIONS: Option<string>[] = [
   {
@@ -37,18 +40,35 @@ const DropdownTest = () => {
   };
   return (
     <Box display="flex" flexDirection="column" gap={16}>
-      <Dropdown usePortal>
-        <Dropdown.Trigger>
-          <Button>드롭다운</Button>
+      <Dropdown>
+        <Dropdown.Trigger onClick={(e) => e.stopPropagation()}>
+          <Box display="flex">
+            <Button variant="text-secondary" style={{ padding: "8px" }}>
+              <Headline size={400}>회사</Headline>
+            </Button>
+          </Box>
         </Dropdown.Trigger>
         <Dropdown.Menu>
           {({ onClose }) => (
-            <DropdownList
-              closeOnSelect={false}
-              options={OPTIONS}
-              value={selectValue}
-              onSelect={onSelect}
-            />
+            <Fragment>
+              <Menu>
+                {OPTIONS.map((option, index) => (
+                  <Menu.Row
+                    key={index}
+                    onSelect={() => {
+                      onClose?.();
+                    }}
+                  >
+                    <Box display="flex" alignItems="center" gap={12}>
+                      <LogoutIcon color="N700" />
+                      <Paragraph size={200} color="N800">
+                        {option.label}
+                      </Paragraph>
+                    </Box>
+                  </Menu.Row>
+                ))}
+              </Menu>
+            </Fragment>
           )}
         </Dropdown.Menu>
       </Dropdown>

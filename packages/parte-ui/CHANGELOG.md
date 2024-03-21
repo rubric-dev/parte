@@ -1,5 +1,11 @@
 # @parte-ds/ui
 
+## 1.15.1
+
+### Patch Changes
+
+- tab 간격 수정
+
 ## 1.15.0
 
 ### Minor Changes
