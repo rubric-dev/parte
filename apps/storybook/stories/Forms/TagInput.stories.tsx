@@ -1,4 +1,4 @@
-import { ActionCrossIcon, InterfaceCaretDownIcon } from "@parte-ds/icons";
+import { ActionCrossIcon, CaretDownIcon } from "@parte-ds/icons";
 import { TagInput, TagInputProps, TagOption } from "@parte-ds/ui";
 import { Meta, StoryObj } from "@storybook/react";
 import { useState } from "react";
@@ -43,7 +43,7 @@ const Template = ({ ...args }: TagInputProps) => {
             color="N600"
             onClick={() => setValues([])}
           />
-          <InterfaceCaretDownIcon size={12} color="N600" />
+          <CaretDownIcon size={12} color="N600" />
         </div>
       }
       placeholder="Placeholder"

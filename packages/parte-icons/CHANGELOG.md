@@ -1,5 +1,11 @@
 # @parte-ds/icons
 
+## 1.9.0
+
+### Minor Changes
+
+- caret 아이콘 이름 수정
+
 ## 1.8.6
 
 ### Patch Changes

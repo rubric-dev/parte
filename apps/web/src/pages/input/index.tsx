@@ -1,4 +1,4 @@
-import { ActionSearchIcon, InterfaceCaretDownIcon } from "@parte-ds/icons";
+import { ActionSearchIcon, CaretDownIcon } from "@parte-ds/icons";
 import { Box, TextInput, Field } from "@parte-ds/ui";
 import { useState } from "react";
 import DatePicker from "react-datepicker";
@@ -44,13 +44,13 @@ const Input = () => {
         width={260}
         placeholder="width icon"
         leadingIcon={<ActionSearchIcon size={12} color="N600" />}
-        trailingIcon={<InterfaceCaretDownIcon size={12} color="N600" />}
+        trailingIcon={<CaretDownIcon size={12} color="N600" />}
       />
       <TextInput
         width={260}
         placeholder="width icon and disabled"
         leadingIcon={<ActionSearchIcon size={12} color="N600" />}
-        trailingIcon={<InterfaceCaretDownIcon size={12} color="N600" />}
+        trailingIcon={<CaretDownIcon size={12} color="N600" />}
         disabled
       />
       <DatePicker

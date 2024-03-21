@@ -1,5 +1,11 @@
 # @parte-ds/ui
 
+## 1.15.0
+
+### Minor Changes
+
+- caret 아이콘 이름 수정
+
 ## 1.14.19
 
 ### Patch Changes

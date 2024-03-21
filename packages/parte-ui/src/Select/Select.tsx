@@ -29,7 +29,7 @@ import {
   ActionDeleteIcon,
   ActionSearchIcon,
   ActionSmallCrossIcon,
-  InterfaceCaretDownIcon,
+  CaretDownIcon,
 } from "../../../parte-icons/src";
 import { Paragraph } from "../@foundations/Typography";
 import { Option } from "../Dropdown";
@@ -130,7 +130,7 @@ export const DropdownIndicator = <
 }: DropdownIndicatorProps<T, K, G>) => {
   return (
     <components.DropdownIndicator {...props}>
-      <InterfaceCaretDownIcon size={12} />
+      <CaretDownIcon size={12} />
     </components.DropdownIndicator>
   );
 };

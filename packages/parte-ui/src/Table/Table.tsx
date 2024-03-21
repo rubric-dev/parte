@@ -4,10 +4,7 @@ import { Dropdown } from "../Dropdown";
 import { Box } from "../Layout";
 import { BoxProps } from "../Layout/Box.types";
 import { Menu } from "../Menu";
-import {
-  ActionFilterIcon,
-  InterfaceCaretDownIcon,
-} from "../../../parte-icons/src";
+import { ActionFilterIcon, CaretDownIcon } from "../../../parte-icons/src";
 import * as Styled from "./Table.styled";
 import {
   BodyProps,
@@ -164,7 +161,7 @@ export const FilterHeader = <T, K>({
           style={{ cursor: "pointer" }}
         >
           {children ?? columnId}
-          <InterfaceCaretDownIcon size={16} />
+          <CaretDownIcon size={16} />
         </Box>
       </Dropdown.Trigger>
       <Dropdown.Menu>

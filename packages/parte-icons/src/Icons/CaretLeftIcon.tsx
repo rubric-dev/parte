@@ -12,11 +12,11 @@ function Icon({ size, ...rest }: Pick<IconProps, "style" | "color" | "size">) {
       <path
         fill="currentcolor"
         fillRule="evenodd"
-        d="M11.87 9.17s.01 0 0 0l-3.5-4A.498.498 0 0 0 8 5c-.15 0-.28.07-.37.17l-3.5 4a.495.495 0 0 0 .37.83h7a.495.495 0 0 0 .37-.83Z"
+        d="M9.5 4c-.13 0-.24.05-.33.13l-4 3.5c-.1.09-.17.22-.17.37s.07.28.17.37l4 3.5a.495.495 0 0 0 .83-.37v-7c0-.28-.22-.5-.5-.5Z"
         clipRule="evenodd"
       />
     </svg>
   );
 }
-const InterfaceCaretUpIcon = convertIcon(Icon, "interface-caret-up");
-export default InterfaceCaretUpIcon;
+const CaretLeftIcon = convertIcon(Icon, "caret-left");
+export default CaretLeftIcon;
