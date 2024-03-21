@@ -12,6 +12,7 @@ export type TabProps = HTMLAttributes<HTMLDivElement> & {
   disabled?: boolean;
   direction?: TabDirection;
   size?: TabSize;
+  gap?: number;
 };
 
 export type TabStyledProps = {
@@ -20,4 +21,5 @@ export type TabStyledProps = {
   $size?: TabSize;
   $selected?: boolean;
   $disabled?: boolean;
+  $gap?: number;
 };

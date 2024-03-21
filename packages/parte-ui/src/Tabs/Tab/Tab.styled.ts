@@ -140,7 +140,7 @@ export const tabSecondaryStyle = css<TabStyledProps>`
 `;
 
 export const Tab = styled.div<TabStyledProps>`
-  ${({ theme, $direction }) => css`
+  ${({ theme, $direction, $gap }) => css`
     box-sizing: border-box;
     display: ${$direction === "horizontal" ? "inline-flex" : "flex"};
     width: ${$direction === "horizontal" ? "auto" : "100%"};
@@ -151,7 +151,7 @@ export const Tab = styled.div<TabStyledProps>`
     gap: ${`${theme.spacing.spacing12}px`};
     background-color: transparent;
     border: none;
-    margin-right: 20px;
+    margin-right: ${`${$gap}px`};
     outline: none;
     &:focus {
       & > div:first-child {
