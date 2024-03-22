@@ -7,4 +7,5 @@ export type MenuRowProps = {
   selected?: boolean;
   disabled?: boolean;
   leadingIcon?: React.ReactNode;
+  width?: number;
 };

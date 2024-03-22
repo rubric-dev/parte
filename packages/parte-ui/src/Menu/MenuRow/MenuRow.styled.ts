@@ -7,6 +7,7 @@ type ContainerProps = {
   hover: boolean;
   selected?: boolean;
   disabled?: boolean;
+  width?: number;
 };
 
 const sideBarStyle = css`
@@ -23,12 +24,12 @@ const sideBarStyle = css`
 `;
 
 export const Container = styled(Box)<ContainerProps>`
-  ${({ theme, hover, selected, type, disabled }) => {
+  ${({ theme, hover, selected, type, disabled, width }) => {
     const isTitle = type === "title";
     return css`
       box-sizing: border-box;
       height: ${isTitle ? "32px" : "40px"};
-      min-width: 208px;
+      min-width: ${width ? `${width}px` : "180px"};
       width: fit-content;
       background-color: ${theme.colorBackgroundMenu};
       display: flex;
