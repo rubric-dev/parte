@@ -12,12 +12,14 @@ export function MenuRow(props: MenuRowProps) {
     children,
     selected,
     disabled,
+    width = 180,
   } = props;
 
   return (
     <Styled.Container
       type={type}
       hover={hover}
+      width={width}
       onMouseEnter={() => setHover(true)}
       onMouseLeave={() => setHover(false)}
       onClick={(e: MouseEvent) => {
