@@ -3,7 +3,6 @@ export const BADGE_COLOR_OPTIONS: BadgeColors[] = [
   "AUTO",
   "BLUE",
   "GREEN",
-  "GREY",
   "NEUTRAL",
   "ORANGE",
   "PINK",
