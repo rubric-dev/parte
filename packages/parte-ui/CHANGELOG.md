@@ -1,5 +1,11 @@
 # @parte-ds/ui
 
+## 1.15.3
+
+### Patch Changes
+
+- 드롭다운 메뉴 스타일 수정
+
 ## 1.15.2
 
 ### Patch Changes
