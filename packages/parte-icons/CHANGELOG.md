@@ -1,5 +1,11 @@
 # @parte-ds/icons
 
+## 1.9.3
+
+### Patch Changes
+
+- 아이콘 index 수정
+
 ## 1.9.2
 
 ### Patch Changes
