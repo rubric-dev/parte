@@ -1,5 +1,11 @@
 # @parte-ds/icons
 
+## 1.9.1
+
+### Patch Changes
+
+- time 아이콘 추가
+
 ## 1.9.0
 
 ### Minor Changes
