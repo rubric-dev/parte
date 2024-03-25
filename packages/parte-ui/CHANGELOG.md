@@ -1,5 +1,11 @@
 # @parte-ds/ui
 
+## 1.15.4
+
+### Patch Changes
+
+- 배지 컬러 수정
+
 ## 1.15.3
 
 ### Patch Changes
