@@ -6,7 +6,11 @@ export const Badge = styled.span<BadgeStyleProps>`
   ${({ $badgeColor, $type, $size, theme }) => css`
     display: inline-flex;
     align-items: center;
-    border-radius: ${$type === "badge" ? "4px" : "8px"};
+    border-radius: ${$type === "badge"
+      ? "4px"
+      : $size === "medium"
+      ? "11px"
+      : "8px"};
     ${getColors($badgeColor)}
     ${sizeHandler($size)};
   `}
