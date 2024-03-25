@@ -1,5 +1,11 @@
 # @parte-ds/ui
 
+## 1.15.5
+
+### Patch Changes
+
+- badge border radius 수정
+
 ## 1.15.4
 
 ### Patch Changes
