@@ -608,3 +608,4 @@ export { default as CaretDownIcon } from "./Icons/CaretDownIcon";
 export { default as CaretLeftIcon } from "./Icons/CaretLeftIcon";
 export { default as CaretRightIcon } from "./Icons/CaretRightIcon";
 export { default as CaretUpIcon } from "./Icons/CaretUpIcon";
+export { default as TimeIcon } from "./Icons/TimeIcon";

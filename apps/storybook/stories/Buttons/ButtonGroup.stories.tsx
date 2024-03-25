@@ -44,7 +44,7 @@ export const Default: Story = {
             trailingNode={
               <Badge
                 text="6"
-                badgeColor={disabled ? "GREY" : "TEAL"}
+                badgeColor={disabled ? "NEUTRAL" : "TEAL"}
                 type="pills"
               />
             }
