@@ -7,6 +7,7 @@ import {
 import * as Styled from "./SelectRow.styled";
 import { forwardRef, useEffect, useRef } from "react";
 import { ActionSearchIcon } from "../../../../parte-icons/src";
+import { Checkbox } from "../../Checkbox";
 
 const SearchRow = forwardRef<HTMLDivElement, SelectRowSearch>((props, ref) => {
   const { inputValue, onChange } = props;
@@ -26,7 +27,12 @@ const SearchRow = forwardRef<HTMLDivElement, SelectRowSearch>((props, ref) => {
 
 const TitleRow = forwardRef<HTMLDivElement, SelectRowTitle>((props, ref) => {
   return (
-    <Styled.SelectRow $variant="title" ref={ref} role="selectItemTitle">
+    <Styled.SelectRow
+      $variant="title"
+      ref={ref}
+      role="selectItemTitle"
+      marginTop={props.isSearchable ? 12 : 8}
+    >
       {props.icon}
       {props.children}
     </Styled.SelectRow>
@@ -43,11 +49,11 @@ const ElementRow = forwardRef<HTMLDivElement, SelectRowElement>(
       onKeyDown,
       icon,
       children,
+      isMulti = false,
     },
     ref
   ) => {
     const rowRef = useRef<HTMLDivElement>(null);
-
     useEffect(() => {
       if (rowRef.current && ref !== null) {
         if (typeof ref === "function") {
@@ -62,7 +68,6 @@ const ElementRow = forwardRef<HTMLDivElement, SelectRowElement>(
       if (selected && rowRef.current && shouldFocusWhenSelected)
         rowRef.current.focus();
     }, [selected, shouldFocusWhenSelected]);
-
     return (
       <Styled.SelectRow
         $variant="element"
@@ -73,7 +78,9 @@ const ElementRow = forwardRef<HTMLDivElement, SelectRowElement>(
         data-selected={selected}
         onClick={onClick}
         onKeyDown={onKeyDown}
+        $isMulti={isMulti}
       >
+        {isMulti && <Checkbox checked={selected} onClick={onClick} />}
         {icon}
         {children}
       </Styled.SelectRow>
@@ -89,7 +96,6 @@ export const SelectRow = forwardRef<HTMLDivElement, SelectRowProps>(
     if (props.variant === "title") {
       return <TitleRow ref={ref} {...props} />;
     }
-
     return <ElementRow ref={ref} {...props} />;
   }
 );

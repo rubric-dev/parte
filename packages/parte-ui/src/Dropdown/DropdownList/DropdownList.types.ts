@@ -19,6 +19,7 @@ export type DropdownListBaseProps<T> = {
   noOptionsText?: string;
   isMulti?: boolean;
   closeOnSelect?: boolean;
+  title?: string;
 };
 
 export type DropdownListMultiProps<T> = Omit<

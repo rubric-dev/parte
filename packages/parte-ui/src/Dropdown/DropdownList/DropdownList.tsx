@@ -35,6 +35,7 @@ export const DropdownList = <T,>({
   noOptionsText,
   isMulti,
   closeOnSelect,
+  title,
 }: DropdownListProps<T>) => {
   const [inputValue, setInputValue] = useState("");
   const menuRef = useRef<HTMLDivElement>(null);
@@ -152,7 +153,12 @@ export const DropdownList = <T,>({
   }, [filteredOptions]);
 
   return (
-    <Styled.List ref={menuRef} display="flex" flexDirection="column">
+    <Styled.List
+      ref={menuRef}
+      display="flex"
+      flexDirection="column"
+      $isFirst={!isSearchable && !title}
+    >
       {isSearchable && (
         <SelectRow
           variant="search"
@@ -161,6 +167,11 @@ export const DropdownList = <T,>({
             setInputValue(e.target.value);
           }}
         />
+      )}
+      {title && (
+        <SelectRow variant="title" isSearchable={isSearchable}>
+          {title}
+        </SelectRow>
       )}
       {noOption && (
         <Styled.NoOption
@@ -181,6 +192,8 @@ export const DropdownList = <T,>({
                 .filter(({ label }) => label.includes(inputValue))
                 .map((groupOption) => (
                   <SelectRow
+                    isMulti={isMulti}
+                    isSearchable={isSearchable}
                     key={groupOption.label}
                     onClick={() => onSelectValue(groupOption)}
                     selected={isSelected(groupOption, value)}
@@ -198,6 +211,8 @@ export const DropdownList = <T,>({
             .filter(({ label }) => label.includes(inputValue))
             .map((option, index) => (
               <SelectRow
+                isMulti={isMulti}
+                isSearchable={isSearchable}
                 key={index}
                 onClick={() => onSelectValue(option)}
                 selected={isSelected(option, value)}
