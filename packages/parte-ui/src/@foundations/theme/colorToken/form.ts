@@ -1,5 +1,5 @@
 const formToken = {
-  colorTextPlaceholderDefault: "N600",
+  colorTextPlaceholderDefault: "N500",
   colorTextPlaceholderHover: "N700",
   colorTextPlaceholderFocused: "N600",
   colorTextPlaceholderDisabled: "N600",
