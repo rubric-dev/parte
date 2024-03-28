@@ -11,6 +11,7 @@ import {
   ButtonGroup,
   Card,
   Checkbox,
+  DialogModal,
   IconButton,
   LinkButton,
   Link as ParteLink,
@@ -117,9 +118,7 @@ export default function Home() {
             오른쪽 버튼
           </ButtonGroup.Option>
         </ButtonGroup>
-        <Card width={300} height={200} type="default">
-          qw
-        </Card>
+        <DialogModal isShown>sd</DialogModal>
       </Box>
     </>
   );
