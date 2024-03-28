@@ -40,7 +40,7 @@ export const DialogModal = memo(function DialogModal({
   sideOffset = "16px",
   topOffset = "12vmin",
   children,
-  width = 560,
+  width = 464,
   ...dialogProps
 }: DialogModalProps) {
   const sideOffsetWithUnit = Number.isInteger(sideOffset)

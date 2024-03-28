@@ -24,8 +24,8 @@ export const Dialog = memo(
     confirmVariant = "fill-primary",
     isConfirmDisabled = false,
     isConfirmLoading = false,
-    minHeightContent = 80,
-    width = 600,
+    minHeightContent = 0,
+    width = 464,
     elevation = 2,
     state,
     overrideStyles,
@@ -99,7 +99,7 @@ export const Dialog = memo(
               {/* Cancel should be first to make sure focus gets on it first. */}
               {hasCancel && (
                 <Button
-                  variant="outline-secondary"
+                  variant="fill-secondary"
                   tabIndex={0}
                   onClick={handleCancel}
                   size="large"

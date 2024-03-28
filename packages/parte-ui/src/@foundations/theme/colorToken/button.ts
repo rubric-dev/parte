@@ -15,7 +15,7 @@ const buttonToken = {
   colorBackgroundButtonFillSecondaryActive: "N300",
   colorBackgroundButtonFillSecondaryFocused: "N100",
   colorBackgroundButtonFillSecondaryDisabled: "N100",
-  colorTextButtonFillSecondary: "N600",
+  colorTextButtonFillSecondary: "N700",
   colorTextButtonFillSecondaryHover: "N800",
   colorTextButtonFillSecondaryActive: "N800",
   colorTextButtonFillSecondaryFocused: "N800",

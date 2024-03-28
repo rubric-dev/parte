@@ -1,5 +1,11 @@
 # @parte-ds/ui
 
+## 1.16.1
+
+### Patch Changes
+
+- dialog modal 수정
+
 ## 1.16.0
 
 ### Minor Changes
