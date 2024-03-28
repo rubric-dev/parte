@@ -98,6 +98,7 @@ const DropdownTest = () => {
           </Dropdown.Trigger>
           <Dropdown.Menu>
             <DropdownList
+              width={120}
               isMulti
               title="타이틀"
               options={OPTIONS}
