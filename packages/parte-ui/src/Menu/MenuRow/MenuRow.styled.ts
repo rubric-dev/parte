@@ -29,12 +29,13 @@ export const Container = styled(Box)<ContainerProps>`
     return css`
       box-sizing: border-box;
       height: ${isTitle ? "32px" : "40px"};
-      min-width: ${width ? `${width}px` : "180px"};
+      min-width: ${width ? `${width + 16}px` : "240px"};
       width: fit-content;
       background-color: ${theme.colorBackgroundMenu};
       display: flex;
       align-items: center;
       padding: ${`0 ${theme.spacing.spacing16}px`};
+      margin: 0 8px;
       ${isTitle ? theme.typography.C100 : theme.typography.P200}
       color: ${isTitle ? theme.colors.N700 : theme.colors.N800};
       cursor: ${isTitle || disabled ? "default" : "pointer"};
@@ -43,14 +44,17 @@ export const Container = styled(Box)<ContainerProps>`
       ${hover &&
       !isTitle &&
       css`
-        background-color: ${theme.colorBackgroundMenuHover};
+        background-color: ${theme.colors.N100};
+        border-radius: 8px;
       `}
       ${selected &&
       !isTitle &&
       css`
-        ${sideBarStyle}
-        background-color: ${theme.colorBackgroundMenuSelected};
-        color: ${theme.colorTextMenuRowSelected};
+        border-radius: 8px;
+        p,
+        svg {
+          color: ${theme.colors.B400};
+        }
       `}
       ${disabled &&
       !isTitle &&

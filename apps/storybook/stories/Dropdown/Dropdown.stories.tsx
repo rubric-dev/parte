@@ -16,17 +16,18 @@ const OPTIONS: Option<string>[] = [
   {
     label: "label1",
     value: "value1",
+    icon: <ActionChatIcon size={20} />,
   },
   {
     label: "label2",
     value: "value2",
     disabled: true,
-    icon: <ActionChatIcon size={12} />,
+    icon: <ActionChatIcon size={20} />,
   },
   {
     label: "label3",
     value: "value3",
-    icon: <ActionChatIcon size={12} />,
+    icon: <ActionChatIcon size={20} />,
   },
 ];
 const GROUP_OPTIONS: GroupOption<string>[] = [
@@ -41,12 +42,12 @@ const GROUP_OPTIONS: GroupOption<string>[] = [
         label: "label1-2",
         value: "value1-2",
         disabled: true,
-        icon: <ActionChatIcon size={12} />,
+        icon: <ActionChatIcon size={20} />,
       },
       {
         label: "label1-3",
         value: "value1-3",
-        icon: <ActionChatIcon size={12} />,
+        icon: <ActionChatIcon size={20} />,
       },
     ],
   },
@@ -56,17 +57,18 @@ const GROUP_OPTIONS: GroupOption<string>[] = [
       {
         label: "label2-1",
         value: "value2-1",
+        icon: <ActionChatIcon size={20} />,
       },
       {
         label: "label2-2",
         value: "value2-2",
         disabled: true,
-        icon: <ActionChatIcon size={12} />,
+        icon: <ActionChatIcon size={20} />,
       },
       {
         label: "label2-3",
         value: "value2-3",
-        icon: <ActionChatIcon size={12} />,
+        icon: <ActionChatIcon size={20} />,
       },
     ],
   },
@@ -81,12 +83,12 @@ const GROUP_OPTIONS: GroupOption<string>[] = [
         label: "label3-2",
         value: "value3-2",
         disabled: true,
-        icon: <ActionChatIcon size={12} />,
+        icon: <ActionChatIcon size={20} />,
       },
       {
         label: "label3-3",
         value: "value3-3",
-        icon: <ActionChatIcon size={12} />,
+        icon: <ActionChatIcon size={20} />,
       },
     ],
   },

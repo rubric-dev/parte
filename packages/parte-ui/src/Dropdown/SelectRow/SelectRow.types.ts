@@ -15,6 +15,7 @@ export type SelectRowElement = PropsWithChildren<{
   onClick?: () => void;
   onKeyDown?: (e: KeyboardEvent<HTMLDivElement>) => void;
   shouldFocusWhenSelected?: boolean;
+  isMulti?: boolean;
 }>;
 export type SelectRowSearch = {
   variant: "search";
@@ -26,8 +27,8 @@ export type SelectRowSearch = {
 export type SelectRowTitle = PropsWithChildren<{
   variant: "title";
   icon?: ReactNode;
+  isSearchable?: boolean;
 }>;
-
 export type SelectRowProps =
   | SelectRowElement
   | SelectRowSearch

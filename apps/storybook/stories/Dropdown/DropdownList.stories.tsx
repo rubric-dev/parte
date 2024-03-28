@@ -42,10 +42,9 @@ const createOption = (groupNames: string[]) => {
 export const Default: Story = {
   args: {
     options: OPTION,
-    value: {
-      label: "label1-2",
-      value: "value1-2",
-    },
+    isSearchable: true,
+    isMulti: true,
+    title: "타이틀",
   },
 };
 
@@ -53,5 +52,6 @@ export const GroupOptions: Story = {
   args: {
     options: createOption(["tjthfa", "asd", "rff"]),
     isSearchable: true,
+    isMulti: true,
   },
 };
