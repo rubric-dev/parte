@@ -1,5 +1,11 @@
 # @parte-ds/ui
 
+## 1.15.6
+
+### Patch Changes
+
+- 인풋 placeholder 컬러 수정
+
 ## 1.15.5
 
 ### Patch Changes
