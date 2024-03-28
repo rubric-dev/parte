@@ -113,13 +113,13 @@ export const buttonStyles = css<StyledButtonProps>`
       background-color: ${theme.colorBackgroundButtonTertiary};
       color: ${theme.colorTextButtonTertiary};
       svg {
-        color: ${theme.colors.B300};
+        color: ${theme.colors.B400};
       }
       &:hover {
         background-color: ${theme.colorBackgroundButtonTertiaryHover};
         color: ${theme.colorTextButtonTertiaryHover};
         svg {
-          color: ${theme.colors.B400};
+          color: ${theme.colors.B500};
         }
       }
       &:focus {
@@ -127,14 +127,14 @@ export const buttonStyles = css<StyledButtonProps>`
         color: ${theme.colorTextButtonTertiaryFocused};
         ${theme.commonStyles.outline}
         svg {
-          color: ${theme.colors.B400};
+          color: ${theme.colors.B500};
         }
       }
       &:active {
         background-color: ${theme.colorBackgroundButtonTertiaryActive};
         color: ${theme.colorTextButtonTertiaryActive};
         svg {
-          color: ${theme.colors.B400};
+          color: ${theme.colors.B500};
         }
       }
       &:disabled {
