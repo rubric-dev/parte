@@ -16,6 +16,7 @@ export * from "./DialogModal";
 export * from "./Dropdown";
 export * from "./Field";
 export * from "./FilePicker";
+export * from "./FilterButton";
 export * from "./IconButton";
 export * from "./Layout";
 export * from "./Link";

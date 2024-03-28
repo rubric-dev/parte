@@ -1,5 +1,11 @@
 # @parte-ds/ui
 
+## 1.16.0
+
+### Minor Changes
+
+- fillterButton 추가
+
 ## 1.15.6
 
 ### Patch Changes
