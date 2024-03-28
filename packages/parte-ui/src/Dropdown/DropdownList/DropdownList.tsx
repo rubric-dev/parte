@@ -36,6 +36,7 @@ export const DropdownList = <T,>({
   isMulti,
   closeOnSelect,
   title,
+  width = 240,
 }: DropdownListProps<T>) => {
   const [inputValue, setInputValue] = useState("");
   const menuRef = useRef<HTMLDivElement>(null);
@@ -158,6 +159,7 @@ export const DropdownList = <T,>({
       display="flex"
       flexDirection="column"
       $isFirst={!isSearchable && !title}
+      width={width}
     >
       {isSearchable && (
         <SelectRow

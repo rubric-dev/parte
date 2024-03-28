@@ -1,5 +1,11 @@
 # @parte-ds/ui
 
+## 1.16.2
+
+### Patch Changes
+
+- dropdownlist width 받을 수 있게 수정
+
 ## 1.16.1
 
 ### Patch Changes
