@@ -88,7 +88,7 @@ export const RightIconContainer = styled.div<{ $disabled?: boolean }>`
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-right: ${theme.spacing.spacing10}px;
+    margin-right: ${theme.spacing.spacing12}px;
     svg {
       ${$disabled &&
       css`

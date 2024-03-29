@@ -1,5 +1,11 @@
 # @parte-ds/ui
 
+## 1.16.4
+
+### Patch Changes
+
+- 텍스트 인풋 trailingIcon margin 수정
+
 ## 1.16.3
 
 ### Patch Changes
