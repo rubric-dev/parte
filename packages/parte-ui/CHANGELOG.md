@@ -1,5 +1,11 @@
 # @parte-ds/ui
 
+## 1.16.3
+
+### Patch Changes
+
+- 드롭다운 수정
+
 ## 1.16.2
 
 ### Patch Changes

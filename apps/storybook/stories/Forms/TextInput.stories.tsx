@@ -3,8 +3,9 @@ import {
   ActionSearchIcon,
   CaretDownIcon,
 } from "@parte-ds/icons";
-import { TextInput } from "@parte-ds/ui";
+import { Box, Button, Dropdown, DropdownList, TextInput } from "@parte-ds/ui";
 import { Meta, StoryObj } from "@storybook/react";
+import { Fragment } from "react";
 
 const TextInputStory: Meta = {
   title: "Components/Forms/TextInput",
@@ -105,5 +106,11 @@ export const WithManyIcon: Story = {
         <CaretDownIcon size={12} color="N600" />
       </div>
     ),
+  },
+};
+export const Select: Story = {
+  args: {
+    readOnly: true,
+    trailingIcon: <CaretDownIcon size={12} color="N600" />,
   },
 };

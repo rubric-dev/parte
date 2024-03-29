@@ -5,7 +5,6 @@ import { SelectRowProps, SelectRowType } from "./SelectRow.types";
 const commonSelectRowStyle = css`
   position: relative;
   align-items: center;
-  min-width: 240px;
   min-height: 32px;
   outline: none;
   user-select: none;
