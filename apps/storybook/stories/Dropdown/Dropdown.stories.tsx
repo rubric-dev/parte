@@ -1,4 +1,4 @@
-import { ActionChatIcon } from "@parte-ds/icons";
+import { ActionChatIcon, CaretDownIcon } from "@parte-ds/icons";
 import {
   Box,
   Button,
@@ -7,6 +7,7 @@ import {
   DropdownProps,
   GroupOption,
   Option,
+  TextInput,
   Toggle,
 } from "@parte-ds/ui";
 import { Meta, StoryObj } from "@storybook/react";
@@ -241,6 +242,50 @@ const MultiTemplate = ({ ...args }) => {
   );
 };
 
+const SelectTemplate = ({ ...args }) => {
+  const [selectValue, setSelectValue] = useState<Option<string>>({
+    label: "label3",
+    value: "value3",
+  });
+
+  const onSelect = (option: Option<string>) => {
+    setSelectValue(option);
+    alert(option.label);
+  };
+  return (
+    <Box
+      width="300px"
+      minHeight={300}
+      display="flex"
+      flexDirection="column"
+      padding={30}
+      style={{
+        overflowY: "auto",
+      }}
+    >
+      <Dropdown {...args}>
+        <Dropdown.Trigger>
+          <TextInput
+            width={240}
+            readOnly
+            value={selectValue.label}
+            trailingIcon={<CaretDownIcon size={12} color="N600" />}
+            textInputSize="large"
+            style={{ cursor: "pointer" }}
+          />
+        </Dropdown.Trigger>
+        <Dropdown.Menu>
+          <DropdownList
+            options={OPTIONS}
+            value={selectValue}
+            onSelect={onSelect}
+          />
+        </Dropdown.Menu>
+      </Dropdown>
+    </Box>
+  );
+};
+
 export const Default: Story = {
   render: Template,
   args: {
@@ -254,4 +299,7 @@ export const Grouped: Story = {
 
 export const MultiSelect: Story = {
   render: MultiTemplate,
+};
+export const Select: Story = {
+  render: SelectTemplate,
 };
