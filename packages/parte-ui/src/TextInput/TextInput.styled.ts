@@ -7,9 +7,8 @@ export const Container = styled.div<{
   $width?: string | number;
   $variant?: TextInputVariant;
   $textInputSize: TextInputSize;
-  $isSelect?: boolean;
 }>`
-  ${({ theme, $width, $variant, $textInputSize, $isSelect }) => css`
+  ${({ theme, $width, $variant, $textInputSize }) => css`
     box-sizing: border-box;
     display: inline-flex;
     align-items: center;
@@ -66,14 +65,14 @@ export const Container = styled.div<{
           border: 1px solid ${theme.colors.R400};
         }
       }
-    `}
-   ${$variant === "select" &&
+    `} 
+    ${$variant === "select" &&
     css`
       border: 1px solid ${theme.colorBorderDefault};
       ${getSizeStyle($width, "width")};
       ${getHeight($textInputSize)}
       &:has(input:hover) {
-        border: 1px solid ${theme.colorBorderHover};
+        border: 1px solid ${theme.colors.N600};
         background: ${theme.colorBackgroundHover};
       }
       &:has(input:focus) {
@@ -191,8 +190,7 @@ export const Input = styled.input<{
       &[type="number"][data-show-span-button="false"] {
         -moz-appearance: textfield;
       }
-    `}
-    ${$variant === "ghost-text" &&
+    `} ${$variant === "ghost-text" &&
     css`
       margin: 0;
       border: none;
@@ -245,9 +243,9 @@ export const Input = styled.input<{
       &[type="number"][data-show-span-button="false"] {
         -moz-appearance: textfield;
       }
-    `} 
-    ${$variant === "select" &&
+    `} ${$variant === "select" &&
     css`
+      cursor: pointer;
       outline: none;
       border: none;
       box-sizing: border-box;
@@ -279,9 +277,7 @@ export const Input = styled.input<{
           color: ${theme.colorTextPlaceholderFocused};
         }
       }
-      &:read-only {
-        cursor: pointer;
-      }
+
       &:disabled {
         color: ${theme.colorTextDisabled};
         &::placeholder {
