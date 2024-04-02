@@ -24,7 +24,7 @@ export const Dialog = memo(
     confirmVariant = "fill-primary",
     isConfirmDisabled = false,
     isConfirmLoading = false,
-    minHeightContent = 0,
+    minHeightContent,
     width = 464,
     elevation = 2,
     state,
@@ -123,6 +123,10 @@ export const Dialog = memo(
         </Styled.Footer>
       );
     };
+
+    const minHeightUnit = Number.isInteger(minHeightContent)
+      ? `${minHeightContent}px`
+      : minHeightContent;
     return (
       <Styled.DialogContainer
         role="dialog"
@@ -136,10 +140,9 @@ export const Dialog = memo(
         `}
       >
         {renderHeader()}
-
         <Styled.Content
           overrideStyles={css`
-            min-height: ${minHeightContent}px;
+            min-height: ${minHeightUnit};
           `}
         >
           {renderChildren()}

@@ -1,5 +1,11 @@
 # @parte-ds/ui
 
+## 1.17.2
+
+### Patch Changes
+
+- dialog modal fullHeight props 추가
+
 ## 1.17.1
 
 ### Patch Changes

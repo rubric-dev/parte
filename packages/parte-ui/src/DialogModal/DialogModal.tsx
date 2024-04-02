@@ -41,6 +41,7 @@ export const DialogModal = memo(function DialogModal({
   topOffset = "12vmin",
   children,
   width = 464,
+  fullHeight,
   ...dialogProps
 }: DialogModalProps) {
   const sideOffsetWithUnit = Number.isInteger(sideOffset)
@@ -52,7 +53,7 @@ export const DialogModal = memo(function DialogModal({
     ? `${topOffset}px`
     : topOffset;
   const maxHeight = `calc(100% - ${topOffsetWithUnit} * 2)`;
-
+  const minHeight = fullHeight ? "100vh" : 0;
   return (
     <Overlay
       isShown={isShown}
@@ -65,6 +66,7 @@ export const DialogModal = memo(function DialogModal({
     >
       {({ close, state }) => (
         <Dialog
+          minHeightContent={minHeight}
           close={close}
           width={width}
           {...dialogProps}
@@ -72,6 +74,7 @@ export const DialogModal = memo(function DialogModal({
           state={state}
           overrideStyles={css`
             width: ${width}px;
+            height: ${fullHeight ? "100%" : "fit-content"};
             max-width: ${maxWidth};
             max-height: ${maxHeight};
             margin: ${topOffsetWithUnit} ${sideOffsetWithUnit};
