@@ -1,5 +1,11 @@
 # @parte-ds/ui
 
+## 1.17.4
+
+### Patch Changes
+
+- dropdownList autoFocus 추가
+
 ## 1.17.3
 
 ### Patch Changes
