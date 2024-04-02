@@ -4,7 +4,9 @@
 
 ### Minor Changes
 
-- Textinput select 타입 추가
+## 1.16.4
+
+### Patch Changes
 
 ## 1.16.3
 
