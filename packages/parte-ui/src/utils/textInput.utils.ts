@@ -22,7 +22,7 @@ export const sizeHandler = (
   variant?: TextInputVariant,
   textInputSize?: TextInputSize
 ) => {
-  if (variant === "text")
+  if (variant === "text" || variant === "select")
     switch (textInputSize) {
       case "medium":
         return css`

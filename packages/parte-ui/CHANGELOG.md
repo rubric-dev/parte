@@ -1,5 +1,11 @@
 # @parte-ds/ui
 
+## 1.17.0
+
+### Minor Changes
+
+- Textinput에 select 타입 추가
+
 ## 1.16.3
 
 ### Patch Changes

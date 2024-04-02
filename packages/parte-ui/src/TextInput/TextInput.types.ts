@@ -1,7 +1,7 @@
 import React, { InputHTMLAttributes } from "react";
 
 export type TextInputSize = "medium" | "large" | "x-large";
-export type TextInputVariant = "text" | "ghost-text";
+export type TextInputVariant = "text" | "ghost-text" | "select";
 
 export type TextInputProps = InputHTMLAttributes<HTMLInputElement> & {
   leadingIcon?: React.ReactNode;

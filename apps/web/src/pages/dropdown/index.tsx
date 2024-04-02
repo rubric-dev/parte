@@ -9,6 +9,7 @@ import {
   Option,
   Paragraph,
   SelectRow,
+  TextInput,
 } from "@parte-ds/ui";
 import { Fragment, useState } from "react";
 
@@ -88,13 +89,15 @@ const DropdownTest = () => {
         {/* <DropdownList options={OPTIONS} /> */}
       </Box>
       <Box display="flex" flexDirection="column" gap={16}>
-        <Dropdown>
+        <Dropdown offset={2}>
           <Dropdown.Trigger onClick={(e) => e.stopPropagation()}>
-            <Box display="flex">
-              <Button variant="text-secondary" style={{ padding: "8px" }}>
-                <Headline size={400}>회사</Headline>
-              </Button>
-            </Box>
+            <TextInput
+              value={selectValue.label}
+              readOnly
+              width={120}
+              variant="select"
+              textInputSize="large"
+            />
           </Dropdown.Trigger>
           <Dropdown.Menu>
             <DropdownList
