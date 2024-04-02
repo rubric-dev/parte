@@ -102,24 +102,15 @@ const DropdownTest = () => {
           </Dropdown.Trigger>
           <Dropdown.Menu>
             <DropdownList
+              autoFocus={false}
               width={120}
-              isMulti
+              isMulti={false}
               title="타이틀"
               options={OPTIONS}
               onSelect={(option: Option<string>) => {
-                const isExist = selectValues.find(
-                  (value) => value.value === option.value
-                );
-                if (isExist) {
-                  const newValues = selectValues.filter(
-                    (value) => value.value !== option.value
-                  );
-                  setSelectValues(newValues);
-                  return;
-                }
-                setSelectValues([...selectValues, option]);
+                setSelectValue(option);
               }}
-              value={selectValues}
+              value={selectValue}
             />
           </Dropdown.Menu>
         </Dropdown>

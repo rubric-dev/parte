@@ -1,5 +1,11 @@
 # @parte-ds/ui
 
+## 1.17.2
+
+### Patch Changes
+
+- select autoFocus props 추가
+
 ## 1.17.1
 
 ### Patch Changes
