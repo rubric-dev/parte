@@ -26,7 +26,6 @@ export interface DialogProps {
   isConfirmLoading?: boolean;
   minHeightContent?: number | string;
   width?: number;
-  height?: number | string;
   elevation?: ElevationToken;
   state?: TransitionStatus;
   overrideStyles?: RuleSet;

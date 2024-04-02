@@ -136,13 +136,14 @@ export const Dialog = memo(
         data-state={state}
         overrideStyles={css`
           width: ${width}px;
+          height: ${minHeightUnit ?? "fit-content"};
           ${overrideStyles}
         `}
       >
         {renderHeader()}
         <Styled.Content
           overrideStyles={css`
-            min-height: ${minHeightUnit};
+            height: 100%;
           `}
         >
           {renderChildren()}
