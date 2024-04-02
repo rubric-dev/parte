@@ -37,6 +37,7 @@ export const DropdownList = <T,>({
   closeOnSelect,
   title,
   width = 240,
+  autoFocus = true,
 }: DropdownListProps<T>) => {
   const [inputValue, setInputValue] = useState("");
   const menuRef = useRef<HTMLDivElement>(null);
@@ -202,7 +203,7 @@ export const DropdownList = <T,>({
                     disabled={groupOption.disabled}
                     onKeyDown={handleKeyboard(groupOption)}
                     icon={groupOption.icon}
-                    shouldFocusWhenSelected={!isMulti}
+                    shouldFocusWhenSelected={!isMulti && autoFocus}
                   >
                     {groupOption.label}
                   </SelectRow>
@@ -221,7 +222,7 @@ export const DropdownList = <T,>({
                 disabled={option.disabled}
                 onKeyDown={handleKeyboard(option)}
                 icon={option.icon}
-                shouldFocusWhenSelected={!isMulti}
+                shouldFocusWhenSelected={!isMulti && autoFocus}
               >
                 {option.label}
               </SelectRow>
