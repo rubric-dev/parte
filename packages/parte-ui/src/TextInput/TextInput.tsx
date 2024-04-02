@@ -1,6 +1,7 @@
 import { forwardRef } from "react";
 import * as Styled from "./TextInput.styled";
 import { TextInputProps } from "./TextInput.types";
+import { CaretDownIcon } from "../../../parte-icons/src";
 
 export const TextInput = forwardRef<HTMLInputElement, TextInputProps>(
   (props: TextInputProps, ref) => {
@@ -39,6 +40,11 @@ export const TextInput = forwardRef<HTMLInputElement, TextInputProps>(
         {trailingIcon && (
           <Styled.RightIconContainer $disabled={inputProps.disabled}>
             {trailingIcon}
+          </Styled.RightIconContainer>
+        )}
+        {variant === "select" && (
+          <Styled.RightIconContainer $disabled={inputProps.disabled}>
+            <CaretDownIcon size={12} color="N600" />
           </Styled.RightIconContainer>
         )}
       </Styled.Container>
