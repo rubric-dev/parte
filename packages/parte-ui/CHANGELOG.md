@@ -1,5 +1,11 @@
 # @parte-ds/ui
 
+## 1.17.3
+
+### Patch Changes
+
+- Modal fullheight 수정
+
 ## 1.17.2
 
 ### Patch Changes

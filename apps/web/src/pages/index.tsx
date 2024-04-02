@@ -119,7 +119,7 @@ export default function Home() {
           </ButtonGroup.Option>
         </ButtonGroup>
         <DialogModal isShown fullHeight topOffset="40px">
-          ss
+          <Box backgroundColor="red" style={{ overflow: "hidden" }}></Box>
         </DialogModal>
       </Box>
     </>
