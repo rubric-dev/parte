@@ -1,10 +1,17 @@
 # @parte-ds/ui
 
+## 1.17.3
+
+### Patch Changes
+
+- Modal fullheight 수정
+
 ## 1.17.2
 
 ### Patch Changes
 
 - select autoFocus props 추가
+- dialog modal fullHeight props 추가
 
 ## 1.17.1
 

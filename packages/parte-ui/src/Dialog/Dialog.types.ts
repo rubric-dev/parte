@@ -24,7 +24,7 @@ export interface DialogProps {
   confirmVariant?: ButtonVariant;
   isConfirmDisabled?: boolean;
   isConfirmLoading?: boolean;
-  minHeightContent?: number;
+  minHeightContent?: number | string;
   width?: number;
   elevation?: ElevationToken;
   state?: TransitionStatus;

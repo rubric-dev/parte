@@ -118,7 +118,9 @@ export default function Home() {
             오른쪽 버튼
           </ButtonGroup.Option>
         </ButtonGroup>
-        <DialogModal isShown>sd</DialogModal>
+        <DialogModal isShown fullHeight topOffset="40px">
+          <Box backgroundColor="red" style={{ overflow: "hidden" }}></Box>
+        </DialogModal>
       </Box>
     </>
   );

@@ -1,6 +1,6 @@
-import { DialogProps } from '../Dialog/Dialog.types';
+import { DialogProps } from "../Dialog/Dialog.types";
 
-export interface DialogModalProps extends Omit<DialogProps, 'close'> {
+export interface DialogModalProps extends Omit<DialogProps, "close"> {
   preventBodyScrolling?: boolean;
   shouldAutoFocus?: boolean;
   shouldCloseOnEsc?: boolean;
@@ -10,4 +10,5 @@ export interface DialogModalProps extends Omit<DialogProps, 'close'> {
   onOpenComplete?: () => void;
   sideOffset?: string;
   topOffset?: string;
+  fullHeight?: boolean;
 }

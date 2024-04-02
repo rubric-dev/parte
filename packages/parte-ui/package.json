@@ -1,6 +1,7 @@
 {
   "name": "@parte-ds/ui",
   "version": "1.17.2",
+  "version": "1.17.3",
   "main": "./dist/index.js",
   "module": "./dist/index.mjs",
   "types": "./dist/index.d.ts",
