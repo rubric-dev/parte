@@ -1,5 +1,11 @@
 # @parte-ds/ui
 
+## 1.17.1
+
+### Patch Changes
+
+- textinput select 수정
+
 ## 1.17.0
 
 ### Minor Changes
