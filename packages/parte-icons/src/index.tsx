@@ -545,6 +545,7 @@ export { default as TableThFilteredIcon } from "./Icons/TableThFilteredIcon";
 export { default as TableThIcon } from "./Icons/TableThIcon";
 export { default as TableThListIcon } from "./Icons/TableThListIcon";
 export { default as TableVariableIcon } from "./Icons/TableVariableIcon";
+
 export { default as TextIcon } from "./Icons/TextIcon";
 export { default as TicketIcon } from "./Icons/TicketIcon";
 export { default as ViewListIcon } from "./Icons/ViewListIcon";
@@ -609,3 +610,7 @@ export { default as CaretLeftIcon } from "./Icons/CaretLeftIcon";
 export { default as CaretRightIcon } from "./Icons/CaretRightIcon";
 export { default as CaretUpIcon } from "./Icons/CaretUpIcon";
 export { default as TimeIcon } from "./Icons/TimeIcon";
+export { default as ConnectionPointIcon } from "./Icons/ConnectionPointIcon";
+export { default as PhoneTelephoneIcon } from "./Icons/PhoneTelephoneIcon";
+export { default as IdCardHIcon } from "./Icons/IdCardHIcon";
+export { default as MailIcon } from "./Icons/MailIcon";
