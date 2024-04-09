@@ -1,5 +1,11 @@
 # @parte-ds/ui
 
+## 1.18.0
+
+### Minor Changes
+
+- dialogModal 수직 정렬
+
 ## 1.17.4
 
 ### Patch Changes

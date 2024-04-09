@@ -213,3 +213,4 @@ export const Overlay = memo(
     );
   }
 );
+Overlay.displayName = "Overlay";

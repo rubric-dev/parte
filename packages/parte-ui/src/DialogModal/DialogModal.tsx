@@ -1,5 +1,5 @@
 import { memo } from "react";
-import { css, keyframes } from "styled-components";
+import styled, { css, keyframes } from "styled-components";
 import { animationEasing } from "../constant";
 import { Dialog } from "../Dialog";
 import { Overlay } from "../Overlay";
@@ -66,37 +66,44 @@ export const DialogModal = memo(function DialogModal({
       preventBodyScrolling={preventBodyScrolling}
     >
       {({ close, state }) => (
-        <Dialog
-          minHeightContent={
-            fullHeight ? `calc(100% - ${topOffset} * 2)` : undefined
-          }
-          close={close}
-          width={width}
-          {...dialogProps}
-          elevation={2}
-          state={state}
-          overrideStyles={css`
-            min-height: ${fullHeight ? `calc(100% - ${topOffset} * 2)` : 0};
-            max-width: ${maxWidth};
-            max-height: ${maxHeight};
-            margin: ${topOffsetWithUnit} ${sideOffsetWithUnit};
-            &[data-state="entering"] {
-              animation: ${openAnimation} ${ANIMATION_DURATION}ms
-                ${deceleration} both;
+        <DialogBox>
+          <Dialog
+            minHeightContent={
+              fullHeight ? `calc(100% - ${topOffset} * 2)` : undefined
             }
-            &[data-state="entered"] {
-              animation: ${openAnimation} ${ANIMATION_DURATION}ms
-                ${deceleration} both;
-            }
-            &[data-state="exiting"] {
-              animation: ${closeAnimation} ${ANIMATION_DURATION}ms
-                ${acceleration} both;
-            }
-          `}
-        >
-          {children}
-        </Dialog>
+            close={close}
+            width={width}
+            {...dialogProps}
+            elevation={2}
+            state={state}
+            overrideStyles={css`
+              min-height: ${fullHeight ? `calc(100% - ${topOffset} * 2)` : 0};
+              max-width: ${maxWidth};
+              max-height: ${maxHeight};
+              margin: ${topOffsetWithUnit} ${sideOffsetWithUnit};
+              &[data-state="entering"] {
+                animation: ${openAnimation} ${ANIMATION_DURATION}ms
+                  ${deceleration} both;
+              }
+              &[data-state="entered"] {
+                animation: ${openAnimation} ${ANIMATION_DURATION}ms
+                  ${deceleration} both;
+              }
+              &[data-state="exiting"] {
+                animation: ${closeAnimation} ${ANIMATION_DURATION}ms
+                  ${acceleration} both;
+              }
+            `}
+          >
+            {children}
+          </Dialog>
+        </DialogBox>
       )}
     </Overlay>
   );
 });
+
+const DialogBox = styled.div`
+  display: flex;
+  align-items: center;
+`;
