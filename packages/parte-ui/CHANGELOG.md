@@ -1,5 +1,11 @@
 # @parte-ds/ui
 
+## 1.18.1
+
+### Patch Changes
+
+- dialog modal 기본 width 수정
+
 ## 1.18.0
 
 ### Minor Changes
