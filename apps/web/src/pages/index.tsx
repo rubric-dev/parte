@@ -1,20 +1,10 @@
 import {
-  ArrowDownIcon,
-  ArrowUpIcon,
-  CloseIcon,
-  ListTwoIcon,
-  PreviewCloseOneIcon,
-} from "@parte-ds/icons";
-import {
   Badge,
   Box,
+  Button,
   ButtonGroup,
-  Card,
   Checkbox,
   DialogModal,
-  IconButton,
-  LinkButton,
-  Link as ParteLink,
   TextInput,
   Toggle,
 } from "@parte-ds/ui";
@@ -43,6 +33,8 @@ export default function Home() {
   const [toggle, setToggle] = useState(true);
 
   const [index, setIndex] = useState(0);
+
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
   return (
     <>
@@ -118,8 +110,16 @@ export default function Home() {
             오른쪽 버튼
           </ButtonGroup.Option>
         </ButtonGroup>
-        <DialogModal isShown fullHeight topOffset="40px">
-          <Box backgroundColor="red" style={{ overflow: "hidden" }}></Box>
+        <Button type="button" onClick={() => setIsModalOpen(true)}>
+          Dialog Modal 열기
+        </Button>
+        <DialogModal
+          title="모달 테스트"
+          isShown={isModalOpen}
+          topOffset="40px"
+          onCloseComplete={() => setIsModalOpen(false)}
+        >
+          컨텐츠
         </DialogModal>
       </Box>
     </>

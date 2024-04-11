@@ -54,7 +54,7 @@ export const DialogModal = memo(function DialogModal({
     : topOffset;
   const maxHeight = `calc(100% - ${topOffsetWithUnit} * 2)`;
 
-  const minHeight = fullHeight ? `calc(100% - ${topOffset} * 2)` : "100%";
+  const minHeight = fullHeight ? `calc(100% - ${topOffset} * 2)` : 0;
   return (
     <Overlay
       isShown={isShown}
@@ -66,7 +66,7 @@ export const DialogModal = memo(function DialogModal({
       preventBodyScrolling={preventBodyScrolling}
     >
       {({ close, state }) => (
-        <DialogBox>
+        <CenterBox>
           <Dialog
             minHeightContent={
               fullHeight ? `calc(100% - ${topOffset} * 2)` : undefined
@@ -77,7 +77,7 @@ export const DialogModal = memo(function DialogModal({
             elevation={2}
             state={state}
             overrideStyles={css`
-              min-height: ${fullHeight ? `calc(100% - ${topOffset} * 2)` : 0};
+              min-height: ${minHeight};
               max-width: ${maxWidth};
               max-height: ${maxHeight};
               margin: ${topOffsetWithUnit} ${sideOffsetWithUnit};
@@ -97,13 +97,13 @@ export const DialogModal = memo(function DialogModal({
           >
             {children}
           </Dialog>
-        </DialogBox>
+        </CenterBox>
       )}
     </Overlay>
   );
 });
 
-const DialogBox = styled.div`
+const CenterBox = styled.div`
   display: flex;
   align-items: center;
 `;

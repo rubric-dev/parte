@@ -63,7 +63,6 @@ Error.args = {
   confirmVariant: "fill-error",
   confirmLabel: "오류",
   width: 320,
-  minHeightContent: 40,
   title: "에러 케이스",
   children: `오류가 발생했습니다`,
 };
