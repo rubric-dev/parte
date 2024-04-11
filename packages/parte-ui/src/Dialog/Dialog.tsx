@@ -25,7 +25,7 @@ export const Dialog = memo(
     isConfirmDisabled = false,
     isConfirmLoading = false,
     minHeightContent,
-    width = 464,
+    width,
     elevation = 2,
     state,
     overrideStyles,
