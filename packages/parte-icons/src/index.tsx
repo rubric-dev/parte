@@ -614,3 +614,6 @@ export { default as ConnectionPointIcon } from "./Icons/ConnectionPointIcon";
 export { default as PhoneTelephoneIcon } from "./Icons/PhoneTelephoneIcon";
 export { default as IdCardHIcon } from "./Icons/IdCardHIcon";
 export { default as MailIcon } from "./Icons/MailIcon";
+export { default as ProjectIcon } from "./Icons/ProjectIcon";
+export { default as DownloadIcon } from "./Icons/DownloadIcon";
+export { default as ToTopIcon } from "./Icons/ToTopIcon";
