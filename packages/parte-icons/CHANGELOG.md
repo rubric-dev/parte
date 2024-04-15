@@ -1,5 +1,11 @@
 # @parte-ds/icons
 
+## 1.9.6
+
+### Patch Changes
+
+- 아이콘 props 수정
+
 ## 1.9.5
 
 ### Patch Changes
