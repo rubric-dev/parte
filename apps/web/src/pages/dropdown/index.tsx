@@ -85,8 +85,6 @@ const DropdownTest = () => {
             )}
           </Dropdown.Menu>
         </Dropdown>
-
-        {/* <DropdownList options={OPTIONS} /> */}
       </Box>
       <Box display="flex" flexDirection="column" gap={16}>
         <Dropdown>
@@ -97,6 +95,7 @@ const DropdownTest = () => {
                 variant="select"
                 value={selectValue.label}
                 readOnly
+                disabled
               />
             </Box>
           </Dropdown.Trigger>
