@@ -1,5 +1,11 @@
 # @parte-ds/ui
 
+## 1.18.2
+
+### Patch Changes
+
+- 드롭다운 리스트 border radius 수정
+
 ## 1.18.1
 
 ### Patch Changes

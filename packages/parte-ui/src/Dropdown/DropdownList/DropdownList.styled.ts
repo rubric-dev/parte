@@ -6,7 +6,7 @@ export const List = styled(Box)<{ $isFirst: boolean }>`
     return css`
       box-sizing: border-box;
       border: 1px solid ${theme.colors.N200};
-      border-radius: 4px;
+      border-radius: 8px;
       box-shadow: 0px 4px 8px 0px rgba(16, 24, 64, 0.08);
       max-height: 273px;
       overflow-x: hidden;
