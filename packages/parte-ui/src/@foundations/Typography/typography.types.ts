@@ -15,7 +15,7 @@ export type CommonProps = Pick<
 
 export type HeadlineProps = HTMLAttributes<HTMLHeadingElement> &
   CommonProps & {
-    size: 100 | 200 | 300 | 400 | 500 | 600 | 700 | 800 | 900;
+    size: 200 | 300 | 400 | 500 | 600 | 700 | 800 | 900;
   };
 
 export type ParagraphProps = HTMLAttributes<HTMLParagraphElement> &

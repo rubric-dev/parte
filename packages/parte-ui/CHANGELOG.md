@@ -1,10 +1,10 @@
 # @parte-ds/ui
 
-## 1.18.2
+## 1.19.0
 
-### Patch Changes
+### Minor Changes
 
-- 드롭다운 리스트 border radius 수정
+- H200 수정, H100 삭제
 
 ## 1.18.1
 
