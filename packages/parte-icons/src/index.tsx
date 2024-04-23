@@ -617,3 +617,8 @@ export { default as MailIcon } from "./Icons/MailIcon";
 export { default as ProjectIcon } from "./Icons/ProjectIcon";
 export { default as DownloadIcon } from "./Icons/DownloadIcon";
 export { default as ToTopIcon } from "./Icons/ToTopIcon";
+export { default as ToLeftIcon } from "./Icons/ToLeftIcon";
+export { default as ToRightIcon } from "./Icons/ToRightIcon";
+export { default as ToBottomIcon } from "./Icons/ToBottomIcon";
+export { default as ExcelIcon } from "./Icons/ExcelIcon";
+export { default as FillePdfOneIcon } from "./Icons/FillePdfOneIcon";

@@ -5,7 +5,7 @@
 ### Patch Changes
 
 - Updated dependencies
-  - @parte-ds/ui@1.19.0
+  - @parte-ds/icons@1.10.0
 
 ## 0.1.81
 
