@@ -15,7 +15,7 @@ const commonSelectRowStyle = css`
 const titleStyle = (theme: DefaultTheme) => css`
   width: 100%;
   height: 32px;
-  padding: 8px 20px;
+  padding: 10px 20px;
   background-color: ${theme.colors.N0};
   color: ${theme.colors.N600};
   ${theme.typography.C200}

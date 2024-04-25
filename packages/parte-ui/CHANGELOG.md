@@ -1,5 +1,11 @@
 # @parte-ds/ui
 
+## 1.19.1
+
+### Patch Changes
+
+- title select row padding 수정
+
 ## 1.19.0
 
 ### Minor Changes
