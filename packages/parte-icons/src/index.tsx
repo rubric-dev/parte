@@ -622,3 +622,5 @@ export { default as ToRightIcon } from "./Icons/ToRightIcon";
 export { default as ToBottomIcon } from "./Icons/ToBottomIcon";
 export { default as ExcelIcon } from "./Icons/ExcelIcon";
 export { default as FillePdfOneIcon } from "./Icons/FillePdfOneIcon";
+export { default as CrownIcon } from "./Icons/CrownIcon";
+export { default as UserPlusIcon } from "./Icons/UserPlusIcon";
