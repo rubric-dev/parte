@@ -16,7 +16,7 @@ export const Menu = styled(Box)<{ $hidden: boolean; $usePortal?: boolean }>`
       position: ${$usePortal ? "fixed" : "absolute"};
       height: fit-content;
       width: fit-content;
-      z-index: 11;
+      z-index: ${$usePortal ? "999" : "11"};
     `;
   }}
 `;
