@@ -1,5 +1,11 @@
 # @parte-ds/ui
 
+## 1.19.3
+
+### Patch Changes
+
+- dropdown z-index 수정
+
 ## 1.19.2
 
 ### Patch Changes
