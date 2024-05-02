@@ -624,3 +624,4 @@ export { default as ExcelIcon } from "./Icons/ExcelIcon";
 export { default as FillePdfOneIcon } from "./Icons/FillePdfOneIcon";
 export { default as CrownIcon } from "./Icons/CrownIcon";
 export { default as UserPlusIcon } from "./Icons/UserPlusIcon";
+export { default as WrongUserIcon } from "./Icons/WrongUserIcon";
