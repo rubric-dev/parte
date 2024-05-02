@@ -1,5 +1,12 @@
 # @parte-ds/web
 
+## 0.1.87
+
+### Patch Changes
+
+- Updated dependencies
+  - @parte-ds/icons@1.10.2
+
 ## 0.1.86
 
 ### Patch Changes
