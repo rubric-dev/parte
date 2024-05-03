@@ -8,6 +8,7 @@ import * as Styled from "./SelectRow.styled";
 import { forwardRef, useEffect, useRef } from "react";
 import { ActionSearchIcon } from "../../../../parte-icons/src";
 import { Checkbox } from "../../Checkbox";
+import { noop } from "@tanstack/react-table";
 
 const SearchRow = forwardRef<HTMLDivElement, SelectRowSearch>((props, ref) => {
   const { inputValue, onChange } = props;
@@ -80,7 +81,7 @@ const ElementRow = forwardRef<HTMLDivElement, SelectRowElement>(
         onKeyDown={onKeyDown}
         $isMulti={isMulti}
       >
-        {isMulti && <Checkbox checked={selected} onClick={onClick} />}
+        {isMulti && <Checkbox checked={selected} onChange={noop} />}
         {icon}
         {children}
       </Styled.SelectRow>

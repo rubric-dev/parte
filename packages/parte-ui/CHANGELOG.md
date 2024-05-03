@@ -1,5 +1,11 @@
 # @parte-ds/ui
 
+## 1.19.4
+
+### Patch Changes
+
+- SelectRow에서 checkbox onclick 이벤트 제거
+
 ## 1.19.3
 
 ### Patch Changes
