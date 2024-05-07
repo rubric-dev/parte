@@ -625,3 +625,7 @@ export { default as FillePdfOneIcon } from "./Icons/FillePdfOneIcon";
 export { default as CrownIcon } from "./Icons/CrownIcon";
 export { default as UserPlusIcon } from "./Icons/UserPlusIcon";
 export { default as WrongUserIcon } from "./Icons/WrongUserIcon";
+export { default as SparklesIcon } from "./Icons/SparklesIcon";
+export { default as NotebookOneIcon } from "./Icons/NotebookOneIcon";
+export { default as AnalysisIcon } from "./Icons/AnalysisIcon";
+export { default as BankCardIcon } from "./Icons/BankCardIcon";
