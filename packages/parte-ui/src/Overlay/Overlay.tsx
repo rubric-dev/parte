@@ -35,6 +35,7 @@ export const Overlay = memo(
     const [status, setStatus] = useState<TransitionStatus>(
       isShown ? "entering" : "exited"
     );
+    const mouseDownTarget = useRef<EventTarget>();
 
     useEffect(() => {
       if (isShown) {
@@ -175,7 +176,6 @@ export const Overlay = memo(
       if (e.target !== e.currentTarget || !shouldCloseOnClick) return;
       close();
     };
-
     if (status === "exited") {
       return null;
     }
@@ -200,7 +200,11 @@ export const Overlay = memo(
               display="flex"
               justifyContent="center"
               ref={containerRef}
-              onClick={handleBackdropClick}
+              onMouseDown={(e) => (mouseDownTarget.current = e.target)}
+              onMouseUp={(e) => {
+                if (containerRef.current === mouseDownTarget.current)
+                  handleBackdropClick(e);
+              }}
               data-state={state}
             >
               {typeof children === "function"
