@@ -1,4 +1,4 @@
-import { ActionChatIcon, LogoutIcon } from "@parte-ds/icons";
+import { ActionChatIcon, BoxIcon, LogoutIcon } from "@parte-ds/icons";
 import {
   Box,
   Button,
@@ -52,78 +52,43 @@ const DropdownTest = () => {
     <Box display="flex" gap={80}>
       <Box display="flex" flexDirection="column" gap={16}>
         <Dropdown>
-          <Dropdown.Trigger onClick={(e) => e.stopPropagation()}>
-            <Box display="flex">
-              <Button variant="text-secondary" style={{ padding: "8px" }}>
-                <Headline size={400}>회사</Headline>
-              </Button>
-            </Box>
-          </Dropdown.Trigger>
-          <Dropdown.Menu>
-            {({ onClose }) => (
-              <Fragment>
-                <Menu>
-                  {OPTIONS.map((option, index) => (
-                    <Menu.Row
-                      type="checkbox"
-                      key={index}
-                      onSelect={() => {
-                        onSelect(option);
-                      }}
-                      selected={option === selectValue}
-                    >
-                      <Box display="flex" alignItems="center" gap={12}>
-                        <LogoutIcon color="N700" />
-                        <Paragraph size={200} color="N800">
-                          {option.label}
-                        </Paragraph>
-                      </Box>
-                    </Menu.Row>
-                  ))}
-                </Menu>
-              </Fragment>
-            )}
-          </Dropdown.Menu>
-        </Dropdown>
-      </Box>
-      <Box display="flex" flexDirection="column" gap={16}>
-        <Dropdown>
-          <Dropdown.Trigger onClick={(e) => e.stopPropagation()}>
-            <Box display="flex">
-              <TextInput
-                textInputSize="large"
-                variant="select"
-                value={selectValue.label}
-                readOnly
-                disabled
-              />
-            </Box>
-          </Dropdown.Trigger>
-          <Dropdown.Menu>
-            <DropdownList
-              width={120}
-              isMulti
-              title="타이틀"
-              options={OPTIONS}
-              onSelect={(option: Option<string>) => {
-                const isExist = selectValues.find(
-                  (value) => value.value === option.value
-                );
-                if (isExist) {
-                  const newValues = selectValues.filter(
-                    (value) => value.value !== option.value
-                  );
-                  setSelectValues(newValues);
-                  return;
-                }
-                setSelectValues([...selectValues, option]);
-              }}
-              value={selectValues}
+          <Dropdown.Trigger>
+            <TextInput
+              readOnly
+              value={selectValues.map(({ label }) => label)}
             />
+          </Dropdown.Trigger>
+          <Dropdown.Menu>
+            <Menu>
+              {OPTIONS.map((option) => {
+                const selected = !!selectValues?.find(
+                  (cur) => cur.value === option.value
+                );
+                return (
+                  <SelectRow
+                    key={option.value}
+                    isMulti
+                    selected={selected}
+                    onClick={() => {
+                      if (selected) {
+                        setSelectValues((prev) =>
+                          prev.filter((cur) => cur.value !== option.value)
+                        );
+                      } else {
+                        setSelectValues((prev) => [...prev, option]);
+                      }
+                    }}
+                  >
+                    <Box display="flex" gap={4}>
+                      <BoxIcon />
+                      {option.label}
+                    </Box>
+                  </SelectRow>
+                );
+              })}
+            </Menu>
           </Dropdown.Menu>
         </Dropdown>
-
-        {/* <DropdownList options={OPTIONS} /> */}
       </Box>
     </Box>
   );

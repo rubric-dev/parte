@@ -1,14 +1,13 @@
-import {
-  SelectRowProps,
-  SelectRowSearch,
-  SelectRowTitle,
-  SelectRowElement,
-} from "./SelectRow.types";
-import * as Styled from "./SelectRow.styled";
 import { forwardRef, useEffect, useRef } from "react";
 import { ActionSearchIcon } from "../../../../parte-icons/src";
 import { Checkbox } from "../../Checkbox";
-import { noop } from "@tanstack/react-table";
+import * as Styled from "./SelectRow.styled";
+import {
+  SelectRowElement,
+  SelectRowProps,
+  SelectRowSearch,
+  SelectRowTitle,
+} from "./SelectRow.types";
 
 const SearchRow = forwardRef<HTMLDivElement, SelectRowSearch>((props, ref) => {
   const { inputValue, onChange } = props;
@@ -55,6 +54,8 @@ const ElementRow = forwardRef<HTMLDivElement, SelectRowElement>(
     ref
   ) => {
     const rowRef = useRef<HTMLDivElement>(null);
+    const checkboxRef = useRef<HTMLInputElement>(null);
+
     useEffect(() => {
       if (rowRef.current && ref !== null) {
         if (typeof ref === "function") {
@@ -77,11 +78,14 @@ const ElementRow = forwardRef<HTMLDivElement, SelectRowElement>(
         role="selectItem"
         data-disabled={disabled}
         data-selected={selected}
-        onClick={onClick}
+        onClick={(e) => {
+          if (e.target === checkboxRef.current) return;
+          onClick?.();
+        }}
         onKeyDown={onKeyDown}
         $isMulti={isMulti}
       >
-        {isMulti && <Checkbox checked={selected} onChange={noop} />}
+        {isMulti && <Checkbox ref={checkboxRef} checked={selected} readOnly />}
         {icon}
         {children}
       </Styled.SelectRow>

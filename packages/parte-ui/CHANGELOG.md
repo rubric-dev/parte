@@ -1,5 +1,11 @@
 # @parte-ds/ui
 
+## 1.19.6
+
+### Patch Changes
+
+- isMulti일때 selectrow 체크박스 클릭 안되는 이슈
+
 ## 1.19.5
 
 ### Patch Changes
