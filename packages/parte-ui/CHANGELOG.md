@@ -1,5 +1,11 @@
 # @parte-ds/ui
 
+## 1.19.5
+
+### Patch Changes
+
+- 모달 밖으로 드래그 시 닫히는 현상 수정
+
 ## 1.19.4
 
 ### Patch Changes
