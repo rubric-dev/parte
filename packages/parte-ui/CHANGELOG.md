@@ -1,5 +1,11 @@
 # @parte-ds/ui
 
+## 1.20.0
+
+### Minor Changes
+
+- checkbox size 받을 수 있도록 수정
+
 ## 1.19.6
 
 ### Patch Changes
