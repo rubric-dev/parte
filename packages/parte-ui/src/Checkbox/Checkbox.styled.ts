@@ -99,11 +99,11 @@ export const LabelContainer = styled.label`
   `}
 `;
 
-export const IconBox = styled(Box)`
-  ${({ theme }) => css`
+export const IconBox = styled(Box)<{ $size?: number }>`
+  ${({ theme, $size = 16 }) => css`
     display: flex;
-    width: 16px;
-    height: 16px;
+    width: ${$size}px;
+    height: ${$size}px;
     border: 1px solid ${theme.colors.N400};
     border-radius: 4px;
   `}
