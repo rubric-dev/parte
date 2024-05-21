@@ -1,5 +1,11 @@
 # @parte-ds/icons
 
+## 1.10.4
+
+### Patch Changes
+
+- 아이콘 수정
+
 ## 1.10.3
 
 ### Patch Changes
