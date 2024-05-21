@@ -12,9 +12,9 @@ function Icon({ size, ...rest }: Pick<IconProps, "style" | "color" | "size">) {
       <path
         d="M6.33301 4L10.333 8L6.33301 12"
         stroke="currentcolor"
-        stroke-width="1.5"
-        stroke-linecap="round"
-        stroke-linejoin="round"
+        strokeWidth="1.5"
+        strokeLinecap="round"
+        strokeLinejoin="round"
       />
     </svg>
   );
