@@ -1,5 +1,6 @@
 import { RefObject, ReactNode, PropsWithChildren } from "react";
 import { DROPDOWN_POSITION } from "../constant";
+import { CSSProperties } from "react";
 
 export type DropdownPosition =
   (typeof DROPDOWN_POSITION)[keyof typeof DROPDOWN_POSITION];
@@ -7,6 +8,7 @@ export type DropdownPosition =
 export type DropdownProps = PropsWithChildren<{
   usePortal?: boolean;
   offset?: number;
+  style?: CSSProperties;
 }>;
 
 export interface DropdownContextState extends DropdownProps {

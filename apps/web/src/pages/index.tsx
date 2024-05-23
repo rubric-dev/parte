@@ -5,6 +5,7 @@ import {
   ButtonGroup,
   Checkbox,
   DialogModal,
+  Dropdown,
   TextInput,
   Toggle,
 } from "@parte-ds/ui";
@@ -51,6 +52,7 @@ export default function Home() {
         gap={8}
         // backgroundColor={colors.N100}
         height="100%"
+        width="100%"
       >
         {MENU.map(({ url, name }) => (
           <LinkContainer key={name}>
@@ -121,6 +123,15 @@ export default function Home() {
         >
           컨텐츠
         </DialogModal>
+        <Dropdown style={{ width: "fit-content" }}>
+          <Dropdown.Trigger>
+            <TextInput
+              textInputSize="x-large"
+              width="100%"
+              placeholder="선택"
+            />
+          </Dropdown.Trigger>
+        </Dropdown>
       </Box>
     </>
   );

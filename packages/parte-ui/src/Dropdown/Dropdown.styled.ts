@@ -4,7 +4,6 @@ import { Box } from "../Layout";
 export const Container = styled.div`
   position: relative;
   display: flex;
-  width: fit-content;
 `;
 
 export const Trigger = styled.div``;

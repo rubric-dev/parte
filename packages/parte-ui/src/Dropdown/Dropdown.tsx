@@ -23,7 +23,7 @@ import {
   getDropdownStyle,
 } from "./DropdownList/styleUtil";
 
-export const Dropdown = ({ children, ...rest }: DropdownProps) => {
+export const Dropdown = ({ children, style, ...rest }: DropdownProps) => {
   const [isOpen, setIsOpen] = useState(false);
   const dropdownRef = useRef<HTMLDivElement>(null);
 
@@ -43,7 +43,7 @@ export const Dropdown = ({ children, ...rest }: DropdownProps) => {
     <DropdownContext.Provider
       value={{ ...rest, dropdownRef, isOpen, onClick, onClose }}
     >
-      <Styled.Container ref={dropdownRef} onKeyDown={onKeyDown}>
+      <Styled.Container ref={dropdownRef} onKeyDown={onKeyDown} style={style}>
         {children}
       </Styled.Container>
     </DropdownContext.Provider>
