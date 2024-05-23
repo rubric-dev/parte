@@ -1,5 +1,11 @@
 # @parte-ds/ui
 
+## 1.21.0
+
+### Minor Changes
+
+- 드롭다운 style 받을 수 있게 수정
+
 ## 1.20.0
 
 ### Minor Changes
