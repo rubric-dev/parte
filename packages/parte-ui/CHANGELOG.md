@@ -1,5 +1,11 @@
 # @parte-ds/ui
 
+## 1.22.1
+
+### Patch Changes
+
+- 인풋으로 만든 드롭다운 disabled일 때 포인터 빼기
+
 ## 1.22.0
 
 ### Minor Changes

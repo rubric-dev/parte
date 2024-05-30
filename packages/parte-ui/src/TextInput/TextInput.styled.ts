@@ -83,6 +83,7 @@ export const Container = styled.div<{
       &:has(input:disabled) {
         background-color: ${theme.colorBackgroundDisabled};
         border: 1px solid ${theme.colorBorderDisabled};
+        cursor: default;
       }
 
       &:has(input[data-error="true"]) {
@@ -279,6 +280,7 @@ export const Input = styled.input<{
       }
 
       &:disabled {
+        cursor: default;
         color: ${theme.colorTextDisabled};
         &::placeholder {
           color: ${theme.colorTextPlaceholderDisabled};
