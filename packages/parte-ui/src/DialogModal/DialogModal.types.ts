@@ -11,4 +11,5 @@ export interface DialogModalProps extends Omit<DialogProps, "close"> {
   sideOffset?: string;
   topOffset?: string;
   fullHeight?: boolean;
+  fullWidth?: boolean;
 }

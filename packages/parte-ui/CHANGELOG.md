@@ -1,5 +1,11 @@
 # @parte-ds/ui
 
+## 1.22.0
+
+### Minor Changes
+
+- dialog modal fullwidth 추가
+
 ## 1.21.0
 
 ### Minor Changes
