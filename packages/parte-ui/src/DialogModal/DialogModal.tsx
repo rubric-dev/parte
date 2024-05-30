@@ -42,6 +42,7 @@ export const DialogModal = memo(function DialogModal({
   children,
   width,
   fullHeight,
+  fullWidth,
   ...dialogProps
 }: DialogModalProps) {
   const sideOffsetWithUnit = Number.isInteger(sideOffset)
@@ -66,7 +67,7 @@ export const DialogModal = memo(function DialogModal({
       preventBodyScrolling={preventBodyScrolling}
     >
       {({ close, state }) => (
-        <CenterBox>
+        <CenterBox fullWidth={fullWidth}>
           <Dialog
             minHeightContent={
               fullHeight ? `calc(100% - ${topOffset} * 2)` : undefined
@@ -77,6 +78,10 @@ export const DialogModal = memo(function DialogModal({
             elevation={2}
             state={state}
             overrideStyles={css`
+              ${fullWidth &&
+              css`
+                width: 100%;
+              `};
               min-height: ${minHeight};
               max-width: ${maxWidth};
               max-height: ${maxHeight};
@@ -103,7 +108,12 @@ export const DialogModal = memo(function DialogModal({
   );
 });
 
-const CenterBox = styled.div`
+const CenterBox = styled.div<{ fullWidth?: boolean }>`
   display: flex;
   align-items: center;
+  ${({ fullWidth }) =>
+    fullWidth &&
+    css`
+      width: 100%;
+    `}
 `;
