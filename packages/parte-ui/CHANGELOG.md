@@ -1,5 +1,11 @@
 # @parte-ds/ui
 
+## 1.22.0
+
+### Minor Changes
+
+- textarea 패딩, 폰트 크기 및 props 수정
+
 ## 1.21.0
 
 ### Minor Changes

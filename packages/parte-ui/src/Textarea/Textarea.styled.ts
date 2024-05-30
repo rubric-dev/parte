@@ -3,17 +3,18 @@ import { StyledTextAreaProps } from "./Textarea.types";
 import { getSizeStyle } from "../utils/style.util";
 
 export const Textarea = styled.textarea<StyledTextAreaProps>`
-  ${({ theme, $resizable, $width }) => css`
+  ${({ theme, $resizable, $width, $height }) => css`
     ${getSizeStyle($width, "width")};
+    ${getSizeStyle($height, "height")};
 
     min-height: 80px;
     min-width: 15px;
     ${!$resizable && `resize: none;`}
 
-    padding: ${theme.spacing.spacing8}px ${theme.spacing.spacing12}px;
+    padding: ${theme.spacing.spacing10}px ${theme.spacing.spacing12}px;
     background-color: ${theme.colorBackgroundDefault};
     color: ${theme.colorParagraph};
-    ${theme.typography.P100}
+    ${theme.typography.P200}
     display: inline-flex;
     font-family: inherit;
     &::placeholder {

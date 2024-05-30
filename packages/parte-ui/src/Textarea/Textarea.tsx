@@ -8,6 +8,7 @@ export const Textarea = forwardRef<HTMLTextAreaElement, TextAreaProps>(
       isError,
       disabled,
       width,
+      height,
       resizable: resizableProp,
       ...textareaAttributes
     } = props;
@@ -20,6 +21,7 @@ export const Textarea = forwardRef<HTMLTextAreaElement, TextAreaProps>(
         data-error={isError ? true : undefined}
         $resizable={resizable}
         $width={width}
+        $height={height}
         {...textareaAttributes}
       />
     );
