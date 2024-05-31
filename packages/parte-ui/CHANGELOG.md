@@ -1,5 +1,11 @@
 # @parte-ds/ui
 
+## 1.22.2
+
+### Patch Changes
+
+- 🐛 DialogModal에 overriedStyles 적용 되도록 수정
+
 ## 1.22.1
 
 ### Patch Changes

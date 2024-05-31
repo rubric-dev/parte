@@ -43,6 +43,7 @@ export const DialogModal = memo(function DialogModal({
   width,
   fullHeight,
   fullWidth,
+  overrideStyles,
   ...dialogProps
 }: DialogModalProps) {
   const sideOffsetWithUnit = Number.isInteger(sideOffset)
@@ -98,6 +99,7 @@ export const DialogModal = memo(function DialogModal({
                 animation: ${closeAnimation} ${ANIMATION_DURATION}ms
                   ${acceleration} both;
               }
+              ${overrideStyles}
             `}
           >
             {children}

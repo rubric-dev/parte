@@ -135,7 +135,7 @@ export const Dialog = memo(
         elevation={elevation}
         data-state={state}
         overrideStyles={css`
-          width: ${width}px;
+          ${typeof width === "number" && `width: ${width}px;`}
           height: ${minHeightUnit ?? "fit-content"};
           ${overrideStyles}
         `}
