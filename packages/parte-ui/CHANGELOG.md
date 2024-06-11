@@ -1,5 +1,11 @@
 # @parte-ds/ui
 
+## 1.22.3
+
+### Patch Changes
+
+- 드롭다운 리스트 텍스트 길어지면 ellipsis
+
 ## 1.22.2
 
 ### Patch Changes
