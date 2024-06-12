@@ -1,5 +1,12 @@
 # @parte-ds/web
 
+## 0.1.98
+
+### Patch Changes
+
+- Updated dependencies
+  - @parte-ds/ui@1.22.3
+
 ## 0.1.97
 
 ### Patch Changes

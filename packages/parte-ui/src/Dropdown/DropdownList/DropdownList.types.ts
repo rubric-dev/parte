@@ -22,6 +22,7 @@ export type DropdownListBaseProps<T> = {
   title?: string;
   width?: number;
   autoFocus?: boolean;
+  placeholder?: string;
 };
 
 export type DropdownListMultiProps<T> = Omit<

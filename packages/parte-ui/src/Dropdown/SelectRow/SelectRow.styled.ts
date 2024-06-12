@@ -3,9 +3,10 @@ import { Box } from "../../Layout";
 import { SelectRowProps, SelectRowType } from "./SelectRow.types";
 
 const commonSelectRowStyle = css`
+  display: flex;
   position: relative;
   align-items: center;
-  min-height: 32px;
+  min-height: 48px;
   outline: none;
   user-select: none;
   display: flex;
@@ -32,6 +33,7 @@ const searchStyle = (theme: DefaultTheme) => css`
     border-bottom: 1px solid ${theme.colors.N200};
   }
   gap: ${({ theme }) => `${theme.spacing.spacing8}px`};
+  margin-bottom: 12px;
 `;
 
 const elementStyle = (theme: DefaultTheme, isMulti?: boolean) => css`
