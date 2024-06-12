@@ -2,7 +2,7 @@ import styled, { css } from "styled-components";
 import { Box } from "../../Layout";
 
 export const List = styled(Box)<{ $isFirst: boolean }>`
-  ${({ theme, $isFirst, width }) => {
+  ${({ theme, $isFirst }) => {
     return css`
       box-sizing: border-box;
       border: 1px solid ${theme.colors.N200};
@@ -14,7 +14,6 @@ export const List = styled(Box)<{ $isFirst: boolean }>`
       padding-top: ${$isFirst ? "8px" : "0"};
       padding-bottom: 8px;
       background-color: ${theme.colors.N0};
-      max-width: ${width + "px"};
     `;
   }}
 `;
