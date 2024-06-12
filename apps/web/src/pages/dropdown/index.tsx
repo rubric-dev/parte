@@ -26,6 +26,18 @@ const OPTIONS: Option<string>[] = [
     label: "label3",
     value: "value3",
   },
+  {
+    label: "label3",
+    value: "value3",
+  },
+  {
+    label: "label3",
+    value: "value3",
+  },
+  {
+    label: "label3",
+    value: "value3",
+  },
 ];
 
 const DropdownTest = () => {
@@ -59,34 +71,7 @@ const DropdownTest = () => {
             />
           </Dropdown.Trigger>
           <Dropdown.Menu>
-            <Menu>
-              {OPTIONS.map((option) => {
-                const selected = !!selectValues?.find(
-                  (cur) => cur.value === option.value
-                );
-                return (
-                  <SelectRow
-                    key={option.value}
-                    isMulti
-                    selected={selected}
-                    onClick={() => {
-                      if (selected) {
-                        setSelectValues((prev) =>
-                          prev.filter((cur) => cur.value !== option.value)
-                        );
-                      } else {
-                        setSelectValues((prev) => [...prev, option]);
-                      }
-                    }}
-                  >
-                    <Box display="flex" gap={4}>
-                      <BoxIcon />
-                      {option.label}
-                    </Box>
-                  </SelectRow>
-                );
-              })}
-            </Menu>
+            <DropdownList options={OPTIONS} />
           </Dropdown.Menu>
         </Dropdown>
       </Box>

@@ -38,6 +38,7 @@ export const DropdownList = <T,>({
   title,
   width = 240,
   autoFocus = true,
+  placeholder = "Search",
 }: DropdownListProps<T>) => {
   const [inputValue, setInputValue] = useState("");
   const menuRef = useRef<HTMLDivElement>(null);
@@ -169,6 +170,7 @@ export const DropdownList = <T,>({
           onChange={(e) => {
             setInputValue(e.target.value);
           }}
+          placeholder={placeholder}
         />
       )}
       {title && (

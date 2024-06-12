@@ -1,5 +1,11 @@
 # @parte-ds/ui
 
+## 1.22.3
+
+### Patch Changes
+
+- 드롭다운 리스트 placeholder 받을 수 있게 수정
+
 ## 1.22.2
 
 ### Patch Changes
