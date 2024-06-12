@@ -8,6 +8,7 @@ const commonSelectRowStyle = css`
   min-height: 32px;
   outline: none;
   user-select: none;
+  display: flex;
   padding: 0 20px;
 `;
 
@@ -43,9 +44,6 @@ const elementStyle = (theme: DefaultTheme, isMulti?: boolean) => css`
   box-sizing: border-box;
   ${theme.typography.P200}
   cursor: pointer;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
   gap: ${({ theme }) => `${theme.spacing.spacing12}px`};
 
   &:hover {
