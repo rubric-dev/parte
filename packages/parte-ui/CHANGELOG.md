@@ -1,5 +1,11 @@
 # @parte-ds/ui
 
+## 1.22.6
+
+### Patch Changes
+
+- SelectRow 호버 시 border 삭제
+
 ## 1.22.5
 
 ### Patch Changes

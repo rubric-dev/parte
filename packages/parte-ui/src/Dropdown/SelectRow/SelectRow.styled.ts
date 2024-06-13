@@ -54,9 +54,6 @@ const elementStyle = (theme: DefaultTheme, isMulti?: boolean) => css`
   &:hover {
     background-color: ${theme.colors.N100};
     border-radius: 8px;
-    div {
-      border: 1px solid ${theme.colors.N600};
-    }
   }
   svg {
     color: ${theme.colors.N700};
