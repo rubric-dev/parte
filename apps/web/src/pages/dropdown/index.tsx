@@ -15,7 +15,8 @@ import { Fragment, useState } from "react";
 
 const OPTIONS: Option<string>[] = [
   {
-    label: "label1",
+    label:
+      "길게길게길게길게길게길게길게길게길게길게길게길게길게길게길게길게길게길게길게길게길게길게길게길게길게길게길게길게길게길게길게길게길게길게길게길게길게길게",
     value: "value1",
   },
   {
@@ -71,7 +72,7 @@ const DropdownTest = () => {
             />
           </Dropdown.Trigger>
           <Dropdown.Menu>
-            <DropdownList options={OPTIONS} />
+            <DropdownList options={OPTIONS} isSearchable isMulti />
           </Dropdown.Menu>
         </Dropdown>
       </Box>

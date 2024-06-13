@@ -1,16 +1,13 @@
+import { AlignItems } from "./../../constant/styles";
 import styled, { DefaultTheme, css } from "styled-components";
 import { Box } from "../../Layout";
 import { SelectRowProps, SelectRowType } from "./SelectRow.types";
 
 const commonSelectRowStyle = css`
-  display: flex;
   position: relative;
-  align-items: center;
   min-height: 48px;
   outline: none;
   user-select: none;
-  display: flex;
-  padding: 0 20px;
 `;
 
 const titleStyle = (theme: DefaultTheme) => css`
@@ -34,6 +31,9 @@ const searchStyle = (theme: DefaultTheme) => css`
   }
   gap: ${({ theme }) => `${theme.spacing.spacing8}px`};
   margin-bottom: 12px;
+  display: flex;
+  align-items: center;
+  padding: 0 20px;
 `;
 
 const elementStyle = (theme: DefaultTheme, isMulti?: boolean) => css`
@@ -48,6 +48,9 @@ const elementStyle = (theme: DefaultTheme, isMulti?: boolean) => css`
   cursor: pointer;
   gap: ${({ theme }) => `${theme.spacing.spacing12}px`};
 
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
   &:hover {
     background-color: ${theme.colors.N100};
     border-radius: 8px;
@@ -97,6 +100,11 @@ export const SelectRow = styled(Box)<{
         return elementStyle(theme, $isMulti);
     }
   }}
+${({ $isMulti }) =>
+    $isMulti &&
+    css`
+      display: flex;
+    `}
 `;
 
 export const SearchInput = styled.input<SelectRowProps>`
