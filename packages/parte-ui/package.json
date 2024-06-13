@@ -18,24 +18,24 @@
   "devDependencies": {
     "@parte-ds/tsconfig": "workspace:*",
     "@parte-ds/utils": "workspace:*",
-    "@tanstack/react-table": "^8.9.7",
-    "@types/node": "^18.17.15",
-    "@types/react": "^18.2.21",
-    "@types/react-dom": "^18.2.7",
-    "@types/react-transition-group": "^4.4.6",
-    "@types/shallowequal": "^1.1.1",
-    "eslint": "^8.49.0",
+    "@tanstack/react-table": "^8.17.3",
+    "@types/node": "^20.14.2",
+    "@types/react": "^18.3.3",
+    "@types/react-dom": "^18.3.0",
+    "@types/react-transition-group": "^4.4.10",
+    "@types/shallowequal": "^1.1.5",
+    "eslint": "^9.4.0",
     "eslint-config-parte": "workspace:*",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
-    "react-select": "^5.7.4",
-    "react-select-async-paginate": "^0.7.3",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "react-select": "^5.8.0",
+    "react-select-async-paginate": "^0.7.4",
     "react-transition-group": "^4.4.5",
     "rxjs": "^7.8.1",
     "shallowequal": "^1.1.0",
-    "styled-components": "^6.0.7",
+    "styled-components": "^6.1.11",
     "tsup": "^7.2.0",
-    "typescript": "^5.2.2"
+    "typescript": "^5.4.5"
   },
   "publishConfig": {
     "access": "public"
@@ -48,10 +48,10 @@
     "styled-components": "^6.0.5"
   },
   "dependencies": {
-    "@types/react-ranger": "^2.0.1",
-    "@types/uuid": "^9.0.4",
+    "@types/react-ranger": "^2.0.4",
+    "@types/uuid": "^9.0.8",
     "react-ranger": "^2.1.0",
-    "stylis": "^4.3.0",
+    "stylis": "^4.3.2",
     "uuid": "^9.0.1"
   }
 }
