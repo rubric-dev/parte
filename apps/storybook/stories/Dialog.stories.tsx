@@ -1,5 +1,5 @@
-import { Dialog, DialogProps } from "@parte-ds/ui";
-import { Story, Meta } from "@storybook/react";
+import { Dialog } from "@parte-ds/ui";
+import { Meta, StoryObj } from "@storybook/react";
 
 export default {
   title: "Components/Overlays/Dialog",
@@ -10,24 +10,27 @@ export default {
   },
 } as Meta;
 
-const Template: Story<DialogProps> = ({ children, ...args }) => {
-  return (
-    <Dialog
-      title="Dialog Title"
-      {...args}
-      // eslint-disable-next-line no-console
-      close={() => console.log("close clicked!")}
-    >
-      {children}
-    </Dialog>
-  );
-};
-export const Default = Template.bind({});
-Default.args = {
-  width: 480,
-  confirmVariant: "fill-primary",
-  children: `Used for multiline pieces of content. Lorem ipsum dolor sit amet, ex
-  lucilius hendrerit vim, tempor scaevola iudicabit ei ius, te eum illud
-  impetus antiopam. Eu wisi commune volutpat pro, usu at alii magna
-  aperiam.`,
+type Story = StoryObj<typeof Dialog>;
+
+export const Default: Story = {
+  args: {
+    width: 480,
+    confirmVariant: "fill-primary",
+    children: `Used for multiline pieces of content. Lorem ipsum dolor sit amet, ex
+    lucilius hendrerit vim, tempor scaevola iudicabit ei ius, te eum illud
+    impetus antiopam. Eu wisi commune volutpat pro, usu at alii magna
+    aperiam.`,
+  },
+  render: ({ children, ...args }) => {
+    return (
+      <Dialog
+        title="Dialog Title"
+        {...args}
+        // eslint-disable-next-line no-console
+        close={() => console.log("close clicked!")}
+      >
+        {children}
+      </Dialog>
+    );
+  },
 };

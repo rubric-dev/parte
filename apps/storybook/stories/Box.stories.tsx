@@ -1,5 +1,5 @@
-import { Story, Meta } from "@storybook/react";
-import { BoxProps, Box, Button } from "@parte-ds/ui";
+import { Box, Button } from "@parte-ds/ui";
+import { Meta, StoryObj } from "@storybook/react";
 
 export default {
   title: "Components/Layout/Box",
@@ -10,6 +10,8 @@ export default {
   },
 } as Meta;
 
+type Story = StoryObj<typeof Box>;
+
 const Content = (
   <>
     <Button variant="fill-primary">First Button</Button>
@@ -19,27 +21,25 @@ const Content = (
   </>
 );
 
-const Template: Story<BoxProps> = ({ flexDirection, ...args }) => {
-  return <Box {...args} flexDirection={flexDirection} />;
+export const FlexBox: Story = {
+  args: {
+    display: "flex",
+    flexDirection: "column",
+    gap: 10,
+    children: Content,
+    marginTop: 32,
+    backgroundColor: "purple",
+    width: 600,
+    justifyContent: "space-between",
+  },
 };
 
-export const FlexBox = Template.bind({});
-FlexBox.args = {
-  display: "flex",
-  flexDirection: "column",
-  gap: 10,
-  children: Content,
-  marginTop: 32,
-  backgroundColor: "purple",
-  width: 600,
-  justifyContent: "space-between",
-};
-
-export const GridBox = Template.bind({});
-GridBox.args = {
-  display: "grid",
-  gap: 10,
-  backgroundColor: "green",
-  gridTemplateColumns: "repeat(2, 1fr)",
-  children: Content,
+export const GridBox: Story = {
+  args: {
+    display: "grid",
+    gap: 10,
+    backgroundColor: "green",
+    gridTemplateColumns: "repeat(2, 1fr)",
+    children: Content,
+  },
 };

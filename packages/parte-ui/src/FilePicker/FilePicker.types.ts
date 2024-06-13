@@ -1,6 +1,6 @@
-import { ChangeEvent, HTMLAttributes } from "react";
+import { ChangeEvent, InputHTMLAttributes } from "react";
 
-export type FilePickerProps = HTMLAttributes<HTMLInputElement> & {
+export type FilePickerProps = InputHTMLAttributes<HTMLInputElement> & {
   name: string;
   accept?: string;
   multiple?: boolean;
