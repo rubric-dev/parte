@@ -1,5 +1,11 @@
 # @parte-ds/ui
 
+## 1.22.4
+
+### Patch Changes
+
+- 버전업
+
 ## 1.22.3
 
 ### Patch Changes
