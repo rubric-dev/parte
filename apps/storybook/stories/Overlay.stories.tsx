@@ -1,5 +1,5 @@
 import { Button, Overlay, OverlayProps } from "@parte-ds/ui";
-import { Story, Meta } from "@storybook/react";
+import { StoryObj, Meta } from "@storybook/react";
 import { useState } from "react";
 
 export default {
@@ -11,7 +11,9 @@ export default {
   },
 } as Meta;
 
-const Template: Story<OverlayProps> = ({ ...args }) => {
+type Story = StoryObj<typeof Overlay>;
+
+const Template = ({ ...args }: OverlayProps) => {
   const [open, setOpen] = useState(false);
   return (
     <div
@@ -26,9 +28,9 @@ const Template: Story<OverlayProps> = ({ ...args }) => {
   );
 };
 
-export const Default = Template.bind({});
-Default.args = {};
-export const AllowScroll = Template.bind({});
-AllowScroll.args = {
-  preventBodyScrolling: false,
+export const Default: Story = { render: Template };
+
+export const AllowScroll: Story = {
+  args: { preventBodyScrolling: false },
+  render: Template,
 };

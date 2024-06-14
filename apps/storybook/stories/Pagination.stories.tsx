@@ -1,5 +1,5 @@
 import { Pagination, PaginationProps } from "@parte-ds/ui";
-import { Story, Meta } from "@storybook/react";
+import { StoryObj, Meta } from "@storybook/react";
 import { useCallback, useState } from "react";
 
 export default {
@@ -11,10 +11,9 @@ export default {
   },
 } as Meta;
 
-const Template: Story<PaginationProps> = ({
-  page: initialPage,
-  totalPages,
-}) => {
+type Story = StoryObj<typeof Pagination>;
+
+const Template = ({ page: initialPage, totalPages }: PaginationProps) => {
   const [page, setPage] = useState(initialPage);
 
   const onPageChange = useCallback((index: number) => {
@@ -30,14 +29,11 @@ const Template: Story<PaginationProps> = ({
   );
 };
 
-export const Default = Template.bind({});
-Default.args = {
-  page: 4,
-  totalPages: 10,
+export const Default: Story = {
+  args: { page: 4, totalPages: 10 },
+  render: Template,
 };
-
-export const Under7Page = Template.bind({});
-Under7Page.args = {
-  page: 3,
-  totalPages: 6,
+export const Under7Page: Story = {
+  args: { page: 3, totalPages: 6 },
+  render: Template,
 };

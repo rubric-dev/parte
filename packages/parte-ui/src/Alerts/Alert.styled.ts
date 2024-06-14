@@ -2,8 +2,7 @@ import styled, { css } from "styled-components";
 import { ColorKey } from "../../../parte-icons/src";
 import { theme } from "../@foundations";
 import { Box } from "../Layout";
-import { AlertStyleProps, AlertStatus } from "./Alert.types";
-import { borderPixel } from "../constants";
+import { AlertStatus, AlertStyleProps } from "./Alert.types";
 
 export const ALERT_ICON_COLOR: Record<AlertStatus, ColorKey> = {
   success: "G400",

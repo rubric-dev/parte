@@ -1,5 +1,5 @@
 import { Option, Tag, TagProps } from "@parte-ds/ui";
-import { Story, Meta } from "@storybook/react";
+import { StoryObj, Meta } from "@storybook/react";
 
 export default {
   title: "Components/Forms/TagInput/Tag",
@@ -10,23 +10,25 @@ export default {
   },
 } as Meta;
 
+type Story = StoryObj<typeof Tag>;
+
 const TAG: Option<string> = { label: "LABEL", value: "value1" };
 
-const Template: Story<TagProps> = ({ ...args }) => {
+const Template = ({ ...args }: TagProps) => {
   return <Tag {...args} />;
 };
 
-export const Default = Template.bind({});
-Default.args = {
-  tag: { ...TAG, status: "normal" },
+export const Default: Story = {
+  args: { tag: { ...TAG, status: "normal" } },
+  render: Template,
 };
 
-export const Error = Template.bind({});
-Error.args = {
-  tag: { ...TAG, status: "error" },
+export const Error: Story = {
+  args: { tag: { ...TAG, status: "error" } },
+  render: Template,
 };
 
-export const Disabled = Template.bind({});
-Disabled.args = {
-  tag: { ...TAG, status: "disabled" },
+export const Disabled: Story = {
+  args: { tag: { ...TAG, status: "disabled" } },
+  render: Template,
 };

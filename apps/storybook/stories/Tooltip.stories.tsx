@@ -1,5 +1,5 @@
 import { Button, POSITION, Tooltip, TooltipProps } from "@parte-ds/ui";
-import { Meta, Story } from "@storybook/react";
+import { Meta, StoryObj } from "@storybook/react";
 
 export default {
   title: "Components/Overlays/Tooltip",
@@ -10,7 +10,9 @@ export default {
   },
 } as Meta;
 
-const Template: Story<TooltipProps> = ({ children, ...args }) => {
+type Story = StoryObj<typeof Tooltip>;
+
+const Template = ({ children, ...args }: TooltipProps) => {
   return (
     <div
       style={{
@@ -29,19 +31,20 @@ const Template: Story<TooltipProps> = ({ children, ...args }) => {
   );
 };
 
-export const Default = Template.bind({});
-
-Default.args = {
-  position: POSITION.BOTTOM_RIGHT,
-  content:
-    "Segment syncs a list of users to these destinations and keeps it up to date.",
-  children: <Button variant="fill-primary">Click Me</Button>,
-  hideDelay: 100,
-  showDelay: 100,
+export const Default: Story = {
+  args: {
+    position: POSITION.BOTTOM_RIGHT,
+    content:
+      "Segment syncs a list of users to these destinations and keeps it up to date.",
+    children: <Button variant="fill-primary">Click Me</Button>,
+    hideDelay: 100,
+    showDelay: 100,
+  },
+  render: Template,
 };
 
-const TooltipTemplate: Story<TooltipProps> = () => {
+const TooltipTemplate = () => {
   return <Tooltip.Content>툴팁의 내용</Tooltip.Content>;
 };
 
-export const TooltipContent = TooltipTemplate.bind({});
+export const TooltipContent: Story = { render: TooltipTemplate };

@@ -5,7 +5,7 @@ import {
   DialogModalProps,
   theme,
 } from "@parte-ds/ui";
-import { Story, Meta } from "@storybook/react";
+import { Meta, StoryObj } from "@storybook/react";
 import { useState } from "react";
 import { css } from "styled-components";
 
@@ -18,6 +18,8 @@ export default {
   },
 } as Meta;
 
+type Story = StoryObj<typeof DialogModal>;
+
 const ScrollBox = () => (
   <Box
     width="100%"
@@ -28,7 +30,7 @@ const ScrollBox = () => (
   />
 );
 
-const Template: Story<DialogModalProps> = ({ children, ...args }) => {
+const Template = ({ children, ...args }: DialogModalProps) => {
   const [open, setOpen] = useState(false);
   return (
     <div
@@ -50,24 +52,30 @@ const Template: Story<DialogModalProps> = ({ children, ...args }) => {
   );
 };
 
-export const Default = Template.bind({});
-Default.args = {
-  confirmVariant: "fill-primary",
-  children: `Used for multiline pieces of content. Lorem ipsum dolor sit amet, ex
-  lucilius hendrerit vim, tempor scaevola iudicabit ei ius, te eum illud
-  impetus antiopam. Eu wisi commune volutpat pro, usu at alii magna
-  aperiam.`,
+export const Default: Story = {
+  args: {
+    confirmVariant: "fill-primary",
+    children: `Used for multiline pieces of content. Lorem ipsum dolor sit amet, ex
+    lucilius hendrerit vim, tempor scaevola iudicabit ei ius, te eum illud
+    impetus antiopam. Eu wisi commune volutpat pro, usu at alii magna
+    aperiam.`,
+  },
+  render: Template,
 };
-export const Error = Template.bind({});
-Error.args = {
-  confirmVariant: "fill-error",
-  confirmLabel: "오류",
-  width: 320,
-  title: "에러 케이스",
-  children: `오류가 발생했습니다`,
+export const Error: Story = {
+  args: {
+    confirmVariant: "fill-error",
+    confirmLabel: "오류",
+    width: 320,
+    title: "에러 케이스",
+    children: `오류가 발생했습니다`,
+  },
+  render: Template,
 };
-export const ScrollContent = Template.bind({});
-ScrollContent.args = {
-  confirmVariant: "fill-primary",
-  children: <ScrollBox />,
+export const ScrollContent: Story = {
+  args: {
+    confirmVariant: "fill-primary",
+    children: <ScrollBox />,
+  },
+  render: Template,
 };

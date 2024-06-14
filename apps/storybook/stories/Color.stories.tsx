@@ -1,5 +1,5 @@
 import { ColorList } from "@parte-ds/ui";
-import { Story, Meta } from "@storybook/react";
+import { Meta, StoryObj } from "@storybook/react";
 
 export default {
   title: "Foundation/Color",
@@ -10,8 +10,8 @@ export default {
   },
 } as Meta;
 
-const Template: Story = () => {
-  return <ColorList />;
+export const Default: StoryObj<typeof ColorList> = {
+  render: () => {
+    return <ColorList />;
+  },
 };
-
-export const Default = Template.bind({});

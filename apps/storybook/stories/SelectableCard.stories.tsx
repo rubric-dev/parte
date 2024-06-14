@@ -1,5 +1,5 @@
 import { Card, CardProps, Headline, Paragraph } from "@parte-ds/ui";
-import { Story, Meta } from "@storybook/react";
+import { StoryObj, Meta } from "@storybook/react";
 
 import { useState } from "react";
 
@@ -12,7 +12,9 @@ export default {
   },
 } as Meta;
 
-const Template: Story<CardProps> = ({ ...args }) => {
+type Story = StoryObj<typeof Card>;
+
+const Template = ({ ...args }: CardProps) => {
   const [selected, setSelected] = useState(false);
   return (
     <Card
@@ -30,10 +32,5 @@ const Template: Story<CardProps> = ({ ...args }) => {
   );
 };
 
-export const Default = Template.bind({});
-Default.args = {};
-
-export const Disabled = Template.bind({});
-Disabled.args = {
-  disabled: true,
-};
+export const Default: Story = { render: Template };
+export const Disabled: Story = { args: { disabled: true }, render: Template };

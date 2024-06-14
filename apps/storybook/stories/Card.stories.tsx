@@ -1,5 +1,5 @@
-import { Card, CardProps, Headline, Paragraph } from "@parte-ds/ui";
-import { Story, Meta } from "@storybook/react";
+import { Card, Headline, Paragraph } from "@parte-ds/ui";
+import { Meta, StoryObj } from "@storybook/react";
 
 export default {
   title: "Components/Card/DefaultCard",
@@ -10,19 +10,27 @@ export default {
   },
 } as Meta;
 
-const Template: Story<CardProps> = ({ ...args }) => {
-  return (
-    <Card {...args} flexDirection="column" padding={20} display="flex">
-      <Headline size={200}>Heading</Headline>
-      <Paragraph size={300}>Paragraph</Paragraph>
-    </Card>
-  );
+type Story = StoryObj<typeof Card>;
+
+export const Default: Story = {
+  args: {},
+  render: ({ ...args }) => {
+    return (
+      <Card {...args} flexDirection="column" padding={20} display="flex">
+        <Headline size={200}>Heading</Headline>
+        <Paragraph size={300}>Paragraph</Paragraph>
+      </Card>
+    );
+  },
 };
-
-export const Default = Template.bind({});
-Default.args = {};
-
-export const Disabled = Template.bind({});
-Disabled.args = {
-  disabled: true,
+export const Disabled: Story = {
+  args: { disabled: true },
+  render: ({ ...args }) => {
+    return (
+      <Card {...args} flexDirection="column" padding={20} display="flex">
+        <Headline size={200}>Heading</Headline>
+        <Paragraph size={300}>Paragraph</Paragraph>
+      </Card>
+    );
+  },
 };
