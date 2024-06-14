@@ -1,5 +1,5 @@
 import { Box, Spinner, SpinnerProps } from "@parte-ds/ui";
-import { Story, Meta } from "@storybook/react";
+import { StoryObj, Meta } from "@storybook/react";
 
 export default {
   title: "Components/Spinner",
@@ -10,7 +10,9 @@ export default {
   },
 } as Meta;
 
-const Template: Story<SpinnerProps> = ({ size }) => {
+type Story = StoryObj<typeof Spinner>;
+
+const Template = ({ size }: SpinnerProps) => {
   return (
     <Box
       display="flex"
@@ -24,7 +26,4 @@ const Template: Story<SpinnerProps> = ({ size }) => {
   );
 };
 
-export const Default = Template.bind({});
-Default.args = {
-  size: 24,
-};
+export const Default: Story = { args: { size: 24 }, render: Template };

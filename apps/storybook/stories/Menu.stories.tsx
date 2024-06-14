@@ -4,7 +4,7 @@ import {
   ActionRefreshIcon,
 } from "@parte-ds/icons";
 import { Menu, MenuProps, Option } from "@parte-ds/ui";
-import { Story, Meta } from "@storybook/react";
+import { StoryObj, Meta } from "@storybook/react";
 import { useState } from "react";
 
 export default {
@@ -16,7 +16,9 @@ export default {
   },
 } as Meta;
 
-const Template: Story<MenuProps> = () => {
+type Story = StoryObj<typeof Menu>;
+
+const Template = (props: MenuProps) => {
   return (
     <Menu>
       <Menu.Group title="TITLE">
@@ -39,7 +41,7 @@ const menuOptions: Option<string>[] = [
   { label: "label2", value: "label2" },
   { label: "label3", value: "label3" },
 ];
-const SelectableTemplate: Story<MenuProps> = () => {
+const SelectableTemplate = () => {
   const [selected, setSelected] = useState("");
   return (
     <Menu>
@@ -63,7 +65,7 @@ const SelectableTemplate: Story<MenuProps> = () => {
   );
 };
 
-const CheckBoxTemplate: Story<MenuProps> = () => {
+const CheckBoxTemplate = () => {
   const [selected, setSelected] = useState<string[]>([]);
   return (
     <Menu>
@@ -78,7 +80,7 @@ const CheckBoxTemplate: Story<MenuProps> = () => {
                 setSelected((prev) =>
                   included
                     ? prev.filter((item) => item !== value)
-                    : [...prev, value]
+                    : [...prev, value],
                 );
               }}
               selected={included}
@@ -92,6 +94,8 @@ const CheckBoxTemplate: Story<MenuProps> = () => {
   );
 };
 
-export const Default = Template.bind({});
-export const Selectable = SelectableTemplate.bind({});
-export const CheckBox = CheckBoxTemplate.bind({});
+export const Default: Story = {
+  render: Template,
+};
+export const Selectable: Story = { render: SelectableTemplate };
+export const CheckBox: Story = { render: CheckBoxTemplate };

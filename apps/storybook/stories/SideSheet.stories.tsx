@@ -6,7 +6,7 @@ import {
   Tab,
   Tabs,
 } from "@parte-ds/ui";
-import { Story, Meta } from "@storybook/react";
+import { StoryObj, Meta } from "@storybook/react";
 import { useState } from "react";
 import styled, { css } from "styled-components";
 
@@ -19,7 +19,9 @@ export default {
   },
 } as Meta;
 
-const Template: Story<SideSheetProps> = ({ ...args }) => {
+type Story = StoryObj<typeof SideSheet>;
+
+const Template = ({ ...args }: SideSheetProps) => {
   const [open, setOpen] = useState(false);
   return (
     <div
@@ -38,11 +40,13 @@ const Template: Story<SideSheetProps> = ({ ...args }) => {
   );
 };
 
-export const Default = Template.bind({});
-Default.args = {
-  preventBodyScrolling: false,
-  shouldCloseOnEscapePress: true,
-  shouldCloseOnOverlayClick: true,
+export const Default: Story = {
+  args: {
+    preventBodyScrolling: false,
+    shouldCloseOnEscapePress: true,
+    shouldCloseOnOverlayClick: true,
+  },
+  render: Template,
 };
 
 const Containter = styled(Box)``;
@@ -85,7 +89,7 @@ const Card = styled(Box)`
   `}
 `;
 
-const Featured: Story<SideSheetProps> = ({ ...args }) => {
+const Featured = ({ ...args }: SideSheetProps) => {
   const [open, setOpen] = useState(false);
   const [selectedIndex, setSelectedIndex] = useState(0);
 
@@ -143,9 +147,11 @@ const Featured: Story<SideSheetProps> = ({ ...args }) => {
     </div>
   );
 };
-export const FullFeatured = Featured.bind({});
-FullFeatured.args = {
-  preventBodyScrolling: false,
-  shouldCloseOnEscapePress: true,
-  shouldCloseOnOverlayClick: true,
+export const FullFeatured: Story = {
+  args: {
+    preventBodyScrolling: false,
+    shouldCloseOnEscapePress: true,
+    shouldCloseOnOverlayClick: true,
+  },
+  render: Featured,
 };

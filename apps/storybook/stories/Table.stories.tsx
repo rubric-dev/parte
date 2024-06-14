@@ -1,24 +1,15 @@
-import { Meta, Story } from "@storybook/react";
+import {
+  Avatar,
+  Cell,
+  Checkbox,
+  HeaderCell,
+  Headline,
+  TableTemplate,
+} from "@parte-ds/ui";
+import { Meta, StoryObj } from "@storybook/react";
 import { ColumnDef, createColumnHelper } from "@tanstack/react-table";
 import { useState } from "react";
 import styled from "styled-components";
-import { ActionChatIcon, InterfaceMoreIcon } from "@parte-ds/icons";
-import {
-  Avatar,
-  Badge,
-  Cell,
-  Checkbox,
-  Dropdown,
-  FilterHeader,
-  HeaderCell,
-  Headline,
-  IconButton,
-  Link,
-  Menu,
-  TableTemplate,
-  toaster,
-  Toggle,
-} from "@parte-ds/ui";
 
 type UserType = "user" | "manager" | "admin";
 type User = {
@@ -81,6 +72,8 @@ export default {
     viewport: "responsive",
   },
 } as Meta;
+
+type Story = StoryObj<typeof TableTemplate>;
 
 const getBadgeColorByType = (type: UserType) => {
   switch (type) {
@@ -162,9 +155,7 @@ const defaultColumns = [
   }),
 ] as ColumnDef<User>[];
 
-const Template: Story<{ enableRowSelection?: boolean }> = ({
-  enableRowSelection,
-}) => {
+const Template = ({ enableRowSelection }: { enableRowSelection?: boolean }) => {
   const [data] = useState(initialDatas);
 
   return (
@@ -176,7 +167,7 @@ const Template: Story<{ enableRowSelection?: boolean }> = ({
   );
 };
 
-const RowSelectTemplate: Story = () => {
+const RowSelectTemplate = () => {
   const [data] = useState(initialDatas);
   const [selectedRowId, setSelectedRowId] = useState<number | string>();
   return (
@@ -194,7 +185,7 @@ const ScrollContainer = styled.div`
   height: 600px;
 `;
 
-const ScrollTableTemplate: Story<{ sticky?: boolean }> = ({ sticky }) => {
+const ScrollTableTemplate = ({ sticky }: { sticky?: boolean }) => {
   const [data] = useState(manyDatas);
 
   return (
@@ -209,13 +200,15 @@ const ScrollTableTemplate: Story<{ sticky?: boolean }> = ({ sticky }) => {
   );
 };
 
-export const Default = Template.bind({});
-Default.args = {
-  enableRowSelection: true,
+export const Default: Story = {
+  args: {
+    enableRowSelection: true,
+  },
+  render: Template,
 };
-export const RowSelect = RowSelectTemplate.bind({});
+export const RowSelect: Story = { render: RowSelectTemplate };
 
-export const ScrollTable = ScrollTableTemplate.bind({});
-ScrollTable.args = {
-  sticky: true,
+export const ScrollTable: Story = {
+  args: { sticky: true },
+  render: ScrollTableTemplate,
 };

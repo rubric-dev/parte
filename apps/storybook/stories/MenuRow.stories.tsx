@@ -1,6 +1,6 @@
 import { ActionChatIcon } from "@parte-ds/icons";
 import { Menu, MenuRowProps } from "@parte-ds/ui";
-import { Story, Meta } from "@storybook/react";
+import { StoryObj, Meta } from "@storybook/react";
 import { useState } from "react";
 
 export default {
@@ -12,10 +12,12 @@ export default {
   },
 } as Meta;
 
-const Template: Story<MenuRowProps> = ({ ...args }) => {
+type Story = StoryObj<typeof Menu.Row>;
+
+const Template = ({ ...args }: MenuRowProps) => {
   return <Menu.Row {...args}>Menu Row</Menu.Row>;
 };
-const ClickableTemplate: Story<MenuRowProps> = ({ ...args }) => {
+const ClickableTemplate = ({ ...args }: MenuRowProps) => {
   const [selected, setSeleted] = useState(false);
   return (
     <Menu.Row
@@ -27,21 +29,23 @@ const ClickableTemplate: Story<MenuRowProps> = ({ ...args }) => {
     </Menu.Row>
   );
 };
-export const Default = Template.bind({});
-Default.args = {
-  selected: false,
+export const Default: Story = {
+  args: { selected: false },
+  render: Template,
 };
-export const Icon = Template.bind({});
-Icon.args = {
-  leadingIcon: <ActionChatIcon size={16} />,
+export const Icon: Story = {
+  args: { leadingIcon: <ActionChatIcon size={16} /> },
+  render: Template,
 };
-export const Title = Template.bind({});
-Title.args = {
-  type: "title",
+export const Title: Story = {
+  args: { type: "title" },
+  render: Template,
 };
-export const Checkbox = Template.bind({});
-Checkbox.args = {
-  type: "checkbox",
-  selected: false,
+export const Checkbox: Story = {
+  args: { type: "checkbox", selected: false },
+  render: Template,
 };
-export const Clickable = ClickableTemplate.bind({});
+
+export const Clickable: Story = {
+  render: ClickableTemplate,
+};

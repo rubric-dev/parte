@@ -1,5 +1,5 @@
 import { Menu, MenuGroupProps } from "@parte-ds/ui";
-import { Story, Meta } from "@storybook/react";
+import { StoryObj, Meta } from "@storybook/react";
 
 export default {
   title: "Components/Menu/MenuGroup",
@@ -10,17 +10,17 @@ export default {
   },
 } as Meta;
 
-const Template: Story<MenuGroupProps> = ({ ...args }) => {
-  return (
-    <Menu.Group {...args}>
-      <Menu.Row>Label 1</Menu.Row>
-      <Menu.Row>Label 2</Menu.Row>
-      <Menu.Row>Label 3</Menu.Row>
-    </Menu.Group>
-  );
-};
+type Story = StoryObj<typeof Menu.Group>;
 
-export const Default = Template.bind({});
-Default.args = {
-  title: "title",
+export const Default: Story = {
+  args: { title: "title" },
+  render: ({ ...args }) => {
+    return (
+      <Menu.Group {...args}>
+        <Menu.Row>Label 1</Menu.Row>
+        <Menu.Row>Label 2</Menu.Row>
+        <Menu.Row>Label 3</Menu.Row>
+      </Menu.Group>
+    );
+  },
 };
