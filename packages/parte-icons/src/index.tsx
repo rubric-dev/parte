@@ -629,3 +629,4 @@ export { default as SparklesIcon } from "./Icons/SparklesIcon";
 export { default as NotebookOneIcon } from "./Icons/NotebookOneIcon";
 export { default as AnalysisIcon } from "./Icons/AnalysisIcon";
 export { default as BankCardIcon } from "./Icons/BankCardIcon";
+export { default as TransactionOrderIcon } from "./Icons/TransactionOrderIcon";
