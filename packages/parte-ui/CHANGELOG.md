@@ -1,5 +1,11 @@
 # @parte-ds/ui
 
+## 1.22.7
+
+### Patch Changes
+
+- 🩹 Select menuPortal 스타일 수정 가능하도록 수정
+
 ## 1.22.6
 
 ### Patch Changes

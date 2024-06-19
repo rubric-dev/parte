@@ -4,7 +4,7 @@ import { GroupBase, StylesConfig } from "react-select";
 const useSelectStyle = <
   T,
   K extends boolean,
-  G extends GroupBase<T> = GroupBase<T>
+  G extends GroupBase<T> = GroupBase<T>,
 >({
   isError,
   customStyles,
@@ -353,6 +353,10 @@ const useSelectStyle = <
       },
       ...(props.isDisabled ? { color: theme.colors.N600 } : {}),
       ...customStyles?.dropdownIndicator?.(css, props),
+    }),
+    menuPortal: (css, props) => ({
+      ...css,
+      ...customStyles?.menuPortal?.(css, props),
     }),
   };
 };
