@@ -1,8 +1,13 @@
-export type FilterButtonType = "fill" | "outline";
+export type FilterButtonVariant = "fill" | "outline";
 export type FilterButtonSize = "medium" | "large";
 export type FilterButtonProps = {
   selectedCount?: number;
   size?: FilterButtonSize;
-  type?: FilterButtonType;
+  variant?: FilterButtonVariant;
   text?: string;
+};
+
+export type FilterButtonStyledProps = {
+  $size: FilterButtonSize;
+  $variant: FilterButtonVariant;
 };
