@@ -45,16 +45,15 @@ type Story = StoryObj<typeof FilterButton>;
 
 export const Fill: Story = {
   args: {
-    type: "fill",
+    variant: "fill",
     size: "medium",
+    children: "필터",
   },
 };
 export const Outline: Story = {
   args: {
-    type: "outline",
+    variant: "outline",
     size: "medium",
-  },
-  parameters: {
-    controls: { exclude: ["variant", "size"] },
+    children: "필터",
   },
 };

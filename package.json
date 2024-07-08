@@ -12,11 +12,11 @@
     "release": "turbo run build --filter=!./apps/* && changeset publish"
   },
   "devDependencies": {
-    "@changesets/cli": "^2.27.5",
-    "eslint": "^9.4.0",
+    "@changesets/cli": "^2.27.7",
+    "eslint": "^9.6.0",
     "eslint-config-parte": "workspace:*",
     "prettier": "^3.3.2",
-    "turbo": "^2.0.3"
+    "turbo": "^2.0.6"
   },
   "packageManager": "pnpm@9.3.0",
   "name": "parte"

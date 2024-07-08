@@ -1,6 +1,6 @@
 {
   "name": "@parte-ds/ui",
-  "version": "1.22.7",
+  "version": "1.22.8",
   "main": "./dist/index.js",
   "module": "./dist/index.mjs",
   "types": "./dist/index.d.ts",
@@ -18,13 +18,13 @@
   "devDependencies": {
     "@parte-ds/tsconfig": "workspace:*",
     "@parte-ds/utils": "workspace:*",
-    "@tanstack/react-table": "^8.17.3",
-    "@types/node": "^20.14.2",
+    "@tanstack/react-table": "^8.19.2",
+    "@types/node": "^20.14.10",
     "@types/react": "^18.3.3",
     "@types/react-dom": "^18.3.0",
     "@types/react-transition-group": "^4.4.10",
     "@types/shallowequal": "^1.1.5",
-    "eslint": "^9.4.0",
+    "eslint": "^9.6.0",
     "eslint-config-parte": "workspace:*",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
@@ -35,7 +35,7 @@
     "shallowequal": "^1.1.0",
     "styled-components": "^6.1.11",
     "tsup": "^7.2.0",
-    "typescript": "^5.4.5"
+    "typescript": "^5.5.3"
   },
   "publishConfig": {
     "access": "public"

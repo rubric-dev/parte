@@ -1,5 +1,11 @@
 # @parte-ds/ui
 
+## 1.22.8
+
+### Patch Changes
+
+- Fix filter button to foward ref comp
+
 ## 1.22.7
 
 ### Patch Changes
