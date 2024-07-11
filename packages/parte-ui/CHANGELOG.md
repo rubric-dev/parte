@@ -1,5 +1,11 @@
 # @parte-ds/ui
 
+## 1.22.9
+
+### Patch Changes
+
+- Fix Textinput Select variant style
+
 ## 1.22.8
 
 ### Patch Changes
