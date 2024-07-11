@@ -264,6 +264,9 @@ export const Input = styled.input<{
       color: ${theme.colorParagraph};
       ${theme.typography.P100}
       font-family: inherit;
+      background-color: ${theme.colors.N0};
+      text-align: left;
+
       ${sizeHandler($variant, $textInputSize)};
       &::placeholder {
         color: ${theme.colorTextPlaceholderDefault};
